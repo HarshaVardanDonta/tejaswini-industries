@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Tejaswini Industries</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=IBM+Plex+Mono&amp;family=Source+Sans+3:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#b5c4ff",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#3c475a",
+                        "on-secondary": "#ffffff",
+                        "background": "#fcf9f8",
+                        "on-background": "#1c1b1b",
+                        "primary": "#00236f",
+                        "surface-tint": "#3d59af",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#bcc7dd",
+                        "on-surface": "#1c1b1b",
+                        "tertiary-fixed": "#d8e3fa",
+                        "inverse-surface": "#313030",
+                        "on-tertiary-container": "#a2adc3",
+                        "on-primary-fixed-variant": "#224095",
+                        "secondary-fixed": "#ffdad8",
+                        "surface-container-lowest": "#ffffff",
+                        "red-light": "#FCEAEC",
+                        "on-secondary-container": "#fffbff",
+                        "secondary": "#bb0027",
+                        "surface-variant": "#e5e2e1",
+                        "surface-dim": "#dcd9d9",
+                        "secondary-fixed-dim": "#ffb3b1",
+                        "on-primary-container": "#91a9ff",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-primary-fixed": "#00164e",
+                        "outline-variant": "#c4c5d3",
+                        "surface-container-high": "#ebe7e7",
+                        "outline": "#757683",
+                        "tertiary-container": "#364153",
+                        "on-secondary-fixed": "#410007",
+                        "error-container": "#ffdad6",
+                        "steel": "#4A5568",
+                        "on-surface-variant": "#444652",
+                        "gray-700": "#3D3D39",
+                        "on-tertiary-fixed": "#111c2c",
+                        "gray-100": "#EFEFEC",
+                        "tertiary": "#202b3c",
+                        "surface-container-low": "#f6f3f2",
+                        "blue-light": "#E8EDF8",
+                        "gray-50": "#F7F7F5",
+                        "inverse-on-surface": "#f3f0ef",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#e0283c",
+                        "surface": "#fcf9f8",
+                        "inverse-primary": "#b5c4ff",
+                        "on-error": "#ffffff",
+                        "gray-500": "#7A7A74",
+                        "on-secondary-fixed-variant": "#92001c",
+                        "surface-container": "#f0edec",
+                        "primary-container": "#1a3a8f",
+                        "gray-300": "#C4C4BC",
+                        "primary-fixed": "#dce1ff",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "space-12": "48px",
+                        "space-1": "4px",
+                        "space-4": "16px",
+                        "margin-desktop": "48px",
+                        "space-3": "12px",
+                        "margin-mobile": "16px",
+                        "margin-tablet": "24px",
+                        "space-2": "8px",
+                        "gutter": "24px",
+                        "base": "4px",
+                        "space-8": "32px",
+                        "space-16": "64px",
+                        "space-6": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Barlow Condensed", "sans-serif"],
+                        "label": ["Barlow Condensed", "sans-serif"],
+                        "h3": ["Barlow Condensed", "sans-serif"],
+                        "display-xl-mobile": ["Barlow Condensed", "sans-serif"],
+                        "h1": ["Barlow Condensed", "sans-serif"],
+                        "body-sm": ["Source Sans 3", "sans-serif"],
+                        "mono-data": ["IBM Plex Mono", "monospace"],
+                        "body-lg": ["Source Sans 3", "sans-serif"],
+                        "display-xl": ["Barlow Condensed", "sans-serif"],
+                        "h2": ["Barlow Condensed", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["36px", { "lineHeight": "1.15", "fontWeight": "700" }],
+                        "label": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "h3": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "700" }],
+                        "h1": ["28px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "mono-data": ["13px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "display-xl": ["48px", { "lineHeight": "1.1", "fontWeight": "700" }],
+                        "h2": ["22px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-lg antialiased">
+<!-- TopAppBar -->
+<header class="bg-primary dark:bg-primary text-on-primary dark:text-on-primary docked full-width top-0 sticky border-b-4 border-secondary z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-[1280px] mx-auto h-20">
+<div class="text-h2 font-h2 font-bold text-on-primary uppercase tracking-wider">
+                Tejaswini Industries
+            </div>
+<nav class="hidden md:flex gap-space-4">
+<a class="font-label text-label text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 px-space-2 py-space-1 rounded-DEFAULT uppercase" href="#">Products</a>
+<a class="font-label text-label text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 px-space-2 py-space-1 rounded-DEFAULT uppercase" href="#">Services</a>
+<a class="font-label text-label text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 px-space-2 py-space-1 rounded-DEFAULT uppercase" href="#">Projects</a>
+<a class="font-label text-label text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 px-space-2 py-space-1 rounded-DEFAULT uppercase" href="#">Blogs</a>
+<a class="font-label text-label text-on-primary border-b-3 border-secondary pb-1 uppercase" href="#">About</a>
+<a class="font-label text-label text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 px-space-2 py-space-1 rounded-DEFAULT uppercase" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-space-4">
+<div class="flex gap-space-2">
+<button class="material-symbols-outlined text-on-primary hover:text-surface-bright transition-colors" data-icon="call" data-weight="fill">call</button>
+<button class="material-symbols-outlined text-on-primary hover:text-surface-bright transition-colors" data-icon="mail" data-weight="fill">mail</button>
+</div>
+<button class="bg-primary-container text-on-primary font-label text-label uppercase tracking-widest px-space-4 py-space-2 rounded-DEFAULT hover:bg-surface-tint transition-colors border border-on-primary/20">Request Quote</button>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<div class="fixed right-4 bottom-24 flex flex-col gap-4 z-50 bg-surface-container-lowest dark:bg-surface-dim border border-gray-300 dark:border-outline shadow-md p-space-2 rounded-xl">
+<div class="text-center pb-space-2 border-b border-gray-100">
+<div class="font-label text-label text-primary font-bold">ISO 9001:2015</div>
+<div class="font-body-sm text-body-sm text-gray-500 text-[10px] leading-tight">Certified Excellence</div>
+</div>
+<div class="flex flex-col space-y-4 pt-space-2">
+<a class="bg-primary text-on-primary p-4 rounded-xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform group relative" href="#">
+<span class="material-symbols-outlined" data-icon="request_quote">request_quote</span>
+<span class="absolute right-full mr-space-2 bg-surface-container-lowest text-primary border border-gray-300 px-space-2 py-space-1 font-label text-label whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity rounded-DEFAULT shadow-md pointer-events-none uppercase">Request Quote</span>
+</a>
+<a class="bg-primary text-on-primary p-4 rounded-xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform group relative" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="absolute right-full mr-space-2 bg-surface-container-lowest text-primary border border-gray-300 px-space-2 py-space-1 font-label text-label whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity rounded-DEFAULT shadow-md pointer-events-none uppercase">WhatsApp</span>
+</a>
+</div>
+</div>
+<main class="max-w-[1280px] mx-auto w-full">
+<!-- Hero Section -->
+<section class="relative w-full h-[614px] min-h-[500px] flex items-center bg-gray-700" data-alt="A dramatic wide-angle shot of a highly advanced industrial manufacturing facility floor. Massive, precision-engineered metal transformers and heavy machinery dominate the scene, illuminated by bright, cold, high-key white industrial lighting. The atmosphere is stark, orderly, and highly technical, emphasizing engineering authority. The color palette relies heavily on stark whites, deep industrial grays, and subtle accents of brand blue (#1A3A8F) on control panels, creating a modern, brutalist aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBNtAOYCJeLtuxUZt2XwvrI5lEaPkBfwQc_qd2_GrFtgR8MXRNMVe-W9bZ_xMamtu1IgFIGIfpi_y2AIT_hJfPfv_plEWsoAegtfU8fAJbpWFC2gOHWTJj6bZwq48OyRwmIF_MOL9goMXQ8nxioiSsj2MOg5blKCHRr8LbvHlr9pH8RgWGJ3xo9bLAGisuZKLFkwSaVGHK9BQcDCO8aNAjSEpGt8jhGH9k2EaHmQnYhCaq1lkInOXM1yIG5eeV1KD7s22uFPhSeqts'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-primary/70 mix-blend-multiply"></div>
+<div class="relative z-10 px-margin-desktop md:w-2/3">
+<h1 class="font-display-xl text-display-xl text-on-primary uppercase mb-space-4 border-l-4 border-secondary pl-space-4">Engineering Authority Since 2011</h1>
+<p class="font-body-lg text-body-lg text-surface-bright max-w-2xl bg-surface-container-lowest/10 p-space-4 backdrop-blur-sm border border-surface-bright/20 rounded-DEFAULT">
+                    Tejaswini Industries stands at the forefront of industrial precision, delivering robust solutions for power utilities, infrastructure, and heavy manufacturing sectors globally.
+                </p>
+</div>
+</section>
+<!-- Company Overview -->
+<section class="px-margin-desktop py-space-16 grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 relative">
+<div class="border border-gray-100 bg-white p-space-2 rounded-xl shadow-sm">
+<img alt="ISO Certification" class="w-full h-auto rounded-lg grayscale hover:grayscale-0 transition-all duration-500" data-alt="A pristine, brightly lit close-up of a framed ISO 9001:2015 certification document resting on a brushed steel industrial workbench. The document is sharp and legible, symbolizing corporate reliability and strict quality control. The lighting is clinical and high-contrast, casting a very subtle, tight shadow from the frame onto the metal surface. The background is softly out of focus, showing blurred industrial monitoring equipment in stark white and gray tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMjeUdxTq8yeZ_Il-SIWuMo-RbD1xrcaDA5Xspxyas956Rz4caQB0UePl6VusLP9txcwRLkbqreZDjtNG8-0IQWAk6uVBI2n5-FcYrLzzMeA3g2BS2GZ1wrX0H_fU3oQFkszhRxIgY6Rdl86s2OWIYds-WXJwXmZLtrk_p5Z32onQo5_x-4FS51gZE31jHuJa-DUkbDvalkL7XwnY49Os69B3pGEc32ORKIK-gVP-7uhkGr-1kgFi82xZFAC98QcQie4XFh-JWYcc"/>
+</div>
+<div class="absolute -bottom-space-6 -right-space-6 bg-white border border-gray-100 p-space-4 rounded-xl shadow-sm border-l-4 border-l-secondary">
+<p class="font-h2 text-h2 text-primary uppercase">ISO 9001:2015</p>
+<p class="font-label text-label text-gray-500 uppercase tracking-widest">Certified</p>
+</div>
+</div>
+<div class="md:col-span-7 md:pl-space-8 mt-space-8 md:mt-0">
+<h2 class="font-h1 text-h1 text-primary uppercase mb-space-4">Defining Precision</h2>
+<div class="font-body-lg text-body-lg text-gray-700 space-y-space-4">
+<p>
+                        Established with a commitment to uncompromising quality, Tejaswini Industries has evolved into a premier engineering powerhouse. Our foundation is built on rigorous standards and a relentless pursuit of customer satisfaction in complex industrial environments.
+                    </p>
+<p>
+                        Operating under strict ISO 9001:2015 protocols, every component engineered in our facilities undergoes exhaustive validation. We view quality not as a metric, but as an inherent property of our manufacturing DNA.
+                    </p>
+</div>
+<div class="mt-space-8 flex gap-space-4">
+<div class="bg-gray-50 border border-gray-100 p-space-4 rounded-DEFAULT flex-1">
+<span class="material-symbols-outlined text-secondary text-3xl mb-space-2" data-icon="precision_manufacturing">precision_manufacturing</span>
+<p class="font-h3 text-h3 text-primary uppercase">Unmatched Quality</p>
+</div>
+<div class="bg-gray-50 border border-gray-100 p-space-4 rounded-DEFAULT flex-1">
+<span class="material-symbols-outlined text-secondary text-3xl mb-space-2" data-icon="handshake">handshake</span>
+<p class="font-h3 text-h3 text-primary uppercase">Trusted Partnerships</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Vision & Mission -->
+<section class="bg-gray-50 py-space-16 border-y border-gray-100">
+<div class="px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Vision Card -->
+<div class="bg-white border border-gray-100 rounded-xl p-space-8 shadow-sm hover:border-primary transition-colors focus-within:ring focus-within:ring-primary/20">
+<div class="w-16 h-16 bg-blue-light flex items-center justify-center rounded-DEFAULT mb-space-6 border border-primary-fixed">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="visibility">visibility</span>
+</div>
+<h3 class="font-h1 text-h1 text-primary uppercase mb-space-4">Our Vision</h3>
+<p class="font-body-lg text-body-lg text-gray-700">
+                            To be the global benchmark in precision engineering, driving industrial progress through innovative manufacturing methodologies and unwavering reliability.
+                        </p>
+</div>
+<!-- Mission Card -->
+<div class="bg-white border border-gray-100 rounded-xl p-space-8 shadow-sm border-l-4 border-l-secondary hover:border-gray-300 transition-colors">
+<div class="w-16 h-16 bg-red-light flex items-center justify-center rounded-DEFAULT mb-space-6 border border-secondary-fixed">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="my_location">my_location</span>
+</div>
+<h3 class="font-h1 text-h1 text-primary uppercase mb-space-4">Our Mission</h3>
+<p class="font-body-lg text-body-lg text-gray-700">
+                            To engineer and deliver superior industrial solutions that empower our clients' operations, maintaining the highest standards of safety, quality, and technical excellence.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Infrastructure & Manufacturing -->
+<section class="px-margin-desktop py-space-16">
+<div class="mb-space-12 text-center md:text-left">
+<h2 class="font-h1 text-h1 text-primary uppercase border-l-4 border-secondary pl-space-4 inline-block">Infrastructure</h2>
+<p class="font-body-lg text-body-lg text-gray-500 mt-space-2 max-w-3xl">State-of-the-art manufacturing facilities located in the industrial hub of Hyderabad.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4 flex flex-col gap-space-4">
+<div class="bg-primary text-on-primary p-space-6 rounded-xl border border-primary-fixed shadow-sm">
+<h4 class="font-h3 text-h3 uppercase mb-space-2 flex items-center gap-space-2">
+<span class="material-symbols-outlined" data-icon="factory">factory</span> Advanced Machinery
+                        </h4>
+<p class="font-body-sm text-body-sm text-surface-bright/80">Equipped with highly calibrated CNC machines and automated assembly lines ensuring micro-millimeter precision.</p>
+</div>
+<div class="bg-white border border-gray-100 p-space-6 rounded-xl shadow-sm">
+<h4 class="font-h3 text-h3 text-primary uppercase mb-space-2 flex items-center gap-space-2">
+<span class="material-symbols-outlined" data-icon="science">science</span> Testing Labs
+                        </h4>
+<p class="font-body-sm text-body-sm text-gray-700">In-house NDT (Non-Destructive Testing) and material analysis laboratories guaranteeing structural integrity before deployment.</p>
+</div>
+<div class="bg-white border border-gray-100 p-space-6 rounded-xl shadow-sm">
+<h4 class="font-h3 text-h3 text-primary uppercase mb-space-2 flex items-center gap-space-2">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span> High-Capacity Storage
+                        </h4>
+<p class="font-body-sm text-body-sm text-gray-700">Climate-controlled warehousing ensuring raw materials and finished goods remain uncontaminated.</p>
+</div>
+</div>
+<div class="md:col-span-8 h-full min-h-[400px] border border-gray-100 rounded-xl overflow-hidden bg-gray-50" data-alt="A brightly lit, expansive interior view of a modern industrial facility in Hyderabad. Rows of heavy-duty, gray and steel CNC machines are aligned perfectly on a clean, light gray epoxy floor. The setting is clinical and highly organized, emphasizing precision and structure. Overhead industrial lighting casts a stark, even white light, eliminating deep shadows. The visual style is functional and brutalist, conveying high-end engineering capabilities." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDnyDw_jj57CYtwyixp5c5UDJ_5y_ZAwIadALJqPzMlzJwyzxJzK6-yDrN-svk2K0boVcre5uSR7AtAKBevy0bLs7KGRs4Ln0L-JJLf_g34FQHPO0nr5Ne4HQUHk0tElc05_DZatLWSHeG0Yfr5033joxDB3KuWb9tL8ePSpVD9-PswQJ-si4nBuBwhQlWSh2vKVychcq-ccAAx24zzRRVf3O63vqW83qhIRu2MLt1qfJmsVfU-PJQbxSrAlZaE-SahvjdYPQtt6qo'); background-size: cover; background-position: center;">
+</div>
+</div>
+</section>
+<!-- Industries Served -->
+<section class="bg-primary py-space-16 text-on-primary">
+<div class="px-margin-desktop text-center">
+<h2 class="font-h1 text-h1 uppercase mb-space-12 inline-block border-b-2 border-secondary pb-space-2">Sectors We Empower</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<div class="flex flex-col items-center p-space-4 border border-on-primary/10 rounded-xl bg-on-primary/5 hover:bg-on-primary/10 transition-colors">
+<span class="material-symbols-outlined text-5xl mb-space-4 text-surface-bright" data-icon="electric_bolt" data-weight="fill">electric_bolt</span>
+<span class="font-label text-label uppercase tracking-widest text-center">Power Utilities</span>
+</div>
+<div class="flex flex-col items-center p-space-4 border border-on-primary/10 rounded-xl bg-on-primary/5 hover:bg-on-primary/10 transition-colors">
+<span class="material-symbols-outlined text-5xl mb-space-4 text-surface-bright" data-icon="domain" data-weight="fill">domain</span>
+<span class="font-label text-label uppercase tracking-widest text-center">Industrial Plants</span>
+</div>
+<div class="flex flex-col items-center p-space-4 border border-on-primary/10 rounded-xl bg-on-primary/5 hover:bg-on-primary/10 transition-colors">
+<span class="material-symbols-outlined text-5xl mb-space-4 text-surface-bright" data-icon="solar_power" data-weight="fill">solar_power</span>
+<span class="font-label text-label uppercase tracking-widest text-center">Solar Farms</span>
+</div>
+<div class="flex flex-col items-center p-space-4 border border-on-primary/10 rounded-xl bg-on-primary/5 hover:bg-on-primary/10 transition-colors">
+<span class="material-symbols-outlined text-5xl mb-space-4 text-surface-bright" data-icon="architecture" data-weight="fill">architecture</span>
+<span class="font-label text-label uppercase tracking-widest text-center">Infrastructure</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-margin-desktop py-space-16 text-center border-b border-gray-100 bg-surface-bright">
+<h2 class="font-display-xl text-display-xl text-primary uppercase mb-space-4">Partner with Engineering Excellence</h2>
+<p class="font-body-lg text-body-lg text-gray-500 max-w-2xl mx-auto mb-space-8">Discuss your technical specifications with our engineering team today.</p>
+<button class="bg-primary text-on-primary font-label text-label uppercase tracking-widest px-space-8 py-space-4 rounded-DEFAULT hover:bg-surface-tint transition-colors border border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-primary inline-flex items-center gap-space-2">
+<span>Request a Quote</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high dark:bg-tertiary-container text-on-surface dark:text-on-tertiary-container full-width bottom-0 border-t border-gray-300 dark:border-outline-variant font-body-sm text-body-sm">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-8 px-margin-desktop py-space-12 w-full max-w-[1280px] mx-auto">
+<div class="col-span-1 md:col-span-2">
+<div class="font-h3 text-h3 text-primary dark:text-primary-fixed-dim uppercase mb-space-4">Tejaswini Industries</div>
+<p class="text-gray-700 dark:text-gray-300 mb-space-4 max-w-md">Precision Engineering Redefined. Setting the standard for robust industrial solutions since 2011.</p>
+<p class="font-label text-label uppercase tracking-widest text-gray-500 dark:text-gray-400">© 2024 Tejaswini Industries. ISO 9001:2015 Certified.</p>
+</div>
+<div class="col-span-1">
+<h4 class="font-label text-label uppercase text-primary dark:text-primary-fixed-dim mb-space-4 tracking-widest">Navigation</h4>
+<ul class="space-y-space-2 flex flex-col">
+<li><a class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 font-label text-label uppercase" href="#">Product Categories</a></li>
+<li><a class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 font-label text-label uppercase" href="#">Quality Policy</a></li>
+<li><a class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 font-label text-label uppercase" href="#">Infrastructure</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-label text-label uppercase text-primary dark:text-primary-fixed-dim mb-space-4 tracking-widest">Corporate</h4>
+<ul class="space-y-space-2 flex flex-col">
+<li><a class="text-secondary font-bold hover:underline decoration-secondary decoration-2 underline-offset-4 font-label text-label uppercase" href="#">About Us</a></li>
+<li><a class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 font-label text-label uppercase" href="#">Career</a></li>
+<li><a class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 font-label text-label uppercase" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>

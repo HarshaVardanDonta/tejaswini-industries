@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Categories - Tejaswini Industries</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=IBM+Plex+Mono:wght@400&amp;family=Source+Sans+3:wght@400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f6f3f2",
+                        "on-primary": "#ffffff",
+                        "gray-100": "#EFEFEC",
+                        "gray-300": "#C4C4BC",
+                        "outline-variant": "#c4c5d3",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#b5c4ff",
+                        "gray-700": "#3D3D39",
+                        "primary-container": "#1a3a8f",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#ebe7e7",
+                        "background": "#fcf9f8",
+                        "on-secondary": "#ffffff",
+                        "gray-50": "#F7F7F5",
+                        "on-background": "#1c1b1b",
+                        "primary-fixed-dim": "#b5c4ff",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-primary-fixed": "#00164e",
+                        "gray-500": "#7A7A74",
+                        "surface-variant": "#e5e2e1",
+                        "on-surface": "#1c1b1b",
+                        "tertiary": "#202b3c",
+                        "on-tertiary-fixed": "#111c2c",
+                        "blue-light": "#E8EDF8",
+                        "surface": "#fcf9f8",
+                        "steel": "#4A5568",
+                        "on-tertiary-container": "#a2adc3",
+                        "secondary-fixed": "#ffdad8",
+                        "secondary": "#bb0027",
+                        "surface-tint": "#3d59af",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#410007",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#92001c",
+                        "on-surface-variant": "#444652",
+                        "tertiary-fixed-dim": "#bcc7dd",
+                        "on-primary-fixed-variant": "#224095",
+                        "primary-fixed": "#dce1ff",
+                        "secondary-fixed-dim": "#ffb3b1",
+                        "tertiary-fixed": "#d8e3fa",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#3c475a",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#fffbff",
+                        "tertiary-container": "#364153",
+                        "red-light": "#FCEAEC",
+                        "surface-bright": "#fcf9f8",
+                        "outline": "#757683",
+                        "primary": "#00236f",
+                        "secondary-container": "#e0283c",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container": "#f0edec",
+                        "inverse-surface": "#313030",
+                        "on-primary-container": "#91a9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px",
+                        "space-2": "8px",
+                        "space-12": "48px",
+                        "space-6": "24px",
+                        "space-3": "12px",
+                        "base": "4px",
+                        "space-4": "16px",
+                        "space-8": "32px",
+                        "margin-tablet": "24px",
+                        "space-16": "64px",
+                        "space-1": "4px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Barlow Condensed"],
+                        "body-sm": ["Source Sans 3"],
+                        "mono-data": ["IBM Plex Mono"],
+                        "display-lg": ["Barlow Condensed"],
+                        "h3": ["Barlow Condensed"],
+                        "display-xl-mobile": ["Barlow Condensed"],
+                        "body-lg": ["Source Sans 3"],
+                        "h2": ["Barlow Condensed"],
+                        "label": ["Barlow Condensed"],
+                        "h1": ["Barlow Condensed"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["48px", { "lineHeight": "1.1", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "mono-data": ["13px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg": ["36px", { "lineHeight": "1.15", "fontWeight": "700" }],
+                        "h3": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "h2": ["22px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-primary dark:bg-primary docked full-width top-0 sticky border-b-4 border-secondary flat no shadows z-40">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto h-20">
+<!-- Brand -->
+<div class="flex items-center gap-space-4">
+<a class="text-h2 font-h2 font-bold text-on-primary uppercase tracking-wider" href="/">
+                    Tejaswini Industries
+                </a>
+</div>
+<!-- Navigation Links (Web) -->
+<nav class="hidden md:flex items-center gap-space-6 font-label text-label">
+<a class="text-on-primary border-b-3 border-secondary pb-1 uppercase hover:bg-primary-container/20 transition-all Active: border-b-secondary transition-all duration-200" href="/products">Products</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors uppercase hover:bg-primary-container/20 transition-all" href="/services">Services</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors uppercase hover:bg-primary-container/20 transition-all" href="/projects">Projects</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors uppercase hover:bg-primary-container/20 transition-all" href="/blogs">Blogs</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors uppercase hover:bg-primary-container/20 transition-all" href="/about">About</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors uppercase hover:bg-primary-container/20 transition-all" href="/contact">Contact</a>
+</nav>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-space-4">
+<div class="hidden lg:flex items-center gap-space-2">
+<button class="text-on-primary/80 hover:text-on-primary p-space-2 hover:bg-primary-container/20 transition-all rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</button>
+<button class="text-on-primary/80 hover:text-on-primary p-space-2 hover:bg-primary-container/20 transition-all rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button>
+</div>
+<button class="hidden md:block bg-secondary text-on-secondary font-label text-label px-space-4 py-space-2 rounded-lg hover:bg-secondary/90 transition-colors uppercase">
+                    Request Quote
+                </button>
+<button class="md:hidden text-on-primary p-space-2 flex items-center justify-center">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-space-8 md:py-space-12 flex flex-col gap-space-8">
+<!-- Breadcrumbs & Intro -->
+<section class="flex flex-col gap-space-4">
+<nav aria-label="Breadcrumb" class="flex text-gray-500 font-label text-label uppercase">
+<ol class="inline-flex items-center space-x-1 md:space-x-3">
+<li class="inline-flex items-center">
+<a class="hover:text-primary transition-colors" href="/">Home</a>
+</li>
+<li>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-sm mx-1">chevron_right</span>
+<span class="text-primary font-bold">Products</span>
+</div>
+</li>
+</ol>
+</nav>
+<div class="max-w-3xl border-l-4 border-secondary pl-space-4">
+<h1 class="font-display-lg text-display-lg md:font-display-xl md:text-display-xl text-primary uppercase mb-space-4">
+                    Industrial Power Solutions Range
+                </h1>
+<p class="font-body-lg text-body-lg text-gray-700">
+                    Engineered for rigorous industrial environments, our comprehensive portfolio of transformers and control panels ensures uninterrupted power distribution and optimal operational efficiency. Every unit is manufactured to exacting ISO 9001:2015 standards, providing unmatched reliability and structural integrity.
+                </p>
+</div>
+</section>
+<!-- Product Categories Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1: Distribution Transformers -->
+<article class="bg-white border border-gray-100 rounded-xl overflow-hidden flex flex-col group hover:border-primary transition-colors">
+<div class="h-48 bg-gray-100 relative overflow-hidden">
+<img alt="Distribution Transformers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A massive, heavy-duty industrial distribution transformer painted in a standard machinery grey, sitting on a concrete factory floor. The setting is a brightly lit, modern industrial warehouse with steel beams visible in the background. The lighting is high-contrast, emphasizing the brutalist, machined structure and precision engineering of the unit. The aesthetic is clean, technical, and reliable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiKFrleg1jxpjd-D2p0QYWmywuCyLV_N5nIdnUO3UifzFavxJ7qKwiHLXwyWj0wwdjxRz9qMc5sybMl_U9yD2MPLgAalNl1ZU6NBIG4ae4Wl-d7DlNNBRmKU7_NlrEWwmguxzVxh6Tcp7bU11SUlE1U-EXBmLxBPpUvscyNrPLVHeYPOSy9SnPPb9_kIu1TbYPIDZ0x_5G1IBAPn-OVZFMoUUPeNyQZezkKFjanM9VS5r-DuvLqFe5Uf7aAaFgoTopije9eI2cLTE"/>
+</div>
+<div class="p-space-6 flex flex-col flex-grow gap-space-4 border-l-[3px] border-transparent group-hover:border-secondary transition-all">
+<div>
+<div class="flex justify-between items-start mb-space-2">
+<h2 class="font-h2 text-h2 text-primary uppercase">Distribution Transformers</h2>
+<span class="font-mono-data text-mono-data bg-gray-50 text-gray-700 px-2 py-1 rounded border border-gray-100">12 Series</span>
+</div>
+<p class="font-body-sm text-body-sm text-gray-700 line-clamp-3">
+                            High-efficiency distribution units designed to step down voltage for local commercial and industrial grid applications. Built with robust enclosures for extended operational lifespan.
+                        </p>
+</div>
+<div class="mt-auto pt-space-4">
+<a class="inline-flex items-center justify-center bg-primary text-on-primary font-label text-label uppercase px-space-4 py-space-3 rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors w-full" href="#">
+                            View Range
+                        </a>
+</div>
+</div>
+</article>
+<!-- Card 2: Power Transformers -->
+<article class="bg-white border border-gray-100 rounded-xl overflow-hidden flex flex-col group hover:border-primary transition-colors">
+<div class="h-48 bg-gray-100 relative overflow-hidden">
+<img alt="Power Transformers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A gigantic power transformer installed in an outdoor substation environment under a clear blue sky. The transformer features large cooling radiators and massive ceramic insulators. The light mode aesthetic is sharp and high-contrast, focusing on the brutalist, metallic structure of the machinery. The color palette emphasizes industrial blues, greys, and crisp whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs043Yo7ZhnUIv-Ul7z6aKko99tyxeuP-h0LxZLFMDZOCx57byWxmE_hwVPHQapUk74FAlnwcBRodh9aqUULXJZWAKS3-HZGzlyZqfP8MAOTQm1Np_hHY4jHDANK_NPkM6jI5NJL2wSUvPSefoS_AgFwkmvZJxAXoYp6hjFE3B4REByrSF_r1g5YSzUPqLRqIgLa1a4_aQflIqSVHIJuE_ctG9vVGi8rPl2NkpwLwv_vYMtQRyBINXD-w6sZxLwmiRgDLwJd2Te_8"/>
+</div>
+<div class="p-space-6 flex flex-col flex-grow gap-space-4 border-l-[3px] border-transparent group-hover:border-secondary transition-all">
+<div>
+<div class="flex justify-between items-start mb-space-2">
+<h2 class="font-h2 text-h2 text-primary uppercase">Power Transformers</h2>
+<span class="font-mono-data text-mono-data bg-gray-50 text-gray-700 px-2 py-1 rounded border border-gray-100">8 Series</span>
+</div>
+<p class="font-body-sm text-body-sm text-gray-700 line-clamp-3">
+                            Heavy-duty transformers engineered for high-voltage transmission networks. Delivering supreme reliability and handling immense loads with minimal energy loss.
+                        </p>
+</div>
+<div class="mt-auto pt-space-4">
+<a class="inline-flex items-center justify-center bg-primary text-on-primary font-label text-label uppercase px-space-4 py-space-3 rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors w-full" href="#">
+                            View Range
+                        </a>
+</div>
+</div>
+</article>
+<!-- Card 3: Dry Type Transformers -->
+<article class="bg-white border border-gray-100 rounded-xl overflow-hidden flex flex-col group hover:border-primary transition-colors">
+<div class="h-48 bg-gray-100 relative overflow-hidden">
+<img alt="Dry Type Transformers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A pristine, compact dry-type transformer enclosed in a ventilated steel cabinet, situated inside a clean, modern electrical control room. The lighting is bright and even, highlighting the meticulous engineering and warning labels. The scene communicates safety, precision, and high-tech industrial manufacturing, utilizing a stark palette of whites, greys, and brand red accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaE6w75-MhDmWDLC8SPx7-fgwUPKKrW4eO-Gv6Ep1aJgUDDgtdaoIBPIL_J4UZP2iYa7gEGk9_29V1eUQzRbMTIDii6WA3gx_NY4A8a8DNn725aZ74jVI_4bTnuUdy6ufRlpY41TiaTW9_5MjmghNFSdjSV3JqdgDQm9dI5SF27GJQqyLD3zZtcepOhVZWqqS_TIjJfUt7JFhUt3BnZBkXKWyMWQ0onojZfH7co3hArXn1zDpmoGFsIthbmVDpVR07f0fzVp4mlB4"/>
+</div>
+<div class="p-space-6 flex flex-col flex-grow gap-space-4 border-l-[3px] border-transparent group-hover:border-secondary transition-all">
+<div>
+<div class="flex justify-between items-start mb-space-2">
+<h2 class="font-h2 text-h2 text-primary uppercase">Dry Type Transformers</h2>
+<span class="font-mono-data text-mono-data bg-gray-50 text-gray-700 px-2 py-1 rounded border border-gray-100">5 Series</span>
+</div>
+<p class="font-body-sm text-body-sm text-gray-700 line-clamp-3">
+                            Environmentally safe, liquid-free transformers ideal for indoor installations where fire safety is paramount. Low maintenance and highly reliable.
+                        </p>
+</div>
+<div class="mt-auto pt-space-4">
+<a class="inline-flex items-center justify-center bg-primary text-on-primary font-label text-label uppercase px-space-4 py-space-3 rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors w-full" href="#">
+                            View Range
+                        </a>
+</div>
+</div>
+</article>
+<!-- Card 4: HT Panels -->
+<article class="bg-white border border-gray-100 rounded-xl overflow-hidden flex flex-col group hover:border-primary transition-colors">
+<div class="h-48 bg-gray-100 relative overflow-hidden">
+<img alt="HT Panels" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A row of High Tension (HT) electrical control panels in a well-lit industrial facility. The panels are tall, monolithic steel enclosures painted in a durable industrial grey, featuring digital meters and heavy-duty switchgear handles. The visual style is highly structured and geometric, conveying authority and control over high-voltage systems." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaE_exww3EN8Pk1pRq1wBnCo51ouWIBB4tWEX0jSSKRtn_jU6L-QLOlBFYZ-bA9l0mJjSzmreiIa6pcB7IBV693bEjSkg9EdZxEVs_Oxsy6ZQ5DgXZQqccjioTPWhxkBuEtxI6KNzyeb4QASjk55gCiea3N3SfbWGCnMgsoZAsQ9yjpUSe6zKe-B9avXlQ7g_De_9Kux3GwaWLktJ-E1jG7CWPBAQZI4Wqph3ybzv43vEH0TXfFmgesZmh_Tbv8kjl9F8PiL5SkOM"/>
+</div>
+<div class="p-space-6 flex flex-col flex-grow gap-space-4 border-l-[3px] border-transparent group-hover:border-secondary transition-all">
+<div>
+<div class="flex justify-between items-start mb-space-2">
+<h2 class="font-h2 text-h2 text-primary uppercase">HT Panels</h2>
+<span class="font-mono-data text-mono-data bg-gray-50 text-gray-700 px-2 py-1 rounded border border-gray-100">6 Configs</span>
+</div>
+<p class="font-body-sm text-body-sm text-gray-700 line-clamp-3">
+                            High Tension switchgear panels designed for the protection and control of high-voltage industrial circuits, ensuring operational safety and system stability.
+                        </p>
+</div>
+<div class="mt-auto pt-space-4">
+<a class="inline-flex items-center justify-center bg-primary text-on-primary font-label text-label uppercase px-space-4 py-space-3 rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors w-full" href="#">
+                            View Range
+                        </a>
+</div>
+</div>
+</article>
+<!-- Card 5: LT Panels -->
+<article class="bg-white border border-gray-100 rounded-xl overflow-hidden flex flex-col group hover:border-primary transition-colors">
+<div class="h-48 bg-gray-100 relative overflow-hidden">
+<img alt="LT Panels" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A wide array of Low Tension (LT) distribution panels within a factory setting. The panels display an organized grid of indicator lights, breakers, and technical labeling. The photography is sharp and detailed, capturing the precise machining of the metalwork. The overall mood is professional, technical, and perfectly aligned with a light-mode corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzpVvn3YjdcemGIzO7Nod2zLVviiKpBpE8i7oyvH9_-NNYz9_jT_m4a5M5DPX9FPkFN8gH2364W4MlW-3pwb0nR7JNhC2enkA2TqpYV89JRpU7Aa5SL1ENctezzDP_pezJ61krADW2PcAWfPnl8GhcmXp3QdGc-um6X1cMy65zQLdSdOSEDH8_Bf34TrsE4sczk5P1TbD6G8JhPCpwzEr40O2DuX96WY5L5ToHdZOHnofJWZcon6RfUUbpZd2u0M9FuZjw6QBGG00"/>
+</div>
+<div class="p-space-6 flex flex-col flex-grow gap-space-4 border-l-[3px] border-transparent group-hover:border-secondary transition-all">
+<div>
+<div class="flex justify-between items-start mb-space-2">
+<h2 class="font-h2 text-h2 text-primary uppercase">LT Panels</h2>
+<span class="font-mono-data text-mono-data bg-gray-50 text-gray-700 px-2 py-1 rounded border border-gray-100">15 Configs</span>
+</div>
+<p class="font-body-sm text-body-sm text-gray-700 line-clamp-3">
+                            Low Tension distribution boards providing critical power routing and circuit protection for complex facility networks and heavy machinery clusters.
+                        </p>
+</div>
+<div class="mt-auto pt-space-4">
+<a class="inline-flex items-center justify-center bg-primary text-on-primary font-label text-label uppercase px-space-4 py-space-3 rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors w-full" href="#">
+                            View Range
+                        </a>
+</div>
+</div>
+</article>
+<!-- Card 6: RMUs -->
+<article class="bg-white border border-gray-100 rounded-xl overflow-hidden flex flex-col group hover:border-primary transition-colors">
+<div class="h-48 bg-gray-100 relative overflow-hidden">
+<img alt="RMUs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A compact Ring Main Unit (RMU) piece of switchgear, isolated against a bright, clean industrial background. The unit features stark, heavy-duty mechanical levers and clear mimic diagrams on its front fascia. The lighting emphasizes the rigid, boxy structure and the high-contrast warning labels, fitting a modern, brutalist industrial design language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw50WzB3Q0SbadcOT9zUrrGFvRuziqR113z9BURl7WmIyFYk7fMWL3JTFgH8xbjgzg_difWoADUAsNMPVLhIaJ54XcB6cM_9ASyJSOzLKjYn_udpFv4ZmRB6IpAsC0h7R9ZdlPUm7lGNZ_5t6_8gMDzJ_sDmsyOjlaV4ZW-uyBgdvA-jUKiYEgPtv1HKojOs0QxNa7KToL7dZU9eLY--yu03VcDKAKgUMnUctbKlGirI0xue9Q1kqO_YfzmO4acd30x7TiNZWoh2s"/>
+</div>
+<div class="p-space-6 flex flex-col flex-grow gap-space-4 border-l-[3px] border-transparent group-hover:border-secondary transition-all">
+<div>
+<div class="flex justify-between items-start mb-space-2">
+<h2 class="font-h2 text-h2 text-primary uppercase">RMUs</h2>
+<span class="font-mono-data text-mono-data bg-gray-50 text-gray-700 px-2 py-1 rounded border border-gray-100">4 Series</span>
+</div>
+<p class="font-body-sm text-body-sm text-gray-700 line-clamp-3">
+                            Compact, fully enclosed Ring Main Units for secondary distribution networks. Offering superior protection in minimal spatial footprints.
+                        </p>
+</div>
+<div class="mt-auto pt-space-4">
+<a class="inline-flex items-center justify-center bg-primary text-on-primary font-label text-label uppercase px-space-4 py-space-3 rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors w-full" href="#">
+                            View Range
+                        </a>
+</div>
+</div>
+</article>
+</section>
+</main>
+<!-- SideNavBar (Contextual Lead Gen for Products) -->
+<aside class="fixed right-4 bottom-24 flex flex-col gap-4 z-50 bg-surface-container-lowest dark:bg-surface-dim shadow-md border border-gray-300 dark:border-outline rounded-xl p-2 hidden lg:flex">
+<div class="text-center pb-2 border-b border-gray-100 mb-2 px-2">
+<p class="font-label text-label text-primary uppercase">ISO 9001:2015</p>
+<p class="text-[10px] text-gray-500 uppercase tracking-wide">Certified Excellence</p>
+</div>
+<div class="flex flex-col space-y-4">
+<a class="bg-secondary text-on-secondary p-4 rounded-xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform Active: scale-95 duration-100 group relative" href="#" title="Request Quote">
+<span class="material-symbols-outlined" data-icon="request_quote">request_quote</span>
+<span class="absolute right-full mr-4 bg-gray-700 text-white font-label text-label px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none uppercase">Request Quote</span>
+</a>
+<a class="bg-primary text-on-primary p-4 rounded-xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform group relative" href="#" title="WhatsApp">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="absolute right-full mr-4 bg-gray-700 text-white font-label text-label px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none uppercase">WhatsApp</span>
+</a>
+</div>
+</aside>
+<!-- Footer -->
+<footer class="bg-surface-container-high dark:bg-tertiary-container full-width bottom-0 border-t border-gray-300 dark:border-outline-variant flat no shadows mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-8 px-margin-mobile md:px-margin-desktop py-space-12 w-full max-w-[1280px] mx-auto">
+<div class="flex flex-col gap-space-4 md:col-span-1">
+<span class="font-h3 text-h3 text-primary dark:text-primary-fixed-dim uppercase">
+                    Tejaswini Industries
+                </span>
+<p class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300">
+                    © 2024 Tejaswini Industries. ISO 9001:2015 Certified. Precision Engineering Redefined.
+                </p>
+</div>
+<div class="flex flex-col gap-space-4 md:col-span-3">
+<nav class="flex flex-wrap gap-space-6 font-label text-label uppercase">
+<a class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 Transition-all duration-300 ease-in-out" href="#">
+                        Product Categories
+                    </a>
+<a class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 Transition-all duration-300 ease-in-out" href="#">
+                        Quality Policy
+                    </a>
+<a class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 Transition-all duration-300 ease-in-out" href="#">
+                        Infrastructure
+                    </a>
+<a class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 Transition-all duration-300 ease-in-out" href="#">
+                        Career
+                    </a>
+<a class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 Transition-all duration-300 ease-in-out" href="#">
+                        Privacy Policy
+                    </a>
+</nav>
+</div>
+</div>
+</footer>
+</body></html>

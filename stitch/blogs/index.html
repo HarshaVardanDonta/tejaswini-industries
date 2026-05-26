@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tejaswini Industries - Industrial Blog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=IBM+Plex+Mono:wght@400&amp;family=Source+Sans+3:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#1c1b1b",
+                      "on-tertiary-fixed-variant": "#3c475a",
+                      "primary-container": "#1a3a8f",
+                      "blue-light": "#E8EDF8",
+                      "gray-100": "#EFEFEC",
+                      "surface-container": "#f0edec",
+                      "outline": "#757683",
+                      "primary-fixed-dim": "#b5c4ff",
+                      "inverse-on-surface": "#f3f0ef",
+                      "on-primary-container": "#91a9ff",
+                      "tertiary": "#202b3c",
+                      "surface-variant": "#e5e2e1",
+                      "surface-dim": "#dcd9d9",
+                      "on-secondary-container": "#fffbff",
+                      "on-primary-fixed-variant": "#224095",
+                      "on-tertiary-fixed": "#111c2c",
+                      "on-primary-fixed": "#00164e",
+                      "on-tertiary": "#ffffff",
+                      "secondary-container": "#e0283c",
+                      "tertiary-fixed": "#d8e3fa",
+                      "surface-container-highest": "#e5e2e1",
+                      "surface-bright": "#fcf9f8",
+                      "on-secondary": "#ffffff",
+                      "primary": "#00236f",
+                      "on-primary": "#ffffff",
+                      "outline-variant": "#c4c5d3",
+                      "secondary-fixed-dim": "#ffb3b1",
+                      "steel": "#4A5568",
+                      "inverse-surface": "#313030",
+                      "gray-300": "#C4C4BC",
+                      "gray-500": "#7A7A74",
+                      "tertiary-fixed-dim": "#bcc7dd",
+                      "secondary": "#bb0027",
+                      "primary-fixed": "#dce1ff",
+                      "red-light": "#FCEAEC",
+                      "on-secondary-fixed": "#410007",
+                      "error": "#ba1a1a",
+                      "on-surface": "#1c1b1b",
+                      "on-error": "#ffffff",
+                      "tertiary-container": "#364153",
+                      "gray-50": "#F7F7F5",
+                      "surface-tint": "#3d59af",
+                      "error-container": "#ffdad6",
+                      "background": "#fcf9f8",
+                      "secondary-fixed": "#ffdad8",
+                      "surface": "#fcf9f8",
+                      "surface-container-low": "#f6f3f2",
+                      "on-error-container": "#93000a",
+                      "gray-700": "#3D3D39",
+                      "on-tertiary-container": "#a2adc3",
+                      "inverse-primary": "#b5c4ff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-high": "#ebe7e7",
+                      "on-surface-variant": "#444652",
+                      "on-secondary-fixed-variant": "#92001c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "space-16": "64px",
+                      "gutter": "24px",
+                      "space-6": "24px",
+                      "space-2": "8px",
+                      "space-4": "16px",
+                      "space-12": "48px",
+                      "space-8": "32px",
+                      "space-3": "12px",
+                      "margin-tablet": "24px",
+                      "base": "4px",
+                      "margin-desktop": "48px",
+                      "space-1": "4px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "mono-data": [
+                              "IBM Plex Mono"
+                      ],
+                      "h2": [
+                              "Barlow Condensed"
+                      ],
+                      "label": [
+                              "Barlow Condensed"
+                      ],
+                      "h1": [
+                              "Barlow Condensed"
+                      ],
+                      "display-xl": [
+                              "Barlow Condensed"
+                      ],
+                      "body-lg": [
+                              "Source Sans 3"
+                      ],
+                      "h3": [
+                              "Barlow Condensed"
+                      ],
+                      "display-xl-mobile": [
+                              "Barlow Condensed"
+                      ],
+                      "display-lg": [
+                              "Barlow Condensed"
+                      ],
+                      "body-sm": [
+                              "Source Sans 3"
+                      ]
+              },
+              "fontSize": {
+                      "mono-data": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h2": [
+                              "22px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.7",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h3": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-xl-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.15",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-gray-50 text-on-surface font-body-sm antialiased">
+<!-- TopAppBar -->
+<header class="bg-primary dark:bg-primary text-on-primary dark:text-on-primary docked full-width top-0 sticky border-b-4 border-secondary flat no shadows z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-[1280px] mx-auto h-20">
+<div class="flex items-center gap-space-8">
+<a class="text-h2 font-h2 font-bold text-on-primary uppercase tracking-wider" href="#">Tejaswini Industries</a>
+<nav class="hidden md:flex gap-space-6 items-center">
+<a class="font-label text-label text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 transition-all px-space-3 py-space-2" href="#">Products</a>
+<a class="font-label text-label text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 transition-all px-space-3 py-space-2" href="#">Services</a>
+<a class="font-label text-label text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 transition-all px-space-3 py-space-2" href="#">Projects</a>
+<a class="font-label text-label text-on-primary border-b-3 border-secondary pb-1 hover:bg-primary-container/20 transition-all px-space-3 py-space-2 Active: border-b-secondary transition-all duration-200" href="#">Blogs</a>
+<a class="font-label text-label text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 transition-all px-space-3 py-space-2" href="#">About</a>
+<a class="font-label text-label text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 transition-all px-space-3 py-space-2" href="#">Contact</a>
+</nav>
+</div>
+<div class="flex items-center gap-space-4">
+<div class="hidden md:flex items-center bg-white border border-gray-300 h-10 px-space-3 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary-fixed-dim transition-all">
+<span class="material-symbols-outlined text-gray-500 mr-space-2" data-icon="search">search</span>
+<input class="border-none bg-transparent focus:ring-0 text-on-surface font-body-sm w-48 placeholder:text-gray-500 outline-none" placeholder="Search insights..." type="text"/>
+</div>
+<div class="flex items-center gap-space-2">
+<button class="w-10 h-10 flex items-center justify-center text-on-primary hover:bg-primary-container/20 transition-all">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-on-primary hover:bg-primary-container/20 transition-all">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button>
+</div>
+<button class="bg-secondary text-on-secondary font-label text-label uppercase tracking-widest px-space-6 h-10 hover:bg-secondary-container transition-colors rounded-none hidden md:flex items-center justify-center">
+                    Request Quote
+                </button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-space-12 space-y-space-12">
+<!-- Header & Filters -->
+<section class="space-y-space-6 border-b border-gray-300 pb-space-6">
+<h1 class="font-display-xl text-display-xl-mobile md:text-display-xl text-primary uppercase">Industrial Insights</h1>
+<p class="font-body-lg text-body-lg text-gray-700 max-w-3xl">Technical bulletins, engineering deep dives, and industry trends from the forefront of precision manufacturing and electrical infrastructure.</p>
+<div class="flex flex-wrap gap-space-2 pt-space-4">
+<button class="bg-primary text-on-primary font-label text-label px-space-4 py-space-2 border border-primary">ALL CATEGORIES</button>
+<button class="bg-white text-gray-700 font-label text-label px-space-4 py-space-2 border border-gray-300 hover:bg-gray-100 transition-colors">TRANSFORMERS</button>
+<button class="bg-white text-gray-700 font-label text-label px-space-4 py-space-2 border border-gray-300 hover:bg-gray-100 transition-colors">ELECTRICAL SAFETY</button>
+<button class="bg-white text-gray-700 font-label text-label px-space-4 py-space-2 border border-gray-300 hover:bg-gray-100 transition-colors">INDUSTRY NEWS</button>
+<button class="bg-white text-gray-700 font-label text-label px-space-4 py-space-2 border border-gray-300 hover:bg-gray-100 transition-colors">MAINTENANCE</button>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Featured & Grid -->
+<div class="lg:col-span-8 space-y-space-8">
+<!-- Featured Article -->
+<article class="bg-white border border-gray-100 rounded-lg overflow-hidden group">
+<div class="h-64 md:h-96 w-full bg-gray-300 relative overflow-hidden">
+<img alt="Featured Image" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A highly detailed industrial photograph of a massive electrical transformer within a clean, modern manufacturing facility. The setting is bright and clinical, with high-key lighting reflecting off polished metal surfaces. The visual style is technical, rigorous, and precise, aligning with a brutalist modern-industrial corporate aesthetic. The color palette emphasizes crisp whites, deep steel grays, and a prominent accent of vivid brand red on a warning label. The mood is confident, engineered, and authoritative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxM4lqDbVuoCpz0qUDuNuOJ0uQxWl6qBJwHyqtho0npZS5-Ryjm0Ec2tjqXONrFPM1apEHOFlgSmaaPqAgIo8HrvbR1vkdt9J-_u1S4RyXonmH5EVfxX5LCS1gkjef9vxu17WNW96KfxSbMGMkF9GBApavWljR_rhgyr23yMcf_j-bx3oydgpN5REmhmjlj4ds9Zt_GQVo8iq7ls8w11_t4OcKQDA7PSUqD5RnEpEBNWUF8JLHQXpHdh37wFlX_46AT-ld5VU9eGU"/>
+<div class="absolute top-space-4 left-space-4 bg-secondary text-on-secondary font-label text-label px-space-3 py-space-1 uppercase">
+                            Featured Guide
+                        </div>
+</div>
+<div class="p-space-6 md:p-space-8 border-l-4 border-primary">
+<div class="flex items-center gap-space-4 font-mono-data text-mono-data text-gray-500 mb-space-3">
+<span>TRANSFORMERS</span>
+<span>•</span>
+<span>OCT 24, 2024</span>
+</div>
+<h2 class="font-h1 text-h1 text-primary mb-space-4 group-hover:text-secondary transition-colors">Optimizing Core Performance in High-Voltage Transformers</h2>
+<p class="font-body-lg text-body-lg text-gray-700 mb-space-6">A comprehensive analysis of advanced cooling methodologies and magnetic core optimizations designed to extend lifecycle and improve efficiency in heavy industrial applications.</p>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-space-3">
+<div class="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
+<img alt="Author" class="w-full h-full object-cover" data-alt="A professional headshot of an industrial engineer in a modern corporate setting. The lighting is crisp and even, highlighting a confident expression. The background is a slightly blurred, bright industrial workspace with muted steel grays and crisp whites. The aesthetic is clean, reliable, and strictly professional, embodying corporate authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVLr7MEcklxrxQBOe_tlGfUb0-ivGl9fyrhL9b4zeKd75U4iiSn5yDm19N6zrYzHijLAhVI7KfswhxetDqfnzUqyOYuA301SnOpF61vw7uiGMATBUMqBo6RqyoUPAng878dtu1l52AkoV7bCcbwkQhh0Pte1HOyUt0nvjxfbACDSoIOi02OTHAdAOuw4JSZK_0Hcq_DAkpOQcYqLxF2Le_TIjgzXoMfEhyOvo9pzxN7tcvazWHk0Ngj4LNlwauoeI-kXKndroMHMo"/>
+</div>
+<div>
+<p class="font-label text-label text-primary">DR. ARVIND RAO</p>
+<p class="font-mono-data text-mono-data text-gray-500 text-[11px]">CHIEF ENGINEER</p>
+</div>
+</div>
+<a class="inline-flex items-center gap-space-2 text-primary font-label text-label hover:text-secondary transition-colors uppercase" href="#">
+                                Read Full Guide <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Article Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-6">
+<!-- Card 1 -->
+<article class="bg-white border border-gray-100 rounded-lg overflow-hidden group flex flex-col h-full">
+<div class="h-48 w-full bg-gray-300 relative overflow-hidden border-b border-gray-100">
+<img alt="Card Image" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A close-up, sharp photograph of heavy industrial machinery components interlocking. The lighting emphasizes the machined textures and metallic sheen of the steel parts. The color palette is strictly neutral with stark whites, deep industrial grays, and a sharp blue reflection indicating a precise, high-tech environment. The composition is rigid and structural, conveying reliability and engineered perfection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiROyk1KvX3M_GH6YRVaz8mjaCGUwIw02IpFJxQy44ZoWvK-u4ESLAmzFCcaSHjgORUQPgCf3GtDD6VtUnzjaNh38xcH-7MNHclYFOLm3LtXx8abODX1URyddsst7Fl_AUxLk672GpiPyA94ZpA2ZsX3Yud2V13eiHZsOcuBq03FzwOv0cHbnFPwUj1pHLYKzqcsX7U8YcwtFXlKl0XKVKTGDFbvyJQ1mWr1oBbnic72fBeYh42RrO7VwLc_QPRZZfFjbwZ81VSY8"/>
+</div>
+<div class="p-space-4 flex-1 flex flex-col">
+<div class="font-mono-data text-mono-data text-gray-500 mb-space-2 uppercase">MAINTENANCE • OCT 18, 2024</div>
+<h3 class="font-h3 text-h3 text-primary mb-space-3 group-hover:text-secondary transition-colors">Predictive Maintenance Protocols for Switchgears</h3>
+<p class="font-body-sm text-body-sm text-gray-700 mb-space-4 flex-1">Implementing IoT-driven sensory arrays to detect micro-faults before catastrophic failure in industrial switchgear installations.</p>
+<div class="mt-auto border-t border-gray-100 pt-space-4 flex justify-between items-center">
+<p class="font-label text-label text-gray-700">T. SHARMA</p>
+<a class="bg-primary text-on-primary font-label text-label px-space-3 py-space-1 rounded hover:bg-primary-container transition-colors uppercase" href="#">Read</a>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-white border border-gray-100 rounded-lg overflow-hidden group flex flex-col h-full border-l-3 border-secondary">
+<div class="h-48 w-full bg-gray-300 relative overflow-hidden border-b border-gray-100">
+<img alt="Card Image" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="An expansive view of an organized, modern industrial warehouse storing large electrical components. The scene is brightly lit with high-bay LED lighting, creating a clinical and highly structured atmosphere. The aesthetic relies on strong vertical and horizontal lines of the shelving racks, colored in bright white and brand blue. The mood is efficient, expansive, and orderly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtvW1wF44g21Kpk28pczWxb78tgAXvTewhc_eSU9f6dGs6pQsIFVa9Mjn1E5awJugvsSRbur4jpb8W4yl6cNR8io_W56TklPSLVVR0ZR-2ok4kqmlGHGtGAyXH7tT-CBwjEjNT-xVLMaY87oLlCca7tHRikmnNoYIXvdSrTidFXU_1Z1hh57J8CAxOyLJgZ-bIQtcfRXVA_LnkCETZdf9mm4mT_lM1M_8PSNj00LMTpAlFsbURpsNpacdfShZhQiXEfxNqB8mKcgM"/>
+</div>
+<div class="p-space-4 flex-1 flex flex-col">
+<div class="font-mono-data text-mono-data text-gray-500 mb-space-2 uppercase text-secondary font-bold">ALERT • SAFETY • OCT 15, 2024</div>
+<h3 class="font-h3 text-h3 text-primary mb-space-3 group-hover:text-secondary transition-colors">Revised Arc Flash Hazard Safety Standards Q4</h3>
+<p class="font-body-sm text-body-sm text-gray-700 mb-space-4 flex-1">Critical updates to personal protective equipment requirements and boundary calculations for low-voltage panels.</p>
+<div class="mt-auto border-t border-gray-100 pt-space-4 flex justify-between items-center">
+<p class="font-label text-label text-gray-700">COMPLIANCE TEAM</p>
+<a class="bg-primary text-on-primary font-label text-label px-space-3 py-space-1 rounded hover:bg-primary-container transition-colors uppercase" href="#">Read</a>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-white border border-gray-100 rounded-lg overflow-hidden group flex flex-col h-full">
+<div class="h-48 w-full bg-gray-300 relative overflow-hidden border-b border-gray-100">
+<img alt="Card Image" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A meticulous technical blueprint displayed on a digital drafting screen in an engineering office. The screen shows complex schematic lines in vivid white against a deep blue background. The surrounding environment is out of focus but suggests a clean, modern workspace. The style is highly technical, detailed, and data-dense, communicating precision and advanced planning." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM9qtlibdRNKqoK5nVQyy4ftmFqzOYaMtKHpepvfBAQQ46W-gc1F-UuPP6bqUw1xJ10I81WQ5VbfiA3MyG_Kj6mYbARBJOn_s4ZrJE9z2jKRYKWJOjEf8L52t93qofA_4GUrUYjZvGWfm0pJZI7LClX0QgNctQz7zCO39YWyoBtTcys1uv62TgWptrBwQexfQX6n0eeODH4xH4E5VsJ1UDhJQH2OCVk22WEsX074KLwRGbqKmlVKmXBWexiEh3YVHz2xAfPJdLYVk"/>
+</div>
+<div class="p-space-4 flex-1 flex flex-col">
+<div class="font-mono-data text-mono-data text-gray-500 mb-space-2 uppercase">INDUSTRY NEWS • OCT 10, 2024</div>
+<h3 class="font-h3 text-h3 text-primary mb-space-3 group-hover:text-secondary transition-colors">ISO 9001:2015 Audit Preparation Guidelines</h3>
+<p class="font-body-sm text-body-sm text-gray-700 mb-space-4 flex-1">A structured checklist for manufacturing floors to ensure seamless compliance during upcoming certification renewal audits.</p>
+<div class="mt-auto border-t border-gray-100 pt-space-4 flex justify-between items-center">
+<p class="font-label text-label text-gray-700">QA DEPT</p>
+<a class="bg-primary text-on-primary font-label text-label px-space-3 py-space-1 rounded hover:bg-primary-container transition-colors uppercase" href="#">Read</a>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="bg-white border border-gray-100 rounded-lg overflow-hidden group flex flex-col h-full">
+<div class="h-48 w-full bg-gray-300 relative overflow-hidden border-b border-gray-100">
+<img alt="Card Image" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A close-up shot of heavy gauge electrical cables tightly bundled within a steel conduit. The lighting emphasizes the robust texture of the insulation and the rigid metallic structure of the conduit. The color scheme is industrial, featuring deep blacks, grays, and stark white highlights. The image conveys themes of power, infrastructure, and heavy-duty engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa0DmkCYwVBTLj4BK4-4ZVrH0CmN0ZdYUu6uaB3Vr0bpYNoZZlYR2yAjImuFcQp5ypBiNKYVqb6Xdpl6d1I6bYm6X_ni6PY2VtOEL_FT3s6fu0vv7nOt47yCPcaT2aVBg4-4JVf1UuNs21e4NWwsO4g-PiktgNDoqWdh0OyNmjZMD76uJpTnOgAJ-FuI9EriWx3TjeT2eJu6rxGa15BY0Ckgi0d-JI2ckgveYCkD1qmkU8ZczvybNNuGZZBzBgQBoATOICWIYqjDU"/>
+</div>
+<div class="p-space-4 flex-1 flex flex-col">
+<div class="font-mono-data text-mono-data text-gray-500 mb-space-2 uppercase">ELECTRICAL SAFETY • OCT 05, 2024</div>
+<h3 class="font-h3 text-h3 text-primary mb-space-3 group-hover:text-secondary transition-colors">Cable Routing Standards for Heavy Load Centers</h3>
+<p class="font-body-sm text-body-sm text-gray-700 mb-space-4 flex-1">Best practices for tray management and separation protocols to minimize electromagnetic interference in dense installations.</p>
+<div class="mt-auto border-t border-gray-100 pt-space-4 flex justify-between items-center">
+<p class="font-label text-label text-gray-700">DR. ARVIND RAO</p>
+<a class="bg-primary text-on-primary font-label text-label px-space-3 py-space-1 rounded hover:bg-primary-container transition-colors uppercase" href="#">Read</a>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center pt-space-8">
+<div class="flex gap-space-2">
+<button class="w-10 h-10 border border-gray-300 bg-white flex items-center justify-center text-gray-500 hover:bg-gray-100"><span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span></button>
+<button class="w-10 h-10 border-2 border-primary bg-primary text-on-primary font-label text-label flex items-center justify-center">1</button>
+<button class="w-10 h-10 border border-gray-300 bg-white text-gray-700 font-label text-label flex items-center justify-center hover:bg-gray-100">2</button>
+<button class="w-10 h-10 border border-gray-300 bg-white text-gray-700 font-label text-label flex items-center justify-center hover:bg-gray-100">3</button>
+<button class="w-10 h-10 border border-gray-300 bg-white flex items-center justify-center text-gray-500 hover:bg-gray-100"><span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar -->
+<aside class="lg:col-span-4 space-y-space-8">
+<!-- Newsletter Signup -->
+<div class="bg-primary text-on-primary p-space-6 border-t-4 border-secondary">
+<h3 class="font-h2 text-h2 mb-space-2 uppercase">Industrial Bulletin</h3>
+<p class="font-body-sm text-body-sm text-on-primary/80 mb-space-6">Subscribe to receive technical specifications, safety alerts, and industry insights directly to your inbox.</p>
+<form class="space-y-space-4">
+<div>
+<label class="block font-label text-label text-on-primary/80 mb-space-1 uppercase">Email Address</label>
+<input class="w-full bg-white border border-gray-300 text-on-surface p-space-2 font-body-sm focus:ring-2 focus:ring-secondary outline-none rounded-none" placeholder="engineer@company.com" type="email"/>
+</div>
+<button class="w-full bg-secondary text-on-secondary font-label text-label uppercase py-space-3 hover:bg-secondary-container transition-colors tracking-widest" type="submit">
+                            Subscribe Now
+                        </button>
+</form>
+<p class="font-mono-data text-mono-data text-[10px] text-on-primary/60 mt-space-4 text-center uppercase">Strictly professional content. No spam.</p>
+</div>
+<!-- Trending Articles List -->
+<div class="bg-white border border-gray-100 p-space-6">
+<h3 class="font-h3 text-h3 text-primary uppercase mb-space-6 pb-space-2 border-b-2 border-gray-100 flex items-center gap-space-2">
+<span class="material-symbols-outlined text-secondary" data-icon="trending_up">trending_up</span> Most Read
+                    </h3>
+<ul class="space-y-space-4">
+<li class="group cursor-pointer">
+<div class="font-mono-data text-mono-data text-secondary mb-1">01</div>
+<h4 class="font-h3 text-h3 text-gray-700 group-hover:text-primary transition-colors leading-tight">Copper vs Aluminum Windings: A Cost-Benefit Analysis</h4>
+<div class="font-label text-label text-gray-500 mt-space-1">5 MIN READ</div>
+</li>
+<li class="border-t border-gray-100 pt-space-4 group cursor-pointer">
+<div class="font-mono-data text-mono-data text-secondary mb-1">02</div>
+<h4 class="font-h3 text-h3 text-gray-700 group-hover:text-primary transition-colors leading-tight">Navigating the New Substation Clearance Regulations</h4>
+<div class="font-label text-label text-gray-500 mt-space-1">8 MIN READ</div>
+</li>
+<li class="border-t border-gray-100 pt-space-4 group cursor-pointer">
+<div class="font-mono-data text-mono-data text-secondary mb-1">03</div>
+<h4 class="font-h3 text-h3 text-gray-700 group-hover:text-primary transition-colors leading-tight">Troubleshooting Harmonic Distortion in Industrial Grids</h4>
+<div class="font-label text-label text-gray-500 mt-space-1">12 MIN READ</div>
+</li>
+<li class="border-t border-gray-100 pt-space-4 group cursor-pointer">
+<div class="font-mono-data text-mono-data text-secondary mb-1">04</div>
+<h4 class="font-h3 text-h3 text-gray-700 group-hover:text-primary transition-colors leading-tight">The Future of Dry-Type Transformers</h4>
+<div class="font-label text-label text-gray-500 mt-space-1">4 MIN READ</div>
+</li>
+</ul>
+</div>
+<!-- Ad/Banner -->
+<div class="bg-gray-100 border border-gray-300 p-space-6 text-center flex flex-col items-center justify-center min-h-[250px]">
+<span class="material-symbols-outlined text-primary text-4xl mb-space-4" data-icon="precision_manufacturing">precision_manufacturing</span>
+<h3 class="font-h2 text-h2 text-primary uppercase mb-space-2">Custom Fabrication</h3>
+<p class="font-body-sm text-body-sm text-gray-700 mb-space-4">Need engineered solutions tailored to your exact load requirements?</p>
+<a class="font-label text-label text-secondary underline hover:text-primary uppercase tracking-widest" href="#">Consult Our Engineers</a>
+</div>
+</aside>
+</div>
+</main>
+<!-- SideNavBar (Floating Action/Contact) -->
+<div class="fixed right-4 bottom-24 flex flex-col gap-4 z-50 bg-surface-container-lowest dark:bg-surface-dim border border-gray-300 dark:border-outline shadow-md flex flex-col space-y-4 p-space-2 rounded-xl">
+<div class="text-center pb-space-2 border-b border-gray-200 mb-space-2">
+<div class="font-label text-label text-primary font-bold">ISO 9001:2015</div>
+<div class="font-mono-data text-mono-data text-[10px] text-gray-500">Certified Excellence</div>
+</div>
+<button class="bg-primary text-on-primary p-4 rounded-xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform group relative">
+<span class="material-symbols-outlined" data-icon="request_quote">request_quote</span>
+<span class="absolute right-full mr-space-2 bg-gray-700 text-white font-label text-label px-space-2 py-space-1 rounded opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap transition-opacity">Request Quote</span>
+</button>
+<button class="bg-primary text-on-primary p-4 rounded-xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform group relative">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="absolute right-full mr-space-2 bg-gray-700 text-white font-label text-label px-space-2 py-space-1 rounded opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap transition-opacity">WhatsApp</span>
+</button>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-high dark:bg-tertiary-container text-on-surface dark:text-on-tertiary-container full-width bottom-0 border-t border-gray-300 dark:border-outline-variant flat no shadows mt-space-16">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-8 px-margin-desktop py-space-12 w-full max-w-[1280px] mx-auto">
+<div class="space-y-space-4">
+<div class="font-h3 text-h3 text-primary dark:text-primary-fixed-dim uppercase font-bold tracking-wider">Tejaswini Industries</div>
+<p class="font-body-sm text-body-sm text-gray-700">Precision Engineering Redefined.</p>
+<div class="font-label text-label text-primary bg-white border border-gray-300 inline-block px-space-2 py-space-1 mt-space-2">ISO 9001:2015 CERTIFIED</div>
+</div>
+<div class="space-y-space-4">
+<h4 class="font-label text-label text-primary uppercase border-b border-gray-300 pb-space-1">Quick Links</h4>
+<ul class="space-y-space-2">
+<li><a class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 Transition-all duration-300 ease-in-out" href="#">Product Categories</a></li>
+<li><a class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 Transition-all duration-300 ease-in-out" href="#">Quality Policy</a></li>
+<li><a class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 Transition-all duration-300 ease-in-out" href="#">Infrastructure</a></li>
+</ul>
+</div>
+<div class="space-y-space-4">
+<h4 class="font-label text-label text-primary uppercase border-b border-gray-300 pb-space-1">Corporate</h4>
+<ul class="space-y-space-2">
+<li><a class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 Transition-all duration-300 ease-in-out" href="#">Career</a></li>
+<li><a class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 Transition-all duration-300 ease-in-out" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="space-y-space-4">
+<h4 class="font-label text-label text-primary uppercase border-b border-gray-300 pb-space-1">Contact</h4>
+<div class="font-body-sm text-body-sm text-gray-700 space-y-space-1">
+<p>Plot No. 45, Industrial Area Phase II,</p>
+<p>Mumbai, Maharashtra 400093</p>
+<p class="pt-space-2 font-mono-data">TEL: +91 22 1234 5678</p>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-300 text-center py-space-4">
+<p class="font-mono-data text-mono-data text-gray-500 uppercase">© 2024 Tejaswini Industries. ISO 9001:2015 Certified. Precision Engineering Redefined.</p>
+</div>
+</footer>
+</body></html>

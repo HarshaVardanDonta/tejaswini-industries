@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Maximizing Efficiency: A Guide to Distribution Transformer Maintenance - Tejaswini Industries</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=IBM+Plex+Mono&amp;family=Source+Sans+3:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#1c1b1b",
+                      "on-tertiary-fixed-variant": "#3c475a",
+                      "primary-container": "#1a3a8f",
+                      "blue-light": "#E8EDF8",
+                      "gray-100": "#EFEFEC",
+                      "surface-container": "#f0edec",
+                      "outline": "#757683",
+                      "primary-fixed-dim": "#b5c4ff",
+                      "inverse-on-surface": "#f3f0ef",
+                      "on-primary-container": "#91a9ff",
+                      "tertiary": "#202b3c",
+                      "surface-variant": "#e5e2e1",
+                      "surface-dim": "#dcd9d9",
+                      "on-secondary-container": "#fffbff",
+                      "on-primary-fixed-variant": "#224095",
+                      "on-tertiary-fixed": "#111c2c",
+                      "on-primary-fixed": "#00164e",
+                      "on-tertiary": "#ffffff",
+                      "secondary-container": "#e0283c",
+                      "tertiary-fixed": "#d8e3fa",
+                      "surface-container-highest": "#e5e2e1",
+                      "surface-bright": "#fcf9f8",
+                      "on-secondary": "#ffffff",
+                      "primary": "#00236f",
+                      "on-primary": "#ffffff",
+                      "outline-variant": "#c4c5d3",
+                      "secondary-fixed-dim": "#ffb3b1",
+                      "steel": "#4A5568",
+                      "inverse-surface": "#313030",
+                      "gray-300": "#C4C4BC",
+                      "gray-500": "#7A7A74",
+                      "tertiary-fixed-dim": "#bcc7dd",
+                      "secondary": "#bb0027",
+                      "primary-fixed": "#dce1ff",
+                      "red-light": "#FCEAEC",
+                      "on-secondary-fixed": "#410007",
+                      "error": "#ba1a1a",
+                      "on-surface": "#1c1b1b",
+                      "on-error": "#ffffff",
+                      "tertiary-container": "#364153",
+                      "gray-50": "#F7F7F5",
+                      "surface-tint": "#3d59af",
+                      "error-container": "#ffdad6",
+                      "background": "#fcf9f8",
+                      "secondary-fixed": "#ffdad8",
+                      "surface": "#fcf9f8",
+                      "surface-container-low": "#f6f3f2",
+                      "on-error-container": "#93000a",
+                      "gray-700": "#3D3D39",
+                      "on-tertiary-container": "#a2adc3",
+                      "inverse-primary": "#b5c4ff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-high": "#ebe7e7",
+                      "on-surface-variant": "#444652",
+                      "on-secondary-fixed-variant": "#92001c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "space-16": "64px",
+                      "gutter": "24px",
+                      "space-6": "24px",
+                      "space-2": "8px",
+                      "space-4": "16px",
+                      "space-12": "48px",
+                      "space-8": "32px",
+                      "space-3": "12px",
+                      "margin-tablet": "24px",
+                      "base": "4px",
+                      "margin-desktop": "48px",
+                      "space-1": "4px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "mono-data": [
+                              "IBM Plex Mono"
+                      ],
+                      "h2": [
+                              "Barlow Condensed"
+                      ],
+                      "label": [
+                              "Barlow Condensed"
+                      ],
+                      "h1": [
+                              "Barlow Condensed"
+                      ],
+                      "display-xl": [
+                              "Barlow Condensed"
+                      ],
+                      "body-lg": [
+                              "Source Sans 3"
+                      ],
+                      "h3": [
+                              "Barlow Condensed"
+                      ],
+                      "display-xl-mobile": [
+                              "Barlow Condensed"
+                      ],
+                      "display-lg": [
+                              "Barlow Condensed"
+                      ],
+                      "body-sm": [
+                              "Source Sans 3"
+                      ]
+              },
+              "fontSize": {
+                      "mono-data": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h2": [
+                              "22px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h1": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.7",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h3": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-xl-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.15",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .industrial-border { border: 1px solid theme('colors.gray-100'); }
+        .industrial-focus:focus-within { border-color: theme('colors.primary'); box-shadow: 0 0 0 3px rgba(26,58,143,0.15); outline: none; }
+        .industrial-card { background-color: theme('colors.surface-container-lowest'); border: 1px solid theme('colors.gray-100'); border-radius: theme('borderRadius.lg'); }
+        .industrial-card-critical { border-left: 3px solid theme('colors.secondary'); }
+      </style>
+</head>
+<body class="bg-background text-on-background font-body-lg min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-primary dark:bg-primary text-on-primary dark:text-on-primary font-h1 text-h1 docked full-width top-0 sticky border-b-4 border-secondary flat no shadows flex justify-between items-center w-full px-margin-desktop max-w-[1280px] mx-auto h-20 z-50">
+<div class="flex items-center gap-space-8">
+<span class="text-h2 font-h2 font-bold text-on-primary uppercase tracking-wider">Tejaswini Industries</span>
+<nav class="hidden md:flex items-center gap-space-6 font-label text-label">
+<a class="text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 transition-all px-space-3 py-space-2 rounded-DEFAULT" href="#">Products</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 transition-all px-space-3 py-space-2 rounded-DEFAULT" href="#">Services</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 transition-all px-space-3 py-space-2 rounded-DEFAULT" href="#">Projects</a>
+<a class="text-on-primary border-b-3 border-secondary pb-1 hover:bg-primary-container/20 transition-all px-space-3 py-space-2 rounded-DEFAULT border-b-secondary transition-all duration-200" href="#">Blogs</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 transition-all px-space-3 py-space-2 rounded-DEFAULT" href="#">About</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 transition-all px-space-3 py-space-2 rounded-DEFAULT" href="#">Contact</a>
+</nav>
+</div>
+<div class="flex items-center gap-space-4">
+<div class="hidden lg:flex items-center gap-space-2">
+<button aria-label="call" class="text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 p-space-2 rounded-DEFAULT">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</button>
+<button aria-label="mail" class="text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 p-space-2 rounded-DEFAULT">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button>
+</div>
+<button class="bg-secondary text-on-secondary font-label text-label px-space-4 py-space-2 rounded-DEFAULT uppercase tracking-wider hover:bg-secondary/90 transition-colors">Request Quote</button>
+<button aria-label="Menu" class="md:hidden text-on-primary p-space-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-space-8 md:py-space-12 grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="lg:col-span-12 flex items-center gap-space-2 font-label text-label text-gray-500 mb-space-4">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Blogs</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface">Transformer Maintenance</span>
+</nav>
+<!-- Article Section -->
+<article class="lg:col-span-8 flex flex-col gap-space-8">
+<!-- Hero -->
+<header class="flex flex-col gap-space-6">
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-on-surface uppercase tracking-tight border-l-4 border-primary pl-space-4">Maximizing Efficiency: A Guide to Distribution Transformer Maintenance</h1>
+<div class="flex flex-wrap items-center gap-space-6 font-mono-data text-mono-data text-gray-700 bg-gray-50 p-space-3 rounded-DEFAULT industrial-border">
+<div class="flex items-center gap-space-2">
+<span class="material-symbols-outlined text-[16px]">person</span>
+<span>Eng. Rajesh Kumar</span>
+</div>
+<div class="flex items-center gap-space-2">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>Oct 24, 2024</span>
+</div>
+<div class="flex items-center gap-space-2">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+<span>8 min read</span>
+</div>
+</div>
+<div class="w-full aspect-video bg-surface-container rounded-DEFAULT overflow-hidden industrial-border">
+<img alt="Distribution Transformer Maintenance" class="w-full h-full object-cover" data-alt="A highly detailed close-up shot of a large industrial distribution transformer in a well-lit, modern manufacturing facility. The machinery features a rugged, precision-engineered metal casing painted in a technical industrial gray, with distinct bright blue and white branding accents reflecting the Tejaswini Industries corporate palette. Prominent high-voltage insulators, complex wiring arrays, and diagnostic gauge dials are sharply in focus, emphasizing technical precision and robust build quality. The lighting is crisp and cool, casting structured shadows that highlight the brutalist, functional design of the heavy equipment, conveying reliability and advanced engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4nroFs-j9eoQ3-5QYiwKVBg0J0jOw2bveiRk1LM6W-OzgGNziTahCVvExKdI3rV3aUh_1uP8S5xuPZgT0c7KlaFsi-YeMxvsDMOW_E2pbnyYfutOlHqxKQJqu2M3fafQhiwPegvemywEY0ph5zvt_S7QiZDzFsW83iuJnTL-K0BmVck5o51FuM-tn1O07q62xS2U-dnQ6UAuw7RCO0rCBXPQgjBjjC0y_0O8STvkbBcTuK3eSV3LUtzwQR7q1fgddrKRxyigp6zE"/>
+</div>
+</header>
+<!-- Content Body -->
+<div class="font-body-lg text-body-lg text-on-surface space-y-space-6 max-w-none">
+<p class="text-[18px] leading-relaxed font-semibold text-gray-700 border-l-2 border-gray-300 pl-space-4">
+                    Distribution transformers are the critical backbone of industrial power systems. Proactive maintenance is not merely a recommendation; it is an operational imperative to prevent catastrophic failures and ensure continuous high-performance output.
+                </p>
+<h2 class="font-h2 text-h2 text-primary uppercase border-b-2 border-gray-100 pb-space-2 mt-space-8">1. Routine Visual Inspections</h2>
+<p>
+                    Visual inspections form the first line of defense in transformer maintenance. These should be conducted strictly according to a documented schedule. Key indicators of potential issues include oil leaks around gaskets or valves, discoloration of the tank surface indicating localized overheating, and physical damage to bushings or cooling fins.
+                </p>
+<h3 class="font-h3 text-h3 text-tertiary mt-space-6">Key Inspection Checkpoints</h3>
+<ul class="list-none space-y-space-2 pl-0">
+<li class="flex items-start gap-space-2">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-[2px]">check_circle</span>
+<span><strong>Oil Levels &amp; Leaks:</strong> Verify conservator oil levels and inspect all welded joints and valves.</span>
+</li>
+<li class="flex items-start gap-space-2">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-[2px]">check_circle</span>
+<span><strong>Silica Gel Breather:</strong> Ensure the gel is blue (active) and replace if it turns pink (saturated).</span>
+</li>
+<li class="flex items-start gap-space-2">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-[2px]">check_circle</span>
+<span><strong>Bushing Condition:</strong> Check for cracks, tracking marks, or significant dirt accumulation.</span>
+</li>
+</ul>
+<h2 class="font-h2 text-h2 text-primary uppercase border-b-2 border-gray-100 pb-space-2 mt-space-8">2. Technical Maintenance Schedule</h2>
+<p>
+                    Adhering to a standardized maintenance grid is vital for operational compliance and equipment longevity. Below is the recommended industrial standard schedule for oil-immersed distribution transformers.
+                </p>
+<!-- Industrial Data Grid -->
+<div class="w-full overflow-x-auto my-space-6 rounded-DEFAULT industrial-border">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-gray-50 border-b border-gray-300">
+<th class="p-space-3 font-label text-label text-gray-700 uppercase tracking-wide">Component</th>
+<th class="p-space-3 font-label text-label text-gray-700 uppercase tracking-wide">Inspection Action</th>
+<th class="p-space-3 font-label text-label text-gray-700 uppercase tracking-wide">Frequency</th>
+<th class="p-space-3 font-label text-label text-gray-700 uppercase tracking-wide">Tolerance limit</th>
+</tr>
+</thead>
+<tbody class="font-mono-data text-mono-data text-on-surface">
+<tr class="border-b border-gray-100 hover:bg-gray-50/50 transition-colors">
+<td class="p-space-3 font-semibold">Oil BDV Test</td>
+<td class="p-space-3">Dielectric strength measurement</td>
+<td class="p-space-3">Annual</td>
+<td class="p-space-3">&gt; 40 kV (min)</td>
+</tr>
+<tr class="border-b border-gray-100 bg-gray-50 hover:bg-gray-100/50 transition-colors">
+<td class="p-space-3 font-semibold">Earth Resistance</td>
+<td class="p-space-3">Megger testing of neutral/body earth</td>
+<td class="p-space-3">Bi-Annual</td>
+<td class="p-space-3">&lt; 1.0 Ohm</td>
+</tr>
+<tr class="border-b border-gray-100 hover:bg-gray-50/50 transition-colors">
+<td class="p-space-3 font-semibold">Buchholz Relay</td>
+<td class="p-space-3">Gas accumulation check &amp; float operation</td>
+<td class="p-space-3">Quarterly</td>
+<td class="p-space-3">Zero Gas</td>
+</tr>
+<tr class="hover:bg-gray-50/50 transition-colors">
+<td class="p-space-3 font-semibold">Winding Resistance</td>
+<td class="p-space-3">Bridge method measurement per phase</td>
+<td class="p-space-3">3 Years</td>
+<td class="p-space-3">± 2% variation</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Alert Card -->
+<div class="industrial-card industrial-card-critical p-space-4 my-space-6">
+<div class="flex gap-space-3">
+<span class="material-symbols-outlined text-secondary" data-weight="fill">warning</span>
+<div>
+<h4 class="font-h3 text-h3 text-on-surface mb-space-1">Critical Action Warning</h4>
+<p class="font-body-sm text-body-sm text-gray-700 m-0">Never attempt oil sampling or internal inspections while the transformer is energized. Ensure comprehensive isolation and grounding protocols are executed prior to physical intervention.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Share Buttons -->
+<div class="flex items-center gap-space-4 pt-space-6 border-t border-gray-100 mt-space-8">
+<span class="font-label text-label text-gray-500 uppercase tracking-wider">Share Protocol:</span>
+<button aria-label="Share via Email" class="bg-gray-100 hover:bg-gray-300 text-gray-700 p-space-2 rounded-DEFAULT transition-colors">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</button>
+<button aria-label="Share via Link" class="bg-gray-100 hover:bg-gray-300 text-gray-700 p-space-2 rounded-DEFAULT transition-colors">
+<span class="material-symbols-outlined text-[20px]">link</span>
+</button>
+<button aria-label="Print Document" class="bg-gray-100 hover:bg-gray-300 text-gray-700 p-space-2 rounded-DEFAULT transition-colors">
+<span class="material-symbols-outlined text-[20px]">print</span>
+</button>
+</div>
+</article>
+<!-- Sidebar -->
+<aside class="lg:col-span-4 flex flex-col gap-space-8">
+<!-- Table of Contents Widget -->
+<div class="industrial-card p-space-6">
+<h3 class="font-h3 text-h3 text-primary uppercase mb-space-4 border-b border-gray-100 pb-space-2">Table of Contents</h3>
+<nav class="flex flex-col gap-space-3 font-body-sm text-body-sm">
+<a class="text-gray-700 hover:text-primary transition-colors flex items-center gap-space-2" href="#">
+<span class="material-symbols-outlined text-[16px] text-gray-300">subdirectory_arrow_right</span>
+                        Routine Visual Inspections
+                    </a>
+<a class="text-gray-700 hover:text-primary transition-colors flex items-center gap-space-2 pl-space-4" href="#">
+<span class="material-symbols-outlined text-[16px] text-gray-300">remove</span>
+                        Key Inspection Checkpoints
+                    </a>
+<a class="text-gray-700 hover:text-primary transition-colors flex items-center gap-space-2" href="#">
+<span class="material-symbols-outlined text-[16px] text-gray-300">subdirectory_arrow_right</span>
+                        Technical Maintenance Schedule
+                    </a>
+</nav>
+</div>
+<!-- CTA Widget -->
+<div class="bg-primary text-on-primary rounded-lg p-space-6 text-center border-t-4 border-secondary shadow-md relative overflow-hidden">
+<div class="absolute -right-8 -top-8 text-on-primary/10">
+<span class="material-symbols-outlined text-[120px]">description</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-h2 text-h2 uppercase mb-space-2">Standardized Checklist</h3>
+<p class="font-body-sm text-body-sm text-on-primary/80 mb-space-6">Download the comprehensive ISO-compliant maintenance checklist PDF for field technicians.</p>
+<button class="w-full bg-secondary text-on-secondary font-label text-label px-space-4 py-space-3 rounded-DEFAULT uppercase tracking-wider hover:bg-secondary/90 transition-colors flex items-center justify-center gap-space-2">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Download Document
+                    </button>
+</div>
+</div>
+<!-- Related Products Widget -->
+<div class="industrial-card p-space-6">
+<h3 class="font-h3 text-h3 text-primary uppercase mb-space-4 border-b border-gray-100 pb-space-2">Relevant Hardware</h3>
+<div class="flex flex-col gap-space-4">
+<a class="flex gap-space-3 group" href="#">
+<div class="w-16 h-16 bg-gray-100 rounded-DEFAULT overflow-hidden shrink-0 border border-gray-300 group-hover:border-primary transition-colors">
+<img alt="Oil Immersed Transformer" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="A small thumbnail image showing a heavy-duty industrial oil-immersed electrical transformer against a stark white background. The machinery is painted in a technical slate gray, demonstrating robust engineering and solid metallic construction typical of high-voltage industrial equipment. The lighting highlights the precision cooling fins and structural integrity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ7S0-m4mM8DFQGni5o150QeFDD83oDuijTZNsQoslWTkSbzy880_1EC8dZEzYKjrocCD51NVTFCpso2KL2KDGbhWzFjMHf3xD4IQW2nl6xnVW0bFcCxf6CHUZIRTPzuXH6Rvm5BDeapbgjuYck8Q_28cmcRQ16BjDU5_S1MX558MYlHO2JQNrULbLlNt-AsFqwrcuqOR_rttBkhTyQ7D74c-bWXWYyied0vuQLam-WdPGE_QZ-2yFu8ceNH4lYdx0t6mJXKf9Vig"/>
+</div>
+<div class="flex flex-col justify-center">
+<h4 class="font-label text-label text-on-surface group-hover:text-primary transition-colors uppercase">Oil Immersed Series T-500</h4>
+<span class="font-mono-data text-mono-data text-gray-500 text-[11px] mt-1">Cap: 500kVA - 2500kVA</span>
+</div>
+</a>
+</div>
+</div>
+</aside>
+</main>
+<!-- SideNavBar (Contextual Contact FABs) -->
+<nav class="fixed right-4 bottom-24 flex flex-col gap-4 z-50 flex flex-col space-y-4">
+<a aria-label="Request Quote" class="bg-primary text-on-primary p-4 rounded-xl flex items-center justify-center shadow-md hover:scale-105 transition-transform border border-outline-variant" href="#" title="Request Quote">
+<span class="material-symbols-outlined" data-icon="request_quote">request_quote</span>
+</a>
+<a aria-label="WhatsApp" class="bg-primary text-on-primary p-4 rounded-xl flex items-center justify-center shadow-md hover:scale-105 transition-transform border border-outline-variant" href="#" title="WhatsApp">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="bg-surface-container-high dark:bg-tertiary-container text-on-surface dark:text-on-tertiary-container full-width bottom-0 border-t border-gray-300 dark:border-outline-variant flat no shadows mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-8 px-margin-desktop py-space-12 w-full max-w-[1280px] mx-auto">
+<div class="flex flex-col gap-space-4">
+<span class="font-h3 text-h3 text-primary dark:text-primary-fixed-dim uppercase">Tejaswini Industries</span>
+<p class="font-label text-label text-primary">ISO 9001:2015</p>
+<p class="font-body-sm text-body-sm">Certified Excellence</p>
+</div>
+<div class="flex flex-col gap-space-2">
+<span class="font-label text-label uppercase text-gray-500 mb-space-2">Navigation</span>
+<a class="font-label text-label text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 Transition-all duration-300 ease-in-out" href="#">Product Categories</a>
+<a class="font-label text-label text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 Transition-all duration-300 ease-in-out" href="#">Quality Policy</a>
+</div>
+<div class="flex flex-col gap-space-2">
+<span class="font-label text-label uppercase text-gray-500 mb-space-2">Corporate</span>
+<a class="font-label text-label text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 Transition-all duration-300 ease-in-out" href="#">Infrastructure</a>
+<a class="font-label text-label text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 Transition-all duration-300 ease-in-out" href="#">Career</a>
+<a class="font-label text-label text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 Transition-all duration-300 ease-in-out" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-space-4">
+<span class="font-label text-label uppercase text-gray-500">Legal</span>
+<p class="font-body-sm text-body-sm text-gray-500">© 2024 Tejaswini Industries. ISO 9001:2015 Certified. Precision Engineering Redefined.</p>
+</div>
+</div>
+</footer>
+</body></html>
