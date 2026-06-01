@@ -92,7 +92,7 @@ export function TransformerSpecificationComparisonPage() {
   if (loading) {
     return (
       <ProductsShell className="bg-gray-50">
-        <PageLoading />
+        <PageLoading embedded />
       </ProductsShell>
     )
   }

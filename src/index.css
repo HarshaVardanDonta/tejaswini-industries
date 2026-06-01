@@ -227,3 +227,54 @@ input[type='range'].capacity-range::-webkit-slider-runnable-track {
     linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 24px 24px;
 }
+
+.loading-spin-slow {
+  animation: loading-spin 3s linear infinite;
+}
+
+@keyframes loading-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-progress-bar {
+  animation: loading-progress 2.5s ease-in-out infinite;
+}
+
+@keyframes loading-progress {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 70%;
+  }
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+.loading-pulse-text {
+  animation: loading-pulse-op 1.5s ease-in-out infinite;
+}
+
+@keyframes loading-pulse-op {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading-grid-bg {
+  background-image:
+    linear-gradient(#efefec 1px, transparent 1px),
+    linear-gradient(90deg, #efefec 1px, transparent 1px);
+  background-size: 24px 24px;
+}

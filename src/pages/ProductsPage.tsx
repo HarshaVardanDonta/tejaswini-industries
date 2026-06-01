@@ -20,7 +20,7 @@ export function ProductsPage() {
     return data.map((item) => mapProductCategory(item as Parameters<typeof mapProductCategory>[0]))
   }, [data])
 
-  if (loading) return <ProductsShell><PageLoading /></ProductsShell>
+  if (loading) return <ProductsShell><PageLoading embedded /></ProductsShell>
 
   return (
     <ProductsShell>

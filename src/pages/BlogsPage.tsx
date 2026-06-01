@@ -57,7 +57,7 @@ export function BlogsPage() {
   if (postsLoading || trendingLoading) {
     return (
       <ProductsShell className="bg-gray-50">
-        <PageLoading />
+        <PageLoading embedded />
       </ProductsShell>
     )
   }

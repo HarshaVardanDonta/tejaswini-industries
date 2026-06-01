@@ -21,7 +21,7 @@ export function CorporateProfilePage() {
       'Corporate Profile - Tejaswini Industries | Precision Engineering for Global Power Infrastructure'
   }, [])
 
-  if (loading) return <ProductsShell className="bg-background"><PageLoading /></ProductsShell>
+  if (loading) return <ProductsShell className="bg-background"><PageLoading embedded /></ProductsShell>
 
   return (
     <CorporateProfilePageProvider value={pageData}>

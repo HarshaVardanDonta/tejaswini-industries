@@ -23,7 +23,7 @@ export function ServicesPage() {
     document.title = 'Services - Tejaswini Industries'
   }, [])
 
-  if (loading) return <ProductsShell className="bg-surface"><PageLoading /></ProductsShell>
+  if (loading) return <ProductsShell className="bg-surface"><PageLoading embedded /></ProductsShell>
 
   return (
     <ServicesPageProvider value={pageData}>

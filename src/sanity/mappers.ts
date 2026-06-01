@@ -5,11 +5,11 @@ import type {
   ServicesPageData,
 } from '../sanity/pageTypes'
 import type { LandingPageData } from '../context/LandingPageContext'
-import type {
-  ComparisonCellValue,
-  DistributionTransformerProduct,
+import {
+  distributionTransformerProducts,
+  type ComparisonCellValue,
+  type DistributionTransformerProduct,
 } from '../data/distributionTransformers'
-import { productDetail250Kva } from '../data/productDetail250Kva'
 import type { ImageWithUrl } from './image'
 import { resolveImageAlt, resolveImageUrl } from './image'
 
@@ -151,22 +151,7 @@ export function mapProductDetailToListingProduct(
 }
 
 export function getDistributionListingProductsFallback(): DistributionTransformerProduct[] {
-  return [
-    mapProductDetailToListingProduct({
-      _id: '250-kva',
-      slug: { current: productDetail250Kva.slug },
-      sku: productDetail250Kva.sku,
-      title: productDetail250Kva.title,
-      images: {
-        main: {
-          url: productDetail250Kva.images.main.src,
-          alt: productDetail250Kva.images.main.alt,
-        },
-      },
-      quickSpecs: [...productDetail250Kva.quickSpecs],
-      technicalParameters: [...productDetail250Kva.technicalParameters],
-    }),
-  ]
+  return distributionTransformerProducts
 }
 
 export function mapProductCategory(category: {

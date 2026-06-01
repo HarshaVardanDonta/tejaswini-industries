@@ -24,7 +24,7 @@ export function AboutPage() {
     document.title = 'About Us | Tejaswini Industries'
   }, [])
 
-  if (loading) return <ProductsShell className="bg-background"><PageLoading /></ProductsShell>
+  if (loading) return <ProductsShell className="bg-background"><PageLoading embedded /></ProductsShell>
 
   return (
     <AboutPageProvider value={pageData}>

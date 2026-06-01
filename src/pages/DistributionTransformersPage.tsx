@@ -10,6 +10,7 @@ import { PageLoading } from '../components/PageLoading'
 import { DistributionPageProvider } from '../context/DistributionPageContext'
 import { comparisonParameters, distributionCategory } from '../data/distributionTransformers'
 import { useProductComparison } from '../hooks/useProductComparison'
+import { useProductFilters } from '../hooks/useProductFilters'
 import { useSanityQuery } from '../hooks/useSanityQuery'
 import {
   getDistributionListingProductsFallback,
@@ -66,6 +67,23 @@ export function DistributionTransformersPage() {
     }
   }, [categoryData, productsData, paramsData])
 
+  const {
+    filterGroups,
+    filterState,
+    setCheckbox,
+    setRange,
+    clearAll,
+    filteredProducts,
+  } = useProductFilters(
+    DISTRIBUTION_TRANSFORMERS_CATEGORY_ID,
+    pageData.products,
+    pageData.comparisonParameters
+  )
+
+  const hasFilters = filterGroups.length > 0
+  const showResultCount =
+    hasFilters && filteredProducts.length !== pageData.products.length
+
   useEffect(() => {
     document.title = `${pageData.category.title} - Tejaswini Industries`
   }, [pageData.category.title])
@@ -73,7 +91,7 @@ export function DistributionTransformersPage() {
   if (loading) {
     return (
       <ProductsShell className="bg-gray-50">
-        <PageLoading />
+        <PageLoading embedded />
       </ProductsShell>
     )
   }
@@ -91,21 +109,40 @@ export function DistributionTransformersPage() {
             <p className="font-body-lg text-body-lg text-gray-700 max-w-3xl">
               {pageData.category.description}
             </p>
+            {showResultCount && (
+              <p className="font-mono-data text-mono-data text-gray-500 mt-space-4">
+                Showing {filteredProducts.length} of {pageData.products.length} products
+              </p>
+            )}
           </div>
 
           <div className="flex flex-col lg:flex-row gap-gutter">
-            <ProductFilters />
-            <div className="w-full lg:w-3/4 flex flex-col gap-space-12">
+            <ProductFilters
+              groups={filterGroups}
+              state={filterState}
+              onCheckboxChange={setCheckbox}
+              onRangeChange={setRange}
+              onClear={clearAll}
+            />
+            <div
+              className={`w-full flex flex-col gap-space-12 ${hasFilters ? 'lg:w-3/4' : ''}`}
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-6">
-                {pageData.products.map((product) => (
-                  <ProductListingCard
-                    key={product.id}
-                    product={product}
-                    compareSelected={isSelected(product.id)}
-                    compareDisabled={!canAdd && !isSelected(product.id)}
-                    onCompareToggle={toggle}
-                  />
-                ))}
+                {filteredProducts.length > 0 ? (
+                  filteredProducts.map((product) => (
+                    <ProductListingCard
+                      key={product.id}
+                      product={product}
+                      compareSelected={isSelected(product.id)}
+                      compareDisabled={!canAdd && !isSelected(product.id)}
+                      onCompareToggle={toggle}
+                    />
+                  ))
+                ) : (
+                  <p className="col-span-full font-body-lg text-body-lg text-gray-700 py-space-12 text-center border border-gray-200 rounded-lg bg-white">
+                    No products match the selected filters. Try adjusting or clearing filters.
+                  </p>
+                )}
               </div>
               <EfficiencyGuideNote />
               <CustomConfigCTA />

@@ -25,7 +25,7 @@ export function ContactPage() {
     document.title = 'Contact Us - Tejaswini Industries'
   }, [])
 
-  if (loading) return <ProductsShell className="bg-background"><PageLoading /></ProductsShell>
+  if (loading) return <ProductsShell className="bg-background"><PageLoading embedded /></ProductsShell>
 
   return (
     <ContactPageProvider value={pageData}>

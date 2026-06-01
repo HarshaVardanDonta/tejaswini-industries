@@ -13,7 +13,12 @@ export const queries = {
   distributionCategory: `*[_type == "distributionCategory" && _id == "distributionCategory"][0]`,
   comparisonParameters: `*[_type == "comparisonParameter"] | order(order asc)`,
   productDetailBySlug: `*[_type == "productDetail" && slug.current == $slug][0]`,
-  productDetailsByCategory: `*[_type == "productDetail" && (categoryId == $categoryId || (!defined(categoryId) && $categoryId == "distribution-transformers"))] | order(title asc)`,
+  productDetailsByCategory: `*[_type == "productDetail" && (categoryId == $categoryId || (!defined(categoryId) && $categoryId == "distribution-transformers"))] | order(title asc){
+    _id, categoryId, slug, sku, title,
+    images{ main{ url, alt, asset } },
+    quickSpecs[]{ label, value, highlight },
+    technicalParameters[]{ parameter, value }
+  }`,
 
   projects: `*[_type == "project"] | order(id asc)`,
   commissionRows: `*[_type == "commissionRow"] | order(id asc)`,

@@ -1,4 +1,6 @@
 export const images = {
+  bisCertification:
+    'https://lh3.googleusercontent.com/aida-public/AB6AXuCrsfMgbPpp5ZqwZO6yRgXyiMuxqajXqR8mx50-SsnBBqK8l17gH4k-E-6SwsqUFilGXVCw2orJlrHcK7RWkL5GQi7mvSyO6tTmDRexHqxB_UVfHovLVUidnDuDZjkfDESSCQU6Vx2-quzjl-zK26ki_S9-RCCKr5a6f2cMQ_q8sCiWQFJZTkHJMsxfUMY64Wpdh5aJ24udGpHicqMyN7fqnr4bzemmtuC2akHvVI_0bzaCt9BhShI0I8mKgMMJ-OSYmCd-0MiUc6o',
   hero:
     'https://lh3.googleusercontent.com/aida-public/AB6AXuADcn0x-LzMQL2de1SzcEkNhBvx4dhYe60m1ONJmPTVBPcHZVjOmRlmoKbpOtUR1bL-WtcNMAmi1Vc7Nb0EYAqE1m1zTpgVm1p0igcG_xFvzM2wrODo5DDMe2gW_kLyx2LVeyTpAa6mQ20K4-LfaFgkvTNGjciCREzGWv_02CKIuiRO7SZEvEoKmdFE3d3G7gjkK8fbvcH00FgQzu6XNkpwN3f1vUyv98slOWy_keHiYJyXBwxXqPiqbWGmW-JuXvjBZffFihEahn8',
   facility:

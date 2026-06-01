@@ -49,7 +49,7 @@ export function ProjectsPage() {
   if (projectsLoading || commissionLoading) {
     return (
       <ProductsShell className="bg-background">
-        <PageLoading />
+        <PageLoading embedded />
       </ProductsShell>
     )
   }

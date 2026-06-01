@@ -30,7 +30,7 @@ export function DistributionTransformer250KvaPage() {
   if (loading) {
     return (
       <ProductsShell className="bg-background">
-        <PageLoading />
+        <PageLoading embedded />
       </ProductsShell>
     )
   }

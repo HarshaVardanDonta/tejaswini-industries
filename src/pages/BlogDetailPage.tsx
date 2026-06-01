@@ -31,7 +31,7 @@ export function BlogDetailPage() {
   if (loading) {
     return (
       <ProductsShell className="bg-background">
-        <PageLoading />
+        <PageLoading embedded />
       </ProductsShell>
     )
   }

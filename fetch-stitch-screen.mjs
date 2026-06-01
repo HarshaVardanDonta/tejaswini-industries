@@ -37,6 +37,10 @@ const SCREENS = [
       'distribution-transformers-listing-comparison'
     ),
   },
+  {
+    screenId: '30c05d2242334214914cd2d553ea2234',
+    outDir: join(__dirname, 'stitch', 'centered-industrial-loading-state'),
+  },
 ]
 
 async function download(url, dest) {
