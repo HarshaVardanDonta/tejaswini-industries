@@ -1,8 +1,8 @@
-import { transformerMaintenanceGuide } from '../../data/blogDetailTransformerMaintenance'
+import { useBlogDetail } from '../../context/BlogDetailContext'
 import { Icon } from '../Icon'
 
 export function BlogDetailContent() {
-  const { intro, sections } = transformerMaintenanceGuide
+  const { intro, sections } = useBlogDetail()
 
   return (
     <div className="font-body-lg text-body-lg text-on-surface space-y-space-6 max-w-none">

@@ -1,12 +1,13 @@
-import { aboutPage } from '../../data/about'
+import { useAboutPageData } from '../../context/PageDataContext'
 import { Icon } from '../Icon'
 
 export function AboutVisionMission() {
+  const { visionMission } = useAboutPageData()
   return (
     <section className="bg-gray-50 py-space-16 border-y border-gray-100">
       <div className="px-margin-mobile md:px-margin-desktop">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-          {aboutPage.visionMission.map((card) => (
+          {visionMission.map((card) => (
             <div
               key={card.title}
               className={`bg-white border border-gray-100 rounded-xl p-space-8 shadow-sm transition-colors ${

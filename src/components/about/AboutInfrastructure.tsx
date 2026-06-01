@@ -1,8 +1,8 @@
-import { aboutPage } from '../../data/about'
+import { useAboutPageData } from '../../context/PageDataContext'
 import { Icon } from '../Icon'
 
 export function AboutInfrastructure() {
-  const { infrastructure } = aboutPage
+  const { infrastructure } = useAboutPageData()
 
   return (
     <section className="px-margin-mobile md:px-margin-desktop py-space-16">

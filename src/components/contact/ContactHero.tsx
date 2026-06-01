@@ -1,7 +1,7 @@
-import { contactPage } from '../../data/contact'
+import { useContactPageData } from '../../context/PageDataContext'
 
 export function ContactHero() {
-  const { hero } = contactPage
+  const { hero } = useContactPageData()
 
   return (
     <section className="relative bg-tertiary text-on-tertiary pt-space-16 pb-space-12 px-margin-mobile md:px-margin-desktop overflow-hidden border-b border-outline-variant">

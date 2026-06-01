@@ -1,10 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { Icon } from '../Icon'
 
-type ProductsFloatingSidebarProps = {
-  variant?: 'default' | 'projects' | 'contact'
-}
-
 const TEASE_STORAGE_KEY = 'ti-floating-sidebar-teased'
 
 function WhatsAppIcon({ className = 'w-5 h-5 shrink-0' }: { className?: string }) {
@@ -42,11 +38,7 @@ function SidebarAction({ href, label, icon, className }: SidebarActionProps) {
   )
 }
 
-export function ProductsFloatingSidebar({
-  variant = 'default',
-}: ProductsFloatingSidebarProps) {
-  const isProjects = variant === 'projects'
-  const isContact = variant === 'contact'
+export function ProductsFloatingSidebar() {
   const [shouldTease, setShouldTease] = useState(false)
 
   useEffect(() => {
@@ -58,10 +50,6 @@ export function ProductsFloatingSidebar({
     return () => window.clearTimeout(timer)
   }, [])
 
-  const quoteClass = isProjects
-    ? 'bg-primary text-on-primary'
-    : 'bg-secondary text-on-secondary'
-
   return (
     <aside
       className={`group/sidebar floating-sidebar fixed right-0 bottom-24 z-50 hidden lg:flex flex-col gap-3 bg-surface-container-lowest dark:bg-surface-dim shadow-md border border-gray-300 dark:border-outline border-r-0 rounded-l-xl rounded-r-none p-3 pr-4 overflow-hidden ${
@@ -69,33 +57,26 @@ export function ProductsFloatingSidebar({
       }`}
       aria-label="Quick actions"
     >
-      {/* Peek grip — visible when collapsed */}
       <div
         className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-12 bg-secondary rounded-full group-hover/sidebar:opacity-0 transition-opacity duration-200"
         aria-hidden
       />
 
-      {!isContact && (
-        <div className="text-center border-b border-gray-100 pb-2 mb-1 max-h-0 opacity-0 overflow-hidden group-hover/sidebar:max-h-24 group-hover/sidebar:opacity-100 transition-all duration-300">
-          <p
-            className={`text-primary uppercase ${
-              isProjects ? 'font-h3 text-h3' : 'font-label text-label'
-            }`}
-          >
-            ISO 9001:2015
-          </p>
-          <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1">
-            Certified Excellence
-          </p>
-        </div>
-      )}
+      <div className="text-center border-b border-gray-100 pb-2 mb-1 max-h-0 opacity-0 overflow-hidden group-hover/sidebar:max-h-24 group-hover/sidebar:opacity-100 transition-all duration-300">
+        <p className="font-label text-label text-primary uppercase">
+          ISO 9001:2015
+        </p>
+        <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1">
+          Certified Excellence
+        </p>
+      </div>
 
-      <div className={`flex flex-col gap-3 ${isContact ? '' : ''}`}>
+      <div className="flex flex-col gap-3">
         <SidebarAction
           href="#"
           label="Request Quote"
           icon={<Icon name="request_quote" size={22} />}
-          className={quoteClass}
+          className="bg-secondary text-on-secondary"
         />
         <SidebarAction
           href="#"

@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import { transformerMaintenanceGuide } from '../../data/blogDetailTransformerMaintenance'
+import { useBlogDetail } from '../../context/BlogDetailContext'
 import { Icon } from '../Icon'
 
 export function BlogDetailSidebar() {
-  const { tableOfContents, relatedProduct } = transformerMaintenanceGuide
+  const { tableOfContents, relatedProduct } = useBlogDetail()
 
   return (
     <aside className="lg:col-span-4 flex flex-col gap-space-8">
@@ -58,6 +58,7 @@ export function BlogDetailSidebar() {
         <h3 className="font-h3 text-h3 text-primary uppercase mb-space-4 border-b border-gray-100 pb-space-2">
           Relevant Hardware
         </h3>
+        {relatedProduct ? (
         <div className="flex flex-col gap-space-4">
           <Link
             to={relatedProduct.href}
@@ -80,6 +81,7 @@ export function BlogDetailSidebar() {
             </div>
           </Link>
         </div>
+        ) : null}
       </div>
     </aside>
   )

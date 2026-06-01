@@ -72,4 +72,14 @@ export const images = {
   contact: {
     map: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCCaECvez6GL-AA072-Be7DYipNo2NGPHwN_iT1A6Z8h4Yxx_F4x-WA2MNG9-CRnKTPHfyZjHP5_ylQPpZ0wRrOWjQh_Ty8Pa-WTx6YNvL4I7lQ5x0_xoKtafYlFYMy2yS4bHow3SQ5PaJUih2oMmqF5CxBxf3nGCKHt0ypuUdYzC7vipJ1TgyPGvU_-opnU4vjbX7xm-4udLBddpMni7Nkt26--Cc-HyO8JAOiggq4ci7OvvrTV44-rnSQcdj0j8WC7jYiAAvMjdY',
   },
+  services: {
+    hero: 'https://lh3.googleusercontent.com/aida-public/AB6AXuApmUDCLl5uZ3zOqS7F-XHSATFGdxYGmYpY8HIMfcghbLFgdWzyvjPB3IM06ge1Ytx20F5pSgDgcjAP2ECVYvaGjvCePko3A6lUlmuDzns0WIk00cT3abHX2RSzqYwgzka1Gu5wG7gOHXzzzuDjVSmaMMmyLcpSadD48uX2YqU5GnNeiTccrxs139Zzu7YVJiE6hG3UUuErq0jMHLQSMkuWBqTRXzgOKhjuyiMOaNSaXJzI_7kKr9I2o6Zln8jB7r1qnV4R09UBn1s',
+    ehvSubstation:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuCiWVeyEZu8uzXWXtdDVBmEQcOZbCysRvRydrhLvDR816iyP43hJtmjY6lh0-A8uFwNwvNlQZ9uYJkykX8SpbUszuSnCjAyw6Mi9gkmZ4WZ3H7P9BPb0dFBsTe914VlZq5DC1lxpjdD2ad-Egne5eZngeobd0zZfJbeRdYAxt_oi8sey6wMcPwaIhXS-lY4DWJML3XO2adcb5FxqjieDp23CCAJ0-oht1CNykHXjbv3ZhACtok1ZE4JF8JWo0_TxlDSNZ2Q5DyAoyU',
+  },
+  corporateProfile: {
+    hero: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBL2s6YC1hEv_p3t2b4OlqC6hnJWQIAcTLB0aP22uzChNVEl-kZ5m2VgBRgU27LhB8zjBY2S7yhZ5C7CTYYp73JvSKkcMA5pkJ2nm7Z-Swf9Sh3YtRq4IrM_8QRdskYTIsTmDyETjI8mhvuwMCXV_KgRmBLxa8OD5cmMSlqWkwBHc1h1u0mUEW-hYGA6vk3yoLIjx4jxAyd3yLotBMQ2wMYcFs37VUDXbV4Wsh8mIM5bgYXN_kBVB41-yBV4qTClf_zPmJAnsT67PI',
+    engineering:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDxAJo8D-LG7ITl8aVKlSLoyi_CAlSgnyOzkFcCWqBUhy6w-BuwntB9Iq68_amRj65zapv5Ns4RApwLNq2o39BLyJqFidfObNtxMCUAhlfMfeLWh-sEOno20vXailONx61AEqd7PyRKSeq1NXHGwVxAhekKM4HiHpXDWJ8v0BhCqB1NxL0K0yJilHR4YiKKLpF2UoFptFKhrrJFl-TbWf59mTY6dpkHI7zAPqiI0D7tZWBrjC6bkoWouSFux4gMKQl93QbKIqUW2hY',
+  },
 } as const

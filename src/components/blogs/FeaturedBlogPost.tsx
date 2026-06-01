@@ -1,7 +1,8 @@
-import { featuredPost } from '../../data/blogs'
+import { useFeaturedPost } from '../../context/BlogsPageContext'
 import { Icon } from '../Icon'
 
 export function FeaturedBlogPost() {
+  const featuredPost = useFeaturedPost()
   return (
     <article className="bg-white border border-gray-100 rounded-lg overflow-hidden group">
       <div className="h-64 md:h-96 w-full bg-gray-300 relative overflow-hidden">

@@ -1,7 +1,7 @@
-import { aboutPage } from '../../data/about'
+import { useAboutPageData } from '../../context/PageDataContext'
 
 export function AboutHero() {
-  const { hero } = aboutPage
+  const { hero } = useAboutPageData()
 
   return (
     <section

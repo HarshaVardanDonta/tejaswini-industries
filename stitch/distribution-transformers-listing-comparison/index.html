@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Distribution Transformers - Tejaswini Industries</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=IBM+Plex+Mono:wght@400&amp;family=Source+Sans+3:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#111c2c",
+                      "on-secondary-container": "#fffbff",
+                      "outline-variant": "#c4c5d3",
+                      "on-error": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "surface-variant": "#e5e2e1",
+                      "on-background": "#1c1b1b",
+                      "tertiary-fixed-dim": "#bcc7dd",
+                      "gray-300": "#C4C4BC",
+                      "surface-container": "#f0edec",
+                      "primary-container": "#1a3a8f",
+                      "tertiary": "#202b3c",
+                      "surface-bright": "#fcf9f8",
+                      "gray-500": "#7A7A74",
+                      "secondary-fixed-dim": "#ffb3b1",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#00236f",
+                      "outline": "#757683",
+                      "red-light": "#FCEAEC",
+                      "primary-fixed-dim": "#b5c4ff",
+                      "on-secondary-fixed": "#410007",
+                      "on-tertiary-container": "#a2adc3",
+                      "gray-100": "#EFEFEC",
+                      "blue-light": "#E8EDF8",
+                      "surface-container-low": "#f6f3f2",
+                      "on-primary-container": "#91a9ff",
+                      "on-primary-fixed": "#00164e",
+                      "primary-fixed": "#dce1ff",
+                      "on-surface-variant": "#444652",
+                      "secondary-fixed": "#ffdad8",
+                      "inverse-surface": "#313030",
+                      "inverse-on-surface": "#f3f0ef",
+                      "gray-50": "#F7F7F5",
+                      "on-surface": "#1c1b1b",
+                      "on-primary": "#ffffff",
+                      "on-secondary-fixed-variant": "#92001c",
+                      "error": "#ba1a1a",
+                      "tertiary-container": "#364153",
+                      "steel": "#4A5568",
+                      "surface-container-highest": "#e5e2e1",
+                      "surface": "#fcf9f8",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#3c475a",
+                      "surface-container-high": "#ebe7e7",
+                      "secondary": "#bb0027",
+                      "surface-dim": "#dcd9d9",
+                      "gray-700": "#3D3D39",
+                      "background": "#fcf9f8",
+                      "tertiary-fixed": "#d8e3fa",
+                      "on-secondary": "#ffffff",
+                      "secondary-container": "#e0283c",
+                      "surface-tint": "#3d59af",
+                      "on-tertiary": "#ffffff",
+                      "inverse-primary": "#b5c4ff",
+                      "on-primary-fixed-variant": "#224095"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "space-3": "12px",
+                      "space-2": "8px",
+                      "gutter": "24px",
+                      "space-1": "4px",
+                      "space-4": "16px",
+                      "space-12": "48px",
+                      "margin-mobile": "16px",
+                      "space-16": "64px",
+                      "margin-tablet": "24px",
+                      "space-8": "32px",
+                      "margin-desktop": "48px",
+                      "base": "4px",
+                      "space-6": "24px"
+              },
+              "fontFamily": {
+                      "mono-data": ["IBM Plex Mono"],
+                      "h2": ["Barlow Condensed"],
+                      "display-xl": ["Barlow Condensed"],
+                      "h3": ["Barlow Condensed"],
+                      "display-xl-mobile": ["Barlow Condensed"],
+                      "body-sm": ["Source Sans 3"],
+                      "body-lg": ["Source Sans 3"],
+                      "label": ["Barlow Condensed"],
+                      "h1": ["Barlow Condensed"],
+                      "display-lg": ["Barlow Condensed"]
+              },
+              "fontSize": {
+                      "mono-data": ["13px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "h2": ["22px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "display-xl": ["48px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                      "h3": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "display-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-lg": ["16px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                      "label": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                      "h1": ["28px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "display-lg": ["36px", {"lineHeight": "1.15", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom range slider styling */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #00236f;
+            cursor: pointer;
+            margin-top: -6px;
+            border: 2px solid #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #C4C4BC;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-on-surface font-body-lg antialiased">
+<!-- TopAppBar Shared Component -->
+<header class="bg-primary text-on-primary docked full-width top-0 sticky border-b-4 border-secondary z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-[1280px] mx-auto h-20">
+<div class="text-h2 font-h2 font-bold text-on-primary uppercase tracking-wider">
+                Tejaswini Industries
+            </div>
+<nav class="hidden md:flex gap-space-8">
+<a class="text-on-primary/80 hover:text-on-primary transition-colors font-label text-label uppercase" href="#">Products</a>
+<a class="text-on-primary border-b-3 border-secondary pb-1 font-label text-label uppercase" href="#">Services</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors font-label text-label uppercase" href="#">Projects</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors font-label text-label uppercase" href="#">Blogs</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors font-label text-label uppercase" href="#">About</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors font-label text-label uppercase" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-space-4">
+<div class="hidden lg:flex gap-space-2">
+<button class="p-2 hover:bg-primary-container/20 transition-all rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">call</span>
+</button>
+<button class="p-2 hover:bg-primary-container/20 transition-all rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+<button class="bg-white text-primary hover:bg-gray-100 transition-colors px-space-4 py-space-2 rounded font-label text-label uppercase">
+                    Request Quote
+                </button>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-space-8">
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-gray-500 font-label text-label uppercase mb-space-8">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Products</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-bold">Distribution Transformers</span>
+</nav>
+<!-- Category Header -->
+<div class="mb-space-12 pb-space-8 border-b border-gray-300">
+<h1 class="font-display-xl text-display-xl text-primary uppercase mb-space-4">Distribution Transformers</h1>
+<p class="font-body-lg text-body-lg text-gray-700 max-w-3xl">
+                Engineered for continuous operation in demanding environments. Our distribution transformers strictly adhere to ISO 9001:2015 standards, ensuring minimal energy loss and maximum reliability for industrial, commercial, and utility applications.
+            </p>
+</div>
+<div class="flex flex-col lg:flex-row gap-gutter">
+<!-- Filter Sidebar -->
+<aside class="w-full lg:w-1/4 flex-shrink-0">
+<div class="bg-white border border-gray-100 rounded-lg p-space-6 shadow-[0_2px_10px_rgba(0,0,0,0.02)] sticky top-[100px]">
+<div class="flex items-center justify-between mb-space-6 pb-space-4 border-b border-gray-100">
+<h2 class="font-h3 text-h3 uppercase text-primary">Filters</h2>
+<button class="text-secondary font-label text-label uppercase hover:underline">Clear All</button>
+</div>
+<!-- Voltage Class -->
+<div class="mb-space-8">
+<h3 class="font-label text-label text-gray-700 uppercase mb-space-3">Voltage Class</h3>
+<div class="space-y-space-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-4 h-4 rounded-sm border-gray-300 text-primary focus:ring-primary focus:ring-offset-0 bg-gray-50 cursor-pointer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">11kV Series</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-4 h-4 rounded-sm border-gray-300 text-primary focus:ring-primary focus:ring-offset-0 bg-gray-50 cursor-pointer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">22kV Series</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded-sm border-gray-300 text-primary focus:ring-primary focus:ring-offset-0 bg-gray-50 cursor-pointer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">33kV Series</span>
+</label>
+</div>
+</div>
+<!-- Capacity Range -->
+<div class="mb-space-8">
+<h3 class="font-label text-label text-gray-700 uppercase mb-space-3">Capacity Range (kVA)</h3>
+<input class="w-full mb-space-2" max="2500" min="25" type="range" value="1000"/>
+<div class="flex justify-between font-mono-data text-mono-data text-gray-500">
+<span>25 kVA</span>
+<span>2500 kVA</span>
+</div>
+</div>
+<!-- Cooling Type -->
+<div class="mb-space-6">
+<h3 class="font-label text-label text-gray-700 uppercase mb-space-3">Cooling Type</h3>
+<div class="space-y-space-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-4 h-4 rounded-sm border-gray-300 text-primary focus:ring-primary focus:ring-offset-0 bg-gray-50 cursor-pointer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">ONAN (Oil Natural Air Natural)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded-sm border-gray-300 text-primary focus:ring-primary focus:ring-offset-0 bg-gray-50 cursor-pointer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">ONAF (Oil Natural Air Forced)</span>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid Area -->
+<div class="w-full lg:w-3/4 flex flex-col gap-space-12">
+<!-- Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-6">
+<!-- Product Card 1 -->
+<article class="bg-white border border-gray-100 rounded-lg overflow-hidden group hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-shadow duration-300 flex flex-col">
+<div class="h-48 bg-gray-100 relative border-b border-gray-100">
+<img alt="Industrial distribution transformer" class="w-full h-full object-cover mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity" data-alt="A high-quality, evenly lit studio photograph of a large, industrial-grade oil-immersed distribution transformer. The transformer is painted a deep, professional machine-gray with prominent cooling fins and sturdy porcelain bushings on top. The background is a clean, bright industrial white space, highlighting the robust engineering and structural complexity of the electrical equipment. The lighting emphasizes the metallic textures and sharp architectural lines of the device." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWubeHIkDWwmHrWmIN7iCqXhy-61gKmafWC9Yx-w3opqaPJjIBd0fnhZ3IOhl3sn-wziyF4vLs4NzSYKHA98Q_h0Tq6uxdC_8Vu2Q0yfENkx6KWmgQD9dnmuPrNs1kGPJMqT3-f-rV_el80phlJznknSByhWf2dzuOecz9jW8ITwwj7LJxP0tWp8Tq1d2MtALft-PnYtxoxXZBRyLUnj9oqWNm-Lau2mngP5Vd7600eGWFJQT340xSBdf9UQlTJeFyChng2WVSPX0"/>
+<div class="absolute top-space-2 right-space-2 bg-secondary text-white px-2 py-1 rounded font-label text-[10px] uppercase tracking-widest">Best Seller</div>
+</div>
+<div class="p-space-4 flex flex-col flex-grow">
+<h3 class="font-h3 text-h3 text-primary uppercase mb-space-2">Oil Immersed Distribution Transformer - Series T</h3>
+<div class="bg-gray-50 rounded p-space-3 mb-space-4 flex-grow border border-gray-100">
+<table class="w-full text-left">
+<tbody>
+<tr class="border-b border-gray-100 last:border-0">
+<th class="py-1 font-label text-label text-gray-500 uppercase font-normal">Capacity</th>
+<td class="py-1 font-mono-data text-mono-data text-right text-gray-700">100kVA - 500kVA</td>
+</tr>
+<tr class="border-b border-gray-100 last:border-0">
+<th class="py-1 font-label text-label text-gray-500 uppercase font-normal">Voltage</th>
+<td class="py-1 font-mono-data text-mono-data text-right text-gray-700">11kV / 433V</td>
+</tr>
+<tr class="border-b border-gray-100 last:border-0">
+<th class="py-1 font-label text-label text-gray-500 uppercase font-normal">Standard</th>
+<td class="py-1 font-mono-data text-mono-data text-right text-gray-700">IS 2026 / IEC 60076</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex flex-col gap-space-2 mt-auto"><label class="flex items-center gap-2 cursor-pointer mb-2">
+<input class="w-4 h-4 rounded-sm border-gray-300 text-primary focus:ring-primary focus:ring-offset-0 bg-gray-50 cursor-pointer" type="checkbox"/>
+<span class="font-label text-label uppercase text-gray-700">Compare Product</span>
+</label>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-label text-label uppercase py-space-2 rounded transition-colors text-center">
+                                    View Specifications
+                                </button>
+<button class="w-full border border-gray-300 hover:border-primary text-gray-700 hover:text-primary font-label text-label uppercase py-space-2 rounded transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+                                    Download Datasheet
+                                </button>
+</div>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="bg-white border border-gray-100 rounded-lg overflow-hidden group hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-shadow duration-300 flex flex-col">
+<div class="h-48 bg-gray-100 relative border-b border-gray-100">
+<img alt="High capacity distribution transformer" class="w-full h-full object-cover mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity" data-alt="A detailed, high-contrast photograph focusing on the corrugated cooling radiators of a large power distribution transformer. The image features a sleek, modern industrial aesthetic with deep blue steel surfaces and stark white highlights reflecting off the metallic edges. The composition is tight, emphasizing the repetitive geometry of the cooling fins and the heavy-duty construction meant for utility substations. Lighting is sharp and technical." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrb5zCjTDnmxlNgKHY_WqascdoTWlZs0gTWzCnrK4zPIQZhJLHSLe18d1o0G_P25lAGZebr3Ehjb-CpeZOcWqOsLqPx4KdLlPKQaCqN4evcXtyrrBfWquMsy2Q6Hlp32nDEKzTKI93XXbN0kUaenf2urK3tVGkhFUZ87YfZH9nOsGiy4o7oFR3FiSge3gc6bR_J_-4x5gWMp_AutRQMItTm-x8sJhmKveUhmh0Sbew2KnlMBQR1uEmG_rEfBMI0XpJccfbR5R50Js"/>
+</div>
+<div class="p-space-4 flex flex-col flex-grow">
+<h3 class="font-h3 text-h3 text-primary uppercase mb-space-2">High-Capacity Core Type Transformer - Series H</h3>
+<div class="bg-gray-50 rounded p-space-3 mb-space-4 flex-grow border border-gray-100">
+<table class="w-full text-left">
+<tbody>
+<tr class="border-b border-gray-100 last:border-0">
+<th class="py-1 font-label text-label text-gray-500 uppercase font-normal">Capacity</th>
+<td class="py-1 font-mono-data text-mono-data text-right text-gray-700">630kVA - 2500kVA</td>
+</tr>
+<tr class="border-b border-gray-100 last:border-0">
+<th class="py-1 font-label text-label text-gray-500 uppercase font-normal">Voltage</th>
+<td class="py-1 font-mono-data text-mono-data text-right text-gray-700">22kV / 433V</td>
+</tr>
+<tr class="border-b border-gray-100 last:border-0">
+<th class="py-1 font-label text-label text-gray-500 uppercase font-normal">Standard</th>
+<td class="py-1 font-mono-data text-mono-data text-right text-gray-700">IS 2026 / IEC 60076</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex flex-col gap-space-2 mt-auto"><label class="flex items-center gap-2 cursor-pointer mb-2">
+<input class="w-4 h-4 rounded-sm border-gray-300 text-primary focus:ring-primary focus:ring-offset-0 bg-gray-50 cursor-pointer" type="checkbox"/>
+<span class="font-label text-label uppercase text-gray-700">Compare Product</span>
+</label>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-label text-label uppercase py-space-2 rounded transition-colors text-center">
+                                    View Specifications
+                                </button>
+<button class="w-full border border-gray-300 hover:border-primary text-gray-700 hover:text-primary font-label text-label uppercase py-space-2 rounded transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+                                    Download Datasheet
+                                </button>
+</div>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="bg-white border-l-[3px] border-l-secondary border-y border-r border-gray-100 rounded-lg overflow-hidden group hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-shadow duration-300 flex flex-col relative">
+<!-- Flag for Accent Variant -->
+<div class="h-48 bg-gray-100 relative border-b border-gray-100">
+<img alt="Energy efficient transformer" class="w-full h-full object-cover mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity" data-alt="A well-lit, professional image of a compact distribution transformer designed for energy efficiency, sitting on a concrete testing floor. The equipment is painted in a standard industrial tone, with clearly visible high-voltage terminals and safety labeling. The background suggests a modern manufacturing or testing facility, with clean, bright, technical lighting that highlights the precision engineering and flawless finish of the unit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDovkJNqu0JLwAiPvVodbRiysktb0vzI9ms8D24m-DGmCulR1NuVbEVjRFfaTjXfGB9aV6fN-ogjNKXjKfVN2xnVfkO2PFUeAWXM1GjpNZ0MbeZ36lzQfHotnpYtkcebbHJRFkBKFg22ka4z66onlU03Sf02Ev2arv-qHEgGWkQgTBm8i-awroOEX8pnA_GIXQEN92hGdB-SEhDL3W8JYpuCvFAh-LwIR2ebzygc4ercnwZHbCwm4gajoHvQmEBwjMhGNySWxfpQac"/>
+<div class="absolute top-space-2 right-space-2 bg-primary-container text-white px-2 py-1 rounded font-label text-[10px] uppercase tracking-widest flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] filled">bolt</span> High Efficiency
+                            </div>
+</div>
+<div class="p-space-4 flex flex-col flex-grow">
+<h3 class="font-h3 text-h3 text-primary uppercase mb-space-2">Energy Efficient Star Rated Transformer</h3>
+<div class="bg-gray-50 rounded p-space-3 mb-space-4 flex-grow border border-gray-100">
+<table class="w-full text-left">
+<tbody>
+<tr class="border-b border-gray-100 last:border-0">
+<th class="py-1 font-label text-label text-gray-500 uppercase font-normal">Capacity</th>
+<td class="py-1 font-mono-data text-mono-data text-right text-gray-700">25kVA - 250kVA</td>
+</tr>
+<tr class="border-b border-gray-100 last:border-0">
+<th class="py-1 font-label text-label text-gray-500 uppercase font-normal">Efficiency</th>
+<td class="py-1 font-mono-data text-mono-data text-right text-gray-700">BEE 4 Star / 5 Star</td>
+</tr>
+<tr class="border-b border-gray-100 last:border-0">
+<th class="py-1 font-label text-label text-gray-500 uppercase font-normal">Standard</th>
+<td class="py-1 font-mono-data text-mono-data text-right text-gray-700">IS 1180 (Part 1)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex flex-col gap-space-2 mt-auto"><label class="flex items-center gap-2 cursor-pointer mb-2">
+<input class="w-4 h-4 rounded-sm border-gray-300 text-primary focus:ring-primary focus:ring-offset-0 bg-gray-50 cursor-pointer" type="checkbox"/>
+<span class="font-label text-label uppercase text-gray-700">Compare Product</span>
+</label>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-label text-label uppercase py-space-2 rounded transition-colors text-center">
+                                    View Specifications
+                                </button>
+<button class="w-full border border-gray-300 hover:border-primary text-gray-700 hover:text-primary font-label text-label uppercase py-space-2 rounded transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+                                    Download Datasheet
+                                </button>
+</div>
+</div>
+</article>
+</div>
+<!-- Featured Technical Note -->
+<section class="mt-space-8 bg-blue-light border border-primary-fixed-dim rounded-lg p-space-6 md:p-space-8 flex flex-col md:flex-row items-center gap-space-6">
+<div class="flex-shrink-0 bg-white p-4 rounded-full shadow-sm border border-primary-fixed-dim">
+<span class="material-symbols-outlined text-primary text-[48px] filled">energy_savings_leaf</span>
+</div>
+<div>
+<h3 class="font-h2 text-h2 text-primary uppercase mb-space-2">Understanding IS 1180 Star Ratings</h3>
+<p class="font-body-sm text-body-sm text-gray-700 max-w-3xl">
+                            Our distribution transformers comply with the latest IS 1180 (Part 1) specifications regarding energy efficiency levels. Upgrading to a Level 2 or Level 3 (equivalent to 4 or 5 Star) transformer significantly reduces core and copper losses, leading to substantial long-term operational cost savings.
+                        </p>
+</div>
+<div class="md:ml-auto flex-shrink-0 w-full md:w-auto mt-space-4 md:mt-0">
+<button class="w-full md:w-auto bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white font-label text-label uppercase px-space-6 py-space-3 rounded transition-colors">
+                            Read Efficiency Guide
+                        </button>
+</div>
+</section>
+<!-- Lead Gen CTA -->
+<section class="mt-space-8 bg-surface-container-low border border-gray-300 rounded-lg p-space-8 text-center">
+<h2 class="font-h1 text-h1 text-on-surface uppercase mb-space-4">Require a Custom Configuration?</h2>
+<p class="font-body-lg text-body-lg text-gray-700 max-w-2xl mx-auto mb-space-6">
+                        Our engineering team can design and manufacture distribution transformers tailored to specific voltage ratios, impedance requirements, or specialized dimensional constraints.
+                    </p>
+<button class="bg-secondary hover:bg-secondary/90 text-white font-label text-label uppercase px-space-8 py-space-4 rounded-lg shadow-sm transition-colors inline-flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">engineering</span>
+                        Request Custom Configuration
+                    </button>
+</section>
+</div>
+</div>
+</main>
+<!-- SideNavBar Shared Component -->
+<nav class="bg-surface-container-lowest text-primary fixed right-4 bottom-24 flex flex-col gap-4 z-50 border border-gray-300 shadow-md p-2 rounded-xl">
+<div class="text-center pb-2 border-b border-gray-300 mb-2">
+<div class="font-label text-[10px] text-gray-500 uppercase tracking-widest">ISO 9001:2015</div>
+<div class="font-label text-[8px] text-primary uppercase">Certified Excellence</div>
+</div>
+<div class="flex flex-col space-y-4">
+<button class="bg-primary text-on-primary p-4 rounded-xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform group relative" title="Request Quote">
+<span class="material-symbols-outlined">request_quote</span>
+<span class="absolute right-full mr-4 bg-inverse-surface text-inverse-on-surface font-label text-[10px] uppercase px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Request Quote</span>
+</button>
+<button class="bg-primary text-on-primary p-4 rounded-xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform group relative" title="WhatsApp">
+<span class="material-symbols-outlined">chat</span>
+<span class="absolute right-full mr-4 bg-inverse-surface text-inverse-on-surface font-label text-[10px] uppercase px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">WhatsApp</span>
+</button>
+</div>
+</nav>
+<!-- Footer Shared Component -->
+<div class="fixed bottom-0 left-0 right-0 bg-primary text-on-primary py-4 px-margin-desktop z-[60] shadow-[0_-4px_20px_rgba(0,0,0,0.15)] flex justify-between items-center" id="compare-bar">
+<div class="flex items-center gap-space-8">
+<div class="flex items-center gap-space-3">
+<span class="material-symbols-outlined">compare_arrows</span>
+<span class="font-h3 text-h3 uppercase">Compare (2) Products Selected</span>
+</div>
+<div class="hidden md:flex gap-4">
+<div class="w-12 h-12 bg-white/10 rounded border border-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+<div class="w-12 h-12 bg-white/10 rounded border border-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-4">
+<button class="text-on-primary hover:underline font-label text-label uppercase">Clear All</button>
+<button class="bg-secondary hover:bg-secondary/90 text-white font-label text-label uppercase px-space-8 py-space-3 rounded-lg shadow-sm transition-colors">
+            Compare Now
+        </button>
+</div>
+</div><footer class="bg-surface-container-high text-on-surface full-width bottom-0 border-t border-gray-300 mt-space-16">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-8 px-margin-desktop py-space-12 w-full max-w-[1280px] mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-h3 text-h3 text-primary uppercase mb-space-4">
+                    Tejaswini Industries
+                </div>
+<p class="font-body-sm text-body-sm text-gray-700 mb-space-4">
+                    © 2024 Tejaswini Industries. ISO 9001:2015 Certified. Precision Engineering Redefined.
+                </p>
+</div>
+<div class="col-span-1 md:col-span-3 grid grid-cols-2 md:grid-cols-4 gap-space-8">
+<div class="flex flex-col gap-space-2">
+<a class="font-label text-label text-gray-700 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 uppercase" href="#">Product Categories</a>
+</div>
+<div class="flex flex-col gap-space-2">
+<a class="font-label text-label text-gray-700 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 uppercase" href="#">Quality Policy</a>
+</div>
+<div class="flex flex-col gap-space-2">
+<a class="font-label text-label text-gray-700 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 uppercase" href="#">Infrastructure</a>
+<a class="font-label text-label text-gray-700 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 uppercase" href="#">Career</a>
+</div>
+<div class="flex flex-col gap-space-2">
+<a class="font-label text-label text-gray-700 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 uppercase" href="#">Privacy Policy</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

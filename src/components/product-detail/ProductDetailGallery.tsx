@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { productDetail250Kva } from '../../data/productDetail250Kva'
+import { useProductDetail } from '../../context/ProductDetailContext'
 import { Icon } from '../Icon'
 
 type GalleryImage = {
@@ -8,13 +8,13 @@ type GalleryImage = {
   alt: string
 }
 
-const galleryImages: GalleryImage[] = [
-  { id: 'main', ...productDetail250Kva.images.main },
-  { id: 'front', ...productDetail250Kva.images.front },
-  { id: 'detail', ...productDetail250Kva.images.detail },
-]
-
 export function ProductDetailGallery() {
+  const productDetail250Kva = useProductDetail()
+  const galleryImages: GalleryImage[] = [
+    { id: 'main', ...productDetail250Kva.images.main },
+    { id: 'front', ...productDetail250Kva.images.front },
+    { id: 'detail', ...productDetail250Kva.images.detail },
+  ]
   const [activeId, setActiveId] = useState('main')
   const activeImage =
     galleryImages.find((img) => img.id === activeId) ?? galleryImages[0]

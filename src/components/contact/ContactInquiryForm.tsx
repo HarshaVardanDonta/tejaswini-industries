@@ -1,12 +1,12 @@
 import { useState, type FormEvent } from 'react'
-import { contactPage, inquiryTypes } from '../../data/contact'
+import { useContactPageData } from '../../context/PageDataContext'
 import { Icon } from '../Icon'
 
 const inputClassName =
   'w-full border border-gray-300 rounded bg-white px-space-3 py-space-2 font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors'
 
 export function ContactInquiryForm() {
-  const { form } = contactPage
+  const { form, inquiryTypes } = useContactPageData()
   const [submitted, setSubmitted] = useState(false)
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {

@@ -1,7 +1,8 @@
-import { trendingArticles } from '../../data/blogs'
+import { useTrendingArticles } from '../../context/BlogsPageContext'
 import { Icon } from '../Icon'
 
 export function BlogsSidebar() {
+  const trendingArticles = useTrendingArticles()
   return (
     <aside className="lg:col-span-4 space-y-space-8">
       <div className="bg-primary text-on-primary p-space-6 border-t-4 border-secondary">

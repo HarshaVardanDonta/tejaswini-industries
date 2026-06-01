@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { distributionCategory } from '../../data/distributionTransformers'
+import { useDistributionPageData } from '../../context/DistributionPageContext'
 import { Icon } from '../Icon'
 
 type ProductDetailBreadcrumbProps = {
@@ -9,6 +9,7 @@ type ProductDetailBreadcrumbProps = {
 export function ProductDetailBreadcrumb({
   currentLabel,
 }: ProductDetailBreadcrumbProps) {
+  const { category: distributionCategory } = useDistributionPageData()
   return (
     <nav
       aria-label="Breadcrumb"

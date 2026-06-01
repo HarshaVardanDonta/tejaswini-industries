@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services - Tejaswini Industries</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=IBM+Plex+Mono:wght@400&amp;family=Source+Sans+3:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "steel": "#4A5568",
+                      "on-primary-fixed": "#00164e",
+                      "on-primary-container": "#91a9ff",
+                      "on-primary-fixed-variant": "#224095",
+                      "surface-tint": "#3d59af",
+                      "background": "#fcf9f8",
+                      "surface-container-high": "#ebe7e7",
+                      "error-container": "#ffdad6",
+                      "red-light": "#FCEAEC",
+                      "tertiary-container": "#364153",
+                      "primary-container": "#1a3a8f",
+                      "surface": "#fcf9f8",
+                      "gray-50": "#F7F7F5",
+                      "on-secondary-container": "#fffbff",
+                      "tertiary": "#202b3c",
+                      "on-error": "#ffffff",
+                      "outline-variant": "#c4c5d3",
+                      "gray-100": "#EFEFEC",
+                      "secondary-fixed-dim": "#ffb3b1",
+                      "on-surface-variant": "#444652",
+                      "outline": "#757683",
+                      "primary-fixed": "#dce1ff",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#dcd9d9",
+                      "gray-700": "#3D3D39",
+                      "on-tertiary-container": "#a2adc3",
+                      "on-surface": "#1c1b1b",
+                      "gray-300": "#C4C4BC",
+                      "surface-container": "#f0edec",
+                      "surface-bright": "#fcf9f8",
+                      "tertiary-fixed": "#d8e3fa",
+                      "tertiary-fixed-dim": "#bcc7dd",
+                      "blue-light": "#E8EDF8",
+                      "gray-500": "#7A7A74",
+                      "on-tertiary-fixed": "#111c2c",
+                      "inverse-on-surface": "#f3f0ef",
+                      "secondary-fixed": "#ffdad8",
+                      "on-secondary-fixed-variant": "#92001c",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#e5e2e1",
+                      "primary-fixed-dim": "#b5c4ff",
+                      "inverse-primary": "#b5c4ff",
+                      "surface-container-highest": "#e5e2e1",
+                      "secondary": "#bb0027",
+                      "error": "#ba1a1a",
+                      "on-background": "#1c1b1b",
+                      "on-secondary-fixed": "#410007",
+                      "secondary-container": "#e0283c",
+                      "on-primary": "#ffffff",
+                      "surface-container-low": "#f6f3f2",
+                      "on-tertiary-fixed-variant": "#3c475a",
+                      "primary": "#00236f",
+                      "inverse-surface": "#313030"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "space-3": "12px",
+                      "space-16": "64px",
+                      "margin-tablet": "24px",
+                      "space-1": "4px",
+                      "space-4": "16px",
+                      "margin-desktop": "48px",
+                      "gutter": "24px",
+                      "margin-mobile": "16px",
+                      "space-6": "24px",
+                      "space-2": "8px",
+                      "space-12": "48px",
+                      "base": "4px",
+                      "space-8": "32px"
+              },
+              "fontFamily": {
+                      "h3": ["Barlow Condensed", "sans-serif"],
+                      "body-sm": ["Source Sans 3", "sans-serif"],
+                      "label": ["Barlow Condensed", "sans-serif"],
+                      "display-xl": ["Barlow Condensed", "sans-serif"],
+                      "display-lg": ["Barlow Condensed", "sans-serif"],
+                      "body-lg": ["Source Sans 3", "sans-serif"],
+                      "mono-data": ["IBM Plex Mono", "monospace"],
+                      "h1": ["Barlow Condensed", "sans-serif"],
+                      "h2": ["Barlow Condensed", "sans-serif"],
+                      "display-xl-mobile": ["Barlow Condensed", "sans-serif"]
+              },
+              "fontSize": {
+                      "h3": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                      "body-sm": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                      "label": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                      "display-xl": ["48px", { "lineHeight": "1.1", "fontWeight": "700" }],
+                      "display-lg": ["36px", { "lineHeight": "1.15", "fontWeight": "700" }],
+                      "body-lg": ["16px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                      "mono-data": ["13px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                      "h1": ["28px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                      "h2": ["22px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                      "display-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "700" }]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .symbol-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for industrial feel */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #fcf9f8; }
+        ::-webkit-scrollbar-thumb { background: #00236f; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #1a3a8f; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-lg text-body-lg antialiased selection:bg-primary selection:text-white">
+<!-- TopAppBar Shared Component -->
+<header class="bg-primary text-on-primary docked full-width top-0 sticky border-b-4 border-secondary flat no-shadows z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto h-20">
+<div class="flex items-center gap-4">
+<span class="text-h2 font-h2 font-bold text-on-primary uppercase tracking-wider">Tejaswini Industries</span>
+</div>
+<nav class="hidden md:flex gap-space-6 items-center">
+<a class="text-on-primary/80 hover:text-on-primary transition-colors font-label text-label uppercase hover:bg-primary-container/20 transition-all px-2 py-1 rounded" href="#">Products</a>
+<a class="text-on-primary border-b-3 border-secondary pb-1 font-label text-label uppercase transition-all duration-200" href="#">Services</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors font-label text-label uppercase hover:bg-primary-container/20 transition-all px-2 py-1 rounded" href="#">Projects</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors font-label text-label uppercase hover:bg-primary-container/20 transition-all px-2 py-1 rounded" href="#">Blogs</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors font-label text-label uppercase hover:bg-primary-container/20 transition-all px-2 py-1 rounded" href="#">About</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors font-label text-label uppercase hover:bg-primary-container/20 transition-all px-2 py-1 rounded" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-space-4">
+<div class="hidden md:flex gap-space-2">
+<button aria-label="call" class="p-2 text-on-primary hover:bg-primary-container/20 rounded transition-all">
+<span class="material-symbols-outlined">call</span>
+</button>
+<button aria-label="mail" class="p-2 text-on-primary hover:bg-primary-container/20 rounded transition-all">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+<button class="bg-secondary text-white px-4 py-2 rounded font-label text-label uppercase hover:bg-secondary-container transition-colors hidden md:block">
+                    Request Quote
+                </button>
+<button class="md:hidden p-2 text-on-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="w-full">
+<!-- Hero Section -->
+<section class="relative w-full h-[614px] min-h-[500px] flex items-center bg-gray-900 border-b border-gray-300">
+<div class="absolute inset-0 z-0">
+<img alt="Industrial machinery and power station interior" class="w-full h-full object-cover opacity-40 mix-blend-overlay" data-alt="A sweeping, high-contrast photograph of a massive industrial power station interior, filled with heavy machinery, thick steel pipes, and complex engineering grids. The scene is illuminated by harsh, directional white utility lights, casting deep, structural shadows that emphasize the brutalist modern-industrial aesthetic. Subtle hints of deep brand blue and vibrant red accents are painted onto critical safety valves and control panels. The mood is powerful, technical, and reliable, conveying absolute precision and authority in heavy engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApmUDCLl5uZ3zOqS7F-XHSATFGdxYGmYpY8HIMfcghbLFgdWzyvjPB3IM06ge1Ytx20F5pSgDgcjAP2ECVYvaGjvCePko3A6lUlmuDzns0WIk00cT3abHX2RSzqYwgzka1Gu5wG7gOHXzzzuDjVSmaMMmyLcpSadD48uX2YqU5GnNeiTccrxs139Zzu7YVJiE6hG3UUuErq0jMHLQSMkuWBqTRXzgOKhjuyiMOaNSaXJzI_7kKr9I2o6Zln8jB7r1qnV4R09UBn1s"/>
+</div>
+<div class="relative z-10 w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="max-w-3xl bg-surface/95 p-8 border-l-4 border-secondary shadow-lg">
+<span class="font-label text-label text-secondary uppercase tracking-widest block mb-4">Core Expertise</span>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-primary mb-6 uppercase">Industrial Engineering Services &amp; Turnkey Solutions</h1>
+<p class="font-body-lg text-body-lg text-gray-700 mb-8 max-w-2xl">
+                        Delivering precision-engineered solutions for high-voltage infrastructure, complex installations, and critical maintenance operations. ISO 9001:2015 certified excellence.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-white font-label text-label uppercase px-8 py-3 rounded hover:bg-primary-container transition-colors flex items-center gap-2 border border-primary">
+                            Explore Services
+                            <span class="material-symbols-outlined text-sm">arrow_downward</span>
+</button>
+<button class="bg-transparent text-primary font-label text-label uppercase px-8 py-3 rounded hover:bg-gray-100 transition-colors flex items-center gap-2 border border-primary">
+                            Download Brochure
+                            <span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="py-space-16 px-margin-mobile md:px-margin-desktop w-full max-w-[1280px] mx-auto bg-surface">
+<div class="mb-space-12 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-gray-300 pb-6">
+<div>
+<h2 class="font-display-lg text-display-lg text-primary uppercase">Core Services</h2>
+<p class="font-body-lg text-body-lg text-gray-700 mt-2 max-w-xl">Comprehensive engineering solutions designed for maximum efficiency and compliance.</p>
+</div>
+<div class="flex items-center gap-2 font-label text-label text-secondary">
+<span class="material-symbols-outlined symbol-filled">verified</span>
+<span>ISO 9001:2015 CERTIFIED PROCESSES</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Service 1 -->
+<div class="bg-white border border-gray-100 rounded-lg p-6 hover:shadow-md transition-shadow group relative overflow-hidden flex flex-col h-full">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary group-hover:bg-secondary transition-colors"></div>
+<div class="w-12 h-12 bg-blue-light rounded flex items-center justify-center mb-6 text-primary border border-gray-100">
+<span class="material-symbols-outlined text-[24px]">electric_bolt</span>
+</div>
+<h3 class="font-h2 text-h2 text-primary uppercase mb-4">Turnkey Electrical Projects</h3>
+<p class="font-body-sm text-body-sm text-gray-700 mb-6 flex-grow">
+                        End-to-end execution of complex electrical infrastructure, from conceptual design to final commissioning. We handle HT/LT installations, control panels, and complete grid integration.
+                    </p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-steel">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">check_circle</span>
+                            Substation Design &amp; Erection
+                        </li>
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-steel">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">check_circle</span>
+                            Industrial Plant Wiring
+                        </li>
+</ul>
+<a class="font-label text-label text-primary uppercase hover:text-secondary flex items-center gap-1 transition-colors mt-auto" href="#">
+                        View Details <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Service 2 -->
+<div class="bg-white border border-gray-100 rounded-lg p-6 hover:shadow-md transition-shadow group relative overflow-hidden flex flex-col h-full">
+<div class="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
+<div class="w-12 h-12 bg-red-light rounded flex items-center justify-center mb-6 text-secondary border border-gray-100">
+<span class="material-symbols-outlined text-[24px]">assignment_turned_in</span>
+</div>
+<h3 class="font-h2 text-h2 text-primary uppercase mb-4">TGSPDCL / TSSPDCL Liaisoning</h3>
+<p class="font-body-sm text-body-sm text-gray-700 mb-6 flex-grow">
+                        Expert navigation of regulatory requirements and statutory approvals. We streamline the process for new connections, load enhancements, and compliance certifications.
+                    </p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-steel">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">check_circle</span>
+                            CEIG Approvals
+                        </li>
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-steel">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">check_circle</span>
+                            Statutory Clearances
+                        </li>
+</ul>
+<a class="font-label text-label text-primary uppercase hover:text-secondary flex items-center gap-1 transition-colors mt-auto" href="#">
+                        View Details <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Service 3 -->
+<div class="bg-white border border-gray-100 rounded-lg p-6 hover:shadow-md transition-shadow group relative overflow-hidden flex flex-col h-full">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary group-hover:bg-secondary transition-colors"></div>
+<div class="w-12 h-12 bg-blue-light rounded flex items-center justify-center mb-6 text-primary border border-gray-100">
+<span class="material-symbols-outlined text-[24px]">build_circle</span>
+</div>
+<h3 class="font-h2 text-h2 text-primary uppercase mb-4">Maintenance &amp; Retrofitting</h3>
+<p class="font-body-sm text-body-sm text-gray-700 mb-6 flex-grow">
+                        Preventative maintenance and system upgrades to ensure minimal downtime and maximum operational efficiency for existing industrial infrastructure.
+                    </p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-steel">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">check_circle</span>
+                            AMC Services
+                        </li>
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-steel">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">check_circle</span>
+                            Panel Retrofitting
+                        </li>
+</ul>
+<a class="font-label text-label text-primary uppercase hover:text-secondary flex items-center gap-1 transition-colors mt-auto" href="#">
+                        View Details <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Process & Workflow -->
+<section class="py-space-16 px-margin-mobile md:px-margin-desktop w-full max-w-[1280px] mx-auto bg-gray-50 border-y border-gray-300">
+<div class="text-center mb-space-12">
+<h2 class="font-display-lg text-display-lg text-primary uppercase">Process &amp; Workflow</h2>
+<p class="font-body-lg text-body-lg text-gray-700 mt-2">A structured, methodological approach to industrial project execution.</p>
+</div>
+<div class="relative">
+<!-- Connecting Line (Desktop) -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-px bg-gray-300 -translate-y-1/2 z-0"></div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-6 relative z-10">
+<!-- Step 1 -->
+<div class="bg-white border border-gray-100 rounded-lg p-6 text-center shadow-sm relative">
+<div class="w-8 h-8 rounded-full bg-primary text-white font-mono-data text-mono-data flex items-center justify-center mx-auto mb-4 absolute -top-4 left-1/2 -translate-x-1/2 border-4 border-gray-50">01</div>
+<span class="material-symbols-outlined text-primary text-[32px] mb-2 mt-2">forum</span>
+<h4 class="font-h3 text-h3 text-primary uppercase mb-2">Consultation</h4>
+<p class="font-body-sm text-body-sm text-gray-600">Site assessment &amp; requirement analysis.</p>
+</div>
+<!-- Step 2 -->
+<div class="bg-white border border-gray-100 rounded-lg p-6 text-center shadow-sm relative">
+<div class="w-8 h-8 rounded-full bg-primary text-white font-mono-data text-mono-data flex items-center justify-center mx-auto mb-4 absolute -top-4 left-1/2 -translate-x-1/2 border-4 border-gray-50">02</div>
+<span class="material-symbols-outlined text-primary text-[32px] mb-2 mt-2">design_services</span>
+<h4 class="font-h3 text-h3 text-primary uppercase mb-2">Design</h4>
+<p class="font-body-sm text-body-sm text-gray-600">Engineering schematics &amp; approval planning.</p>
+</div>
+<!-- Step 3 -->
+<div class="bg-white border border-gray-100 rounded-lg p-6 text-center shadow-sm relative border-b-4 border-b-secondary">
+<div class="w-8 h-8 rounded-full bg-secondary text-white font-mono-data text-mono-data flex items-center justify-center mx-auto mb-4 absolute -top-4 left-1/2 -translate-x-1/2 border-4 border-gray-50">03</div>
+<span class="material-symbols-outlined text-secondary text-[32px] mb-2 mt-2">precision_manufacturing</span>
+<h4 class="font-h3 text-h3 text-primary uppercase mb-2">Installation</h4>
+<p class="font-body-sm text-body-sm text-gray-600">Precision execution by certified engineers.</p>
+</div>
+<!-- Step 4 -->
+<div class="bg-white border border-gray-100 rounded-lg p-6 text-center shadow-sm relative">
+<div class="w-8 h-8 rounded-full bg-primary text-white font-mono-data text-mono-data flex items-center justify-center mx-auto mb-4 absolute -top-4 left-1/2 -translate-x-1/2 border-4 border-gray-50">04</div>
+<span class="material-symbols-outlined text-primary text-[32px] mb-2 mt-2">fact_check</span>
+<h4 class="font-h3 text-h3 text-primary uppercase mb-2">Testing</h4>
+<p class="font-body-sm text-body-sm text-gray-600">Rigorous safety &amp; performance validation.</p>
+</div>
+<!-- Step 5 -->
+<div class="bg-white border border-gray-100 rounded-lg p-6 text-center shadow-sm relative">
+<div class="w-8 h-8 rounded-full bg-primary text-white font-mono-data text-mono-data flex items-center justify-center mx-auto mb-4 absolute -top-4 left-1/2 -translate-x-1/2 border-4 border-gray-50">05</div>
+<span class="material-symbols-outlined text-primary text-[32px] mb-2 mt-2">task_alt</span>
+<h4 class="font-h3 text-h3 text-primary uppercase mb-2">Handover</h4>
+<p class="font-body-sm text-body-sm text-gray-600">Final documentation &amp; operational training.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Capabilities Grid (Bento Style) -->
+<section class="py-space-16 px-margin-mobile md:px-margin-desktop w-full max-w-[1280px] mx-auto bg-surface">
+<div class="mb-space-8">
+<h2 class="font-display-lg text-display-lg text-primary uppercase">Technical Capabilities</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4">
+<!-- Capability 1 (Large) -->
+<div class="md:col-span-2 md:row-span-2 bg-white border border-gray-300 rounded-lg p-8 flex flex-col justify-end relative overflow-hidden group">
+<img alt="EHV Substation equipment" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:grayscale-0 group-hover:opacity-40 transition-all duration-500" data-alt="A detailed, close-up photograph of high-voltage electrical substation insulators and transmission lines against a clear sky. The metallic structures are sharp and complex, rendered in a crisp, high-contrast modern-industrial style. Light mode lighting emphasizes the stark white ceramics and galvanized steel, with deep brand blue framing the composition. The mood is highly technical and precise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiWVeyEZu8uzXWXtdDVBmEQcOZbCysRvRydrhLvDR816iyP43hJtmjY6lh0-A8uFwNwvNlQZ9uYJkykX8SpbUszuSnCjAyw6Mi9gkmZ4WZ3H7P9BPb0dFBsTe914VlZq5DC1lxpjdD2ad-Egne5eZngeobd0zZfJbeRdYAxt_oi8sey6wMcPwaIhXS-lY4DWJML3XO2adcb5FxqjieDp23CCAJ0-oht1CNykHXjbv3ZhACtok1ZE4JF8JWo0_TxlDSNZ2Q5DyAoyU"/>
+<div class="relative z-10 bg-white/90 p-6 border-l-4 border-primary">
+<h3 class="font-h2 text-h2 text-primary uppercase mb-2">EHV Substations (Up to 132kV)</h3>
+<p class="font-body-sm text-body-sm text-gray-700">Complete civil, structural, and electrical engineering for Extra High Voltage substations, including testing and commissioning.</p>
+</div>
+</div>
+<!-- Capability 2 -->
+<div class="md:col-span-2 bg-gray-50 border border-gray-200 rounded-lg p-6 flex items-center gap-6">
+<div class="w-16 h-16 bg-white border border-gray-200 rounded flex-shrink-0 flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[32px]">cable</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-primary uppercase mb-1">Internal Electrification</h3>
+<p class="font-body-sm text-body-sm text-gray-600">Industrial power distribution, lighting grids, and sophisticated cable management systems.</p>
+</div>
+</div>
+<!-- Capability 3 -->
+<div class="bg-primary text-white rounded-lg p-6 flex flex-col justify-between">
+<span class="material-symbols-outlined text-[32px] mb-4">architecture</span>
+<h3 class="font-h3 text-h3 uppercase mb-2">Structural Fabrications</h3>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim">Custom steel structures for equipment mounting and support.</p>
+</div>
+<!-- Capability 4 -->
+<div class="bg-white border border-gray-200 rounded-lg p-6 flex flex-col justify-between shadow-sm">
+<span class="material-symbols-outlined text-[32px] text-secondary mb-4">analytics</span>
+<h3 class="font-h3 text-h3 text-primary uppercase mb-2">Energy Auditing</h3>
+<p class="font-body-sm text-body-sm text-gray-600">System analysis and optimization for power quality and efficiency.</p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-primary text-on-primary py-space-16 mt-space-12 border-t-4 border-secondary">
+<div class="w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<h2 class="font-display-lg text-display-lg uppercase mb-4">Request a Technical Consultation</h2>
+<p class="font-body-lg text-body-lg text-primary-fixed mb-8 max-w-2xl mx-auto">Engage our engineering team to discuss your project requirements, scope, and technical specifications.</p>
+<form class="max-w-md mx-auto flex flex-col gap-4 bg-white/5 p-6 rounded-lg border border-white/10">
+<div class="text-left">
+<label class="font-label text-label uppercase text-primary-fixed mb-1 block">Work Email</label>
+<input class="w-full bg-white text-gray-900 border-gray-300 rounded px-4 py-2 font-body-sm focus:border-secondary focus:ring-1 focus:ring-secondary outline-none" placeholder="engineer@company.com" type="email"/>
+</div>
+<button class="w-full bg-secondary text-white font-label text-label uppercase py-3 rounded hover:bg-secondary-container transition-colors mt-2" type="button">
+                        Initiate Consultation
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- SideNavBar Shared Component -->
+<nav class="bg-surface-container-lowest dark:bg-surface-dim text-primary dark:text-primary-fixed fixed right-4 bottom-24 flex flex-col gap-4 z-50 border border-gray-300 dark:border-outline shadow-md p-2 rounded-xl">
+<div class="text-center border-b border-gray-200 pb-2 mb-2 hidden md:block">
+<div class="font-label text-label text-primary uppercase">ISO 9001:2015</div>
+<div class="font-label text-label text-gray-500 text-[10px]">Certified Excellence</div>
+</div>
+<div class="flex flex-col space-y-4">
+<button aria-label="Request Quote" class="bg-primary text-on-primary p-4 rounded-xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform group relative">
+<span class="material-symbols-outlined">request_quote</span>
+<span class="absolute right-full mr-4 bg-gray-800 text-white font-label text-label px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Request Quote</span>
+</button>
+<button aria-label="WhatsApp" class="bg-primary text-on-primary p-4 rounded-xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform group relative">
+<span class="material-symbols-outlined">chat</span>
+<span class="absolute right-full mr-4 bg-gray-800 text-white font-label text-label px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">WhatsApp</span>
+</button>
+</div>
+</nav>
+<!-- Footer Shared Component -->
+<footer class="bg-surface-container-high dark:bg-tertiary-container text-on-surface dark:text-on-tertiary-container full-width bottom-0 border-t border-gray-300 dark:border-outline-variant flat no-shadows">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-8 px-margin-mobile md:px-margin-desktop py-space-12 w-full max-w-[1280px] mx-auto transition-all duration-300 ease-in-out">
+<div class="md:col-span-1">
+<div class="font-h3 text-h3 text-primary dark:text-primary-fixed-dim uppercase mb-4">Tejaswini Industries</div>
+<p class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300 mb-4 max-w-xs">Precision Engineering Redefined.</p>
+<div class="font-label text-label text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">workspace_premium</span>
+                    ISO 9001:2015 Certified
+                </div>
+</div>
+<div class="md:col-span-2 grid grid-cols-2 gap-4">
+<div>
+<h4 class="font-label text-label text-primary uppercase mb-4 border-b border-gray-300 pb-2 inline-block">Quick Links</h4>
+<ul class="space-y-2 flex flex-col">
+<a class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 w-fit" href="#">Product Categories</a>
+<a class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 w-fit" href="#">Quality Policy</a>
+<a class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 w-fit" href="#">Infrastructure</a>
+<a class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 w-fit" href="#">Career</a>
+<a class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 w-fit" href="#">Privacy Policy</a>
+</ul>
+</div>
+</div>
+<div class="md:col-span-1 border-t md:border-t-0 pt-6 md:pt-0 border-gray-300 flex flex-col justify-end">
+<p class="font-body-sm text-body-sm text-gray-500">© 2024 Tejaswini Industries. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>

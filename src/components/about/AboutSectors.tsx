@@ -1,8 +1,8 @@
-import { aboutPage } from '../../data/about'
+import { useAboutPageData } from '../../context/PageDataContext'
 import { Icon } from '../Icon'
 
 export function AboutSectors() {
-  const { sectors } = aboutPage
+  const { sectors } = useAboutPageData()
 
   return (
     <section className="bg-primary py-space-16 text-on-primary">

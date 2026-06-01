@@ -1,9 +1,8 @@
-import { transformerMaintenanceGuide } from '../../data/blogDetailTransformerMaintenance'
+import { useBlogDetail } from '../../context/BlogDetailContext'
 import { Icon } from '../Icon'
 
 export function BlogDetailHero() {
-  const { title, author, date, readTime, heroImage, heroImageAlt } =
-    transformerMaintenanceGuide
+  const { title, author, date, readTime, heroImage, heroImageAlt } = useBlogDetail()
 
   return (
     <header className="flex flex-col gap-space-6">

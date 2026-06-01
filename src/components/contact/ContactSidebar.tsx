@@ -1,8 +1,8 @@
-import { contactPage } from '../../data/contact'
+import { useContactPageData } from '../../context/PageDataContext'
 import { Icon } from '../Icon'
 
 export function ContactSidebar() {
-  const { infoCards, whatsapp, map } = contactPage
+  const { infoCards, whatsapp, map } = useContactPageData()
 
   return (
     <div className="lg:col-span-5 flex flex-col gap-space-8">

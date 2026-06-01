@@ -1,7 +1,8 @@
-import { productDetail250Kva } from '../../data/productDetail250Kva'
+import { useProductDetail } from '../../context/ProductDetailContext'
 import { Icon } from '../Icon'
 
 export function TechnicalParametersTable() {
+  const { technicalParameters } = useProductDetail()
   return (
     <section className="col-span-4 md:col-span-12 mb-space-16">
       <h2 className="font-h2 text-h2 text-primary uppercase mb-space-6 border-b-2 border-gray-100 pb-space-2 flex items-center gap-space-2">
@@ -21,7 +22,7 @@ export function TechnicalParametersTable() {
             </tr>
           </thead>
           <tbody className="font-body-sm text-body-sm text-gray-700">
-            {productDetail250Kva.technicalParameters.map((row, index) => (
+            {technicalParameters.map((row, index) => (
               <tr
                 key={row.parameter}
                 className={`border-b border-gray-100 last:border-0 ${

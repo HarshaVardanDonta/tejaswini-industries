@@ -1,8 +1,8 @@
-import { aboutPage } from '../../data/about'
+import { useAboutPageData } from '../../context/PageDataContext'
 import { Icon } from '../Icon'
 
 export function AboutCta() {
-  const { cta } = aboutPage
+  const { cta } = useAboutPageData()
 
   return (
     <section className="px-margin-mobile md:px-margin-desktop py-space-16 text-center border-b border-gray-100 bg-surface-bright">

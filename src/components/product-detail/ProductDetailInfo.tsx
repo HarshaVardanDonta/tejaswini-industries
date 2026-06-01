@@ -1,8 +1,8 @@
-import { productDetail250Kva } from '../../data/productDetail250Kva'
+import { useProductDetail } from '../../context/ProductDetailContext'
 import { Icon } from '../Icon'
 
 export function ProductDetailInfo() {
-  const { sku, title, description, quickSpecs } = productDetail250Kva
+  const { sku, title, description, quickSpecs } = useProductDetail()
 
   return (
     <div className="md:col-span-5 flex flex-col justify-start">

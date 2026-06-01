@@ -1,16 +1,27 @@
 import { Link } from 'react-router-dom'
-import { distributionCategory } from '../../data/distributionTransformers'
+import { useDistributionPageData } from '../../context/DistributionPageContext'
 import type { DistributionTransformerProduct } from '../../data/distributionTransformers'
 import { Icon } from '../Icon'
 
 type ProductListingCardProps = {
   product: DistributionTransformerProduct
+  compareSelected?: boolean
+  compareDisabled?: boolean
+  onCompareToggle?: (id: string) => void
 }
 
-export function ProductListingCard({ product }: ProductListingCardProps) {
-  const borderClass = product.accent
-    ? 'border-l-[3px] border-l-secondary border-y border-r border-gray-100'
-    : 'border border-gray-100'
+export function ProductListingCard({
+  product,
+  compareSelected = false,
+  compareDisabled = false,
+  onCompareToggle,
+}: ProductListingCardProps) {
+  const { category: distributionCategory } = useDistributionPageData()
+  const borderClass = compareSelected
+    ? 'border-2 border-primary'
+    : product.accent
+      ? 'border-l-[3px] border-l-secondary border-y border-r border-gray-100'
+      : 'border border-gray-100'
 
   return (
     <article
@@ -57,7 +68,27 @@ export function ProductListingCard({ product }: ProductListingCardProps) {
             </tbody>
           </table>
         </div>
-        <div className="mt-auto">
+        <div className="flex flex-col gap-space-2 mt-auto">
+          {onCompareToggle && (
+            <label
+              className={`flex items-center gap-2 mb-2 ${
+                compareDisabled && !compareSelected
+                  ? 'cursor-not-allowed opacity-50'
+                  : 'cursor-pointer'
+              }`}
+            >
+              <input
+                type="checkbox"
+                checked={compareSelected}
+                disabled={compareDisabled && !compareSelected}
+                onChange={() => onCompareToggle(product.id)}
+                className="w-4 h-4 rounded-sm border-gray-300 text-primary focus:ring-primary focus:ring-offset-0 bg-gray-50 cursor-pointer disabled:cursor-not-allowed"
+              />
+              <span className="font-label text-label uppercase text-gray-700">
+                Compare Product
+              </span>
+            </label>
+          )}
           {product.detailSlug ? (
             <Link
               to={`/products/${distributionCategory.slug}/${product.detailSlug}`}
@@ -73,6 +104,13 @@ export function ProductListingCard({ product }: ProductListingCardProps) {
               View Specifications
             </button>
           )}
+          <button
+            type="button"
+            className="w-full border border-gray-300 hover:border-primary text-gray-700 hover:text-primary font-label text-label uppercase py-space-2 rounded transition-colors flex items-center justify-center gap-2"
+          >
+            <Icon name="picture_as_pdf" size={16} className="icon-outline" />
+            Download Datasheet
+          </button>
         </div>
       </div>
     </article>

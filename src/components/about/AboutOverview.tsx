@@ -1,8 +1,8 @@
-import { aboutPage } from '../../data/about'
+import { useAboutPageData } from '../../context/PageDataContext'
 import { Icon } from '../Icon'
 
 export function AboutOverview() {
-  const { overview } = aboutPage
+  const { overview } = useAboutPageData()
 
   return (
     <section className="px-margin-mobile md:px-margin-desktop py-space-16 grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">

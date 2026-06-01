@@ -1,4 +1,39 @@
-# React + TypeScript + Vite
+# Tejaswini Industries
+
+Industrial marketing site (Vite + React) with **Sanity CMS** and a custom content admin at `/admin`.
+
+## Sanity CMS setup
+
+The `sanity/` folder is **already configured** (schemas, Studio structure, seed scripts). You do **not** need to run `npx sanity init` again — that command fails with “Given path is not empty” because the Studio lives in the existing `sanity/` directory.
+
+Your Sanity project was created successfully:
+
+- **Project:** tejaswini-industries  
+- **Project ID:** `y5p55fqj`  
+- **Dataset:** `production` (public, default)  
+- **Manage:** https://www.sanity.io/manage/project/y5p55fqj  
+
+### Finish setup
+
+1. Copy [`.env.example`](.env.example) to `.env` (or use the `.env` already in the repo with the project ID).
+2. Create an **Editor** API token at [API → Tokens](https://www.sanity.io/manage/project/y5p55fqj/api) and set `VITE_SANITY_WRITE_TOKEN` in `.env`.
+3. Under **API → CORS origins**, add `http://localhost:5173` (and your production URL when you deploy).
+4. Seed content: `npm run seed:sanity`
+5. Start the app: `npm run dev`
+   - Site: http://localhost:5173  
+   - Admin: http://localhost:5173/admin/login (after seed: `admin` / `changeme`)
+
+The admin UI is a first-party React app (sidebar navigation, sectioned forms, list views). It reads and writes Sanity via `VITE_SANITY_WRITE_TOKEN` in the browser—the same model as the former embedded Studio.
+
+Optional: run standalone Sanity Studio with `npm run sanity:dev` for schema development only (not linked from the public site).
+
+### Admin security note
+
+Admin login checks username/password stored in the Sanity `adminCredentials` document (editable under **Settings → Admin Credentials** in `/admin`). Change the default password after first login. Writes and image uploads require the Editor API token in `.env`. This is basic access control, not enterprise auth.
+
+---
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

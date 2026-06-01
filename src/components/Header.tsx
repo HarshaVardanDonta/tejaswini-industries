@@ -4,7 +4,7 @@ import { Icon } from './Icon'
 
 const navLinks = [
   { label: 'Products', to: '/products' },
-  { label: 'Services', to: '#' },
+  { label: 'Services', to: '/services' },
   { label: 'Projects', to: '/projects' },
   { label: 'Blogs', to: '/blogs' },
   { label: 'About', to: '/about' },
@@ -40,26 +40,16 @@ export function Header() {
         <div className="flex justify-between items-center w-full px-margin-desktop max-w-[1280px] mx-auto h-20">
           <LogoLink className="h-12" />
           <nav className="flex items-center gap-space-6 h-full">
-            {navLinks.map((link) =>
-              link.to.startsWith('/') && link.to !== '#' ? (
-                <NavLink
-                  key={link.label}
-                  to={link.to}
-                  className={navLinkClass}
-                  end={false}
-                >
-                  {link.label}
-                </NavLink>
-              ) : (
-                <a
-                  key={link.label}
-                  href={link.to}
-                  className="text-on-primary/80 hover:text-on-primary font-label text-label uppercase transition-colors hover:bg-primary-container/20 px-2 py-1 rounded"
-                >
-                  {link.label}
-                </a>
-              ),
-            )}
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.label}
+                to={link.to}
+                className={navLinkClass}
+                end={false}
+              >
+                {link.label}
+              </NavLink>
+            ))}
           </nav>
           <div className="flex items-center gap-space-4">
             <div className="hidden lg:flex gap-2">

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Comparison - Tejaswini Industries</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=IBM+Plex+Mono:wght@400&amp;family=Source+Sans+3:wght@400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#91a9ff",
+                        "surface-container-highest": "#e5e2e1",
+                        "primary": "#00236f",
+                        "on-tertiary-fixed-variant": "#3c475a",
+                        "surface-container-high": "#ebe7e7",
+                        "gray-300": "#C4C4BC",
+                        "inverse-on-surface": "#f3f0ef",
+                        "gray-100": "#EFEFEC",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#dce1ff",
+                        "on-tertiary-container": "#a2adc3",
+                        "on-secondary-fixed-variant": "#92001c",
+                        "surface-dim": "#dcd9d9",
+                        "blue-light": "#E8EDF8",
+                        "primary-fixed-dim": "#b5c4ff",
+                        "surface": "#fcf9f8",
+                        "on-primary-fixed-variant": "#224095",
+                        "outline-variant": "#c4c5d3",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container": "#f0edec",
+                        "on-secondary-container": "#fffbff",
+                        "on-surface-variant": "#444652",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb3b1",
+                        "inverse-surface": "#313030",
+                        "surface-bright": "#fcf9f8",
+                        "surface-container-low": "#f6f3f2",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#00164e",
+                        "gray-500": "#7A7A74",
+                        "steel": "#4A5568",
+                        "secondary-container": "#e0283c",
+                        "tertiary-fixed": "#d8e3fa",
+                        "inverse-primary": "#b5c4ff",
+                        "on-background": "#1c1b1b",
+                        "outline": "#757683",
+                        "on-surface": "#1c1b1b",
+                        "secondary": "#bb0027",
+                        "tertiary-fixed-dim": "#bcc7dd",
+                        "secondary-fixed": "#ffdad8",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "primary-container": "#1a3a8f",
+                        "tertiary-container": "#364153",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fcf9f8",
+                        "gray-700": "#3D3D39",
+                        "tertiary": "#202b3c",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#111c2c",
+                        "surface-tint": "#3d59af",
+                        "red-light": "#FCEAEC",
+                        "gray-50": "#F7F7F5",
+                        "on-secondary-fixed": "#410007"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "48px",
+                        "space-16": "64px",
+                        "base": "4px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "space-2": "8px",
+                        "space-1": "4px",
+                        "space-3": "12px",
+                        "margin-tablet": "24px",
+                        "space-8": "32px",
+                        "space-6": "24px",
+                        "space-12": "48px",
+                        "space-4": "16px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Source Sans 3"],
+                        "h1": ["Barlow Condensed"],
+                        "mono-data": ["IBM Plex Mono"],
+                        "display-xl": ["Barlow Condensed"],
+                        "display-lg": ["Barlow Condensed"],
+                        "body-lg": ["Source Sans 3"],
+                        "label": ["Barlow Condensed"],
+                        "h3": ["Barlow Condensed"],
+                        "h2": ["Barlow Condensed"],
+                        "display-xl-mobile": ["Barlow Condensed"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h1": ["28px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "mono-data": ["13px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-xl": ["48px", { "lineHeight": "1.1", "fontWeight": "700" }],
+                        "display-lg": ["36px", { "lineHeight": "1.15", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "label": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "h3": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "h2": ["22px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom scrollbar for comparison table */
+        .comparison-scroll::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+        .comparison-scroll::-webkit-scrollbar-track {
+            background: #F7F7F5; /* gray-50 */
+        }
+        .comparison-scroll::-webkit-scrollbar-thumb {
+            background: #C4C4BC; /* gray-300 */
+            border-radius: 4px;
+        }
+        .comparison-scroll::-webkit-scrollbar-thumb:hover {
+            background: #7A7A74; /* gray-500 */
+        }
+        
+        /* Sticky column shadow effect */
+        .sticky-col-shadow::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -10px;
+            bottom: 0;
+            width: 10px;
+            background: linear-gradient(to right, rgba(0,0,0,0.05), transparent);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-sm">
+<!-- TopAppBar Component -->
+<header class="bg-primary dark:bg-primary text-on-primary dark:text-on-primary docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-[1280px] mx-auto h-20 border-b-4 border-secondary">
+<div class="text-h2 font-h2 font-bold text-on-primary uppercase tracking-wider">
+                Tejaswini Industries
+            </div>
+<nav class="hidden md:flex items-center space-x-space-6">
+<a class="font-label text-label text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 px-3 py-2 rounded-DEFAULT" href="#">Products</a>
+<a class="font-label text-label text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 px-3 py-2 rounded-DEFAULT" href="#">Services</a>
+<a class="font-label text-label text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 px-3 py-2 rounded-DEFAULT" href="#">Projects</a>
+<a class="font-label text-label text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 px-3 py-2 rounded-DEFAULT" href="#">Blogs</a>
+<a class="font-label text-label text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 px-3 py-2 rounded-DEFAULT" href="#">About</a>
+<a class="font-label text-label text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 px-3 py-2 rounded-DEFAULT" href="#">Contact</a>
+</nav>
+<div class="flex items-center space-x-space-4">
+<div class="hidden md:flex space-x-space-2">
+<button aria-label="call" class="p-2 text-on-primary/80 hover:text-on-primary hover:bg-primary-container/20 rounded-DEFAULT transition-all">
+<span class="material-symbols-outlined">call</span>
+</button>
+<button aria-label="mail" class="p-2 text-on-primary/80 hover:text-on-primary hover:bg-primary-container/20 rounded-DEFAULT transition-all">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+<button class="bg-secondary text-on-secondary font-label text-label px-space-6 py-space-3 rounded-DEFAULT hover:bg-secondary/90 transition-colors uppercase tracking-wider">
+                    Request Quote
+                </button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-space-12 flex flex-col gap-space-8">
+<!-- Page Header & Action Bar -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-space-4 pb-space-6 border-b border-gray-300">
+<div>
+<h1 class="font-display-xl text-display-xl text-primary uppercase">Technical Comparison</h1>
+<p class="font-body-lg text-body-lg text-gray-700 mt-space-2 max-w-2xl">
+                    Detailed specification matrix for Distribution Transformers. Compare critical performance metrics to identify the optimal configuration for your operational requirements.
+                </p>
+</div>
+<button class="bg-primary text-on-primary font-label text-label px-space-6 py-space-3 rounded-DEFAULT hover:bg-primary/90 transition-colors flex items-center gap-space-2 uppercase tracking-wider whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                Download Comparison PDF
+            </button>
+</div>
+<!-- Comparison Matrix -->
+<div class="bg-surface border border-gray-100 rounded-lg overflow-hidden shadow-sm relative">
+<div class="overflow-x-auto comparison-scroll">
+<table class="w-full text-left border-collapse min-w-[800px]">
+<thead>
+<tr>
+<!-- Parameter Column (Sticky) -->
+<th class="bg-gray-50 border-b border-r border-gray-300 p-space-4 font-label text-label text-gray-700 uppercase sticky left-0 z-20 sticky-col-shadow w-1/4 min-w-[200px]">
+                                Parameter
+                            </th>
+<!-- Product 1 -->
+<th class="bg-white border-b border-r border-gray-100 p-space-6 align-top w-1/4 min-w-[200px]">
+<div class="flex flex-col gap-space-2">
+<div class="h-[120px] bg-gray-50 border border-gray-300 rounded-DEFAULT relative overflow-hidden flex items-center justify-center mb-space-2">
+<img alt="Transformer" class="object-cover w-full h-full opacity-80 mix-blend-multiply" data-alt="A detailed, high-contrast industrial photograph of a medium-sized electrical distribution transformer sitting on a concrete pad. The transformer is painted a utilitarian industrial grey, with prominent cooling fins and ceramic insulators clearly visible against a bright, modern factory setting. The lighting is harsh and technical, emphasizing the heavy machinery aspect and the precision engineering of the metallic casing. The overall mood is robust, reliable, and strictly professional, adhering to a high-end manufacturing aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKwvfh04IM2tL2kqrFy1bH2UeOGypNpZX81SCHcxQ02xfav90hH0OToPeSrBLR9SPL3-jdmU2kpRTRUXd_7OxK5Tt3uXRvkwc0UAACGxYCO076Dp1D3v1xUCreLh5jC9V218H41PW-nXF6F-x57ZchRtgwq7M1QcBjx-oqPoePkCpNQkwF0U9UzwlQzFyPX7ZVw4dj0racl9zmMIKS0_cfqQoI5D8POSxxyP1X6e9c4_1kTJDRoH3d8JUWGfpOaZsbNFwkDrCm3rs"/>
+<div class="absolute top-2 right-2 bg-white/90 px-2 py-1 border border-gray-300 rounded-sm font-mono-data text-mono-data text-gray-700">DT-250</div>
+</div>
+<h3 class="font-h3 text-h3 text-primary uppercase">250 kVA Distribution Transformer</h3>
+<a class="font-label text-label text-secondary hover:underline flex items-center gap-1 uppercase tracking-wider" href="#">
+                                        View Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</th>
+<!-- Product 2 -->
+<th class="bg-white border-b border-r border-gray-100 p-space-6 align-top w-1/4 min-w-[200px]">
+<div class="flex flex-col gap-space-2 relative">
+<!-- Highlight Badge -->
+<div class="absolute -top-6 -right-6 bg-primary text-on-primary font-label text-label px-3 py-1 uppercase tracking-wider rounded-bl-DEFAULT">Most Selected</div>
+<div class="h-[120px] bg-gray-50 border border-primary rounded-DEFAULT relative overflow-hidden flex items-center justify-center mb-space-2">
+<img alt="Transformer" class="object-cover w-full h-full opacity-80 mix-blend-multiply" data-alt="A striking industrial photograph focusing on a large 500 kVA distribution transformer inside a clean, modern manufacturing facility. The transformer features extensive cooling radiator banks and complex bushing arrangements on top. It is illuminated by crisp, cool white overhead factory lights that cast sharp, structural shadows, highlighting the brutalist engineering design. The color palette is dominated by stark silvers, industrial greys, and stark whites, conveying an atmosphere of technical authority and precision manufacturing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKwD3dGVnpFovhGhmfJ1D8MT_0FXMoiAhuVXVfa9fUv_pEmNIT3arkrNGK8wT4tAZq6atWITn5TbTHXWNoayG1tUoUL89XfuTOhDxiGeFZmPaM9exURNxJn2A_82aoqQ1Mg4e5W5ZPaaTUl0nsHlZabbhPWw7maivVJvmgWPUWLExOeUyyGyluTQQTM1Ormg7Bus_3MY09K92tz4O-ALGgCCgYoCszSDpU3AxBTbCQt4Davha0KSF4cSHU7WBvB_SZRVbAPT42XDw"/>
+<div class="absolute top-2 right-2 bg-primary/90 text-on-primary px-2 py-1 border border-primary-container rounded-sm font-mono-data text-mono-data">DT-500</div>
+</div>
+<h3 class="font-h3 text-h3 text-primary uppercase">500 kVA Distribution Transformer</h3>
+<a class="font-label text-label text-secondary hover:underline flex items-center gap-1 uppercase tracking-wider" href="#">
+                                        View Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</th>
+<!-- Product 3 -->
+<th class="bg-white border-b border-gray-100 p-space-6 align-top w-1/4 min-w-[200px]">
+<div class="flex flex-col gap-space-2">
+<div class="h-[120px] bg-gray-50 border border-gray-300 rounded-DEFAULT relative overflow-hidden flex items-center justify-center mb-space-2">
+<img alt="Transformer" class="object-cover w-full h-full opacity-80 mix-blend-multiply" data-alt="A commanding, wide-angle shot of a massive 1000 kVA industrial power transformer situated in a high-voltage testing yard. The metallic structure is imposing, displaying thick gauge steel construction, extensive ribbed cooling panels, and prominent high-voltage terminals. The environment is a structured, stark test facility with neutral concrete flooring and minimalist background elements, putting absolute visual emphasis on the equipment. The lighting is high-contrast and slightly desaturated, reinforcing a brutalist, highly technical, and unyielding industrial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5Dd_TPIf6d5VgMnYqo28L-aw2UNYgq72_2WCqkHin4HkHUyNOSjg-M774hbBD3p5rtQ25ZSds50cJYQ8K1mo72aVPOOoUpD8oPSm9F7DxZawwKAeNoG7wgSbfTdxWq8IdYyyArKF57-Vpswz-yu5D6NbM8j_0xtEhL0qHEe8Hiyf-VBVT4butc-l97bedBjjTvX35kRAyKrf131ddibkLSngPPqileHjZbHwVEVnTW9YLWiGy0dUXMti7AYSjJrF-lE15d9w4p5c"/>
+<div class="absolute top-2 right-2 bg-white/90 px-2 py-1 border border-gray-300 rounded-sm font-mono-data text-mono-data text-gray-700">DT-1000</div>
+</div>
+<h3 class="font-h3 text-h3 text-primary uppercase">1000 kVA Distribution Transformer</h3>
+<a class="font-label text-label text-secondary hover:underline flex items-center gap-1 uppercase tracking-wider" href="#">
+                                        View Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</th>
+</tr>
+</thead>
+<tbody class="bg-white">
+<!-- Rating -->
+<tr class="hover:bg-blue-light/30 transition-colors">
+<td class="bg-gray-50 border-b border-r border-gray-300 p-space-4 font-label text-label text-gray-700 uppercase sticky left-0 z-10 sticky-col-shadow">
+                                Power Rating (kVA)
+                            </td>
+<td class="border-b border-r border-gray-100 p-space-4 font-mono-data text-mono-data text-gray-700">250</td>
+<td class="bg-blue-light/10 border-b border-r border-gray-100 p-space-4 font-mono-data text-mono-data text-primary font-medium">500</td>
+<td class="border-b border-gray-100 p-space-4 font-mono-data text-mono-data text-gray-700">1000</td>
+</tr>
+<!-- Voltage -->
+<tr class="bg-gray-50/50 hover:bg-blue-light/30 transition-colors">
+<td class="bg-gray-50 border-b border-r border-gray-300 p-space-4 font-label text-label text-gray-700 uppercase sticky left-0 z-10 sticky-col-shadow">
+                                Voltage Ratio (kV)
+                            </td>
+<td class="border-b border-r border-gray-100 p-space-4 font-mono-data text-mono-data text-gray-700">11 / 0.433</td>
+<td class="bg-blue-light/10 border-b border-r border-gray-100 p-space-4 font-mono-data text-mono-data text-primary font-medium">11 / 0.433</td>
+<td class="border-b border-gray-100 p-space-4 font-mono-data text-mono-data text-gray-700">11 / 0.433</td>
+</tr>
+<!-- Cooling -->
+<tr class="hover:bg-blue-light/30 transition-colors">
+<td class="bg-gray-50 border-b border-r border-gray-300 p-space-4 font-label text-label text-gray-700 uppercase sticky left-0 z-10 sticky-col-shadow">
+                                Cooling Type
+                            </td>
+<td class="border-b border-r border-gray-100 p-space-4 font-body-sm text-body-sm text-gray-700">ONAN</td>
+<td class="bg-blue-light/10 border-b border-r border-gray-100 p-space-4 font-body-sm text-body-sm text-primary font-medium">ONAN</td>
+<td class="border-b border-gray-100 p-space-4 font-body-sm text-body-sm text-gray-700">ONAN / ONAF</td>
+</tr>
+<!-- Vector Group -->
+<tr class="bg-gray-50/50 hover:bg-blue-light/30 transition-colors">
+<td class="bg-gray-50 border-b border-r border-gray-300 p-space-4 font-label text-label text-gray-700 uppercase sticky left-0 z-10 sticky-col-shadow">
+                                Vector Group
+                            </td>
+<td class="border-b border-r border-gray-100 p-space-4 font-mono-data text-mono-data text-gray-700">Dyn11</td>
+<td class="bg-blue-light/10 border-b border-r border-gray-100 p-space-4 font-mono-data text-mono-data text-primary font-medium">Dyn11</td>
+<td class="border-b border-gray-100 p-space-4 font-mono-data text-mono-data text-gray-700">Dyn11</td>
+</tr>
+<!-- No-Load Loss -->
+<tr class="hover:bg-blue-light/30 transition-colors">
+<td class="bg-gray-50 border-b border-r border-gray-300 p-space-4 font-label text-label text-gray-700 uppercase sticky left-0 z-10 sticky-col-shadow flex items-center justify-between">
+                                No-Load Loss (W)
+                                <span class="material-symbols-outlined text-[16px] text-gray-500 cursor-help" title="Max losses at rated voltage and frequency">info</span>
+</td>
+<td class="border-b border-r border-gray-100 p-space-4 font-mono-data text-mono-data text-gray-700">420</td>
+<td class="bg-blue-light/10 border-b border-r border-gray-100 p-space-4 font-mono-data text-mono-data text-primary font-medium">750 <span class="text-secondary text-[10px] ml-1">↓ Optimised</span></td>
+<td class="border-b border-gray-100 p-space-4 font-mono-data text-mono-data text-gray-700">1250</td>
+</tr>
+<!-- Load Loss -->
+<tr class="bg-gray-50/50 hover:bg-blue-light/30 transition-colors">
+<td class="bg-gray-50 border-b border-r border-gray-300 p-space-4 font-label text-label text-gray-700 uppercase sticky left-0 z-10 sticky-col-shadow">
+                                Load Loss @ 75°C (W)
+                            </td>
+<td class="border-b border-r border-gray-100 p-space-4 font-mono-data text-mono-data text-gray-700">3150</td>
+<td class="bg-blue-light/10 border-b border-r border-gray-100 p-space-4 font-mono-data text-mono-data text-primary font-medium">5600</td>
+<td class="border-b border-gray-100 p-space-4 font-mono-data text-mono-data text-gray-700">10500</td>
+</tr>
+<!-- Impedance -->
+<tr class="hover:bg-blue-light/30 transition-colors">
+<td class="bg-gray-50 border-b border-r border-gray-300 p-space-4 font-label text-label text-gray-700 uppercase sticky left-0 z-10 sticky-col-shadow">
+                                Impedance Voltage (%)
+                            </td>
+<td class="border-b border-r border-gray-100 p-space-4 font-mono-data text-mono-data text-gray-700">4.5</td>
+<td class="bg-blue-light/10 border-b border-r border-gray-100 p-space-4 font-mono-data text-mono-data text-primary font-medium">4.5</td>
+<td class="border-b border-gray-100 p-space-4 font-mono-data text-mono-data text-gray-700">5.0</td>
+</tr>
+<!-- Compliance -->
+<tr class="bg-gray-50/50 hover:bg-blue-light/30 transition-colors">
+<td class="bg-gray-50 border-b border-r border-gray-300 p-space-4 font-label text-label text-gray-700 uppercase sticky left-0 z-10 sticky-col-shadow">
+                                Compliance Standards
+                            </td>
+<td class="border-b border-r border-gray-100 p-space-4">
+<div class="flex flex-wrap gap-2">
+<span class="bg-gray-100 border border-gray-300 px-2 py-1 rounded-sm font-mono-data text-[11px] text-gray-700">IS 1180</span>
+</div>
+</td>
+<td class="bg-blue-light/10 border-b border-r border-gray-100 p-space-4">
+<div class="flex flex-wrap gap-2">
+<span class="bg-white border border-primary px-2 py-1 rounded-sm font-mono-data text-[11px] text-primary">IS 1180</span>
+<span class="bg-white border border-primary px-2 py-1 rounded-sm font-mono-data text-[11px] text-primary">IEC 60076</span>
+</div>
+</td>
+<td class="border-b border-gray-100 p-space-4">
+<div class="flex flex-wrap gap-2">
+<span class="bg-gray-100 border border-gray-300 px-2 py-1 rounded-sm font-mono-data text-[11px] text-gray-700">IS 1180</span>
+<span class="bg-gray-100 border border-gray-300 px-2 py-1 rounded-sm font-mono-data text-[11px] text-gray-700">IEC 60076</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Add More Slot (Footer of table area) -->
+<div class="bg-gray-50 border-t border-gray-300 p-space-4 flex justify-end">
+<button class="flex items-center gap-2 font-label text-label text-gray-700 hover:text-primary transition-colors border border-dashed border-gray-300 hover:border-primary px-4 py-2 rounded-sm uppercase tracking-wider bg-white">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Add Product to Compare
+                </button>
+</div>
+</div>
+</main>
+<!-- SideNavBar Component -->
+<nav class="bg-surface-container-lowest dark:bg-surface-dim text-primary dark:text-primary-fixed fixed right-4 bottom-24 flex flex-col gap-4 z-50 border border-gray-300 dark:border-outline shadow-md p-space-2 rounded-xl">
+<div class="text-center pb-2 border-b border-gray-300 mb-2">
+<p class="font-label text-label text-primary uppercase">ISO 9001:2015</p>
+<p class="text-[10px] text-gray-500 uppercase tracking-widest">Certified Excellence</p>
+</div>
+<div class="flex flex-col space-y-4">
+<a class="bg-secondary text-on-secondary p-4 rounded-xl flex items-center justify-center shadow-lg scale-95 duration-100" href="#" title="Request Quote">
+<span class="material-symbols-outlined">request_quote</span>
+</a>
+<a class="bg-primary text-on-primary p-4 rounded-xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform" href="#" title="WhatsApp">
+<span class="material-symbols-outlined">chat</span>
+</a>
+</div>
+</nav>
+<!-- Footer Component -->
+<footer class="bg-surface-container-high dark:bg-tertiary-container text-on-surface dark:text-on-tertiary-container full-width bottom-0 border-t border-gray-300 dark:border-outline-variant flat no shadows mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-8 px-margin-desktop py-space-12 w-full max-w-[1280px] mx-auto transition-all duration-300 ease-in-out">
+<div class="col-span-1 md:col-span-2">
+<div class="font-h3 text-h3 text-primary dark:text-primary-fixed-dim uppercase mb-space-4">
+                    Tejaswini Industries
+                </div>
+<p class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300 max-w-sm">
+                    © 2024 Tejaswini Industries. ISO 9001:2015 Certified. Precision Engineering Redefined.
+                </p>
+</div>
+<div class="col-span-1">
+<h4 class="font-label text-label uppercase mb-space-4 tracking-wider">Company</h4>
+<ul class="space-y-space-2">
+<li><a class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4" href="#">Product Categories</a></li>
+<li><a class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4" href="#">Quality Policy</a></li>
+<li><a class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4" href="#">Infrastructure</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-label text-label uppercase mb-space-4 tracking-wider">Legal &amp; Links</h4>
+<ul class="space-y-space-2">
+<li><a class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4" href="#">Career</a></li>
+<li><a class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>

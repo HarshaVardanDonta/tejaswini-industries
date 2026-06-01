@@ -1,6 +1,7 @@
-import { commissionRows } from '../../data/projects'
+import { useCommissionRows } from '../../context/ProjectsPageContext'
 
 export function CommissionsTable() {
+  const commissionRows = useCommissionRows()
   return (
     <div className="md:col-span-2 lg:col-span-3 bg-surface-container-lowest border border-gray-100 rounded-xl overflow-hidden mt-space-6">
       <div className="bg-gray-50 p-space-4 border-b border-gray-100">
