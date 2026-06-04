@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom'
 
+import { useAdminDocument } from '../hooks/useAdminDocument'
 import { adminNavGroups } from '../lib/adminNavigation'
+import { adminQueries } from '../lib/adminQueries'
 
 export function AdminDashboard() {
   const sections = adminNavGroups.filter((g) => g.title !== 'Overview')
+  const { data: pendingCount } = useAdminDocument<number>(adminQueries.pendingInquiryCount)
 
   return (
     <div className="p-6 space-y-8">
@@ -13,6 +16,13 @@ export function AdminDashboard() {
           Manage all website content structured by section. Changes are saved to Sanity and appear on
           the public site after you refresh.
         </p>
+        {typeof pendingCount === 'number' && pendingCount > 0 ? (
+          <p className="font-body-sm text-body-sm mt-3">
+            <Link to="/admin/inquiries" className="text-secondary font-label uppercase hover:underline">
+              {pendingCount} form submission{pendingCount === 1 ? '' : 's'} awaiting response
+            </Link>
+          </p>
+        ) : null}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {sections.flatMap((group) =>

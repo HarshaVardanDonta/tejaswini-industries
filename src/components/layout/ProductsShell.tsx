@@ -17,7 +17,7 @@ export function ProductsShell({
       className={`${className} text-on-surface min-h-screen flex flex-col font-body-lg antialiased`}
     >
       <Header />
-      {children}
+      <div className="page-below-header flex flex-col grow min-h-0">{children}</div>
       <ProductsFloatingSidebar />
       <Footer />
     </div>

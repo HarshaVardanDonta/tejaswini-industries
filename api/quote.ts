@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { handleContactInquiry } from '../lib/handle-contact-inquiry.js'
+import { handleQuoteRequest } from '../lib/handle-quote-request.js'
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
@@ -7,6 +7,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  const result = await handleContactInquiry(req.body)
+  const result = await handleQuoteRequest(req.body)
   return res.status(result.status).json(result.body)
 }

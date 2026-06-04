@@ -44,6 +44,16 @@ export const adminNavGroups: AdminNavGroup[] = [
     ],
   },
   {
+    title: 'Inquiries',
+    items: [
+      {
+        label: 'All submissions',
+        path: '/admin/inquiries',
+        description: 'Quote and contact form submissions',
+      },
+    ],
+  },
+  {
     title: 'Other',
     items: [{ label: 'Trending Articles', path: '/admin/trending' }],
   },

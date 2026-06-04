@@ -1,52 +1,62 @@
 import 'dotenv/config'
+import type { IncomingMessage, ServerResponse } from 'node:http'
 import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import { parseInquiryPayload } from './lib/contact-inquiry'
-import { sendInquiryEmail } from './lib/send-inquiry-email'
+import { handleContactInquiry } from './lib/handle-contact-inquiry'
+import { handleQuoteRequest } from './lib/handle-quote-request'
 
-function contactApiDevPlugin(): Plugin {
+function readJsonBody(req: IncomingMessage): Promise<unknown> {
+  return new Promise((resolve, reject) => {
+    const chunks: Buffer[] = []
+    req.on('data', (chunk) => chunks.push(chunk))
+    req.on('end', () => {
+      try {
+        resolve(JSON.parse(Buffer.concat(chunks).toString('utf8')))
+      } catch {
+        reject(new Error('Invalid JSON body'))
+      }
+    })
+    req.on('error', reject)
+  })
+}
+
+function sendJson(res: ServerResponse, status: number, body: Record<string, unknown>) {
+  res.statusCode = status
+  res.setHeader('Content-Type', 'application/json')
+  res.end(JSON.stringify(body))
+}
+
+function formApiDevPlugin(): Plugin {
   return {
-    name: 'contact-api-dev',
+    name: 'form-api-dev',
     configureServer(server) {
       server.middlewares.use('/api/contact', async (req, res, next) => {
         if (req.method !== 'POST') {
           return next()
         }
 
-        const chunks: Buffer[] = []
-        req.on('data', (chunk) => chunks.push(chunk))
-        req.on('end', async () => {
-          let body: unknown
-          try {
-            body = JSON.parse(Buffer.concat(chunks).toString('utf8'))
-          } catch {
-            res.statusCode = 400
-            res.setHeader('Content-Type', 'application/json')
-            res.end(JSON.stringify({ error: 'Invalid JSON body' }))
-            return
-          }
+        try {
+          const body = await readJsonBody(req)
+          const result = await handleContactInquiry(body)
+          sendJson(res, result.status, result.body)
+        } catch {
+          sendJson(res, 400, { error: 'Invalid JSON body' })
+        }
+      })
 
-          const { payload, errors } = parseInquiryPayload(body)
-          if (!payload) {
-            res.statusCode = 400
-            res.setHeader('Content-Type', 'application/json')
-            res.end(JSON.stringify({ error: 'Validation failed', fields: errors }))
-            return
-          }
+      server.middlewares.use('/api/quote', async (req, res, next) => {
+        if (req.method !== 'POST') {
+          return next()
+        }
 
-          const result = await sendInquiryEmail(payload)
-          if (!result.ok) {
-            res.statusCode = result.error === 'not_configured' ? 503 : 502
-            res.setHeader('Content-Type', 'application/json')
-            res.end(JSON.stringify({ error: result.message }))
-            return
-          }
-
-          res.statusCode = 200
-          res.setHeader('Content-Type', 'application/json')
-          res.end(JSON.stringify({ ok: true }))
-        })
+        try {
+          const body = await readJsonBody(req)
+          const result = await handleQuoteRequest(body)
+          sendJson(res, result.status, result.body)
+        } catch {
+          sendJson(res, 400, { error: 'Invalid JSON body' })
+        }
       })
     },
   }
@@ -54,5 +64,5 @@ function contactApiDevPlugin(): Plugin {
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), contactApiDevPlugin()],
+  plugins: [react(), tailwindcss(), formApiDevPlugin()],
 })

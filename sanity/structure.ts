@@ -36,5 +36,7 @@ export const structure = (S: StructureBuilder) =>
       S.documentTypeListItem('project').title('Projects'),
       S.documentTypeListItem('commissionRow').title('Commission Rows'),
       S.divider(),
+      S.documentTypeListItem('siteInquiry').title('Form Inquiries'),
+      S.divider(),
       singleton(S, 'adminCredentials', 'Admin Credentials'),
     ])

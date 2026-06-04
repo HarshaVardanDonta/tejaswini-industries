@@ -1,6 +1,7 @@
 import { type SchemaTypeDefinition } from 'sanity'
 
 import { blogPost, trendingArticle } from './documents/blogPost'
+import { siteInquiry } from './documents/siteInquiry'
 import { comparisonParameter } from './documents/comparisonParameter'
 import { distributionProduct } from './documents/distributionProduct'
 import { productCategory } from './documents/productCategory'
@@ -37,4 +38,5 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   commissionRow,
   blogPost,
   trendingArticle,
+  siteInquiry,
 ]

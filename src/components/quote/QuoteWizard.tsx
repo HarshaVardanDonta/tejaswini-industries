@@ -3,11 +3,10 @@ import { useSearchParams } from 'react-router-dom'
 import { contactInfo } from '../../constants/contactInfo'
 import { quotePage } from '../../data/quote'
 import {
-  buildQuoteMessage,
   createInitialQuoteFormState,
   type QuoteFormState,
 } from '../../lib/buildQuoteMessage'
-import { submitContactInquiry } from '../../lib/submitContactInquiry'
+import { submitQuoteRequest } from '../../lib/submitQuoteRequest'
 import { Icon } from '../Icon'
 import { QuoteStepContact } from './QuoteStepContact'
 import { QuoteStepIndicator } from './QuoteStepIndicator'
@@ -109,13 +108,13 @@ export function QuoteWizard() {
     setSubmitError(null)
     setSubmitting(true)
 
-    const result = await submitContactInquiry({
-      name: values.name.trim(),
+    const result = await submitQuoteRequest({
+      ...values,
       company: values.company.trim(),
+      name: values.name.trim(),
       email: values.email.trim(),
       phone: values.phone.trim(),
-      inquiryLabel: 'Quote Request',
-      message: buildQuoteMessage(values),
+      technicalRequirements: values.technicalRequirements.trim(),
     })
 
     setSubmitting(false)
