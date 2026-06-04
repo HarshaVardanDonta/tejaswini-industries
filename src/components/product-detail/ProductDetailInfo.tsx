@@ -1,8 +1,19 @@
+import { Link } from 'react-router-dom'
 import { useProductDetail } from '../../context/ProductDetailContext'
+import { buildProductProposalWhatsAppUrl } from '../../constants/contactInfo'
+import { REQUEST_QUOTE_PATH } from '../../constants/routes'
 import { Icon } from '../Icon'
 
 export function ProductDetailInfo() {
-  const { sku, title, description, quickSpecs } = useProductDetail()
+  const { sku, title, description, quickSpecs, technicalParameters } =
+    useProductDetail()
+  const proposalWhatsAppUrl = buildProductProposalWhatsAppUrl({
+    sku,
+    title,
+    quickSpecs,
+    technicalParameters,
+  })
+  const quoteUrl = `${REQUEST_QUOTE_PATH}?product=${encodeURIComponent(title)}&sku=${encodeURIComponent(sku)}&category=distribution-transformers`
 
   return (
     <div className="md:col-span-5 flex flex-col justify-start">
@@ -42,13 +53,22 @@ export function ProductDetailInfo() {
         </ul>
       </div>
       <div className="flex flex-col gap-space-3 mt-auto">
-        <button
-          type="button"
+        <a
+          href={proposalWhatsAppUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="w-full bg-primary text-on-primary font-label text-label uppercase tracking-widest py-space-4 rounded hover:bg-primary-fixed-variant transition-colors flex items-center justify-center gap-space-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
         >
           <Icon name="assignment" filled={false} />
           Request Detailed Proposal
-        </button>
+        </a>
+        <Link
+          to={quoteUrl}
+          className="w-full bg-white text-primary border border-primary font-label text-label uppercase tracking-widest py-space-3 rounded hover:bg-blue-light transition-colors flex items-center justify-center gap-space-2"
+        >
+          <Icon name="request_quote" filled={false} />
+          Request Quote
+        </Link>
         <div className="grid grid-cols-2 gap-space-3">
           <button
             type="button"

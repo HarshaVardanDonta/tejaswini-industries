@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react'
+import { useMemo } from 'react'
 import { CompareSelectionBar } from '../components/comparison/CompareSelectionBar'
 import { CustomConfigCTA } from '../components/listing/CustomConfigCTA'
 import { EfficiencyGuideNote } from '../components/listing/EfficiencyGuideNote'
@@ -7,6 +7,7 @@ import { ProductListingBreadcrumb } from '../components/listing/ProductListingBr
 import { ProductListingCard } from '../components/listing/ProductListingCard'
 import { ProductsShell } from '../components/layout/ProductsShell'
 import { PageLoading } from '../components/PageLoading'
+import { PageSEO } from '../components/seo/PageSEO'
 import { DistributionPageProvider } from '../context/DistributionPageContext'
 import { comparisonParameters, distributionCategory } from '../data/distributionTransformers'
 import { useProductComparison } from '../hooks/useProductComparison'
@@ -84,10 +85,6 @@ export function DistributionTransformersPage() {
   const showResultCount =
     hasFilters && filteredProducts.length !== pageData.products.length
 
-  useEffect(() => {
-    document.title = `${pageData.category.title} - Tejaswini Industries`
-  }, [pageData.category.title])
-
   if (loading) {
     return (
       <ProductsShell className="bg-gray-50">
@@ -99,6 +96,11 @@ export function DistributionTransformersPage() {
   return (
     <DistributionPageProvider value={pageData}>
       <ProductsShell className="bg-gray-50">
+        <PageSEO
+          title={pageData.category.title}
+          description={pageData.category.description}
+          path="/products/distribution-transformers"
+        />
         <main className="grow max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-space-8 w-full">
           <ProductListingBreadcrumb categoryTitle={pageData.category.title} />
 

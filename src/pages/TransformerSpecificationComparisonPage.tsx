@@ -5,6 +5,8 @@ import { SpecificationComparisonTable } from '../components/comparison/Specifica
 import { ProductsShell } from '../components/layout/ProductsShell'
 import { PageLoading } from '../components/PageLoading'
 import { Icon } from '../components/Icon'
+import { PageSEO } from '../components/seo/PageSEO'
+import { staticPageMeta } from '../constants/seo'
 import { DistributionPageProvider } from '../context/DistributionPageContext'
 import { comparisonParameters, distributionCategory } from '../data/distributionTransformers'
 import { parseCompareIdsParam } from '../hooks/useProductComparison'
@@ -75,10 +77,6 @@ export function TransformerSpecificationComparisonPage() {
   }, [idsParam, pageData.products])
 
   useEffect(() => {
-    document.title = `Technical Comparison - ${pageData.category.title} - Tejaswini Industries`
-  }, [pageData.category.title])
-
-  useEffect(() => {
     if (products.length > 0) {
       sessionStorage.setItem(
         'ti-distribution-compare-ids',
@@ -100,6 +98,11 @@ export function TransformerSpecificationComparisonPage() {
   return (
     <DistributionPageProvider value={pageData}>
       <ProductsShell className="bg-gray-50">
+        <PageSEO
+          title={`Technical Comparison - ${pageData.category.title}`}
+          description={staticPageMeta.compare.description}
+          path={staticPageMeta.compare.path}
+        />
         <main className="grow max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-space-8 w-full pb-space-16">
           <ComparisonBreadcrumb />
 

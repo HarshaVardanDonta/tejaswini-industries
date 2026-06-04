@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom'
 import { useLandingPageData } from '../context/LandingPageContext'
+import { REQUEST_QUOTE_PATH } from '../constants/routes'
 
 export function CTABanner() {
   const { ctaBanner } = useLandingPageData()
@@ -10,12 +12,12 @@ export function CTABanner() {
           <h2 className="font-h1 text-h1 text-white uppercase mb-2">{ctaBanner.title}</h2>
           <p className="font-body-lg text-body-lg text-on-tertiary-container">{ctaBanner.description}</p>
         </div>
-        <button
-          type="button"
+        <Link
+          to={REQUEST_QUOTE_PATH}
           className="bg-secondary text-on-secondary px-space-6 py-space-3 rounded-sm font-label text-label uppercase tracking-widest hover:bg-secondary/90 transition-colors whitespace-nowrap"
         >
           {ctaBanner.buttonLabel}
-        </button>
+        </Link>
       </div>
     </section>
   )

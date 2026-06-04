@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tejaswini Industries - Technical Quote - Step 2</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=IBM+Plex+Mono:wght@400&amp;family=Source+Sans+3:wght@400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#111c2c",
+                        "inverse-on-surface": "#f3f0ef",
+                        "blue-light": "#E8EDF8",
+                        "gray-100": "#EFEFEC",
+                        "gray-50": "#F7F7F5",
+                        "primary-fixed-dim": "#b5c4ff",
+                        "surface-variant": "#e5e2e1",
+                        "tertiary": "#202b3c",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary": "#ffffff",
+                        "red-light": "#FCEAEC",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#fffbff",
+                        "on-error-container": "#93000a",
+                        "steel": "#4A5568",
+                        "on-tertiary-container": "#a2adc3",
+                        "on-tertiary-fixed-variant": "#3c475a",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#ffb3b1",
+                        "secondary": "#bb0027",
+                        "inverse-surface": "#313030",
+                        "inverse-primary": "#b5c4ff",
+                        "primary-fixed": "#dce1ff",
+                        "on-primary-container": "#91a9ff",
+                        "on-primary-fixed": "#00164e",
+                        "background": "#fcf9f8",
+                        "gray-500": "#7A7A74",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#e0283c",
+                        "tertiary-fixed-dim": "#bcc7dd",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#ffdad8",
+                        "gray-700": "#3D3D39",
+                        "surface-container-highest": "#e5e2e1",
+                        "tertiary-container": "#364153",
+                        "tertiary-fixed": "#d8e3fa",
+                        "surface-container": "#f0edec",
+                        "primary": "#00236f",
+                        "on-surface": "#1c1b1b",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#410007",
+                        "surface": "#fcf9f8",
+                        "on-secondary-fixed-variant": "#92001c",
+                        "outline-variant": "#c4c5d3",
+                        "gray-300": "#C4C4BC",
+                        "surface-bright": "#fcf9f8",
+                        "primary-container": "#1a3a8f",
+                        "surface-tint": "#3d59af",
+                        "surface-container-high": "#ebe7e7",
+                        "surface-container-low": "#f6f3f2",
+                        "on-primary-fixed-variant": "#224095",
+                        "on-background": "#1c1b1b",
+                        "outline": "#757683",
+                        "on-surface-variant": "#444652"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "space-4": "16px",
+                        "space-6": "24px",
+                        "margin-mobile": "16px",
+                        "space-8": "32px",
+                        "margin-tablet": "24px",
+                        "space-2": "8px",
+                        "margin-desktop": "48px",
+                        "gutter": "24px",
+                        "base": "4px",
+                        "space-16": "64px",
+                        "space-12": "48px",
+                        "space-3": "12px",
+                        "space-1": "4px"
+                    },
+                    "fontFamily": {
+                        "display-xl-mobile": ["Barlow Condensed"],
+                        "h2": ["Barlow Condensed"],
+                        "body-sm": ["Source Sans 3"],
+                        "mono-data": ["IBM Plex Mono"],
+                        "label": ["Barlow Condensed"],
+                        "display-xl": ["Barlow Condensed"],
+                        "body-lg": ["Source Sans 3"],
+                        "h3": ["Barlow Condensed"],
+                        "display-lg": ["Barlow Condensed"],
+                        "h1": ["Barlow Condensed"]
+                    },
+                    "fontSize": {
+                        "display-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "700" }],
+                        "h2": ["22px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "mono-data": ["13px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "display-xl": ["48px", { "lineHeight": "1.1", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "h3": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-lg": ["36px", { "lineHeight": "1.15", "fontWeight": "700" }],
+                        "h1": ["28px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom Checkbox/Radio for Industrial Look */
+        input[type="radio"] {
+            appearance: none;
+            background-color: #fff;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.15em;
+            height: 1.15em;
+            border: 1px solid #C4C4BC; /* gray-300 */
+            border-radius: 50%;
+            display: grid;
+            place-content: center;
+        }
+        input[type="radio"]::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em #00236f; /* primary */
+        }
+        input[type="radio"]:checked::before {
+            transform: scale(1);
+        }
+        input[type="radio"]:focus {
+            outline: max(2px, 0.15em) solid rgba(26,58,143,0.15);
+            outline-offset: max(2px, 0.15em);
+            border-color: #00236f;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-sm text-body-sm antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-primary dark:bg-primary border-b-4 border-secondary sticky top-0 full-width z-40">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-[1280px] mx-auto h-20">
+<!-- Brand Logo -->
+<div class="text-h2 font-h2 font-bold text-on-primary uppercase tracking-wider flex items-center gap-space-2 cursor-pointer">
+<span class="material-symbols-outlined text-[28px]">precision_manufacturing</span>
+                Tejaswini Industries
+            </div>
+<!-- Main Navigation (Hidden on mobile, showing standard list) -->
+<nav class="hidden md:flex items-center gap-space-6">
+<a class="text-on-primary/80 hover:text-on-primary transition-colors font-label text-label hover:bg-primary-container/20 px-3 py-2 rounded-DEFAULT uppercase" href="#">Products</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors font-label text-label hover:bg-primary-container/20 px-3 py-2 rounded-DEFAULT uppercase" href="#">Services</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors font-label text-label hover:bg-primary-container/20 px-3 py-2 rounded-DEFAULT uppercase" href="#">Projects</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors font-label text-label hover:bg-primary-container/20 px-3 py-2 rounded-DEFAULT uppercase" href="#">Blogs</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors font-label text-label hover:bg-primary-container/20 px-3 py-2 rounded-DEFAULT uppercase" href="#">About</a>
+<a class="text-on-primary/80 hover:text-on-primary transition-colors font-label text-label hover:bg-primary-container/20 px-3 py-2 rounded-DEFAULT uppercase" href="#">Contact</a>
+</nav>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-space-4">
+<div class="hidden lg:flex items-center gap-space-2 text-on-primary/80">
+<button aria-label="Call" class="p-2 hover:bg-primary-container/20 rounded-DEFAULT transition-all group">
+<span class="material-symbols-outlined group-hover:text-on-primary transition-colors">call</span>
+</button>
+<button aria-label="Mail" class="p-2 hover:bg-primary-container/20 rounded-DEFAULT transition-all group">
+<span class="material-symbols-outlined group-hover:text-on-primary transition-colors">mail</span>
+</button>
+</div>
+<!-- Primary Action Highlighted slightly differently since it's the active flow context, but structurally a standard button -->
+<button class="bg-secondary text-on-secondary font-label text-label px-space-6 py-space-3 rounded-DEFAULT uppercase tracking-wider hover:bg-secondary-container transition-colors shadow-sm flex items-center gap-2">
+                    Request Quote
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-space-8 md:py-space-12 grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Form & Stepper -->
+<div class="lg:col-span-8 flex flex-col gap-space-8">
+<!-- Page Header -->
+<div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-space-2 uppercase">Technical Quote Generator</h1>
+<p class="font-body-lg text-body-lg text-gray-700">Specify technical parameters for accurate engineering assessment.</p>
+</div>
+<!-- Stepper Component -->
+<div class="w-full relative py-space-4">
+<div class="absolute top-1/2 left-0 w-full h-1 bg-gray-300 -translate-y-1/2 rounded-full z-0 hidden sm:block"></div>
+<!-- Progress Line Active -->
+<div class="absolute top-1/2 left-0 w-1/2 h-1 bg-secondary -translate-y-1/2 z-0 hidden sm:block transition-all duration-300"></div>
+<div class="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0">
+<!-- Step 1: Completed -->
+<div class="flex items-center gap-3 bg-surface px-2">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label text-label shadow-sm">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div>
+<p class="font-label text-label text-primary uppercase">Step 1</p>
+<p class="font-h3 text-h3 text-on-surface">General Specs</p>
+</div>
+</div>
+<!-- Step 2: Active -->
+<div class="flex items-center gap-3 bg-surface px-2">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label text-label border-2 border-secondary shadow-[0_0_0_3px_rgba(187,0,39,0.15)]">
+                            2
+                        </div>
+<div>
+<p class="font-label text-label text-secondary uppercase">Step 2</p>
+<p class="font-h3 text-h3 text-on-surface">Product Details</p>
+</div>
+</div>
+<!-- Step 3: Pending -->
+<div class="flex items-center gap-3 bg-surface px-2 opacity-50">
+<div class="w-8 h-8 rounded-full bg-gray-100 text-gray-700 border border-gray-300 flex items-center justify-center font-label text-label">
+                            3
+                        </div>
+<div>
+<p class="font-label text-label text-gray-700 uppercase">Step 3</p>
+<p class="font-h3 text-h3 text-gray-700">Final Review</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Form Card (Industrial Structuring) -->
+<div class="bg-surface-container-lowest border border-gray-100 rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Card Header -->
+<div class="bg-gray-50 border-b border-gray-100 px-space-6 py-space-4 flex justify-between items-center">
+<h2 class="font-h2 text-h2 text-on-surface uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">settings_applications</span>
+                        Transformer Configuration
+                    </h2>
+<span class="font-mono-data text-mono-data text-gray-500 bg-white px-2 py-1 border border-gray-100 rounded">REF: TQ-2024-88A</span>
+</div>
+<!-- Form Body -->
+<div class="p-space-6 sm:p-space-8 grid grid-cols-1 md:grid-cols-2 gap-space-6 gap-y-space-8">
+<!-- Field: Transformer Type -->
+<div class="flex flex-col gap-space-2 col-span-1 md:col-span-2 lg:col-span-1">
+<label class="font-label text-label text-gray-700 uppercase" for="transformer_type">Transformer Type <span class="text-secondary">*</span></label>
+<div class="relative">
+<select class="w-full bg-white border border-gray-300 rounded-DEFAULT px-space-3 py-space-3 font-body-sm text-body-sm text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none appearance-none shadow-sm cursor-pointer" id="transformer_type" name="transformer_type">
+<option disabled="" selected="" value="">Select equipment class...</option>
+<option value="distribution">Distribution Transformer</option>
+<option value="power">Power Transformer</option>
+<option value="specialty">Specialty / Custom Build</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+<!-- Field: Cooling Type -->
+<div class="flex flex-col gap-space-2 col-span-1 md:col-span-2 lg:col-span-1">
+<label class="font-label text-label text-gray-700 uppercase" for="cooling_type">Cooling Specification <span class="text-secondary">*</span></label>
+<div class="relative">
+<select class="w-full bg-white border border-gray-300 rounded-DEFAULT px-space-3 py-space-3 font-body-sm text-body-sm text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none appearance-none shadow-sm cursor-pointer" id="cooling_type" name="cooling_type">
+<option disabled="" selected="" value="">Select cooling method...</option>
+<option value="onan">ONAN (Oil Natural Air Natural)</option>
+<option value="onaf">ONAF (Oil Natural Air Forced)</option>
+<option value="ofaf">OFAF (Oil Forced Air Forced)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+<!-- Divider -->
+<div class="col-span-1 md:col-span-2 border-t border-gray-100 my-space-2"></div>
+<!-- Field: Winding Material (Radio Group) -->
+<div class="flex flex-col gap-space-3 col-span-1 md:col-span-2">
+<label class="font-label text-label text-gray-700 uppercase">Winding Material Preference <span class="text-secondary">*</span></label>
+<div class="flex flex-col sm:flex-row gap-space-6 bg-gray-50 p-space-4 border border-gray-100 rounded-DEFAULT">
+<label class="flex items-center gap-space-3 cursor-pointer group">
+<input checked="" name="winding_material" type="radio" value="copper"/>
+<span class="font-body-sm text-body-sm font-medium text-on-surface group-hover:text-primary transition-colors">Electrolytic Copper</span>
+</label>
+<label class="flex items-center gap-space-3 cursor-pointer group">
+<input name="winding_material" type="radio" value="aluminum"/>
+<span class="font-body-sm text-body-sm font-medium text-on-surface group-hover:text-primary transition-colors">High-Grade Aluminum</span>
+</label>
+</div>
+</div>
+<!-- Field: Tap Changer Requirements -->
+<div class="flex flex-col gap-space-2 col-span-1 md:col-span-2">
+<label class="font-label text-label text-gray-700 uppercase flex justify-between items-end" for="tap_changer">
+                            Tap Changer Requirements
+                            <span class="font-body-sm text-gray-500 font-normal normal-case">(Optional)</span>
+</label>
+<textarea class="w-full bg-white border border-gray-300 rounded-DEFAULT px-space-3 py-space-3 font-body-sm text-body-sm text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none shadow-sm resize-y" id="tap_changer" name="tap_changer" placeholder="Specify OLTC/OCTC requirements, tapping range (e.g., +5% to -10% in steps of 1.25%), or specific control gear requests." rows="4"></textarea>
+</div>
+</div>
+<!-- Card Footer (Actions) -->
+<div class="bg-gray-50 border-t border-gray-100 px-space-6 py-space-4 flex justify-between items-center">
+<button class="font-label text-label text-gray-700 uppercase hover:text-primary transition-colors flex items-center gap-1 px-3 py-2" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                        Back to Step 1
+                    </button>
+<button class="bg-primary text-on-primary font-label text-label uppercase px-space-6 py-space-3 rounded-DEFAULT hover:bg-primary-container transition-colors shadow-sm flex items-center gap-2" type="button">
+                        Proceed to Review
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar -->
+<div class="lg:col-span-4 flex flex-col gap-space-6">
+<!-- Commitment Card -->
+<div class="bg-primary text-on-primary rounded-xl overflow-hidden shadow-sm relative p-space-6 sm:p-space-8 border border-primary-container">
+<!-- Decorative pattern overlay -->
+<div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')] pattern-diagonal-lines-sm" data-alt="A subtle, repeating geometric grid pattern overlay in white on a deep blue background, conveying precision and industrial engineering structure."></div>
+<div class="relative z-10 flex flex-col gap-space-4">
+<div class="w-12 h-12 bg-white/10 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px] text-on-primary">verified</span>
+</div>
+<h3 class="font-h2 text-h2 uppercase tracking-wide">Our Commitment to Precision</h3>
+<div class="border-l-2 border-secondary pl-space-4 py-1">
+<p class="font-body-sm text-on-primary/90 leading-relaxed">
+                            Every quote generated by Tejaswini Industries is backed by our rigorous engineering standards. Our components are machined to exact tolerances, ensuring unparalleled reliability in high-stress industrial environments.
+                        </p>
+</div>
+<ul class="flex flex-col gap-2 mt-2">
+<li class="flex items-center gap-2 font-label text-label uppercase text-on-primary/80">
+<span class="material-symbols-outlined text-[16px] text-secondary">done</span> 100% Quality Assurance
+                        </li>
+<li class="flex items-center gap-2 font-label text-label uppercase text-on-primary/80">
+<span class="material-symbols-outlined text-[16px] text-secondary">done</span> Adherence to IEC Standards
+                        </li>
+</ul>
+</div>
+</div>
+<!-- Certifications Card -->
+<div class="bg-surface-container-lowest border border-gray-100 rounded-xl p-space-6 shadow-sm flex flex-col gap-space-4">
+<h4 class="font-label text-label text-gray-700 uppercase border-b border-gray-100 pb-2">Accreditations &amp; Standards</h4>
+<div class="grid grid-cols-2 gap-space-4 items-center justify-items-center py-2">
+<!-- Standard ISO Text Badge -->
+<div class="text-center flex flex-col items-center justify-center border border-gray-100 p-3 w-full h-full bg-gray-50 rounded">
+<span class="material-symbols-outlined text-[32px] text-primary mb-1">workspace_premium</span>
+<span class="font-label text-[10px] text-primary uppercase tracking-widest leading-tight block">ISO 9001:2015</span>
+<span class="font-label text-[9px] text-gray-500 uppercase mt-1">Certified</span>
+</div>
+<!-- Requested BIS Image Badge -->
+<div class="flex items-center justify-center border border-gray-100 p-2 w-full h-full bg-white rounded">
+<img alt="Bureau of Indian Standards Certification Logo" class="max-h-[60px] w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLvaoU7HZK_IRyoenSmoISbvYCXn1K08IhkOa_ZUZ2LqzTitnzOP7bUgazEMfsthtcnqiJzaTGGBhUalDjbs6v-_0UOgM2zOeQrl1kwPoYLsakqR5D4xSBN-Gwn524sD34gfYueM8ukK68WGB6NmE92Bv0VPcaR_WLn3hJmNuurq0g3NJazNaGHox2icc4m_VqfmtiYuQ20Ai5qxp7ttn3ShyHMWks155vDq7g-2zkilMVw4FM7TmMDx4Q"/>
+</div>
+</div>
+</div>
+<!-- Need Help Support Box -->
+<div class="bg-gray-50 border border-gray-100 rounded-xl p-space-6 flex gap-space-4">
+<span class="material-symbols-outlined text-[24px] text-primary shrink-0">support_agent</span>
+<div>
+<h4 class="font-h3 text-h3 text-on-surface uppercase mb-1">Require Engineering Support?</h4>
+<p class="font-body-sm text-gray-700 mb-3">Our technical sales team is available to assist with complex specifications.</p>
+<a class="font-label text-label text-primary uppercase hover:underline decoration-2 underline-offset-4 flex items-center gap-1" href="#">
+                        Contact Technical Sales
+                        <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<!-- SideNavBar (Floating Action Area based on JSON) -->
+<nav class="fixed right-4 bottom-24 flex flex-col gap-4 z-50 shadow-md">
+<!-- Active Tab (Request Quote matches current context conceptually, though we are in the flow) -->
+<a aria-label="Request Quote" class="bg-secondary text-on-secondary p-4 rounded-xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform scale-95 duration-100 group relative" href="#">
+<span class="material-symbols-outlined">request_quote</span>
+<!-- Tooltip -->
+<span class="absolute right-full mr-4 bg-tertiary text-on-tertiary font-label text-label px-3 py-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none uppercase">Quote Active</span>
+</a>
+<!-- Inactive Tab (WhatsApp) -->
+<a aria-label="WhatsApp" class="bg-primary text-on-primary p-4 rounded-xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform group relative" href="#">
+<span class="material-symbols-outlined">chat</span>
+<!-- Tooltip -->
+<span class="absolute right-full mr-4 bg-tertiary text-on-tertiary font-label text-label px-3 py-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none uppercase">WhatsApp Support</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="bg-surface-container-high dark:bg-tertiary-container border-t border-gray-300 dark:border-outline-variant full-width bottom-0 mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-8 px-margin-desktop py-space-12 w-full max-w-[1280px] mx-auto">
+<!-- Brand Column -->
+<div class="flex flex-col gap-space-4 md:col-span-1">
+<span class="font-h3 text-h3 text-primary dark:text-primary-fixed-dim uppercase flex items-center gap-2">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+                    Tejaswini
+                </span>
+<p class="font-body-sm text-body-sm text-gray-700 dark:text-gray-300">
+                    © 2024 Tejaswini Industries. ISO 9001:2015 Certified. Precision Engineering Redefined.
+                </p>
+</div>
+<!-- Links Column 1 -->
+<div class="flex flex-col gap-space-3 md:col-span-1">
+<a class="font-label text-label text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 uppercase" href="#">Product Categories</a>
+<a class="font-label text-label text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 uppercase" href="#">Quality Policy</a>
+</div>
+<!-- Links Column 2 -->
+<div class="flex flex-col gap-space-3 md:col-span-1">
+<a class="font-label text-label text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 uppercase" href="#">Infrastructure</a>
+<a class="font-label text-label text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 uppercase" href="#">Career</a>
+</div>
+<!-- Links Column 3 -->
+<div class="flex flex-col gap-space-3 md:col-span-1">
+<a class="font-label text-label text-gray-700 dark:text-gray-300 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4 uppercase" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</body></html>

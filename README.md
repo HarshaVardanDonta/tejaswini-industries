@@ -27,6 +27,20 @@ The admin UI is a first-party React app (sidebar navigation, sectioned forms, li
 
 Optional: run standalone Sanity Studio with `npm run sanity:dev` for schema development only (not linked from the public site).
 
+### Contact form email
+
+Submissions on `/contact` are sent to **info@tejaswiniindustries.com** via a server-side SMTP API (`POST /api/contact`). Do **not** store SMTP passwords in Sanity—the site loads CMS data in the browser, so secrets would be exposed.
+
+1. Add SMTP variables to `.env` (see [`.env.example`](.env.example); no `VITE_` prefix).
+2. Local dev: `npm run dev` serves `/api/contact` through Vite middleware (uses the same `.env` values).
+3. Production: deploy to [Vercel](https://vercel.com) (or another host that runs `api/contact`) and set the same variables in the project **Environment Variables** dashboard.
+
+Typical values from your email host: `SMTP_HOST`, `SMTP_PORT` (often `587`), `SMTP_USER`, `SMTP_PASS`, optional `SMTP_FROM` and `CONTACT_INQUIRY_TO`.
+
+### Contact page map
+
+The contact sidebar embeds **Google Maps** at the coordinates in [`src/constants/contactInfo.ts`](src/constants/contactInfo.ts). Clicking the map opens **Google Maps navigation** (driving directions) to the office.
+
 ### Admin security note
 
 Admin login checks username/password stored in the Sanity `adminCredentials` document (editable under **Settings → Admin Credentials** in `/admin`). Change the default password after first login. Writes and image uploads require the Editor API token in `.env`. This is basic access control, not enterprise auth.

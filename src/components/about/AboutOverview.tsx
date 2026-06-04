@@ -14,7 +14,13 @@ export function AboutOverview() {
             src={overview.isoImage}
           />
         </div>
-        <div className="absolute -bottom-space-6 -right-space-6 bg-white border border-gray-100 p-space-4 rounded-xl shadow-sm border-l-4 border-l-secondary">
+        <div className="absolute -bottom-space-6 -left-space-2 sm:-left-space-6 bg-white border border-gray-100 p-space-4 rounded-xl shadow-sm border-l-4 border-l-secondary">
+          <p className="font-h2 text-h2 text-primary uppercase">BIS</p>
+          <p className="font-label text-label text-gray-500 uppercase tracking-widest">
+            Certified
+          </p>
+        </div>
+        <div className="absolute -bottom-space-6 -right-space-2 sm:-right-space-6 bg-white border border-gray-100 p-space-4 rounded-xl shadow-sm border-l-4 border-l-secondary">
           <p className="font-h2 text-h2 text-primary uppercase">ISO 9001:2015</p>
           <p className="font-label text-label text-gray-500 uppercase tracking-widest">
             Certified

@@ -4,6 +4,7 @@ import type {
   CorporateProfilePageData,
   ServicesPageData,
 } from '../sanity/pageTypes'
+import { contactInfo } from '../constants/contactInfo'
 import type { LandingPageData } from '../context/LandingPageContext'
 import {
   distributionTransformerProducts,
@@ -501,19 +502,39 @@ export function mapAboutPage(doc: Record<string, unknown> | null, fallback: Abou
   }
 }
 
+function applyContactInfo(infoCards: ContactPageData['infoCards']): ContactPageData['infoCards'] {
+  return infoCards.map((card) => {
+    if (card.title === 'Corporate Office') {
+      return { ...card, lines: [...contactInfo.addressLines] }
+    }
+    if (card.title === 'Direct Contact') {
+      return { ...card, lines: [contactInfo.phone, contactInfo.email] }
+    }
+    if (card.title === 'Operating Hours') {
+      return { ...card, lines: [...contactInfo.operatingHoursLines] }
+    }
+    return card
+  })
+}
+
 export function mapContactPage(doc: Record<string, unknown> | null, fallback: ContactPageData): ContactPageData {
   if (!doc) return fallback
   const map = doc.map as Record<string, unknown> | undefined
   const mapImage = mapImageField(map?.image as ImageWithUrl, fallback.map.image, fallback.map.imageAlt)
+  const infoCards = applyContactInfo(
+    (doc.infoCards as ContactPageData['infoCards']) || fallback.infoCards
+  )
 
   return {
     hero: (doc.hero as ContactPageData['hero']) || fallback.hero,
-    infoCards: (doc.infoCards as ContactPageData['infoCards']) || fallback.infoCards,
+    infoCards,
     whatsapp: (doc.whatsapp as ContactPageData['whatsapp']) || fallback.whatsapp,
     map: {
       image: mapImage.url,
-      imageAlt: mapImage.alt,
-      label: (map?.label as string) || fallback.map.label,
+      imageAlt:
+        mapImage.alt ||
+        `Map showing Tejaswini Industries at ${contactInfo.mapLabel}`,
+      label: (map?.label as string) || contactInfo.mapLabel,
     },
     form: (doc.form as ContactPageData['form']) || fallback.form,
     inquiryTypes: (doc.inquiryTypes as ContactPageData['inquiryTypes']) || fallback.inquiryTypes,

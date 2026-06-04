@@ -1,5 +1,7 @@
 import { Link, NavLink } from 'react-router-dom'
 import logo from '../assets/logo.png'
+import { contactInfo } from '../constants/contactInfo'
+import { REQUEST_QUOTE_PATH } from '../constants/routes'
 import { Icon } from './Icon'
 
 const navLinks = [
@@ -53,27 +55,27 @@ export function Header() {
           </nav>
           <div className="flex items-center gap-space-4">
             <div className="hidden lg:flex gap-2">
-              <button
-                type="button"
-                aria-label="call"
+              <a
+                href={contactInfo.phoneHref}
+                aria-label={`Call ${contactInfo.phone}`}
                 className="p-2 text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 rounded-full"
               >
                 <Icon name="call" />
-              </button>
-              <button
-                type="button"
-                aria-label="mail"
+              </a>
+              <a
+                href={`mailto:${contactInfo.email}`}
+                aria-label={`Email ${contactInfo.email}`}
                 className="p-2 text-on-primary/80 hover:text-on-primary transition-colors hover:bg-primary-container/20 rounded-full"
               >
                 <Icon name="mail" />
-              </button>
+              </a>
             </div>
-            <button
-              type="button"
+            <Link
+              to={REQUEST_QUOTE_PATH}
               className="bg-secondary text-on-secondary px-space-4 py-space-2 rounded-lg font-label text-label uppercase tracking-widest hover:bg-secondary/90 transition-colors border border-secondary shadow-sm"
             >
               Request Quote
-            </button>
+            </Link>
           </div>
         </div>
       </header>

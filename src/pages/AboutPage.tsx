@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react'
+import { useMemo } from 'react'
 import { AboutCta } from '../components/about/AboutCta'
 import { AboutHero } from '../components/about/AboutHero'
 import { AboutInfrastructure } from '../components/about/AboutInfrastructure'
@@ -7,6 +7,8 @@ import { AboutSectors } from '../components/about/AboutSectors'
 import { AboutVisionMission } from '../components/about/AboutVisionMission'
 import { ProductsShell } from '../components/layout/ProductsShell'
 import { PageLoading } from '../components/PageLoading'
+import { PageSEO } from '../components/seo/PageSEO'
+import { staticPageMeta } from '../constants/seo'
 import { AboutPageProvider } from '../context/PageDataContext'
 import { aboutPage } from '../data/about'
 import { useSanityQuery } from '../hooks/useSanityQuery'
@@ -20,15 +22,13 @@ export function AboutPage() {
     [data]
   )
 
-  useEffect(() => {
-    document.title = 'About Us | Tejaswini Industries'
-  }, [])
 
   if (loading) return <ProductsShell className="bg-background"><PageLoading embedded /></ProductsShell>
 
   return (
     <AboutPageProvider value={pageData}>
-      <ProductsShell className="bg-background" footerVariant="default">
+      <ProductsShell className="bg-background">
+        <PageSEO {...staticPageMeta.about} />
         <main className="grow max-w-[1280px] mx-auto w-full">
           <AboutHero />
           <AboutOverview />

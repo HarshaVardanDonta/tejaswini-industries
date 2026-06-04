@@ -330,19 +330,22 @@ export function buildDocuments(images) {
         {
           icon: 'domain',
           title: 'Corporate Office',
-          lines: ['Industrial Estate, Phase II,', 'Sector 4, Manufacturing Hub, IN'],
+          lines: [
+            '3-13-109/1/1, FCI Road, Suryanagar',
+            'Mallapur, Hyderabad - 500076, Telangana, India',
+          ],
           mono: false,
         },
         {
           icon: 'call',
           title: 'Direct Contact',
-          lines: ['+91 800 555 0199', 'sales@tejaswini.ind'],
+          lines: ['+91 9248030365', 'info@tejaswiniindustries.com'],
           mono: true,
         },
         {
           icon: 'schedule',
           title: 'Operating Hours',
-          lines: ['Mon - Sat: 9:00 AM - 6:00 PM', 'Sun: Closed'],
+          lines: ['Mon - Sat: 9:00 AM - 5:30 PM', 'Sun: Closed'],
           mono: false,
         },
       ],
@@ -357,7 +360,7 @@ export function buildDocuments(images) {
           images.contact.map,
           'Satellite map view of an industrial park with a facility marker'
         ),
-        label: 'Manufacturing Hub, IN',
+        label: 'Hyderabad, Telangana',
       },
       form: {
         title: 'Project Inquiry Form',

@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react'
+import { useMemo } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { ProductDetailBreadcrumb } from '../components/product-detail/ProductDetailBreadcrumb'
 import { ProductDetailGallery } from '../components/product-detail/ProductDetailGallery'
@@ -6,6 +6,7 @@ import { ProductDetailInfo } from '../components/product-detail/ProductDetailInf
 import { TechnicalParametersTable } from '../components/product-detail/TechnicalParametersTable'
 import { ProductsShell } from '../components/layout/ProductsShell'
 import { PageLoading } from '../components/PageLoading'
+import { buildProductJsonLd, PageSEO } from '../components/seo/PageSEO'
 import { DistributionPageProvider } from '../context/DistributionPageContext'
 import { ProductDetailProvider } from '../context/ProductDetailContext'
 import { distributionCategory } from '../data/distributionTransformers'
@@ -22,10 +23,6 @@ export function DistributionTransformer250KvaPage() {
     () => mapProductDetail(data as Record<string, unknown> | null, productDetail250Kva),
     [data]
   )
-
-  useEffect(() => {
-    document.title = `${detail.title} | Tejaswini Industries`
-  }, [detail.title])
 
   if (loading) {
     return (
@@ -48,6 +45,8 @@ export function DistributionTransformer250KvaPage() {
     )
   }
 
+  const productPath = `/products/distribution-transformers/${detail.slug}`
+
   return (
     <DistributionPageProvider
       value={{
@@ -58,6 +57,20 @@ export function DistributionTransformer250KvaPage() {
     >
       <ProductDetailProvider value={detail}>
         <ProductsShell className="bg-background">
+          <PageSEO
+            title={detail.title}
+            description={detail.description}
+            path={productPath}
+            image={detail.images.main.src}
+            type="product"
+            jsonLd={buildProductJsonLd({
+              title: detail.title,
+              description: detail.description,
+              path: productPath,
+              image: detail.images.main.src,
+              sku: detail.sku,
+            })}
+          />
           <main className="grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-space-12 grid grid-cols-4 md:grid-cols-12 gap-gutter">
             <ProductDetailBreadcrumb currentLabel={detail.breadcrumbLabel} />
 

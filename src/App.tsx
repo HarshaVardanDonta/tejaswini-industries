@@ -1,17 +1,24 @@
 import { lazy, Suspense } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { GoogleAnalytics } from './components/GoogleAnalytics'
+import { ScrollToTop } from './components/ScrollToTop'
 import { AppLayout } from './components/layout/AppLayout'
 import { AboutPage } from './pages/AboutPage'
+import { CareerPage } from './pages/CareerPage'
 import { CorporateProfilePage } from './pages/CorporateProfilePage'
 import { ContactPage } from './pages/ContactPage'
+import { RequestQuotePage } from './pages/RequestQuotePage'
 import { BlogDetailPage } from './pages/BlogDetailPage'
 import { BlogsPage } from './pages/BlogsPage'
 import { DistributionTransformer250KvaPage } from './pages/DistributionTransformer250KvaPage'
 import { DistributionTransformersPage } from './pages/DistributionTransformersPage'
 import { TransformerSpecificationComparisonPage } from './pages/TransformerSpecificationComparisonPage'
+import { InfrastructurePage } from './pages/InfrastructurePage'
 import { LandingPage } from './pages/LandingPage'
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage'
 import { ProductsPage } from './pages/ProductsPage'
 import { ProjectsPage } from './pages/ProjectsPage'
+import { QualityPolicyPage } from './pages/QualityPolicyPage'
 import { ServicesPage } from './pages/ServicesPage'
 
 const AdminLoginPage = lazy(() =>
@@ -35,6 +42,8 @@ function AdminFallback() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
+      <GoogleAnalytics />
       <Routes>
         <Route
           path="/admin/login"
@@ -74,6 +83,11 @@ function App() {
           <Route path="corporate-profile" element={<CorporateProfilePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="request-quote" element={<RequestQuotePage />} />
+          <Route path="quality-policy" element={<QualityPolicyPage />} />
+          <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="careers" element={<CareerPage />} />
+          <Route path="infrastructure" element={<InfrastructurePage />} />
           <Route path="blogs" element={<BlogsPage />} />
           <Route path="blogs/:slug" element={<BlogDetailPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />

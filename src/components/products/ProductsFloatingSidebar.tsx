@@ -1,7 +1,12 @@
 import { useEffect, useState, type ReactNode } from 'react'
+import { Link } from 'react-router-dom'
+import { contactInfo, getWhatsAppUrl } from '../../constants/contactInfo'
+import { REQUEST_QUOTE_PATH } from '../../constants/routes'
+import { images } from '../../constants/images'
 import { Icon } from '../Icon'
 
 const TEASE_STORAGE_KEY = 'ti-floating-sidebar-teased'
+const WHATSAPP_URL = getWhatsAppUrl(contactInfo.whatsappMessages.products)
 
 function WhatsAppIcon({ className = 'w-5 h-5 shrink-0' }: { className?: string }) {
   return (
@@ -17,23 +22,46 @@ function WhatsAppIcon({ className = 'w-5 h-5 shrink-0' }: { className?: string }
 }
 
 type SidebarActionProps = {
-  href: string
+  href?: string
+  to?: string
   label: string
   icon: ReactNode
   className: string
+  target?: string
+  rel?: string
 }
 
-function SidebarAction({ href, label, icon, className }: SidebarActionProps) {
-  return (
-    <a
-      href={href}
-      title={label}
-      className={`flex items-center justify-center gap-space-2 px-space-4 py-space-3 rounded-xl shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-transform whitespace-nowrap min-w-[3rem] group-hover/sidebar:justify-start ${className}`}
-    >
+function SidebarAction({
+  href,
+  to,
+  label,
+  icon,
+  className,
+  target,
+  rel,
+}: SidebarActionProps) {
+  const classNames = `flex items-center justify-center gap-space-2 px-space-4 py-space-3 rounded-xl shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-transform whitespace-nowrap min-w-[3rem] group-hover/sidebar:justify-start ${className}`
+
+  const content = (
+    <>
       {icon}
       <span className="font-label text-label uppercase tracking-wide max-w-0 overflow-hidden opacity-0 group-hover/sidebar:max-w-[10rem] group-hover/sidebar:opacity-100 transition-all duration-300">
         {label}
       </span>
+    </>
+  )
+
+  if (to) {
+    return (
+      <Link to={to} title={label} className={classNames}>
+        {content}
+      </Link>
+    )
+  }
+
+  return (
+    <a href={href} title={label} target={target} rel={rel} className={classNames}>
+      {content}
     </a>
   )
 }
@@ -62,27 +90,36 @@ export function ProductsFloatingSidebar() {
         aria-hidden
       />
 
-      <div className="text-center border-b border-gray-100 pb-2 mb-1 max-h-0 opacity-0 overflow-hidden group-hover/sidebar:max-h-24 group-hover/sidebar:opacity-100 transition-all duration-300">
+      <div className="text-center border-b border-gray-100 pb-2 mb-1 max-h-0 opacity-0 overflow-hidden group-hover/sidebar:max-h-36 group-hover/sidebar:opacity-100 transition-all duration-300">
         <p className="font-label text-label text-primary uppercase">
           ISO 9001:2015
         </p>
         <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1">
           Certified Excellence
         </p>
+        <div className="mt-2 pt-2 border-t border-gray-100 flex justify-center">
+          <img
+            src={images.bisCertification}
+            alt="BIS Certification"
+            className="h-7 w-auto object-contain"
+          />
+        </div>
       </div>
 
       <div className="flex flex-col gap-3">
         <SidebarAction
-          href="#"
+          to={REQUEST_QUOTE_PATH}
           label="Request Quote"
           icon={<Icon name="request_quote" size={22} />}
           className="bg-secondary text-on-secondary"
         />
         <SidebarAction
-          href="#"
+          href={WHATSAPP_URL}
           label="WhatsApp"
           icon={<WhatsAppIcon />}
           className="bg-[#25D366] text-white hover:bg-[#20BD5A]"
+          target="_blank"
+          rel="noopener noreferrer"
         />
       </div>
     </aside>

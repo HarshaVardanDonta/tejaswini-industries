@@ -1,4 +1,7 @@
+import { Link } from 'react-router-dom'
 import { useLandingPageData } from '../context/LandingPageContext'
+import { contactInfo } from '../constants/contactInfo'
+import { REQUEST_QUOTE_PATH } from '../constants/routes'
 import { Icon } from './Icon'
 
 export function Hero() {
@@ -38,20 +41,21 @@ export function Hero() {
             {hero.description}
           </p>
           <div className="flex flex-wrap gap-space-4">
-            <button
-              type="button"
+            <Link
+              to={REQUEST_QUOTE_PATH}
               className="bg-secondary text-on-secondary px-space-6 py-space-3 rounded-sm font-label text-label uppercase tracking-widest hover:bg-secondary/90 transition-colors flex items-center gap-2 border border-secondary shadow-[0_4px_14px_rgba(187,0,39,0.3)]"
             >
               {hero.primaryCta}
               <Icon name="arrow_forward" size={18} />
-            </button>
-            <button
-              type="button"
+            </Link>
+            <a
+              href={contactInfo.phoneHref}
+              aria-label={`Call ${contactInfo.phone}`}
               className="bg-white/10 backdrop-blur-md text-white border border-gray-300/50 px-space-6 py-space-3 rounded-sm font-label text-label uppercase tracking-widest hover:bg-white/20 transition-colors flex items-center gap-2"
             >
               <Icon name="call" size={18} />
               {hero.secondaryCta}
-            </button>
+            </a>
           </div>
         </div>
       </div>

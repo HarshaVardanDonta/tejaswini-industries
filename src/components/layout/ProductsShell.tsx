@@ -6,13 +6,11 @@ import { ProductsFloatingSidebar } from '../products/ProductsFloatingSidebar'
 type ProductsShellProps = {
   children: ReactNode
   className?: string
-  footerVariant?: 'default' | 'compact'
 }
 
 export function ProductsShell({
   children,
   className = 'bg-surface',
-  footerVariant = 'compact',
 }: ProductsShellProps) {
   return (
     <div
@@ -21,7 +19,7 @@ export function ProductsShell({
       <Header />
       {children}
       <ProductsFloatingSidebar />
-      <Footer variant={footerVariant} />
+      <Footer />
     </div>
   )
 }

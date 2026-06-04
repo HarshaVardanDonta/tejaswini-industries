@@ -1,10 +1,12 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { ProductsShell } from '../components/layout/ProductsShell'
 import { PageLoading } from '../components/PageLoading'
 import { CommissionsTable } from '../components/projects/CommissionsTable'
 import { ProjectCard } from '../components/projects/ProjectCard'
 import { ProjectsFilters } from '../components/projects/ProjectsFilters'
 import { ProjectsIntro } from '../components/projects/ProjectsIntro'
+import { PageSEO } from '../components/seo/PageSEO'
+import { staticPageMeta } from '../constants/seo'
 import { ProjectsPageProvider } from '../context/ProjectsPageContext'
 import type { Project, ProjectCategory } from '../data/projects'
 import { commissionRows, projects } from '../data/projects'
@@ -42,10 +44,6 @@ export function ProjectsPage() {
     return projectList.filter((p) => p.category === filter)
   }, [filter, projectList])
 
-  useEffect(() => {
-    document.title = 'Projects - Tejaswini Industries'
-  }, [])
-
   if (projectsLoading || commissionLoading) {
     return (
       <ProductsShell className="bg-background">
@@ -57,6 +55,7 @@ export function ProjectsPage() {
   return (
     <ProjectsPageProvider commissionRows={commissionList}>
       <ProductsShell className="bg-background">
+        <PageSEO {...staticPageMeta.projects} />
         <main className="grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-space-12">
           <div className="mb-space-12 flex flex-col md:flex-row justify-between items-end gap-space-6 border-b border-gray-300 pb-space-6">
             <ProjectsIntro />

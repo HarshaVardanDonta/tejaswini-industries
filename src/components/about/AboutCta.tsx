@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom'
 import { useAboutPageData } from '../../context/PageDataContext'
+import { REQUEST_QUOTE_PATH } from '../../constants/routes'
 import { Icon } from '../Icon'
 
 export function AboutCta() {
@@ -12,13 +14,13 @@ export function AboutCta() {
       <p className="font-body-lg text-body-lg text-gray-500 max-w-2xl mx-auto mb-space-8">
         {cta.description}
       </p>
-      <button
-        type="button"
+      <Link
+        to={REQUEST_QUOTE_PATH}
         className="bg-primary text-on-primary font-label text-label uppercase tracking-widest px-space-8 py-space-4 rounded hover:bg-surface-tint transition-colors border border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-primary inline-flex items-center gap-space-2"
       >
         <span>{cta.buttonLabel}</span>
         <Icon name="arrow_forward" size={16} filled={false} />
-      </button>
+      </Link>
     </section>
   )
 }

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Technical Specifications - Tejaswini Industries</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=IBM+Plex+Mono:wght@400&amp;family=Source+Sans+3:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#111c2c",
+                        "inverse-on-surface": "#f3f0ef",
+                        "blue-light": "#E8EDF8",
+                        "gray-100": "#EFEFEC",
+                        "gray-50": "#F7F7F5",
+                        "primary-fixed-dim": "#b5c4ff",
+                        "surface-variant": "#e5e2e1",
+                        "tertiary": "#202b3c",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary": "#ffffff",
+                        "red-light": "#FCEAEC",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#fffbff",
+                        "on-error-container": "#93000a",
+                        "steel": "#4A5568",
+                        "on-tertiary-container": "#a2adc3",
+                        "on-tertiary-fixed-variant": "#3c475a",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#ffb3b1",
+                        "secondary": "#bb0027",
+                        "inverse-surface": "#313030",
+                        "inverse-primary": "#b5c4ff",
+                        "primary-fixed": "#dce1ff",
+                        "on-primary-container": "#91a9ff",
+                        "on-primary-fixed": "#00164e",
+                        "background": "#fcf9f8",
+                        "gray-500": "#7A7A74",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#e0283c",
+                        "tertiary-fixed-dim": "#bcc7dd",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#ffdad8",
+                        "gray-700": "#3D3D39",
+                        "surface-container-highest": "#e5e2e1",
+                        "tertiary-container": "#364153",
+                        "tertiary-fixed": "#d8e3fa",
+                        "surface-container": "#f0edec",
+                        "primary": "#00236f",
+                        "on-surface": "#1c1b1b",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#410007",
+                        "surface": "#fcf9f8",
+                        "on-secondary-fixed-variant": "#92001c",
+                        "outline-variant": "#c4c5d3",
+                        "gray-300": "#C4C4BC",
+                        "surface-bright": "#fcf9f8",
+                        "primary-container": "#1a3a8f",
+                        "surface-tint": "#3d59af",
+                        "surface-container-high": "#ebe7e7",
+                        "surface-container-low": "#f6f3f2",
+                        "on-primary-fixed-variant": "#224095",
+                        "on-background": "#1c1b1b",
+                        "outline": "#757683",
+                        "on-surface-variant": "#444652"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "space-4": "16px",
+                        "space-6": "24px",
+                        "margin-mobile": "16px",
+                        "space-8": "32px",
+                        "margin-tablet": "24px",
+                        "space-2": "8px",
+                        "margin-desktop": "48px",
+                        "gutter": "24px",
+                        "base": "4px",
+                        "space-16": "64px",
+                        "space-12": "48px",
+                        "space-3": "12px",
+                        "space-1": "4px"
+                    },
+                    "fontFamily": {
+                        "display-xl-mobile": ["Barlow Condensed", "sans-serif"],
+                        "h2": ["Barlow Condensed", "sans-serif"],
+                        "body-sm": ["Source Sans 3", "sans-serif"],
+                        "mono-data": ["IBM Plex Mono", "monospace"],
+                        "label": ["Barlow Condensed", "sans-serif"],
+                        "display-xl": ["Barlow Condensed", "sans-serif"],
+                        "body-lg": ["Source Sans 3", "sans-serif"],
+                        "h3": ["Barlow Condensed", "sans-serif"],
+                        "display-lg": ["Barlow Condensed", "sans-serif"],
+                        "h1": ["Barlow Condensed", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "700" }],
+                        "h2": ["22px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "mono-data": ["13px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "display-xl": ["48px", { "lineHeight": "1.1", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "h3": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-lg": ["36px", { "lineHeight": "1.15", "fontWeight": "700" }],
+                        "h1": ["28px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        [data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom scrollbar for textareas */
+        textarea::-webkit-scrollbar {
+            width: 6px;
+        }
+        textarea::-webkit-scrollbar-track {
+            background: #F7F7F5;
+        }
+        textarea::-webkit-scrollbar-thumb {
+            background: #C4C4BC;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-on-surface font-body-lg min-h-screen flex flex-col">
+<!-- Top Navigation (Shared Component Placeholder - Suppressed for flow, but keeping structure as per instructions if needed. Let's provide a simplified transactional header) -->
+<header class="bg-primary text-on-primary border-b-4 border-secondary sticky top-0 z-50 h-20 flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
+<div class="text-h2 font-h2 font-bold uppercase tracking-wider flex items-center gap-space-2">
+<span class="material-symbols-outlined text-[32px]" data-icon="precision_manufacturing">precision_manufacturing</span>
+            Tejaswini Industries
+        </div>
+<div class="hidden md:flex gap-space-4 items-center">
+<span class="font-label text-label uppercase opacity-80">Quote Request Portal</span>
+<span class="material-symbols-outlined opacity-80" data-icon="assignment">assignment</span>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-space-12 flex flex-col lg:flex-row gap-gutter">
+<!-- Main Form Area -->
+<div class="flex-grow lg:w-2/3 flex flex-col gap-space-8">
+<!-- Header & Stepper -->
+<div class="bg-surface-container-lowest border border-gray-100 rounded-lg p-space-6 md:p-space-8 shadow-sm relative overflow-hidden">
+<!-- Red Accent Left -->
+<div class="absolute left-0 top-0 bottom-0 w-[3px] bg-secondary"></div>
+<h1 class="font-display-lg text-display-lg text-primary mb-space-2">Technical Specifications</h1>
+<p class="font-body-sm text-body-sm text-gray-500 mb-space-8">Step 3 of 3: Provide final engineering requirements and necessary documentation for accurate quoting.</p>
+<!-- Stepper -->
+<div class="flex items-center w-full mb-space-4">
+<div class="flex items-center text-gray-500">
+<div class="rounded-full h-8 w-8 flex items-center justify-center border-2 border-gray-300 font-label text-label bg-gray-50">1</div>
+<span class="ml-space-2 font-label text-label uppercase tracking-widest hidden sm:inline">Company Details</span>
+</div>
+<div class="flex-auto border-t-2 border-gray-300 mx-space-4"></div>
+<div class="flex items-center text-gray-500">
+<div class="rounded-full h-8 w-8 flex items-center justify-center border-2 border-gray-300 font-label text-label bg-gray-50">2</div>
+<span class="ml-space-2 font-label text-label uppercase tracking-widest hidden sm:inline">Product Selection</span>
+</div>
+<div class="flex-auto border-t-2 border-secondary mx-space-4"></div>
+<div class="flex items-center text-secondary">
+<div class="rounded-full h-8 w-8 flex items-center justify-center border-2 border-secondary bg-secondary text-white font-label text-label">3</div>
+<span class="ml-space-2 font-label text-label uppercase tracking-widest hidden sm:inline font-bold">Tech Specs</span>
+</div>
+</div>
+</div>
+<!-- Form Sections -->
+<form class="flex flex-col gap-space-8">
+<!-- Site Conditions -->
+<div class="bg-surface-container-lowest border border-gray-100 rounded-lg p-space-6 shadow-sm">
+<h2 class="font-h2 text-h2 text-primary border-b border-gray-300 pb-space-2 mb-space-6 flex items-center gap-space-2">
+<span class="material-symbols-outlined" data-icon="thermostat">thermostat</span>
+                        Environmental &amp; Site Conditions
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-6 mb-space-6">
+<div class="flex flex-col gap-space-1">
+<label class="font-label text-label text-gray-700 uppercase" for="altitude">Altitude (m above sea level)</label>
+<input class="w-full bg-white border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary-fixed-dim px-space-3 py-space-2 font-mono-data text-mono-data placeholder:text-gray-300" id="altitude" placeholder="e.g. 1000" type="number"/>
+</div>
+<div class="flex flex-col gap-space-1">
+<label class="font-label text-label text-gray-700 uppercase" for="temp">Max Ambient Temp (°C)</label>
+<input class="w-full bg-white border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary-fixed-dim px-space-3 py-space-2 font-mono-data text-mono-data placeholder:text-gray-300" id="temp" placeholder="e.g. 50" type="number"/>
+</div>
+</div>
+<div class="flex flex-col gap-space-1">
+<label class="font-label text-label text-gray-700 uppercase" for="site_details">Additional Site Conditions / Constraints</label>
+<textarea class="w-full bg-white border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary-fixed-dim px-space-3 py-space-2 font-body-sm text-body-sm" id="site_details" placeholder="Describe humidity levels, dust conditions, or physical space constraints..." rows="4"></textarea>
+</div>
+</div>
+<!-- Technical Standards -->
+<div class="bg-surface-container-lowest border border-gray-100 rounded-lg p-space-6 shadow-sm">
+<h2 class="font-h2 text-h2 text-primary border-b border-gray-300 pb-space-2 mb-space-6 flex items-center gap-space-2">
+<span class="material-symbols-outlined" data-icon="rule">rule</span>
+                        Compliance Standards
+                    </h2>
+<p class="font-body-sm text-body-sm text-gray-500 mb-space-4">Select all applicable manufacturing and testing standards required for this project.</p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-4">
+<!-- Checkbox Item -->
+<label class="flex items-start gap-space-2 cursor-pointer p-space-3 border border-gray-100 rounded hover:bg-gray-50 transition-colors">
+<input checked="" class="mt-1 border-gray-300 text-primary focus:ring-primary rounded-sm w-4 h-4" type="checkbox"/>
+<span class="flex flex-col">
+<span class="font-label text-label text-gray-700 font-bold">IS (Indian Standards)</span>
+<span class="font-body-sm text-[11px] text-gray-500">Default requirement</span>
+</span>
+</label>
+<label class="flex items-start gap-space-2 cursor-pointer p-space-3 border border-gray-100 rounded hover:bg-gray-50 transition-colors">
+<input class="mt-1 border-gray-300 text-primary focus:ring-primary rounded-sm w-4 h-4" type="checkbox"/>
+<span class="flex flex-col">
+<span class="font-label text-label text-gray-700 font-bold">IEC Standards</span>
+<span class="font-body-sm text-[11px] text-gray-500">International Electrotechnical</span>
+</span>
+</label>
+<label class="flex items-start gap-space-2 cursor-pointer p-space-3 border border-gray-100 rounded hover:bg-gray-50 transition-colors">
+<input class="mt-1 border-gray-300 text-primary focus:ring-primary rounded-sm w-4 h-4" type="checkbox"/>
+<span class="flex flex-col">
+<span class="font-label text-label text-gray-700 font-bold">ANSI Standards</span>
+<span class="font-body-sm text-[11px] text-gray-500">American National</span>
+</span>
+</label>
+</div>
+</div>
+<!-- File Upload -->
+<div class="bg-surface-container-lowest border border-gray-100 rounded-lg p-space-6 shadow-sm">
+<h2 class="font-h2 text-h2 text-primary border-b border-gray-300 pb-space-2 mb-space-6 flex items-center gap-space-2">
+<span class="material-symbols-outlined" data-icon="upload_file">upload_file</span>
+                        Technical Documentation
+                    </h2>
+<div class="border-2 border-dashed border-gray-300 rounded-lg p-space-8 text-center bg-gray-50 hover:bg-blue-light/30 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-4xl text-primary opacity-70 mb-space-2 group-hover:opacity-100 transition-opacity" data-icon="cloud_upload">cloud_upload</span>
+<h3 class="font-h3 text-h3 text-gray-700 mb-1">Upload SLD &amp; Specs</h3>
+<p class="font-body-sm text-body-sm text-gray-500 mb-space-4">Drag and drop your Single Line Diagrams, BOQ, or detailed spec sheets here.</p>
+<div class="flex justify-center">
+<button class="bg-white border border-primary text-primary font-label text-label px-space-4 py-space-2 rounded uppercase tracking-wider hover:bg-gray-50 transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="attach_file">attach_file</span>
+                                Browse Files
+                            </button>
+</div>
+<p class="font-mono-data text-[11px] text-gray-400 mt-space-4 uppercase">Supported: .PDF, .DWG, .XLSX (Max 50MB)</p>
+</div>
+</div>
+<!-- Submit Action -->
+<div class="flex justify-between items-center pt-space-4">
+<button class="font-label text-label text-gray-500 hover:text-primary transition-colors flex items-center gap-1 uppercase tracking-wider" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_back">arrow_back</span>
+                        Back to Products
+                    </button>
+<button class="bg-primary text-on-primary font-label text-label px-space-8 py-space-3 rounded uppercase tracking-wider hover:bg-primary-container transition-colors shadow-md flex items-center gap-2" type="button">
+                        Submit Request
+                        <span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Sidebar (Commitment & Certifications) -->
+<div class="w-full lg:w-1/3 flex flex-col gap-space-6">
+<!-- Commitment Card -->
+<div class="bg-surface-container-high border border-gray-300 rounded-lg p-space-6">
+<div class="flex items-center gap-space-3 mb-space-4 border-b border-gray-300 pb-space-2">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="verified" data-weight="fill">verified</span>
+<h3 class="font-h2 text-h2 text-primary">Our Commitment</h3>
+</div>
+<div class="space-y-space-4 font-body-sm text-body-sm text-gray-700">
+<p>At Tejaswini Industries, precision is not a metric; it is our foundation. By providing accurate technical specifications, you enable our engineering team to architect solutions that meet rigorous industrial demands.</p>
+<ul class="list-none space-y-space-2">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-sm mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Expert engineering review within 48 hours.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-sm mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Compliance with all stipulated national standards.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-sm mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Strict adherence to data confidentiality.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Certifications -->
+<div class="bg-surface-container-lowest border border-gray-100 rounded-lg p-space-6 flex flex-col items-center justify-center gap-space-6 shadow-sm">
+<div class="text-center">
+<span class="font-label text-label text-gray-500 uppercase tracking-widest block mb-space-2">Certified Excellence</span>
+<div class="border-2 border-primary text-primary font-h3 text-h3 px-space-4 py-space-2 inline-block font-bold">
+                        ISO 9001:2015
+                    </div>
+</div>
+<div class="w-full h-px bg-gray-100"></div>
+<div class="text-center w-full">
+<span class="font-label text-label text-gray-500 uppercase tracking-widest block mb-space-4">Compliant With</span>
+<!-- BIS Logo Placeholder -->
+<img alt="BIS Certification" class="h-24 mx-auto object-contain mix-blend-multiply" src="https://lh3.googleusercontent.com/aida/AP1WRLvaoU7HZK_IRyoenSmoISbvYCXn1K08IhkOa_ZUZ2LqzTitnzOP7bUgazEMfsthtcnqiJzaTGGBhUalDjbs6v-_0UOgM2zOeQrl1kwPoYLsakqR5D4xSBN-Gwn524sD34gfYueM8ukK68WGB6NmE92Bv0VPcaR_WLn3hJmNuurq0g3NJazNaGHox2icc4m_VqfmtiYuQ20Ai5qxp7ttn3ShyHMWks155vDq7g-2zkilMVw4FM7TmMDx4Q"/>
+</div>
+</div>
+<!-- Support Contact -->
+<div class="bg-blue-light border border-primary-fixed-dim rounded-lg p-space-6 text-center">
+<span class="material-symbols-outlined text-primary text-3xl mb-space-2 block" data-icon="support_agent">support_agent</span>
+<h4 class="font-h3 text-h3 text-primary mb-1">Need Engineering Support?</h4>
+<p class="font-body-sm text-body-sm text-gray-700 mb-space-4">Our technical team is available to assist with specifications.</p>
+<a class="font-label text-label text-primary uppercase tracking-wider hover:underline decoration-2 underline-offset-4 flex justify-center items-center gap-1" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="call">call</span>
+                     +91-800-TECH-SUP
+                 </a>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-high border-t border-gray-300 w-full mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-8 px-margin-mobile md:px-margin-desktop py-space-12 w-full max-w-[1280px] mx-auto">
+<div class="col-span-1 md:col-span-2">
+<div class="font-h3 text-h3 text-primary uppercase mb-space-2">Tejaswini Industries</div>
+<p class="font-body-sm text-body-sm text-gray-700 max-w-sm">© 2024 Tejaswini Industries. ISO 9001:2015 Certified. Precision Engineering Redefined.</p>
+</div>
+<div class="flex flex-col gap-space-2">
+<a class="font-label text-label text-gray-700 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4" href="#">Product Categories</a>
+<a class="font-label text-label text-gray-700 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4" href="#">Quality Policy</a>
+<a class="font-label text-label text-gray-700 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4" href="#">Infrastructure</a>
+</div>
+<div class="flex flex-col gap-space-2">
+<a class="font-label text-label text-gray-700 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4" href="#">Career</a>
+<a class="font-label text-label text-gray-700 hover:text-primary transition-colors hover:underline decoration-secondary decoration-2 underline-offset-4" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</body></html>
