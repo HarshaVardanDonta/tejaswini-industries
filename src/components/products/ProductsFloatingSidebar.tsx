@@ -29,6 +29,7 @@ type SidebarActionProps = {
   className: string
   target?: string
   rel?: string
+  onActivate?: () => void
 }
 
 function SidebarAction({
@@ -39,8 +40,14 @@ function SidebarAction({
   className,
   target,
   rel,
+  onActivate,
 }: SidebarActionProps) {
   const classNames = `flex items-center justify-center gap-space-2 px-space-4 py-space-3 rounded-xl shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-transform whitespace-nowrap min-w-[3rem] group-hover/sidebar:justify-start ${className}`
+
+  const handleActivate = () => {
+    onActivate?.()
+    ;(document.activeElement as HTMLElement | null)?.blur()
+  }
 
   const content = (
     <>
@@ -53,14 +60,21 @@ function SidebarAction({
 
   if (to) {
     return (
-      <Link to={to} title={label} className={classNames}>
+      <Link to={to} title={label} className={classNames} onClick={handleActivate}>
         {content}
       </Link>
     )
   }
 
   return (
-    <a href={href} title={label} target={target} rel={rel} className={classNames}>
+    <a
+      href={href}
+      title={label}
+      target={target}
+      rel={rel}
+      className={classNames}
+      onClick={handleActivate}
+    >
       {content}
     </a>
   )
@@ -68,6 +82,12 @@ function SidebarAction({
 
 export function ProductsFloatingSidebar() {
   const [shouldTease, setShouldTease] = useState(false)
+  const [isCollapsed, setIsCollapsed] = useState(false)
+
+  const dismissSidebar = () => {
+    setShouldTease(false)
+    setIsCollapsed(true)
+  }
 
   useEffect(() => {
     if (sessionStorage.getItem(TEASE_STORAGE_KEY)) return
@@ -82,8 +102,9 @@ export function ProductsFloatingSidebar() {
     <aside
       className={`group/sidebar floating-sidebar fixed right-0 bottom-24 z-50 hidden lg:flex flex-col gap-3 bg-surface-container-lowest dark:bg-surface-dim shadow-md border border-gray-300 dark:border-outline border-r-0 rounded-l-xl rounded-r-none p-3 pr-4 overflow-hidden ${
         shouldTease ? 'floating-sidebar--tease' : ''
-      }`}
+      } ${isCollapsed ? 'floating-sidebar--collapsed' : ''}`}
       aria-label="Quick actions"
+      onPointerLeave={() => setIsCollapsed(false)}
     >
       <div
         className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-12 bg-secondary rounded-full group-hover/sidebar:opacity-0 transition-opacity duration-200"
@@ -112,6 +133,7 @@ export function ProductsFloatingSidebar() {
           label="Request Quote"
           icon={<Icon name="request_quote" size={22} />}
           className="bg-secondary text-on-secondary"
+          onActivate={dismissSidebar}
         />
         <SidebarAction
           href={WHATSAPP_URL}
@@ -120,6 +142,7 @@ export function ProductsFloatingSidebar() {
           className="bg-[#25D366] text-white hover:bg-[#20BD5A]"
           target="_blank"
           rel="noopener noreferrer"
+          onActivate={dismissSidebar}
         />
       </div>
     </aside>

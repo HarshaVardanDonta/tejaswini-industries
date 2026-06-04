@@ -155,9 +155,13 @@
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.floating-sidebar:hover,
-.floating-sidebar:focus-within {
+.floating-sidebar:hover:not(.floating-sidebar--collapsed),
+.floating-sidebar:has(:focus-visible):not(.floating-sidebar--collapsed) {
   transform: translateX(0);
+}
+
+.floating-sidebar--collapsed {
+  transform: translateX(calc(100% - 3rem));
 }
 
 .floating-sidebar--tease {
