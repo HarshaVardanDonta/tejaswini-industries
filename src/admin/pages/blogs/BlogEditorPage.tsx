@@ -123,6 +123,145 @@ export function BlogEditorPage() {
               next[si] = { ...next[si], paragraphs: v.split('\n').filter(Boolean) }
               setForm({ ...form, sections: next })
             }} />
+
+            {(section.subsections ?? []).length > 0 ? (
+              <div className="space-y-3 border-t border-gray-100 pt-3">
+                <p className="font-label text-label text-gray-700 uppercase">Checklist subsections</p>
+                {(section.subsections ?? []).map((subsection, ssi) => (
+                  <div key={ssi} className="border border-gray-100 p-3 space-y-3 rounded-sm">
+                    <TextInput label="Subsection ID" value={subsection.id ?? ''} onChange={(id) => {
+                      const next = [...sections]
+                      const subsections = [...(next[si].subsections ?? [])]
+                      subsections[ssi] = { ...subsections[ssi], id }
+                      next[si] = { ...next[si], subsections }
+                      setForm({ ...form, sections: next })
+                    }} />
+                    <TextInput label="Subsection title" value={subsection.title ?? ''} onChange={(title) => {
+                      const next = [...sections]
+                      const subsections = [...(next[si].subsections ?? [])]
+                      subsections[ssi] = { ...subsections[ssi], title }
+                      next[si] = { ...next[si], subsections }
+                      setForm({ ...form, sections: next })
+                    }} />
+                    {(subsection.checklist ?? []).map((item, ci) => (
+                      <div key={ci} className="grid grid-cols-1 md:grid-cols-2 gap-3 border border-gray-50 p-3 rounded-sm">
+                        <TextInput label="Checkpoint label" value={item.label} onChange={(label) => {
+                          const next = [...sections]
+                          const subsections = [...(next[si].subsections ?? [])]
+                          const checklist = [...(subsections[ssi].checklist ?? [])]
+                          checklist[ci] = { ...checklist[ci], label }
+                          subsections[ssi] = { ...subsections[ssi], checklist }
+                          next[si] = { ...next[si], subsections }
+                          setForm({ ...form, sections: next })
+                        }} />
+                        <TextInput label="Checkpoint text" value={item.text} onChange={(text) => {
+                          const next = [...sections]
+                          const subsections = [...(next[si].subsections ?? [])]
+                          const checklist = [...(subsections[ssi].checklist ?? [])]
+                          checklist[ci] = { ...checklist[ci], text }
+                          subsections[ssi] = { ...subsections[ssi], checklist }
+                          next[si] = { ...next[si], subsections }
+                          setForm({ ...form, sections: next })
+                        }} />
+                        <button type="button" className="md:col-span-2 font-label text-label text-secondary uppercase text-left" onClick={() => {
+                          const next = [...sections]
+                          const subsections = [...(next[si].subsections ?? [])]
+                          subsections[ssi] = {
+                            ...subsections[ssi],
+                            checklist: (subsections[ssi].checklist ?? []).filter((_, i) => i !== ci),
+                          }
+                          next[si] = { ...next[si], subsections }
+                          setForm({ ...form, sections: next })
+                        }}>Remove checkpoint</button>
+                      </div>
+                    ))}
+                    <button type="button" className="font-label text-label text-secondary uppercase" onClick={() => {
+                      const next = [...sections]
+                      const subsections = [...(next[si].subsections ?? [])]
+                      subsections[ssi] = {
+                        ...subsections[ssi],
+                        checklist: [...(subsections[ssi].checklist ?? []), { label: '', text: '' }],
+                      }
+                      next[si] = { ...next[si], subsections }
+                      setForm({ ...form, sections: next })
+                    }}>+ Add checkpoint</button>
+                    <button type="button" className="font-label text-label text-secondary uppercase" onClick={() => {
+                      const next = [...sections]
+                      const subsections = (next[si].subsections ?? []).filter((_, i) => i !== ssi)
+                      next[si] = { ...next[si], subsections: subsections.length ? subsections : undefined }
+                      setForm({ ...form, sections: next })
+                    }}>Remove subsection</button>
+                  </div>
+                ))}
+                <button type="button" className="font-label text-label text-secondary uppercase" onClick={() => {
+                  const next = [...sections]
+                  next[si] = {
+                    ...next[si],
+                    subsections: [...(next[si].subsections ?? []), { id: '', title: '', checklist: [] }],
+                  }
+                  setForm({ ...form, sections: next })
+                }}>+ Add subsection</button>
+              </div>
+            ) : null}
+
+            {section.table ? (
+              <div className="space-y-3 border-t border-gray-100 pt-3">
+                <p className="font-label text-label text-gray-700 uppercase">Table</p>
+                <TextArea
+                  label="Column headers (one per line)"
+                  value={(section.table.headers ?? []).join('\n')}
+                  onChange={(v) => {
+                    const next = [...sections]
+                    next[si] = {
+                      ...next[si],
+                      table: { ...section.table!, headers: v.split('\n').filter(Boolean) },
+                    }
+                    setForm({ ...form, sections: next })
+                  }}
+                />
+                {(section.table.rows ?? []).map((row, ri) => (
+                  <div key={ri} className="border border-gray-100 p-3 space-y-2 rounded-sm">
+                    <TextArea
+                      label={`Row ${ri + 1} cells (one per line)`}
+                      value={(row.cells ?? []).join('\n')}
+                      onChange={(v) => {
+                        const next = [...sections]
+                        const rows = [...(section.table!.rows ?? [])]
+                        rows[ri] = { cells: v.split('\n').filter(Boolean) }
+                        next[si] = { ...next[si], table: { ...section.table!, rows } }
+                        setForm({ ...form, sections: next })
+                      }}
+                    />
+                    <button type="button" className="font-label text-label text-secondary uppercase" onClick={() => {
+                      const next = [...sections]
+                      const rows = (section.table!.rows ?? []).filter((_, i) => i !== ri)
+                      next[si] = { ...next[si], table: { ...section.table!, rows } }
+                      setForm({ ...form, sections: next })
+                    }}>Remove row</button>
+                  </div>
+                ))}
+                <button type="button" className="font-label text-label text-secondary uppercase" onClick={() => {
+                  const next = [...sections]
+                  const colCount = section.table!.headers?.length ?? 0
+                  const emptyCells = colCount > 0 ? Array(colCount).fill('') : ['']
+                  next[si] = {
+                    ...next[si],
+                    table: {
+                      ...section.table!,
+                      rows: [...(section.table!.rows ?? []), { cells: emptyCells }],
+                    },
+                  }
+                  setForm({ ...form, sections: next })
+                }}>+ Add row</button>
+                <button type="button" className="font-label text-label text-secondary uppercase" onClick={() => {
+                  const next = [...sections]
+                  const { table: _table, ...rest } = next[si]
+                  next[si] = rest
+                  setForm({ ...form, sections: next })
+                }}>Remove table</button>
+              </div>
+            ) : null}
+
             {section.alert ? (
               <>
                 <TextInput label="Alert title" value={section.alert.title ?? ''} onChange={(title) => {
@@ -137,6 +276,35 @@ export function BlogEditorPage() {
                 }} />
               </>
             ) : null}
+            <div className="flex flex-wrap gap-2">
+              {!section.subsections?.length ? (
+                <button type="button" className="font-label text-label text-secondary uppercase" onClick={() => {
+                  const next = [...sections]
+                  next[si] = {
+                    ...next[si],
+                    subsections: [{ id: '', title: '', checklist: [{ label: '', text: '' }] }],
+                  }
+                  setForm({ ...form, sections: next })
+                }}>+ Add checklist</button>
+              ) : null}
+              {!section.table ? (
+                <button type="button" className="font-label text-label text-secondary uppercase" onClick={() => {
+                  const next = [...sections]
+                  next[si] = {
+                    ...next[si],
+                    table: { headers: ['Column 1', 'Column 2'], rows: [{ cells: ['', ''] }] },
+                  }
+                  setForm({ ...form, sections: next })
+                }}>+ Add table</button>
+              ) : null}
+              {!section.alert ? (
+                <button type="button" className="font-label text-label text-secondary uppercase" onClick={() => {
+                  const next = [...sections]
+                  next[si] = { ...next[si], alert: { title: '', message: '' } }
+                  setForm({ ...form, sections: next })
+                }}>+ Add alert</button>
+              ) : null}
+            </div>
             <button type="button" className="font-label text-label text-secondary uppercase" onClick={() => {
               const next = sections.filter((_, i) => i !== si)
               setForm({ ...form, sections: next })
@@ -145,6 +313,8 @@ export function BlogEditorPage() {
         ))}
         <div className="flex flex-wrap gap-2">
           <button type="button" className="font-label text-label text-secondary uppercase" onClick={() => setForm({ ...form, sections: [...sections, { id: '', title: '', paragraphs: [] }] })}>+ Paragraph section</button>
+          <button type="button" className="font-label text-label text-secondary uppercase" onClick={() => setForm({ ...form, sections: [...sections, { id: '', title: '', paragraphs: [], subsections: [{ id: '', title: '', checklist: [{ label: '', text: '' }] }] }] })}>+ Checklist section</button>
+          <button type="button" className="font-label text-label text-secondary uppercase" onClick={() => setForm({ ...form, sections: [...sections, { id: '', title: '', paragraphs: [], table: { headers: ['Column 1', 'Column 2'], rows: [{ cells: ['', ''] }] } }] })}>+ Table section</button>
           <button type="button" className="font-label text-label text-secondary uppercase" onClick={() => setForm({ ...form, sections: [...sections, { id: '', title: '', alert: { title: '', message: '' } }] })}>+ Alert section</button>
         </div>
       </SectionCard>
