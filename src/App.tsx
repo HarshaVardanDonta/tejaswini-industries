@@ -39,9 +39,15 @@ function AdminFallback() {
   )
 }
 
+function routerBasename(): string | undefined {
+  const base = import.meta.env.BASE_URL
+  if (!base || base === '/') return undefined
+  return base.replace(/\/$/, '')
+}
+
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={routerBasename()}>
       <ScrollToTop />
       <GoogleAnalytics />
       <Routes>
