@@ -13,8 +13,8 @@ export function AboutHero() {
         backgroundPosition: 'center',
       }}
     >
-      <div className="absolute inset-0 bg-primary/70 mix-blend-multiply" aria-hidden />
-      <div className="hero-bleed-header__content relative z-10 flex flex-1 items-center w-full px-margin-mobile md:px-margin-desktop">
+      <div className="absolute top-0 w-full h-full bg-primary/70 mix-blend-multiply" aria-hidden />
+      <div className="hero-bleed-header__content relative z-10 flex flex-1 items-center w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
         <div className="md:w-2/3">
           <h1 className="font-display-xl text-display-xl text-on-primary uppercase mb-space-4 border-l-4 border-secondary pl-space-4">
             {hero.title}

@@ -29,13 +29,15 @@ export function AboutPage() {
     <AboutPageProvider value={pageData}>
       <ProductsShell className="bg-background">
         <PageSEO {...staticPageMeta.about} />
-        <main className="grow max-w-[1280px] mx-auto w-full">
+        <main className="grow w-full">
           <AboutHero />
-          <AboutOverview />
-          <AboutVisionMission />
-          <AboutInfrastructure />
-          <AboutSectors />
-          <AboutCta />
+          <div className="max-w-[1280px] mx-auto w-full">
+            <AboutOverview />
+            <AboutVisionMission />
+            <AboutInfrastructure />
+            <AboutSectors />
+            <AboutCta />
+          </div>
         </main>
       </ProductsShell>
     </AboutPageProvider>
