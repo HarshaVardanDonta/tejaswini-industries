@@ -104,7 +104,7 @@ function DesktopHeader({ isCompact }: { isCompact: boolean }) {
   return (
     <HeaderShell isCompact={isCompact} variant="desktop">
       <div className="header-shell-row header-shell-row--desktop">
-        <MorphBrand fullLogoClassName="h-12" />
+        <MorphBrand fullLogoClassName="h-10" />
         <div className="header-chrome header-chrome--desktop min-w-0 h-full">
           <nav className="flex items-center gap-space-6 h-full flex-1 justify-center min-w-0">
             {navLinks.map((link) => (

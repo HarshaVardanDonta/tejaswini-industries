@@ -5,9 +5,13 @@ import {
   type RefObject,
 } from 'react'
 
-const DESKTOP_COMPACT_FALLBACK = 72
-const MOBILE_COMPACT_FALLBACK = 164
+const DESKTOP_COMPACT_FALLBACK = 44
+const MOBILE_COMPACT_FALLBACK = 120
 const EXPANDED_MAX = 1280
+/** Matches --header-mobile-compact-logo (2rem) */
+const MOBILE_COMPACT_LOGO_PX = 32
+/** Matches --header-desktop-compact-logo (2.75rem) */
+const DESKTOP_COMPACT_LOGO_PX = 44
 
 function readSafeInsets(anchor: Element | null) {
   if (!anchor) {
@@ -32,10 +36,9 @@ function measureCompactWidth(
   variant: 'desktop' | 'mobile',
 ) {
   const row = shell.querySelector('.header-shell-row')
-  const compactLogo = shell.querySelector('.header-logo-layer--compact a')
   const menu = shell.querySelector('.header-menu-btn')
 
-  if (!row || !compactLogo) {
+  if (!row) {
     return variant === 'mobile' ? MOBILE_COMPACT_FALLBACK : DESKTOP_COMPACT_FALLBACK
   }
 
@@ -44,16 +47,47 @@ function measureCompactWidth(
   const compactBorder =
     parseFloat(shellStyles.borderLeftWidth) +
     parseFloat(shellStyles.borderRightWidth)
+  const rowPadding =
+    parseFloat(rowStyles.paddingLeft) + parseFloat(rowStyles.paddingRight)
   const gap =
-    variant === 'mobile' ? parseFloat(rowStyles.columnGap) || 6 : 0
+    variant === 'mobile' ? parseFloat(rowStyles.columnGap) || 8 : 0
 
-  let contentWidth = compactLogo.getBoundingClientRect().width
+  if (variant === 'mobile') {
+    let contentWidth = MOBILE_COMPACT_LOGO_PX + rowPadding
+    if (menu) {
+      contentWidth += gap + menu.getBoundingClientRect().width
+    }
+    return Math.ceil(contentWidth + compactBorder)
+  }
 
-  if (variant === 'mobile' && menu) {
+  return Math.ceil(DESKTOP_COMPACT_LOGO_PX + compactBorder)
+}
+
+function measureExpandedMobileWidth(shell: HTMLElement) {
+  const row = shell.querySelector('.header-shell-row')
+  const brand = shell.querySelector('.header-brand')
+  const menu = shell.querySelector('.header-menu-btn')
+
+  if (!row) return null
+
+  const rowStyles = getComputedStyle(row)
+  const shellStyles = getComputedStyle(shell)
+  const rowPadding =
+    parseFloat(rowStyles.paddingLeft) + parseFloat(rowStyles.paddingRight)
+  const gap = parseFloat(rowStyles.columnGap) || 8
+  const border =
+    parseFloat(shellStyles.borderLeftWidth) +
+    parseFloat(shellStyles.borderRightWidth)
+
+  let contentWidth = rowPadding + border
+  if (brand) {
+    contentWidth += brand.getBoundingClientRect().width
+  }
+  if (menu) {
     contentWidth += gap + menu.getBoundingClientRect().width
   }
 
-  return Math.ceil(contentWidth + compactBorder)
+  return Math.ceil(contentWidth)
 }
 
 export function useHeaderShellWidth(
@@ -85,14 +119,7 @@ export function useHeaderShellWidth(
       return
     }
 
-    const row = shell.querySelector('.header-shell-row')
-    const shellStyles = getComputedStyle(shell)
-    const contentWidth = row
-      ? Math.ceil(row.scrollWidth) +
-        parseFloat(shellStyles.borderLeftWidth) +
-        parseFloat(shellStyles.borderRightWidth)
-      : expanded
-
+    const contentWidth = measureExpandedMobileWidth(shell) ?? expanded
     setWidthPx(Math.min(expanded, Math.max(compact, contentWidth)))
   }, [shellRef, anchorRef, variant, isCompact])
 

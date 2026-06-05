@@ -301,7 +301,7 @@
 }
 
 .header-shell--desktop {
-  height: 5rem;
+  height: 4.5rem;
 }
 
 .header-shell--mobile {
@@ -314,10 +314,13 @@
 }
 
 .header-shell--desktop.header-shell--compact {
+  --header-desktop-compact-logo: 2.75rem;
   padding: 0;
+  overflow: visible;
 }
 
 .header-shell--mobile.header-shell--compact {
+  --header-mobile-compact-logo: 2rem;
   padding: 0;
 }
 
@@ -361,6 +364,7 @@
 .header-shell--desktop.header-shell--compact .header-shell-row--desktop {
   grid-template-columns: 1fr;
   justify-items: center;
+  align-items: center;
   column-gap: 0;
   padding-inline: 0;
 }
@@ -370,8 +374,9 @@
 }
 
 .header-shell--mobile.header-shell--compact .header-shell-row--mobile {
+  grid-template-columns: var(--header-mobile-compact-logo) max-content;
   column-gap: 0.5rem;
-  padding-inline: 0.25rem;
+  padding-inline: 0.5rem;
 }
 
 .header-brand {
@@ -384,14 +389,16 @@
     height var(--header-morph-duration) var(--header-morph-spring);
 }
 
-.header-shell--compact .header-brand {
-  width: 100%;
-  height: 100%;
-}
-
 .header-shell--desktop.header-shell--compact .header-brand {
-  width: 3rem;
-  height: 3rem;
+  width: var(--header-desktop-compact-logo);
+  min-width: var(--header-desktop-compact-logo);
+  max-width: var(--header-desktop-compact-logo);
+  height: var(--header-desktop-compact-logo);
+  margin: 0;
+  overflow: hidden;
+  align-self: center;
+  justify-self: center;
+  z-index: 1;
 }
 
 .header-shell--mobile.header-shell--expanded .header-brand {
@@ -402,9 +409,46 @@
 }
 
 .header-shell--mobile.header-shell--compact .header-brand {
-  width: 3rem;
-  max-width: 3rem;
-  height: 3rem;
+  width: var(--header-mobile-compact-logo);
+  min-width: var(--header-mobile-compact-logo);
+  max-width: var(--header-mobile-compact-logo);
+  height: var(--header-mobile-compact-logo);
+  overflow: hidden;
+  align-self: center;
+}
+
+/* Mobile (unshrinked) header: prevent full logo overflow */
+@media (max-width: 47.999rem) {
+  .header-shell--mobile.header-shell--expanded {
+    --header-mobile-compact-logo: 2rem;
+  }
+
+  .header-shell--mobile.header-shell--expanded .header-shell-row--mobile {
+    grid-template-columns: 2rem max-content;
+    column-gap: 0.5rem;
+    padding-inline: 0.5rem;
+  }
+
+  .header-shell--mobile.header-shell--expanded .header-brand {
+    width: 2rem;
+    min-width: 2rem;
+    max-width: 2rem;
+    height: 2rem;
+    overflow: hidden;
+  }
+
+  .header-shell--mobile.header-shell--expanded .header-logo-layer--full {
+    opacity: 0;
+    transform: scale(0.85) translateY(2px);
+    pointer-events: none;
+  }
+
+  .header-shell--mobile.header-shell--expanded .header-logo-layer--compact {
+    justify-content: center;
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    pointer-events: auto;
+  }
 }
 
 .header-logo-layer {
@@ -412,35 +456,56 @@
   inset: 0;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   transition:
-    opacity var(--header-morph-duration) var(--header-morph-ease),
-    transform var(--header-morph-duration) var(--header-morph-spring);
+    opacity var(--header-morph-duration) var(--header-morph-ease);
 }
 
 .header-logo-layer--full {
   opacity: 1;
-  transform: scale(1) translateY(0);
+  transform: none;
   pointer-events: auto;
 }
 
 .header-shell--compact .header-logo-layer--full {
   opacity: 0;
-  transform: scale(0.85) translateY(2px);
+  transform: none;
   pointer-events: none;
 }
 
 .header-logo-layer--compact {
   opacity: 0;
-  transform: scale(0.85) translateY(-2px);
+  transform: none;
   pointer-events: none;
 }
 
 .header-shell--compact .header-logo-layer--compact {
   justify-content: center;
   opacity: 1;
-  transform: scale(1) translateY(0);
+  transform: none;
   pointer-events: auto;
+}
+
+/* Narrow desktop: full logo overflows nav — use compact logo while expanded */
+@media (min-width: 48rem) and (max-width: 79.999rem) {
+  .header-shell--desktop.header-shell--expanded .header-brand {
+    width: 3rem;
+    height: 3rem;
+    max-width: 3rem;
+  }
+
+  .header-shell--desktop.header-shell--expanded .header-logo-layer--full {
+    opacity: 0;
+    transform: none;
+    pointer-events: none;
+  }
+
+  .header-shell--desktop.header-shell--expanded .header-logo-layer--compact {
+    justify-content: center;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
 }
 
 .header-compact-logo-link {
@@ -463,12 +528,24 @@
   display: block;
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: cover;
   border-radius: 9999px;
 }
 
-.header-shell--desktop.header-shell--compact .header-brand {
-  margin-inline: auto;
+.header-shell--mobile.header-shell--compact .header-menu-btn {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-shell--desktop.header-shell--compact .header-chrome--desktop {
+  display: none;
 }
 
 .header-shell--expanded .header-logo-layer--full {
@@ -536,6 +613,12 @@
 
 .header-menu-btn {
   flex-shrink: 0;
+  height: 100%;
+  width: 2.5rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition:
     transform var(--header-morph-duration) var(--header-morph-spring),
     border-radius var(--header-morph-duration) var(--header-morph-spring);

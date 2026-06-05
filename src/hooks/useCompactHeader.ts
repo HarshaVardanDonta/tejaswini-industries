@@ -17,8 +17,18 @@ export function useCompactHeader(): boolean {
 
   useEffect(() => {
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const mobileQuery = window.matchMedia('(max-width: 47.999rem)')
 
     const updateFromScroll = () => {
+      // On small screens, always keep the header shrinked (compact).
+      if (mobileQuery.matches) {
+        setIsCompact(true)
+        scrollDownAccum.current = 0
+        scrollUpAccum.current = 0
+        lastScrollY.current = window.scrollY
+        return
+      }
+
       if (motionQuery.matches) {
         setIsCompact(false)
         scrollDownAccum.current = 0
@@ -63,13 +73,11 @@ export function useCompactHeader(): boolean {
     }
 
     const onMotionChange = () => {
-      if (motionQuery.matches) {
-        setIsCompact(false)
-        scrollDownAccum.current = 0
-        scrollUpAccum.current = 0
-      } else {
-        updateFromScroll()
-      }
+      updateFromScroll()
+    }
+
+    const onMobileChange = () => {
+      updateFromScroll()
     }
 
     lastScrollY.current = window.scrollY
@@ -77,10 +85,12 @@ export function useCompactHeader(): boolean {
 
     window.addEventListener('scroll', updateFromScroll, { passive: true })
     motionQuery.addEventListener('change', onMotionChange)
+    mobileQuery.addEventListener('change', onMobileChange)
 
     return () => {
       window.removeEventListener('scroll', updateFromScroll)
       motionQuery.removeEventListener('change', onMotionChange)
+      mobileQuery.removeEventListener('change', onMobileChange)
     }
   }, [])
 
