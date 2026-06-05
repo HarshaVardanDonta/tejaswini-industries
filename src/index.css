@@ -272,8 +272,9 @@
 .header-shell {
   position: fixed;
   top: var(--header-safe-top);
-  left: var(--header-safe-left);
-  transform-origin: top left;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: top center;
   z-index: 40;
   pointer-events: auto;
   max-width: calc(
@@ -301,10 +302,12 @@
 }
 
 .header-shell--desktop {
+  --header-brand-size: 2.75rem;
   height: 4.5rem;
 }
 
 .header-shell--mobile {
+  --header-brand-size: 2rem;
   height: 4rem;
 }
 
@@ -314,13 +317,11 @@
 }
 
 .header-shell--desktop.header-shell--compact {
-  --header-desktop-compact-logo: 2.75rem;
   padding: 0;
   overflow: visible;
 }
 
 .header-shell--mobile.header-shell--compact {
-  --header-mobile-compact-logo: 2rem;
   padding: 0;
 }
 
@@ -374,7 +375,7 @@
 }
 
 .header-shell--mobile.header-shell--compact .header-shell-row--mobile {
-  grid-template-columns: var(--header-mobile-compact-logo) max-content;
+  grid-template-columns: var(--header-brand-size) max-content;
   column-gap: 0.5rem;
   padding-inline: 0.5rem;
 }
@@ -382,130 +383,25 @@
 .header-brand {
   position: relative;
   flex-shrink: 0;
-  width: 3.75rem;
-  height: 3rem;
+  width: var(--header-brand-size);
+  min-width: var(--header-brand-size);
+  max-width: var(--header-brand-size);
+  height: var(--header-brand-size);
+  overflow: hidden;
+  align-self: center;
   transition:
     width var(--header-morph-duration) var(--header-morph-spring),
     height var(--header-morph-duration) var(--header-morph-spring);
 }
 
 .header-shell--desktop.header-shell--compact .header-brand {
-  width: var(--header-desktop-compact-logo);
-  min-width: var(--header-desktop-compact-logo);
-  max-width: var(--header-desktop-compact-logo);
-  height: var(--header-desktop-compact-logo);
   margin: 0;
-  overflow: hidden;
-  align-self: center;
   justify-self: center;
   z-index: 1;
 }
 
-.header-shell--mobile.header-shell--expanded .header-brand {
-  width: auto;
-  min-width: 2.75rem;
-  max-width: min(12rem, 42vw);
-  height: 2.5rem;
-}
-
 .header-shell--mobile.header-shell--compact .header-brand {
-  width: var(--header-mobile-compact-logo);
-  min-width: var(--header-mobile-compact-logo);
-  max-width: var(--header-mobile-compact-logo);
-  height: var(--header-mobile-compact-logo);
-  overflow: hidden;
   align-self: center;
-}
-
-/* Mobile (unshrinked) header: prevent full logo overflow */
-@media (max-width: 47.999rem) {
-  .header-shell--mobile.header-shell--expanded {
-    --header-mobile-compact-logo: 2rem;
-  }
-
-  .header-shell--mobile.header-shell--expanded .header-shell-row--mobile {
-    grid-template-columns: 2rem max-content;
-    column-gap: 0.5rem;
-    padding-inline: 0.5rem;
-  }
-
-  .header-shell--mobile.header-shell--expanded .header-brand {
-    width: 2rem;
-    min-width: 2rem;
-    max-width: 2rem;
-    height: 2rem;
-    overflow: hidden;
-  }
-
-  .header-shell--mobile.header-shell--expanded .header-logo-layer--full {
-    opacity: 0;
-    transform: scale(0.85) translateY(2px);
-    pointer-events: none;
-  }
-
-  .header-shell--mobile.header-shell--expanded .header-logo-layer--compact {
-    justify-content: center;
-    opacity: 1;
-    transform: scale(1) translateY(0);
-    pointer-events: auto;
-  }
-}
-
-.header-logo-layer {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition:
-    opacity var(--header-morph-duration) var(--header-morph-ease);
-}
-
-.header-logo-layer--full {
-  opacity: 1;
-  transform: none;
-  pointer-events: auto;
-}
-
-.header-shell--compact .header-logo-layer--full {
-  opacity: 0;
-  transform: none;
-  pointer-events: none;
-}
-
-.header-logo-layer--compact {
-  opacity: 0;
-  transform: none;
-  pointer-events: none;
-}
-
-.header-shell--compact .header-logo-layer--compact {
-  justify-content: center;
-  opacity: 1;
-  transform: none;
-  pointer-events: auto;
-}
-
-/* Narrow desktop: full logo overflows nav — use compact logo while expanded */
-@media (min-width: 48rem) and (max-width: 79.999rem) {
-  .header-shell--desktop.header-shell--expanded .header-brand {
-    width: 3rem;
-    height: 3rem;
-    max-width: 3rem;
-  }
-
-  .header-shell--desktop.header-shell--expanded .header-logo-layer--full {
-    opacity: 0;
-    transform: none;
-    pointer-events: none;
-  }
-
-  .header-shell--desktop.header-shell--expanded .header-logo-layer--compact {
-    justify-content: center;
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
-  }
 }
 
 .header-compact-logo-link {
@@ -546,18 +442,6 @@
 
 .header-shell--desktop.header-shell--compact .header-chrome--desktop {
   display: none;
-}
-
-.header-shell--expanded .header-logo-layer--full {
-  transition-delay: calc(var(--header-morph-duration) * 0.2);
-}
-
-.header-shell--expanded .header-logo-layer--compact {
-  transition-delay: 0s;
-}
-
-.header-shell--compact .header-logo-layer--compact {
-  transition-delay: calc(var(--header-morph-duration) * 0.15);
 }
 
 .header-chrome {
@@ -633,7 +517,6 @@
   .header-shell,
   .header-shell-inner,
   .header-brand,
-  .header-logo-layer,
   .header-chrome,
   .header-menu-btn,
   .header-anchor {

@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import logo from '../assets/logo.png'
 import smallLogo from '../assets/smallLogo.jpeg'
 import { contactInfo } from '../constants/contactInfo'
 import { REQUEST_QUOTE_PATH } from '../constants/routes'
@@ -29,39 +28,17 @@ function mobileNavLinkClass({ isActive }: { isActive: boolean }) {
     : 'flex items-center px-space-4 py-space-3 text-on-primary/80 hover:text-on-primary hover:bg-primary-container/20 font-label text-label uppercase transition-colors'
 }
 
-function MorphBrand({
-  fullLogoClassName,
-  onNavigate,
-}: {
-  fullLogoClassName: string
-  onNavigate?: () => void
-}) {
+function BrandLogo({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <div className="header-brand">
-      <div className="header-logo-layer header-logo-layer--full">
-        <Link
-          to="/"
-          onClick={onNavigate}
-          className="flex items-center shrink-0 bg-white rounded-lg p-1.5 shadow-sm hover:opacity-95 transition-opacity"
-          aria-label="Tejaswini Industries home"
-        >
-          <img
-            src={logo}
-            alt=""
-            className={`w-auto max-w-full object-contain ${fullLogoClassName}`}
-          />
-        </Link>
-      </div>
-      <div className="header-logo-layer header-logo-layer--compact">
-        <Link
-          to="/"
-          onClick={onNavigate}
-          className="header-compact-logo-link"
-          aria-label="Tejaswini Industries home"
-        >
-          <img src={smallLogo} alt="" />
-        </Link>
-      </div>
+      <Link
+        to="/"
+        onClick={onNavigate}
+        className="header-compact-logo-link"
+        aria-label="Tejaswini Industries home"
+      >
+        <img src={smallLogo} alt="" />
+      </Link>
     </div>
   )
 }
@@ -104,7 +81,7 @@ function DesktopHeader({ isCompact }: { isCompact: boolean }) {
   return (
     <HeaderShell isCompact={isCompact} variant="desktop">
       <div className="header-shell-row header-shell-row--desktop">
-        <MorphBrand fullLogoClassName="h-10" />
+        <BrandLogo />
         <div className="header-chrome header-chrome--desktop min-w-0 h-full">
           <nav className="flex items-center gap-space-6 h-full flex-1 justify-center min-w-0">
             {navLinks.map((link) => (
@@ -164,7 +141,7 @@ function MobileHeaderBar({
   return (
     <HeaderShell isCompact={isCompact} variant="mobile">
       <div className="header-shell-row header-shell-row--mobile">
-        <MorphBrand fullLogoClassName="h-8" />
+        <BrandLogo />
         <button
           type="button"
           aria-label="Open menu"
@@ -180,21 +157,15 @@ function MobileHeaderBar({
   )
 }
 
-function LogoLink({
-  className,
-  onNavigate,
-}: {
-  className: string
-  onNavigate?: () => void
-}) {
+function LogoLink({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <Link
       to="/"
       onClick={onNavigate}
-      className="flex items-center shrink-0 bg-white rounded-lg p-1.5 shadow-sm hover:opacity-95 transition-opacity"
+      className="header-compact-logo-link block h-8 w-8 shrink-0"
       aria-label="Tejaswini Industries home"
     >
-      <img src={logo} alt="" className={`w-auto object-contain ${className}`} />
+      <img src={smallLogo} alt="" />
     </Link>
   )
 }
@@ -261,7 +232,7 @@ export function Header() {
           }`}
         >
           <div className="flex items-center justify-between border-b border-on-primary/20 px-margin-mobile py-space-3">
-            <LogoLink className="h-8" onNavigate={closeMobileMenu} />
+            <LogoLink onNavigate={closeMobileMenu} />
             <button
               type="button"
               aria-label="Close menu"

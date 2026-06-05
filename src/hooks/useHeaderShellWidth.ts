@@ -7,7 +7,6 @@ import {
 
 const DESKTOP_COMPACT_FALLBACK = 44
 const MOBILE_COMPACT_FALLBACK = 120
-const EXPANDED_MAX = 1280
 /** Matches --header-mobile-compact-logo (2rem) */
 const MOBILE_COMPACT_LOGO_PX = 32
 /** Matches --header-desktop-compact-logo (2.75rem) */
@@ -28,7 +27,7 @@ function measureExpandedWidth(safeLeft: number, safeRight: number) {
     0,
     Math.round(window.innerWidth - safeLeft - safeRight),
   )
-  return Math.min(EXPANDED_MAX, available)
+  return available
 }
 
 function measureCompactWidth(
