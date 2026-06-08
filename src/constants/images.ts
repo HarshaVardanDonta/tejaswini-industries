@@ -1,7 +1,6 @@
 export const images = {
   bisCertification: '/images.png',
-  hero:
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuADcn0x-LzMQL2de1SzcEkNhBvx4dhYe60m1ONJmPTVBPcHZVjOmRlmoKbpOtUR1bL-WtcNMAmi1Vc7Nb0EYAqE1m1zTpgVm1p0igcG_xFvzM2wrODo5DDMe2gW_kLyx2LVeyTpAa6mQ20K4-LfaFgkvTNGjciCREzGWv_02CKIuiRO7SZEvEoKmdFE3d3G7gjkK8fbvcH00FgQzu6XNkpwN3f1vUyv98slOWy_keHiYJyXBwxXqPiqbWGmW-JuXvjBZffFihEahn8',
+  hero: '/hero-tejaswini-transformer.png',
   facility:
     'https://lh3.googleusercontent.com/aida-public/AB6AXuDk9fSOeVhu6dx-YrxR3vZdjyrcGYbXSnvNKr9oOU_QplDgljQw5_EgeqHAbIJ6S6scxuX6166zQ6mATzjl-Z6Khd1yU29wCwBoaT-FQF3E42U9Lb-ibz8o4YugZTLp_A2pXdBQtSfc7J56fP7O9z6cEgAyQDu7xb7JlEymUlRX9geMvzr4PclhYexkAkGSzP43SVzXRgB6NkUittnL1-MYQfe2jjccvljiQQnv95ROHGQub1o8LBSXxsHSLTq9khXfWbsgd61C7SE',
   transformers:

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useLandingPageData } from '../context/LandingPageContext'
 import { contactInfo } from '../constants/contactInfo'
-import { REQUEST_QUOTE_PATH } from '../constants/routes'
+import { CONTACT_PATH } from '../constants/routes'
 import { Icon } from './Icon'
 
 export function Hero() {
@@ -13,7 +13,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-black/60 z-10" />
       <img
         alt={hero.imageAlt}
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="absolute inset-0 w-full h-full object-cover object-[center_40%] z-0"
         src={hero.image}
       />
       <div className="relative z-20 w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter">
@@ -42,7 +42,7 @@ export function Hero() {
           </p>
           <div className="flex flex-wrap gap-space-4">
             <Link
-              to={REQUEST_QUOTE_PATH}
+              to={CONTACT_PATH}
               className="bg-secondary text-on-secondary px-space-6 py-space-3 rounded-sm font-label text-label uppercase tracking-widest hover:bg-secondary/90 transition-colors flex items-center gap-2 border border-secondary shadow-[0_4px_14px_rgba(187,0,39,0.3)]"
             >
               {hero.primaryCta}

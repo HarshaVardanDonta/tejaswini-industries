@@ -54,16 +54,3 @@ export const commissionRow = defineType({
   },
 })
 
-export const distributionCategory = defineType({
-  name: 'distributionCategory',
-  title: 'Distribution Category',
-  type: 'document',
-  fields: [
-    defineField({ name: 'slug', type: 'string' }),
-    defineField({ name: 'title', type: 'string' }),
-    defineField({ name: 'description', type: 'text' }),
-  ],
-  preview: {
-    prepare: () => ({ title: 'Distribution Transformers Category' }),
-  },
-})

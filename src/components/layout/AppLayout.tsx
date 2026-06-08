@@ -8,12 +8,12 @@ export function AppLayout() {
   const isStandaloneRoute =
     pathname.startsWith('/products') ||
     pathname.startsWith('/projects') ||
+    pathname.startsWith('/clients') ||
     pathname.startsWith('/services') ||
     pathname.startsWith('/corporate-profile') ||
     pathname.startsWith('/blogs') ||
     pathname.startsWith('/about') ||
     pathname.startsWith('/contact') ||
-    pathname.startsWith('/request-quote') ||
     pathname.startsWith('/quality-policy') ||
     pathname.startsWith('/privacy-policy') ||
     pathname.startsWith('/careers') ||

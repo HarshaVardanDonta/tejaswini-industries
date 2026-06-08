@@ -4,7 +4,6 @@ import { pageKeys, type PageKey } from '../lib/adminNavigation'
 import { AboutPageEditor } from '../editors/AboutPageEditor'
 import { ContactPageEditor } from '../editors/ContactPageEditor'
 import { CorporateProfilePageEditor } from '../editors/CorporateProfilePageEditor'
-import { DistributionCategoryEditor } from '../editors/DistributionCategoryEditor'
 import { LandingPageEditor } from '../editors/LandingPageEditor'
 import { ServicesPageEditor } from '../editors/ServicesPageEditor'
 
@@ -26,8 +25,6 @@ export function PageEditorPage() {
       return <ContactPageEditor />
     case 'corporate-profile':
       return <CorporateProfilePageEditor />
-    case 'distribution-category':
-      return <DistributionCategoryEditor />
     default:
       return <Navigate to="/admin" replace />
   }

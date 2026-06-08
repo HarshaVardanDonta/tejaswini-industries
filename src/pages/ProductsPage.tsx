@@ -5,7 +5,7 @@ import { ProductCategoryCard } from '../components/products/ProductCategoryCard'
 import { ProductsIntro } from '../components/products/ProductsIntro'
 import { PageSEO } from '../components/seo/PageSEO'
 import { staticPageMeta } from '../constants/seo'
-import { productCategories } from '../data/productCategories'
+import { getProductCategoryById, productCategories } from '../data/productCategories'
 import { useSanityQuery } from '../hooks/useSanityQuery'
 import { mapProductCategory } from '../sanity/mappers'
 import { queries } from '../sanity/queries'
@@ -19,7 +19,14 @@ export function ProductsPage() {
 
   const categories = useMemo(() => {
     if (!data?.length) return productCategories
-    return data.map((item) => mapProductCategory(item as Parameters<typeof mapProductCategory>[0]))
+    return data.map((item) => {
+      const id = (item as { id: string }).id
+      const staticFallback = getProductCategoryById(id)
+      return mapProductCategory(
+        item as Parameters<typeof mapProductCategory>[0],
+        staticFallback
+      )
+    })
   }, [data])
 
   if (loading) return <ProductsShell><PageLoading embedded /></ProductsShell>

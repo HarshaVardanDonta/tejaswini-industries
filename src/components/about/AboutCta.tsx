@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useAboutPageData } from '../../context/PageDataContext'
-import { REQUEST_QUOTE_PATH } from '../../constants/routes'
+import { CONTACT_PATH } from '../../constants/routes'
 import { Icon } from '../Icon'
 
 export function AboutCta() {
@@ -15,7 +15,7 @@ export function AboutCta() {
         {cta.description}
       </p>
       <Link
-        to={REQUEST_QUOTE_PATH}
+        to={CONTACT_PATH}
         className="bg-primary text-on-primary font-label text-label uppercase tracking-widest px-space-8 py-space-4 rounded hover:bg-surface-tint transition-colors border border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-primary inline-flex items-center gap-space-2"
       >
         <span>{cta.buttonLabel}</span>

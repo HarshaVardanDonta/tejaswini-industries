@@ -5,14 +5,12 @@ import { ScrollToTop } from './components/ScrollToTop'
 import { AppLayout } from './components/layout/AppLayout'
 import { AboutPage } from './pages/AboutPage'
 import { CareerPage } from './pages/CareerPage'
+import { ClientsPage } from './pages/ClientsPage'
 import { CorporateProfilePage } from './pages/CorporateProfilePage'
 import { ContactPage } from './pages/ContactPage'
-import { RequestQuotePage } from './pages/RequestQuotePage'
 import { BlogDetailPage } from './pages/BlogDetailPage'
 import { BlogsPage } from './pages/BlogsPage'
-import { DistributionTransformer250KvaPage } from './pages/DistributionTransformer250KvaPage'
-import { DistributionTransformersPage } from './pages/DistributionTransformersPage'
-import { TransformerSpecificationComparisonPage } from './pages/TransformerSpecificationComparisonPage'
+import { ProductCategoryPage } from './pages/ProductCategoryPage'
 import { InfrastructurePage } from './pages/InfrastructurePage'
 import { LandingPage } from './pages/LandingPage'
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage'
@@ -73,23 +71,21 @@ function App() {
           <Route index element={<LandingPage />} />
           <Route path="products" element={<ProductsPage />} />
           <Route
-            path="products/distribution-transformers"
-            element={<DistributionTransformersPage />}
-          />
-          <Route
             path="products/distribution-transformers/compare"
-            element={<TransformerSpecificationComparisonPage />}
+            element={<Navigate to="/products/distribution-transformers" replace />}
           />
           <Route
             path="products/distribution-transformers/:slug"
-            element={<DistributionTransformer250KvaPage />}
+            element={<Navigate to="/products/distribution-transformers" replace />}
           />
+          <Route path="products/:categoryId" element={<ProductCategoryPage />} />
           <Route path="projects" element={<ProjectsPage />} />
+          <Route path="clients" element={<ClientsPage />} />
           <Route path="services" element={<ServicesPage />} />
           <Route path="corporate-profile" element={<CorporateProfilePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="contact" element={<ContactPage />} />
-          <Route path="request-quote" element={<RequestQuotePage />} />
+          <Route path="request-quote" element={<Navigate to="/contact" replace />} />
           <Route path="quality-policy" element={<QualityPolicyPage />} />
           <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="careers" element={<CareerPage />} />

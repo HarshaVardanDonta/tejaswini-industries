@@ -12,15 +12,6 @@ function spec(label, value) {
   return { _type: 'spec', label, value }
 }
 
-function comparisonValuesFromRecord(record) {
-  return Object.entries(record).map(([key, value]) => {
-    if (typeof value === 'object' && value && 'tags' in value) {
-      return { key, tags: value.tags }
-    }
-    return { key, value: String(value) }
-  })
-}
-
 /**
  * @param {SeedImages} images
  * @returns {Record<string, unknown>[]}
@@ -40,14 +31,14 @@ export function buildDocuments(images) {
       hero: {
         image: img(
           images.hero,
-          'High-voltage industrial power transformer in a manufacturing facility'
+          'Tejaswini branded power transformer secured on a flatbed truck at an industrial delivery yard'
         ),
         badgePrimary: 'ISO 9001:2015',
         badgeSecondary: 'BIS Certified',
         title: 'Precision Engineering.\nUncompromising Power.',
         description:
           'Tejaswini Industries delivers industrial-grade transformers, control panels, and critical infrastructure solutions engineered for absolute reliability in high-demand environments.',
-        primaryCta: 'Request Quote',
+        primaryCta: 'Contact Us',
         secondaryCta: 'Call Now',
       },
       companyIntro: {
@@ -314,7 +305,7 @@ export function buildDocuments(images) {
       cta: {
         title: 'Partner with Engineering Excellence',
         description: 'Discuss your technical specifications with our engineering team today.',
-        buttonLabel: 'Request a Quote',
+        buttonLabel: 'Contact Us',
       },
     },
 
@@ -416,15 +407,6 @@ export function buildDocuments(images) {
     },
 
     {
-      _id: 'distributionCategory',
-      _type: 'distributionCategory',
-      slug: 'distribution-transformers',
-      title: 'Distribution Transformers',
-      description:
-        'Engineered for continuous operation in demanding environments. Our distribution transformers strictly adhere to ISO 9001:2015 standards, ensuring minimal energy loss and maximum reliability for industrial, commercial, and utility applications.',
-    },
-
-    {
       _id: 'distribution-transformers',
       _type: 'productCategory',
       id: 'distribution-transformers',
@@ -435,7 +417,17 @@ export function buildDocuments(images) {
         images.products.distribution,
         'Heavy-duty industrial distribution transformer in a modern warehouse'
       ),
-      listingPath: '/products/distribution-transformers',
+      technicalSpecs: [
+        'Range: 100 KVA to 5000 KVA',
+        'Voltage Class: 11 KV, 22 KV, 33 KV',
+        'Cooling: ONAN',
+        'Taping: OFF Load Tap Changer / On load Tap changer',
+      ],
+      bodyParagraphs: [
+        'Distribution transformers for industrial application are available in 3 or 1 phase version with primary voltages of up to 33 KV and secondary voltages ranging from 433 to 11000 V. The capacity range is up to 10000 KVA.',
+        'Our manufacturing facilities are located in Hyderabad. Power transformers up to 63 MVA 132 KV Class are regularly manufactured and supplied.',
+        'The company has achieved ISO 9001 certification for all its transformers with regular internal and external quality audits.',
+      ],
     },
     {
       _id: 'power-transformers',
@@ -445,6 +437,15 @@ export function buildDocuments(images) {
       description:
         'Heavy-duty transformers engineered for high-voltage transmission networks. Delivering supreme reliability and handling immense loads with minimal energy loss.',
       image: img(images.products.power, 'Large power transformer at an outdoor substation'),
+      technicalSpecs: [
+        'Copper foil winding technology for high current sections',
+        'Sustaining short circuit forces without distortion in LV windings',
+        'Hot spot in LV windings regulated',
+        'Minimal stray losses and reduced total copper losses',
+      ],
+      bodyParagraphs: [
+        'A power transformer transfers energy between two or more circuits through electromagnetic induction, efficiently changing AC voltages from one level to another within power networks.',
+      ],
     },
     {
       _id: 'dry-type-transformers',
@@ -454,6 +455,15 @@ export function buildDocuments(images) {
       description:
         'Environmentally safe, liquid-free transformers ideal for indoor installations where fire safety is paramount. Low maintenance and highly reliable.',
       image: img(images.products.dryType, 'Dry-type transformer in a clean electrical control room'),
+      technicalSpecs: [
+        'VPI type up to 2.5 MVA',
+        'Insulation grade F (155 °C) and H (180 °C)',
+        'Protection up to IP56',
+        'High mechanical strength with void-free insulation',
+      ],
+      bodyParagraphs: [
+        'Dry type transformers use no insulating liquid. Windings and core are kept within a sealed tank pressurized with air, offering easy maintenance and reduced fire hazard.',
+      ],
     },
     {
       _id: 'ht-panels',
@@ -463,6 +473,14 @@ export function buildDocuments(images) {
       description:
         'High Tension switchgear panels designed for the protection and control of high-voltage industrial circuits, ensuring operational safety and system stability.',
       image: img(images.products.htPanels, 'Row of high tension electrical control panels'),
+      technicalSpecs: [
+        'Vacuum Circuit Breaker rating 630–2000 A',
+        'Current Transformer ACC: 1–5p10',
+        'Insulation level: 12/28/75 kV',
+      ],
+      bodyParagraphs: [
+        'HT panels incorporate vacuum circuit breakers, CTs, PTs, and comprehensive metering for safe high-voltage industrial operation.',
+      ],
     },
     {
       _id: 'lt-panels',
@@ -472,6 +490,15 @@ export function buildDocuments(images) {
       description:
         'Low Tension distribution boards providing critical power routing and circuit protection for complex facility networks and heavy machinery clusters.',
       image: img(images.products.ltPanels, 'Low tension distribution panels in a factory setting'),
+      technicalSpecs: [
+        'All types of LT distribution panels',
+        'Solid busbar system — no loose connections',
+        'On-load protected switching system',
+        'Live parts not directly accessible',
+      ],
+      bodyParagraphs: [
+        'LT panels provide critical power routing and circuit protection for complex facility networks and heavy machinery clusters.',
+      ],
     },
     {
       _id: 'rmus',
@@ -481,203 +508,14 @@ export function buildDocuments(images) {
       description:
         'Compact, fully enclosed Ring Main Units for secondary distribution networks. Offering superior protection in minimal spatial footprints.',
       image: img(images.products.rmu, 'Compact ring main unit switchgear'),
-    },
-
-    {
-      _id: 'comparisonParameter-capacity',
-      _type: 'comparisonParameter',
-      key: 'capacity',
-      label: 'Capacity Range',
-      order: 0,
-    },
-    {
-      _id: 'comparisonParameter-voltage',
-      _type: 'comparisonParameter',
-      key: 'voltage',
-      label: 'Voltage Ratio (kV)',
-      order: 1,
-    },
-    {
-      _id: 'comparisonParameter-standard',
-      _type: 'comparisonParameter',
-      key: 'standard',
-      label: 'Applicable Standard',
-      order: 2,
-    },
-    {
-      _id: 'comparisonParameter-powerRating',
-      _type: 'comparisonParameter',
-      key: 'powerRating',
-      label: 'Power Rating (kVA)',
-      order: 3,
-    },
-    {
-      _id: 'comparisonParameter-coolingType',
-      _type: 'comparisonParameter',
-      key: 'coolingType',
-      label: 'Cooling Type',
-      order: 4,
-    },
-    {
-      _id: 'comparisonParameter-vectorGroup',
-      _type: 'comparisonParameter',
-      key: 'vectorGroup',
-      label: 'Vector Group',
-      order: 5,
-    },
-    {
-      _id: 'comparisonParameter-noLoadLoss',
-      _type: 'comparisonParameter',
-      key: 'noLoadLoss',
-      label: 'No-Load Loss (W)',
-      hint: 'Max losses at rated voltage and frequency',
-      order: 6,
-    },
-    {
-      _id: 'comparisonParameter-loadLoss',
-      _type: 'comparisonParameter',
-      key: 'loadLoss',
-      label: 'Load Loss @ 75°C (W)',
-      order: 7,
-    },
-    {
-      _id: 'comparisonParameter-impedance',
-      _type: 'comparisonParameter',
-      key: 'impedance',
-      label: 'Impedance Voltage (%)',
-      order: 8,
-    },
-    {
-      _id: 'comparisonParameter-compliance',
-      _type: 'comparisonParameter',
-      key: 'compliance',
-      label: 'Compliance Standards',
-      order: 9,
-    },
-
-    {
-      _id: 'series-t',
-      _type: 'distributionProduct',
-      categoryId: 'distribution-transformers',
-      id: 'series-t',
-      title: 'Oil Immersed Distribution Transformer - Series T',
-      image: img(images.distributionListing.seriesT, 'Industrial oil-immersed distribution transformer'),
-      specs: [
-        spec('Capacity', '100kVA - 500kVA'),
-        spec('Voltage', '11kV / 433V'),
-        spec('Standard', 'IS 2026 / IEC 60076'),
+      technicalSpecs: [
+        'Load Break Switches or SFU: 11 KV and 33 KV',
+        'Vacuum Circuit Breakers: 11 KV and 33 KV',
+        'Load Break Switch 630 A, 26.3 kA with Earth Switch and Interlock',
+        'Earth Fault Indicator with CBCT as per EB Standard',
       ],
-      badge: { type: 'best-seller', label: 'Best Seller' },
-      detailSlug: '250-kva',
-      comparisonSku: 'DT-250',
-      comparisonValues: comparisonValuesFromRecord({
-        capacity: '100kVA - 500kVA',
-        voltage: '11 / 0.433',
-        standard: 'IS 2026 / IEC 60076',
-        powerRating: '250',
-        coolingType: 'ONAN',
-        vectorGroup: 'Dyn11',
-        noLoadLoss: '480',
-        loadLoss: '3150',
-        impedance: '4.5',
-        compliance: { tags: ['IS 1180', 'IEC 60076'] },
-      }),
-    },
-    {
-      _id: 'series-h',
-      _type: 'distributionProduct',
-      categoryId: 'distribution-transformers',
-      id: 'series-h',
-      title: 'High-Capacity Core Type Transformer - Series H',
-      image: img(images.distributionListing.seriesH, 'High capacity distribution transformer cooling radiators'),
-      specs: [
-        spec('Capacity', '630kVA - 2500kVA'),
-        spec('Voltage', '22kV / 433V'),
-        spec('Standard', 'IS 2026 / IEC 60076'),
-      ],
-      comparisonSku: 'DT-1000',
-      comparisonHighlight: true,
-      comparisonValues: comparisonValuesFromRecord({
-        capacity: '630kVA - 2500kVA',
-        voltage: '22 / 0.433',
-        standard: 'IS 2026 / IEC 60076',
-        powerRating: '1000',
-        coolingType: 'ONAN / ONAF',
-        vectorGroup: 'Dyn11',
-        noLoadLoss: '1250',
-        loadLoss: '10500',
-        impedance: '5.0',
-        compliance: { tags: ['IS 1180', 'IEC 60076'] },
-      }),
-    },
-    {
-      _id: 'energy-efficient',
-      _type: 'distributionProduct',
-      categoryId: 'distribution-transformers',
-      id: 'energy-efficient',
-      title: 'Energy Efficient Star Rated Transformer',
-      image: img(images.distributionListing.energyEfficient, 'Compact energy efficient distribution transformer'),
-      specs: [
-        spec('Capacity', '25kVA - 250kVA'),
-        spec('Efficiency', 'BEE 4 Star / 5 Star'),
-        spec('Standard', 'IS 1180 (Part 1)'),
-      ],
-      badge: { type: 'efficiency', label: 'High Efficiency', icon: 'bolt' },
-      accent: true,
-      detailSlug: '250-kva',
-      comparisonSku: 'DT-250-EE',
-      comparisonValues: comparisonValuesFromRecord({
-        capacity: '25kVA - 250kVA',
-        voltage: '11 / 0.433',
-        standard: 'IS 1180 (Part 1)',
-        powerRating: '250',
-        coolingType: 'ONAN',
-        vectorGroup: 'Dyn11',
-        noLoadLoss: '420',
-        loadLoss: '3150',
-        impedance: '4.5',
-        compliance: { tags: ['IS 1180'] },
-      }),
-    },
-
-    {
-      _id: '250-kva',
-      _type: 'productDetail',
-      categoryId: 'distribution-transformers',
-      slug: slug('250-kva'),
-      sku: 'TR-250K-D1',
-      title: '250 kVA Distribution Transformer',
-      breadcrumbLabel: '250 kVA',
-      description:
-        'Engineered for absolute reliability in high-demand industrial environments. This 250 kVA unit features advanced core design for minimal energy loss and superior thermal management.',
-      images: {
-        main: img(
-          images.distributionListing.detail250kva.main,
-          '250 kVA distribution transformer in a modern industrial facility'
-        ),
-        front: img(
-          images.distributionListing.detail250kva.front,
-          'Front view of 250 kVA industrial transformer control panel'
-        ),
-        detail: img(
-          images.distributionListing.detail250kva.detail,
-          'Close-up of high-voltage ceramic bushings on distribution transformer'
-        ),
-      },
-      quickSpecs: [
-        { label: 'Power Rating', value: '250 kVA', highlight: true },
-        { label: 'Voltage Ratio', value: '11 kV / 433 V' },
-        { label: 'Cooling Type', value: 'ONAN' },
-        { label: 'Vector Group', value: 'Dyn11' },
-      ],
-      technicalParameters: [
-        { parameter: 'Continuous Rating', value: '250 kVA' },
-        { parameter: 'No-Load Loss (Max)', value: '480 W' },
-        { parameter: 'Load Loss at 75°C (Max)', value: '3150 W' },
-        { parameter: 'Impedance Voltage', value: '4.5%' },
-        { parameter: 'Winding Material', value: 'Electrolytic Copper / Aluminum (Optional)' },
-        { parameter: 'Insulation Class', value: 'Class A (Mineral Oil Immersed)' },
-        { parameter: 'Applicable Standard', value: 'IS 1180 (Part 1) : 2014 / IEC 60076' },
+      bodyParagraphs: [
+        'Ring Main Units are compact, enclosed switchgear for medium voltage distribution — a complete package requiring only installation and cable connection.',
       ],
     },
 

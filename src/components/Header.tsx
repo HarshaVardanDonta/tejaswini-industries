@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import logo from '../assets/logo.png'
 import smallLogo from '../assets/smallLogo.jpeg'
 import { contactInfo } from '../constants/contactInfo'
-import { REQUEST_QUOTE_PATH } from '../constants/routes'
+import { CONTACT_PATH } from '../constants/routes'
 import { useCompactHeader } from '../hooks/useCompactHeader'
 import { useHeaderShellWidth } from '../hooks/useHeaderShellWidth'
 import { Icon } from './Icon'
@@ -11,6 +12,7 @@ const navLinks = [
   { label: 'Products', to: '/products' },
   { label: 'Services', to: '/services' },
   { label: 'Projects', to: '/projects' },
+  { label: 'Clients', to: '/clients' },
   { label: 'Blogs', to: '/blogs' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },
@@ -116,11 +118,11 @@ function DesktopHeader({ isCompact }: { isCompact: boolean }) {
               </a>
             </div>
             <Link
-              to={REQUEST_QUOTE_PATH}
+              to={CONTACT_PATH}
               className="bg-secondary text-on-secondary px-space-4 py-space-2 rounded-lg font-label text-label uppercase tracking-widest hover:bg-secondary/90 transition-colors border border-secondary/80 shadow-sm whitespace-nowrap"
               tabIndex={isCompact ? -1 : undefined}
             >
-              Request Quote
+              Contact Us
             </Link>
           </div>
         </div>
@@ -162,10 +164,10 @@ function LogoLink({ onNavigate }: { onNavigate?: () => void }) {
     <Link
       to="/"
       onClick={onNavigate}
-      className="header-compact-logo-link block h-8 w-8 shrink-0"
+      className="block h-8 shrink-0 rounded bg-white px-1.5 py-0.5"
       aria-label="Tejaswini Industries home"
     >
-      <img src={smallLogo} alt="" />
+      <img src={logo} alt="" className="h-full w-auto object-contain object-left" />
     </Link>
   )
 }
@@ -277,11 +279,11 @@ export function Header() {
               </a>
             </div>
             <Link
-              to={REQUEST_QUOTE_PATH}
+              to={CONTACT_PATH}
               onClick={closeMobileMenu}
               className="flex w-full items-center justify-center bg-secondary px-space-4 py-space-3 rounded-lg font-label text-label uppercase tracking-widest text-on-secondary hover:bg-secondary/90 transition-colors border border-secondary shadow-sm"
             >
-              Request Quote
+              Contact Us
             </Link>
           </div>
         </nav>

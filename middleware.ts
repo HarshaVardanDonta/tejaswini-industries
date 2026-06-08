@@ -10,13 +10,10 @@ export default function middleware(request: Request) {
 
   const { pathname } = new URL(request.url)
   const isBlogDetail = /^\/blogs\/[^/]+$/.test(pathname)
-  const isProductDetail = /^\/products\/distribution-transformers\/[^/]+$/.test(pathname)
+  const isProductCategory =
+    /^\/products\/[^/]+$/.test(pathname) && pathname !== '/products'
 
-  if (!isBlogDetail && !isProductDetail) {
-    return next()
-  }
-
-  if (pathname.endsWith('/compare')) {
+  if (!isBlogDetail && !isProductCategory) {
     return next()
   }
 
@@ -29,5 +26,5 @@ export default function middleware(request: Request) {
 }
 
 export const config = {
-  matcher: ['/blogs/:slug*', '/products/distribution-transformers/:slug*'],
+  matcher: ['/blogs/:slug*', '/products/:categoryId'],
 }

@@ -9,15 +9,13 @@ export const queries = {
   contactPage: `*[_type == "contactPage" && _id == "contactPage"][0]`,
   corporateProfilePage: `*[_type == "corporateProfilePage" && _id == "corporateProfilePage"][0]`,
 
-  productCategories: `*[_type == "productCategory"] | order(id asc)`,
-  distributionCategory: `*[_type == "distributionCategory" && _id == "distributionCategory"][0]`,
-  comparisonParameters: `*[_type == "comparisonParameter"] | order(order asc)`,
-  productDetailBySlug: `*[_type == "productDetail" && slug.current == $slug][0]`,
-  productDetailsByCategory: `*[_type == "productDetail" && (categoryId == $categoryId || (!defined(categoryId) && $categoryId == "distribution-transformers"))] | order(title asc){
-    _id, categoryId, slug, sku, title,
-    images{ main{ url, alt, asset } },
-    quickSpecs[]{ label, value, highlight },
-    technicalParameters[]{ parameter, value }
+  productCategories: `*[_type == "productCategory"] | order(id asc){
+    id, title, description, image{ url, alt, asset },
+    technicalSpecs, bodyParagraphs
+  }`,
+  productCategoryById: `*[_type == "productCategory" && id == $id][0]{
+    id, title, description, image{ url, alt, asset },
+    technicalSpecs, bodyParagraphs
   }`,
 
   projects: `*[_type == "project"] | order(id asc)`,

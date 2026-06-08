@@ -29,37 +29,13 @@ export function getWhatsAppUrl(message: string) {
   return `https://wa.me/${contactInfo.whatsappNumber}?text=${encodeURIComponent(message)}`
 }
 
-type ProductProposalFields = {
-  sku: string
-  title: string
-  quickSpecs: { label: string; value: string }[]
-  technicalParameters: { parameter: string; value: string }[]
-}
-
-export function buildProductProposalWhatsAppUrl({
-  sku,
-  title,
-  quickSpecs,
-  technicalParameters,
-}: ProductProposalFields) {
-  const primarySpecs = quickSpecs.map((spec) => `${spec.label}: ${spec.value}`).join('\n')
-  const technicalSpecs = technicalParameters
-    .map((param) => `${param.parameter}: ${param.value}`)
-    .join('\n')
-
+export function buildCategoryInquiryWhatsAppUrl(categoryTitle: string) {
   const message = [
-    'Hello, I would like to request a detailed proposal for the following product:',
+    'Hello, I am interested in learning more about your products.',
     '',
-    `Product: ${title}`,
-    `SKU: ${sku}`,
+    `Category: ${categoryTitle}`,
     '',
-    'Primary Specifications:',
-    primarySpecs,
-    '',
-    'Technical Parameters:',
-    technicalSpecs,
-    '',
-    'Please share pricing, delivery timeline, and any additional details.',
+    'Please share specifications, pricing, and delivery details.',
   ].join('\n')
 
   return getWhatsAppUrl(message)

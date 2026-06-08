@@ -4,7 +4,6 @@ import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { handleContactInquiry } from './lib/handle-contact-inquiry'
-import { handleQuoteRequest } from './lib/handle-quote-request'
 
 function readJsonBody(req: IncomingMessage): Promise<unknown> {
   return new Promise((resolve, reject) => {
@@ -39,20 +38,6 @@ function formApiDevPlugin(): Plugin {
         try {
           const body = await readJsonBody(req)
           const result = await handleContactInquiry(body)
-          sendJson(res, result.status, result.body)
-        } catch {
-          sendJson(res, 400, { error: 'Invalid JSON body' })
-        }
-      })
-
-      server.middlewares.use('/api/quote', async (req, res, next) => {
-        if (req.method !== 'POST') {
-          return next()
-        }
-
-        try {
-          const body = await readJsonBody(req)
-          const result = await handleQuoteRequest(body)
           sendJson(res, result.status, result.body)
         } catch {
           sendJson(res, 400, { error: 'Invalid JSON body' })

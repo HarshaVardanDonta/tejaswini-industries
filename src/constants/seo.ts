@@ -51,12 +51,6 @@ export const staticPageMeta = {
       'Get in touch with Tejaswini Industries for product inquiries, project consultations, and technical support.',
     path: '/contact',
   },
-  requestQuote: {
-    title: 'Request a Quote',
-    description:
-      'Request a technical quote from Tejaswini Industries for transformers, turnkey projects, and industrial power solutions.',
-    path: '/request-quote',
-  },
   services: {
     title: 'Services',
     description:
@@ -68,6 +62,12 @@ export const staticPageMeta = {
     description:
       'Explore Tejaswini Industries completed projects and installations across power utilities and industrial sectors.',
     path: '/projects',
+  },
+  clients: {
+    title: 'Our Clients & Technical Testimonials',
+    description:
+      'Discover the industrial partners and technical testimonials that validate Tejaswini Industries precision engineering and ISO-certified reliability.',
+    path: '/clients',
   },
   corporateProfile: {
     title: 'Corporate Profile',
@@ -98,11 +98,5 @@ export const staticPageMeta = {
     description:
       'How Tejaswini Industries collects, uses, and protects information when you visit our website or contact us.',
     path: '/privacy-policy',
-  },
-  compare: {
-    title: 'Technical Comparison',
-    description:
-      'Compare distribution transformer specifications side by side to find the right industrial power solution.',
-    path: '/products/distribution-transformers/compare',
   },
 } as const

@@ -2,11 +2,6 @@ import { randomUUID } from 'node:crypto'
 
 import type { InquiryPayload } from './contact-inquiry.js'
 import {
-  buildQuoteMessage,
-  quoteFieldsOnly,
-  type QuoteFormState,
-} from './build-quote-message.js'
-import {
   isSanityServerWriteConfigured,
   sanityServerWriteClient,
 } from './sanity-server.js'
@@ -25,7 +20,7 @@ export type SiteInquiryDocument = {
   phone: string
   inquiryLabel: string
   message: string
-  quote?: ReturnType<typeof quoteFieldsOnly>
+  quote?: Record<string, unknown>
 }
 
 export type SaveSiteInquiryResult =
@@ -47,21 +42,6 @@ export async function createSiteInquiryFromContact(
     phone: payload.phone,
     inquiryLabel: payload.inquiryLabel,
     message: payload.message,
-  })
-}
-
-export async function createSiteInquiryFromQuote(
-  state: QuoteFormState,
-): Promise<SaveSiteInquiryResult> {
-  return createSiteInquiry({
-    source: 'quote',
-    name: state.name,
-    company: state.company,
-    email: state.email,
-    phone: state.phone,
-    inquiryLabel: 'Quote Request',
-    message: buildQuoteMessage(state),
-    quote: quoteFieldsOnly(state),
   })
 }
 

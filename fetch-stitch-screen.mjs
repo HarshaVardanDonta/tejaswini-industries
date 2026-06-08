@@ -52,6 +52,10 @@ const SCREENS = [
     screenId: '8d68c67dfc854b20bbe6e3a48a6beae9',
     outDir: join(__dirname, 'stitch', 'request-quote-step-3'),
   },
+  {
+    screenId: '0d2d318925ab47aa80184962244a0692',
+    outDir: join(__dirname, 'stitch', 'our-clients-technical-testimonials'),
+  },
 ]
 
 async function download(url, dest) {

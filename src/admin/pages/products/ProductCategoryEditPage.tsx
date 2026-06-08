@@ -16,7 +16,8 @@ type Doc = {
   title: string
   description: string
   image?: SanityImageWithUrl
-  listingPath?: string
+  technicalSpecs?: string[]
+  bodyParagraphs?: string[]
 }
 
 export function ProductCategoryEditPage() {
@@ -36,7 +37,8 @@ export function ProductCategoryEditPage() {
         id: '',
         title: '',
         description: '',
-        listingPath: '',
+        technicalSpecs: [],
+        bodyParagraphs: [],
         image: emptyImage(),
       },
     })
@@ -55,9 +57,26 @@ export function ProductCategoryEditPage() {
     <EditorShell title={isNew ? 'New Category' : 'Edit Category'} loading={loading && !isNew} error={error} dirty={dirty} saving={saving} message={message} onSave={handleSave} onDiscard={onDiscard}>
       <TextInput label="ID" value={form.id} onChange={(v) => setForm({ ...form, id: v })} />
       <TextInput label="Title" value={form.title} onChange={(v) => setForm({ ...form, title: v })} />
-      <TextArea label="Description" value={form.description} onChange={(v) => setForm({ ...form, description: v })} />
-      <TextInput label="Listing path" value={form.listingPath ?? ''} onChange={(v) => setForm({ ...form, listingPath: v })} />
+      <TextArea label="Short description (card blurb)" value={form.description} onChange={(v) => setForm({ ...form, description: v })} />
       <ImageField label="Image" value={form.image ?? emptyImage()} onChange={(image) => setForm({ ...form, image })} />
+      <TextArea
+        label="Technical specifications (one per line)"
+        value={(form.technicalSpecs ?? []).join('\n')}
+        onChange={(v) => setForm({ ...form, technicalSpecs: v.split('\n').filter(Boolean) })}
+      />
+      <TextArea
+        label="Description paragraphs (separate with a blank line)"
+        value={(form.bodyParagraphs ?? []).join('\n\n')}
+        onChange={(v) =>
+          setForm({
+            ...form,
+            bodyParagraphs: v
+              .split(/\n\s*\n/)
+              .map((paragraph) => paragraph.trim())
+              .filter(Boolean),
+          })
+        }
+      />
     </EditorShell>
   )
 }

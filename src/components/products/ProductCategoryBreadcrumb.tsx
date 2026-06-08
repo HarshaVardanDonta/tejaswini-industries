@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
 import { Icon } from '../Icon'
 
-type ProductListingBreadcrumbProps = {
+type ProductCategoryBreadcrumbProps = {
   categoryTitle: string
 }
 
-export function ProductListingBreadcrumb({
+export function ProductCategoryBreadcrumb({
   categoryTitle,
-}: ProductListingBreadcrumbProps) {
+}: ProductCategoryBreadcrumbProps) {
   return (
     <nav
       aria-label="Breadcrumb"

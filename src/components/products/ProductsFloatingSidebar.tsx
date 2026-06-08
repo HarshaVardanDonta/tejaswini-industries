@@ -1,7 +1,7 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { contactInfo, getWhatsAppUrl } from '../../constants/contactInfo'
-import { REQUEST_QUOTE_PATH } from '../../constants/routes'
+import { CONTACT_PATH } from '../../constants/routes'
 import { images } from '../../constants/images'
 import { Icon } from '../Icon'
 
@@ -129,9 +129,9 @@ export function ProductsFloatingSidebar() {
 
       <div className="flex flex-col gap-3">
         <SidebarAction
-          to={REQUEST_QUOTE_PATH}
-          label="Request Quote"
-          icon={<Icon name="request_quote" size={22} />}
+          to={CONTACT_PATH}
+          label="Contact Us"
+          icon={<Icon name="mail" size={22} />}
           className="bg-secondary text-on-secondary"
           onActivate={dismissSidebar}
         />

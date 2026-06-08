@@ -13,7 +13,18 @@ export const productCategory = defineType({
     defineField({ name: 'title', type: 'string', validation: (rule) => rule.required() }),
     defineField({ name: 'description', type: 'text' }),
     defineField({ name: 'image', type: 'imageWithUrl' }),
-    defineField({ name: 'listingPath', type: 'string' }),
+    defineField({
+      name: 'technicalSpecs',
+      title: 'Technical specifications',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
+    defineField({
+      name: 'bodyParagraphs',
+      title: 'Description paragraphs',
+      type: 'array',
+      of: [{ type: 'text' }],
+    }),
   ],
   preview: {
     select: { title: 'title', subtitle: 'id' },

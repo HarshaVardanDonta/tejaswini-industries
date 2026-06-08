@@ -4,12 +4,7 @@ import {
   type PageMeta,
   getSiteUrl,
 } from './seo.js'
-import {
-  FALLBACK_BLOG_META,
-  FALLBACK_BLOG_SLUG,
-  FALLBACK_PRODUCT_META,
-  FALLBACK_PRODUCT_SLUG,
-} from './seo-fallbacks.js'
+import { FALLBACK_BLOG_META, FALLBACK_BLOG_SLUG } from './seo-fallbacks.js'
 import { resolveServerImageUrl } from './sanity-image-server.js'
 import { isSanityServerConfigured, sanityServerClient } from './sanity-server.js'
 
@@ -20,10 +15,11 @@ const blogPostBySlugQuery = `*[_type == "blogPost" && slug.current == $slug][0]{
   image{ url, alt, asset }
 }`
 
-const productDetailBySlugQuery = `*[_type == "productDetail" && slug.current == $slug][0]{
+const productCategoryByIdQuery = `*[_type == "productCategory" && id == $id][0]{
+  id,
   title,
   description,
-  images{ main{ url, alt, asset } }
+  image{ url, alt, asset }
 }`
 
 const blogSlugsQuery = `*[_type == "blogPost" && defined(slug.current)]{
@@ -31,8 +27,8 @@ const blogSlugsQuery = `*[_type == "blogPost" && defined(slug.current)]{
   _updatedAt
 }`
 
-const productSlugsQuery = `*[_type == "productDetail" && defined(slug.current)]{
-  "slug": slug.current,
+const productCategoryIdsQuery = `*[_type == "productCategory" && defined(id)]{
+  id,
   _updatedAt
 }`
 
@@ -43,13 +39,15 @@ type BlogPostDoc = {
   image?: { url?: string; alt?: string; asset?: { _ref?: string } }
 }
 
-type ProductDetailDoc = {
+type ProductCategoryDoc = {
+  id?: string
   title?: string
   description?: string
-  images?: { main?: { url?: string; alt?: string; asset?: { _ref?: string } } }
+  image?: { url?: string; alt?: string; asset?: { _ref?: string } }
 }
 
 type SlugEntry = { slug: string; _updatedAt?: string }
+type CategoryEntry = { id: string; _updatedAt?: string }
 
 function blogMetaFromDoc(slug: string, doc: BlogPostDoc): PageMeta {
   return {
@@ -61,14 +59,13 @@ function blogMetaFromDoc(slug: string, doc: BlogPostDoc): PageMeta {
   }
 }
 
-function productMetaFromDoc(slug: string, doc: ProductDetailDoc): PageMeta {
+function productCategoryMetaFromDoc(id: string, doc: ProductCategoryDoc): PageMeta {
   return {
-    title: doc.title || 'Product Details',
+    title: doc.title || 'Products',
     description: doc.description || DEFAULT_DESCRIPTION,
-    path: `/products/distribution-transformers/${slug}`,
-    image:
-      resolveServerImageUrl(doc.images?.main, FALLBACK_PRODUCT_META.image) || DEFAULT_OG_IMAGE,
-    type: 'product',
+    path: `/products/${id}`,
+    image: resolveServerImageUrl(doc.image) || DEFAULT_OG_IMAGE,
+    type: 'website',
   }
 }
 
@@ -95,28 +92,16 @@ export async function resolveMetaForPath(pathname: string): Promise<PageMeta | n
     return null
   }
 
-  const productMatch = pathname.match(/^\/products\/distribution-transformers\/([^/]+)$/)
-  if (productMatch) {
-    const slug = decodeURIComponent(productMatch[1])
-
-    if (slug === 'compare') return null
+  const categoryMatch = pathname.match(/^\/products\/([^/]+)$/)
+  if (categoryMatch) {
+    const id = decodeURIComponent(categoryMatch[1])
 
     if (isSanityServerConfigured) {
-      const doc = await sanityServerClient.fetch<ProductDetailDoc | null>(
-        productDetailBySlugQuery,
-        { slug }
+      const doc = await sanityServerClient.fetch<ProductCategoryDoc | null>(
+        productCategoryByIdQuery,
+        { id }
       )
-      if (doc?.title) return productMetaFromDoc(slug, doc)
-    }
-
-    if (slug === FALLBACK_PRODUCT_SLUG) {
-      return {
-        title: FALLBACK_PRODUCT_META.title,
-        description: FALLBACK_PRODUCT_META.description,
-        path: `/products/distribution-transformers/${slug}`,
-        image: FALLBACK_PRODUCT_META.image,
-        type: 'product',
-      }
+      if (doc?.title) return productCategoryMetaFromDoc(id, doc)
     }
 
     return null
@@ -146,23 +131,18 @@ export async function getSitemapUrls(): Promise<SitemapUrl[]> {
   }
 
   let blogSlugs: SlugEntry[] = []
-  let productSlugs: SlugEntry[] = []
+  let categoryIds: CategoryEntry[] = []
 
   if (isSanityServerConfigured) {
-    ;[blogSlugs, productSlugs] = await Promise.all([
+    ;[blogSlugs, categoryIds] = await Promise.all([
       sanityServerClient.fetch<SlugEntry[]>(blogSlugsQuery),
-      sanityServerClient.fetch<SlugEntry[]>(productSlugsQuery),
+      sanityServerClient.fetch<CategoryEntry[]>(productCategoryIdsQuery),
     ])
   }
 
   const blogSlugSet = new Set(blogSlugs.map((entry) => entry.slug))
   if (!blogSlugSet.has(FALLBACK_BLOG_SLUG)) {
     blogSlugs.push({ slug: FALLBACK_BLOG_SLUG })
-  }
-
-  const productSlugSet = new Set(productSlugs.map((entry) => entry.slug))
-  if (!productSlugSet.has(FALLBACK_PRODUCT_SLUG)) {
-    productSlugs.push({ slug: FALLBACK_PRODUCT_SLUG })
   }
 
   for (const entry of blogSlugs) {
@@ -175,10 +155,10 @@ export async function getSitemapUrls(): Promise<SitemapUrl[]> {
     })
   }
 
-  for (const entry of productSlugs) {
-    if (!entry.slug) continue
+  for (const entry of categoryIds) {
+    if (!entry.id) continue
     urls.push({
-      loc: `${siteUrl}/products/distribution-transformers/${entry.slug}`,
+      loc: `${siteUrl}/products/${entry.id}`,
       lastmod: entry._updatedAt ? entry._updatedAt.split('T')[0] : undefined,
       changefreq: 'monthly',
       priority: '0.8',
