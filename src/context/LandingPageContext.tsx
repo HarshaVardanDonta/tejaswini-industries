@@ -52,13 +52,14 @@ export type LandingPageData = {
 export const defaultLandingPageData: LandingPageData = {
   hero: {
     image: images.hero,
-    imageAlt: 'High-voltage industrial power transformer in a manufacturing facility',
+    imageAlt:
+      'Tejaswini branded power transformer secured on a flatbed truck at an industrial delivery yard',
     badgePrimary: 'ISO 9001:2015',
     badgeSecondary: 'BIS Certified',
     title: 'Precision Engineering.\nUncompromising Power.',
     description:
       'Tejaswini Industries delivers industrial-grade transformers, control panels, and critical infrastructure solutions engineered for absolute reliability in high-demand environments.',
-    primaryCta: 'Request Quote',
+    primaryCta: 'Contact Us',
     secondaryCta: 'Call Now',
   },
   companyIntro: {

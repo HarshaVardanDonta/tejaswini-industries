@@ -4,170 +4,37 @@ import type {
   CorporateProfilePageData,
   ServicesPageData,
 } from '../sanity/pageTypes'
+import { contactInfo } from '../constants/contactInfo'
 import type { LandingPageData } from '../context/LandingPageContext'
-import {
-  distributionTransformerProducts,
-  type ComparisonCellValue,
-  type DistributionTransformerProduct,
-} from '../data/distributionTransformers'
 import type { ImageWithUrl } from './image'
 import { resolveImageAlt, resolveImageUrl } from './image'
 
-type SanityComparisonEntry = {
-  key: string
-  value?: string
-  tags?: string[]
-}
-
-type SanityDistributionProduct = {
-  id: string
-  title: string
-  image?: ImageWithUrl
-  specs?: { label: string; value: string }[]
-  badge?: { type: string; label: string; icon?: string }
-  accent?: boolean
-  detailSlug?: string
-  comparisonSku?: string
-  comparisonHighlight?: boolean
-  comparisonValues?: SanityComparisonEntry[]
-}
-
-export function mapComparisonValues(entries?: SanityComparisonEntry[]) {
-  const result: Record<string, string | { tags: string[] }> = {}
-  for (const entry of entries || []) {
-    if (entry.tags?.length) {
-      result[entry.key] = { tags: entry.tags }
-    } else if (entry.value) {
-      result[entry.key] = entry.value
-    }
+export function mapProductCategory(
+  category: {
+    id: string
+    title: string
+    description: string
+    image?: ImageWithUrl
+    technicalSpecs?: string[]
+    bodyParagraphs?: string[]
+  },
+  fallback?: {
+    technicalSpecs?: string[]
+    bodyParagraphs?: string[]
   }
-  return result
-}
-
-export function mapDistributionProduct(product: SanityDistributionProduct) {
-  return {
-    id: product.id,
-    title: product.title,
-    image: resolveImageUrl(product.image),
-    imageAlt: resolveImageAlt(product.image, product.title),
-    specs: product.specs || [],
-    badge: product.badge?.type
-      ? product.badge.type === 'efficiency'
-        ? {
-            type: 'efficiency' as const,
-            label: product.badge.label,
-            icon: product.badge.icon || 'bolt',
-          }
-        : { type: 'best-seller' as const, label: product.badge.label }
-      : undefined,
-    accent: product.accent,
-    detailSlug: product.detailSlug,
-    comparisonSku: product.comparisonSku,
-    comparisonHighlight: product.comparisonHighlight,
-    comparisonValues: mapComparisonValues(product.comparisonValues),
-  }
-}
-
-const QUICK_SPEC_TO_COMPARISON_KEY: Record<string, string> = {
-  'Power Rating': 'powerRating',
-  'Voltage Ratio': 'voltage',
-  'Cooling Type': 'coolingType',
-  'Vector Group': 'vectorGroup',
-  Capacity: 'capacity',
-  'Capacity Range': 'capacity',
-  Standard: 'standard',
-  'Applicable Standard': 'standard',
-  Efficiency: 'efficiency',
-}
-
-const TECH_PARAM_TO_COMPARISON_KEY: Record<string, string> = {
-  'Continuous Rating': 'powerRating',
-  'No-Load Loss (Max)': 'noLoadLoss',
-  'Load Loss at 75°C (Max)': 'loadLoss',
-  'Impedance Voltage': 'impedance',
-  'Applicable Standard': 'compliance',
-}
-
-function normalizeComparisonValue(value: string, key: string): ComparisonCellValue {
-  if (key === 'compliance' && value.includes('/')) {
-    const tags = value
-      .split('/')
-      .map((part) => part.trim())
-      .filter(Boolean)
-    if (tags.length > 1) return { tags }
-  }
-  return value.replace(/\s*W$/, '').replace(/\s*kVA$/i, '').replace(/%/g, '').trim() || value
-}
-
-function buildComparisonValuesFromProductDetail(detail: {
-  quickSpecs?: { label: string; value: string }[]
-  technicalParameters?: { parameter: string; value: string }[]
-}): Record<string, ComparisonCellValue> {
-  const values: Record<string, ComparisonCellValue> = {}
-
-  for (const spec of detail.quickSpecs ?? []) {
-    const key = QUICK_SPEC_TO_COMPARISON_KEY[spec.label]
-    if (key) values[key] = normalizeComparisonValue(spec.value, key)
-  }
-
-  for (const row of detail.technicalParameters ?? []) {
-    const key = TECH_PARAM_TO_COMPARISON_KEY[row.parameter]
-    if (key && values[key] === undefined) {
-      values[key] = normalizeComparisonValue(row.value, key)
-    }
-  }
-
-  return values
-}
-
-/** Maps a productDetail document to a category listing card (replaces distributionProduct cards). */
-export function mapProductDetailToListingProduct(
-  detail: Record<string, unknown>
-): DistributionTransformerProduct {
-  const slug =
-    (detail.slug as { current?: string })?.current ?? (detail.slug as string) ?? ''
-  const title = (detail.title as string) ?? ''
-  const sku = (detail.sku as string) ?? ''
-  const images = detail.images as { main?: ImageWithUrl } | undefined
-  const quickSpecs =
-    (detail.quickSpecs as { label: string; value: string; highlight?: boolean }[]) ?? []
-
-  return {
-    id: slug || (detail._id as string) || sku,
-    title,
-    image: resolveImageUrl(images?.main),
-    imageAlt: resolveImageAlt(images?.main, title),
-    specs: quickSpecs.map(({ label, value }) => ({ label, value })),
-    detailSlug: slug,
-    comparisonSku: sku,
-    comparisonHighlight: false,
-    comparisonValues: buildComparisonValuesFromProductDetail({
-      quickSpecs,
-      technicalParameters: detail.technicalParameters as
-        | { parameter: string; value: string }[]
-        | undefined,
-    }),
-  }
-}
-
-export function getDistributionListingProductsFallback(): DistributionTransformerProduct[] {
-  return distributionTransformerProducts
-}
-
-export function mapProductCategory(category: {
-  id: string
-  title: string
-  description: string
-  image?: ImageWithUrl
-  listingPath?: string
-}) {
+) {
   return {
     id: category.id,
     title: category.title,
     description: category.description,
     image: resolveImageUrl(category.image),
     imageAlt: resolveImageAlt(category.image, category.title),
-    listingPath: category.listingPath,
+    technicalSpecs: category.technicalSpecs?.length
+      ? category.technicalSpecs
+      : (fallback?.technicalSpecs ?? []),
+    bodyParagraphs: category.bodyParagraphs?.length
+      ? category.bodyParagraphs
+      : (fallback?.bodyParagraphs ?? []),
   }
 }
 
@@ -265,57 +132,6 @@ export function mapBlogDetail(
           href: (post.relatedProduct as { href: string }).href,
         }
       : undefined,
-  }
-}
-
-export function mapProductDetail(
-  detail: Record<string, unknown> | null,
-  fallback: typeof import('../data/productDetail250Kva').productDetail250Kva
-) {
-  if (!detail) return fallback
-  return {
-    slug: (detail.slug as { current?: string })?.current || fallback.slug,
-    sku: (detail.sku as string) || fallback.sku,
-    title: (detail.title as string) || fallback.title,
-    breadcrumbLabel: (detail.breadcrumbLabel as string) || fallback.breadcrumbLabel,
-    description: (detail.description as string) || fallback.description,
-    images: {
-      main: {
-        src: resolveImageUrl(
-          (detail.images as { main?: ImageWithUrl })?.main,
-          fallback.images.main.src
-        ),
-        alt: resolveImageAlt(
-          (detail.images as { main?: ImageWithUrl })?.main,
-          fallback.images.main.alt
-        ),
-      },
-      front: {
-        src: resolveImageUrl(
-          (detail.images as { front?: ImageWithUrl })?.front,
-          fallback.images.front.src
-        ),
-        alt: resolveImageAlt(
-          (detail.images as { front?: ImageWithUrl })?.front,
-          fallback.images.front.alt
-        ),
-      },
-      detail: {
-        src: resolveImageUrl(
-          (detail.images as { detail?: ImageWithUrl })?.detail,
-          fallback.images.detail.src
-        ),
-        alt: resolveImageAlt(
-          (detail.images as { detail?: ImageWithUrl })?.detail,
-          fallback.images.detail.alt
-        ),
-      },
-    },
-    quickSpecs:
-      (detail.quickSpecs as typeof fallback.quickSpecs) || fallback.quickSpecs,
-    technicalParameters:
-      (detail.technicalParameters as typeof fallback.technicalParameters) ||
-      fallback.technicalParameters,
   }
 }
 
@@ -501,19 +317,39 @@ export function mapAboutPage(doc: Record<string, unknown> | null, fallback: Abou
   }
 }
 
+function applyContactInfo(infoCards: ContactPageData['infoCards']): ContactPageData['infoCards'] {
+  return infoCards.map((card) => {
+    if (card.title === 'Corporate Office') {
+      return { ...card, lines: [...contactInfo.addressLines] }
+    }
+    if (card.title === 'Direct Contact') {
+      return { ...card, lines: [contactInfo.phone, contactInfo.email] }
+    }
+    if (card.title === 'Operating Hours') {
+      return { ...card, lines: [...contactInfo.operatingHoursLines] }
+    }
+    return card
+  })
+}
+
 export function mapContactPage(doc: Record<string, unknown> | null, fallback: ContactPageData): ContactPageData {
   if (!doc) return fallback
   const map = doc.map as Record<string, unknown> | undefined
   const mapImage = mapImageField(map?.image as ImageWithUrl, fallback.map.image, fallback.map.imageAlt)
+  const infoCards = applyContactInfo(
+    (doc.infoCards as ContactPageData['infoCards']) || fallback.infoCards
+  )
 
   return {
     hero: (doc.hero as ContactPageData['hero']) || fallback.hero,
-    infoCards: (doc.infoCards as ContactPageData['infoCards']) || fallback.infoCards,
+    infoCards,
     whatsapp: (doc.whatsapp as ContactPageData['whatsapp']) || fallback.whatsapp,
     map: {
       image: mapImage.url,
-      imageAlt: mapImage.alt,
-      label: (map?.label as string) || fallback.map.label,
+      imageAlt:
+        mapImage.alt ||
+        `Map showing Tejaswini Industries at ${contactInfo.mapLabel}`,
+      label: (map?.label as string) || contactInfo.mapLabel,
     },
     form: (doc.form as ContactPageData['form']) || fallback.form,
     inquiryTypes: (doc.inquiryTypes as ContactPageData['inquiryTypes']) || fallback.inquiryTypes,

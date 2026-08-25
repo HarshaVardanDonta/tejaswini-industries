@@ -22,7 +22,6 @@ export const adminNavGroups: AdminNavGroup[] = [
       { label: 'About', path: '/admin/pages/about' },
       { label: 'Contact', path: '/admin/pages/contact' },
       { label: 'Corporate Profile', path: '/admin/pages/corporate-profile' },
-      { label: 'Distribution Category', path: '/admin/pages/distribution-category' },
     ],
   },
   {
@@ -32,8 +31,7 @@ export const adminNavGroups: AdminNavGroup[] = [
   {
     title: 'Products',
     items: [
-      { label: 'Categories & products', path: '/admin/products/categories' },
-      { label: 'Comparison Parameters', path: '/admin/products/comparison' },
+      { label: 'Product Categories', path: '/admin/products/categories' },
     ],
   },
   {
@@ -41,6 +39,16 @@ export const adminNavGroups: AdminNavGroup[] = [
     items: [
       { label: 'Projects', path: '/admin/projects' },
       { label: 'Commission Rows', path: '/admin/commissions' },
+    ],
+  },
+  {
+    title: 'Inquiries',
+    items: [
+      {
+        label: 'All submissions',
+        path: '/admin/inquiries',
+        description: 'Quote and contact form submissions',
+      },
     ],
   },
   {
@@ -59,7 +67,6 @@ export const pageKeys = [
   'about',
   'contact',
   'corporate-profile',
-  'distribution-category',
 ] as const
 
 export type PageKey = (typeof pageKeys)[number]
@@ -70,7 +77,6 @@ export const pageKeyToDocId: Record<PageKey, string> = {
   about: 'aboutPage',
   contact: 'contactPage',
   'corporate-profile': 'corporateProfilePage',
-  'distribution-category': 'distributionCategory',
 }
 
 export const pageKeyToType: Record<PageKey, string> = {
@@ -79,7 +85,6 @@ export const pageKeyToType: Record<PageKey, string> = {
   about: 'aboutPage',
   contact: 'contactPage',
   'corporate-profile': 'corporateProfilePage',
-  'distribution-category': 'distributionCategory',
 }
 
 export const pageKeyToTitle: Record<PageKey, string> = {
@@ -88,5 +93,4 @@ export const pageKeyToTitle: Record<PageKey, string> = {
   about: 'About Page',
   contact: 'Contact Page',
   'corporate-profile': 'Corporate Profile',
-  'distribution-category': 'Distribution Category',
 }

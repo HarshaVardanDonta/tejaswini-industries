@@ -1,9 +1,11 @@
-import { useEffect, useMemo } from 'react'
+import { useMemo } from 'react'
 import { ContactHero } from '../components/contact/ContactHero'
 import { ContactInquiryForm } from '../components/contact/ContactInquiryForm'
 import { ContactSidebar } from '../components/contact/ContactSidebar'
 import { ProductsShell } from '../components/layout/ProductsShell'
 import { PageLoading } from '../components/PageLoading'
+import { PageSEO } from '../components/seo/PageSEO'
+import { staticPageMeta } from '../constants/seo'
 import { ContactPageProvider } from '../context/PageDataContext'
 import { contactPage, inquiryTypes } from '../data/contact'
 import { useSanityQuery } from '../hooks/useSanityQuery'
@@ -21,15 +23,12 @@ export function ContactPage() {
     [data]
   )
 
-  useEffect(() => {
-    document.title = 'Contact Us - Tejaswini Industries'
-  }, [])
-
   if (loading) return <ProductsShell className="bg-background"><PageLoading embedded /></ProductsShell>
 
   return (
     <ContactPageProvider value={pageData}>
-      <ProductsShell className="bg-background" footerVariant="compact">
+      <ProductsShell className="bg-background">
+        <PageSEO {...staticPageMeta.contact} />
         <main className="grow">
           <ContactHero />
           <div className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-space-12 grid grid-cols-1 lg:grid-cols-12 gap-gutter">

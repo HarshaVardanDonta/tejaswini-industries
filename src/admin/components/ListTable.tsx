@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
+import { type ReactNode } from 'react'
 
 export function ListTable({
   title,
   description,
   addHref,
   addLabel = 'Add new',
+  headerControls,
   columns,
   rows,
   emptyMessage = 'No items yet.',
@@ -13,6 +15,7 @@ export function ListTable({
   description?: string
   addHref?: string
   addLabel?: string
+  headerControls?: ReactNode
   columns: string[]
   rows: { id: string; cells: string[]; editHref: string }[]
   emptyMessage?: string
@@ -26,14 +29,17 @@ export function ListTable({
             <p className="font-body-sm text-body-sm text-gray-500 mt-1">{description}</p>
           ) : null}
         </div>
-        {addHref ? (
-          <Link
-            to={addHref}
-            className="bg-primary text-on-primary px-4 py-2 rounded-sm font-label text-label uppercase"
-          >
-            {addLabel}
-          </Link>
-        ) : null}
+        <div className="flex flex-wrap items-center gap-3">
+          {headerControls ?? null}
+          {addHref ? (
+            <Link
+              to={addHref}
+              className="bg-primary text-on-primary px-4 py-2 rounded-sm font-label text-label uppercase"
+            >
+              {addLabel}
+            </Link>
+          ) : null}
+        </div>
       </div>
       <div className="border border-gray-200 rounded-sm overflow-hidden bg-white">
         <table className="w-full text-left">

@@ -1,5 +1,7 @@
 import { useState, type FormEvent } from 'react'
+import { contactInfo } from '../../constants/contactInfo'
 import { useContactPageData } from '../../context/PageDataContext'
+import { submitContactInquiry } from '../../lib/submitContactInquiry'
 import { Icon } from '../Icon'
 
 const inputClassName =
@@ -8,9 +10,39 @@ const inputClassName =
 export function ContactInquiryForm() {
   const { form, inquiryTypes } = useContactPageData()
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    setError(null)
+
+    const formData = new FormData(event.currentTarget)
+    const name = String(formData.get('name') ?? '').trim()
+    const company = String(formData.get('company') ?? '').trim()
+    const email = String(formData.get('email') ?? '').trim()
+    const phone = String(formData.get('phone') ?? '').trim()
+    const inquiryValue = String(formData.get('subject') ?? '')
+    const message = String(formData.get('message') ?? '').trim()
+    const inquiryLabel =
+      inquiryTypes.find((type) => type.value === inquiryValue)?.label ?? inquiryValue
+
+    setSubmitting(true)
+    const result = await submitContactInquiry({
+      name,
+      company,
+      email,
+      phone,
+      inquiryLabel,
+      message,
+    })
+    setSubmitting(false)
+
+    if (!result.ok) {
+      setError(result.message)
+      return
+    }
+
     setSubmitted(true)
   }
 
@@ -25,11 +57,19 @@ export function ContactInquiryForm() {
 
       {submitted ? (
         <p className="font-body-lg text-body-lg text-gray-700 py-space-8 text-center">
-          Thank you for your inquiry. Our engineering team will respond within
-          one business day.
+          Thank you. Your inquiry has been sent to {contactInfo.email}. Our
+          engineering team will respond within one business day.
         </p>
       ) : (
         <form className="space-y-space-6" onSubmit={handleSubmit}>
+          {error ? (
+            <p
+              className="font-body-sm text-body-sm text-red-700 bg-red-50 border border-red-200 rounded px-space-3 py-space-2"
+              role="alert"
+            >
+              {error}
+            </p>
+          ) : null}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-space-6">
             <div className="flex flex-col gap-space-1">
               <label className="font-label text-label text-gray-700 uppercase" htmlFor="name">
@@ -124,9 +164,10 @@ export function ContactInquiryForm() {
           <div className="pt-space-4 border-t border-gray-100 flex justify-end">
             <button
               type="submit"
-              className="bg-primary text-on-primary font-label text-label uppercase px-space-6 py-space-3 rounded hover:bg-primary-container transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 flex items-center gap-2 group"
+              disabled={submitting}
+              className="bg-primary text-on-primary font-label text-label uppercase px-space-6 py-space-3 rounded hover:bg-primary-container transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 flex items-center gap-2 group disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              {form.submitLabel}
+              {submitting ? 'Sending…' : form.submitLabel}
               <Icon
                 name="arrow_forward"
                 size={18}

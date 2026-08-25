@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react'
+import { useMemo } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { BlogDetailBreadcrumb } from '../components/blog-detail/BlogDetailBreadcrumb'
 import { BlogDetailContent } from '../components/blog-detail/BlogDetailContent'
@@ -7,6 +7,7 @@ import { BlogDetailShare } from '../components/blog-detail/BlogDetailShare'
 import { BlogDetailSidebar } from '../components/blog-detail/BlogDetailSidebar'
 import { ProductsShell } from '../components/layout/ProductsShell'
 import { PageLoading } from '../components/PageLoading'
+import { buildArticleJsonLd, PageSEO } from '../components/seo/PageSEO'
 import { BlogDetailProvider } from '../context/BlogDetailContext'
 import { transformerMaintenanceGuide } from '../data/blogDetailTransformerMaintenance'
 import { useSanityQuery } from '../hooks/useSanityQuery'
@@ -21,12 +22,6 @@ export function BlogDetailPage() {
     const mapped = mapBlogDetail(data as Record<string, unknown> | null, transformerMaintenanceGuide)
     return mapped.slug ? mapped : slug === transformerMaintenanceGuide.slug ? transformerMaintenanceGuide : null
   }, [data, slug])
-
-  useEffect(() => {
-    if (article) {
-      document.title = `${article.title} - Tejaswini Industries`
-    }
-  }, [article])
 
   if (loading) {
     return (
@@ -49,9 +44,25 @@ export function BlogDetailPage() {
     )
   }
 
+  const articlePath = `/blogs/${article.slug}`
+
   return (
     <BlogDetailProvider value={article}>
       <ProductsShell className="bg-background">
+        <PageSEO
+          title={article.title}
+          description={article.intro}
+          path={articlePath}
+          image={article.heroImage}
+          type="article"
+          jsonLd={buildArticleJsonLd({
+            title: article.title,
+            description: article.intro,
+            path: articlePath,
+            image: article.heroImage,
+            author: article.author,
+          })}
+        />
         <main className="grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-space-8 md:py-space-12 grid grid-cols-1 lg:grid-cols-12 gap-gutter">
           <BlogDetailBreadcrumb currentLabel={article.breadcrumbLabel} />
 

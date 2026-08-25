@@ -1,8 +1,10 @@
-import { useEffect, useMemo } from 'react'
+import { useMemo } from 'react'
 import { ProductsShell } from '../components/layout/ProductsShell'
 import { PageLoading } from '../components/PageLoading'
 import { CorporateProfileGlance } from '../components/corporate-profile/CorporateProfileGlance'
 import { CorporateProfileHero } from '../components/corporate-profile/CorporateProfileHero'
+import { PageSEO } from '../components/seo/PageSEO'
+import { staticPageMeta } from '../constants/seo'
 import { CorporateProfilePageProvider } from '../context/PageDataContext'
 import { corporateProfilePage } from '../data/corporateProfile'
 import { useSanityQuery } from '../hooks/useSanityQuery'
@@ -16,16 +18,12 @@ export function CorporateProfilePage() {
     [data]
   )
 
-  useEffect(() => {
-    document.title =
-      'Corporate Profile - Tejaswini Industries | Precision Engineering for Global Power Infrastructure'
-  }, [])
-
   if (loading) return <ProductsShell className="bg-background"><PageLoading embedded /></ProductsShell>
 
   return (
     <CorporateProfilePageProvider value={pageData}>
-      <ProductsShell className="bg-background" footerVariant="default">
+      <ProductsShell className="bg-background">
+        <PageSEO {...staticPageMeta.corporateProfile} />
         <main className="grow w-full">
           <CorporateProfileHero />
           <CorporateProfileGlance />

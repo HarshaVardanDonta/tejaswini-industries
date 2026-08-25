@@ -1,5 +1,13 @@
+import { contactInfo, getWhatsAppUrl } from '../../constants/contactInfo'
 import { useContactPageData } from '../../context/PageDataContext'
+import { getGoogleMapsEmbedUrl, getGoogleMapsNavigationUrl } from '../../lib/contactMap'
 import { Icon } from '../Icon'
+
+const linkClassName =
+  'font-mono-data text-mono-data text-on-surface-variant hover:text-primary transition-colors'
+
+const addressLinkClassName =
+  'font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors'
 
 export function ContactSidebar() {
   const { infoCards, whatsapp, map } = useContactPageData()
@@ -17,18 +25,61 @@ export function ContactSidebar() {
               <h3 className="font-label text-label text-gray-700 uppercase mb-space-1">
                 {card.title}
               </h3>
-              {card.lines.map((line) => (
-                <p
-                  key={line}
-                  className={
-                    card.mono
-                      ? 'font-mono-data text-mono-data text-on-surface-variant mb-1 last:mb-0'
-                      : 'font-body-sm text-body-sm text-on-surface-variant'
-                  }
-                >
-                  {line}
-                </p>
-              ))}
+              {card.lines.map((line, index) => {
+                const lineClassName = card.mono
+                  ? `${linkClassName} mb-1 last:mb-0 block`
+                  : 'font-body-sm text-body-sm text-on-surface-variant'
+
+                if (card.title === 'Corporate Office' && index === 0) {
+                  return (
+                    <a
+                      key="address"
+                      href={contactInfo.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={addressLinkClassName}
+                    >
+                      {contactInfo.addressLines[0]}
+                      <br />
+                      {contactInfo.addressLines[1]}
+                    </a>
+                  )
+                }
+
+                if (card.title === 'Corporate Office' && index > 0) {
+                  return null
+                }
+
+                if (card.title === 'Direct Contact' && line === contactInfo.phone) {
+                  return (
+                    <a
+                      key={line}
+                      href={contactInfo.phoneHref}
+                      className={lineClassName}
+                    >
+                      {line}
+                    </a>
+                  )
+                }
+
+                if (card.title === 'Direct Contact' && line === contactInfo.email) {
+                  return (
+                    <a
+                      key={line}
+                      href={`mailto:${contactInfo.email}`}
+                      className={lineClassName}
+                    >
+                      {line}
+                    </a>
+                  )
+                }
+
+                return (
+                  <p key={line} className={lineClassName}>
+                    {line}
+                  </p>
+                )
+              })}
             </div>
           </div>
         ))}
@@ -45,27 +96,38 @@ export function ContactSidebar() {
           <p className="font-body-sm text-body-sm text-blue-light mb-space-4 max-w-[80%]">
             {whatsapp.description}
           </p>
-          <button
-            type="button"
-            className="bg-white text-primary font-label text-label uppercase px-space-4 py-space-2 rounded flex items-center gap-2 hover:bg-gray-50 transition-colors"
+          <a
+            href={getWhatsAppUrl(contactInfo.whatsappMessages.contact)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-primary font-label text-label uppercase px-space-4 py-space-2 rounded inline-flex items-center gap-2 hover:bg-gray-50 transition-colors"
           >
             <Icon name="chat" size={18} filled={false} />
             {whatsapp.buttonLabel}
-          </button>
+          </a>
         </div>
       </div>
 
-      <div className="bg-gray-100 border border-gray-300 rounded overflow-hidden h-64 relative group">
-        <img
-          alt={map.imageAlt}
-          className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-500"
-          src={map.image}
+      <a
+        href={getGoogleMapsNavigationUrl()}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Get directions to ${map.label} in Google Maps`}
+        className="bg-gray-100 border border-gray-300 rounded overflow-hidden h-64 relative group block"
+      >
+        <iframe
+          title={map.imageAlt}
+          src={getGoogleMapsEmbedUrl()}
+          className="pointer-events-none w-full h-full border-0 grayscale opacity-80 group-hover:grayscale-0 transition-all duration-500"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          allowFullScreen
         />
         <div className="absolute inset-0 bg-primary/10 pointer-events-none" />
-        <div className="absolute bottom-space-2 right-space-2 bg-white px-space-2 py-space-1 border border-gray-300 rounded font-label text-label text-gray-700 shadow-sm">
+        <div className="absolute bottom-space-2 right-space-2 bg-white px-space-2 py-space-1 border border-gray-300 rounded font-label text-label text-gray-700 shadow-sm pointer-events-none">
           {map.label}
         </div>
-      </div>
+      </a>
     </div>
   )
 }

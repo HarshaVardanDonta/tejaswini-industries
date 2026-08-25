@@ -57,28 +57,10 @@ export const adminQueries = {
     hero{ image${imageProjection}, badge, title, titleHighlight, description, stats[]{ value, label, accent } },
     profile{ image${imageProjection}, eyebrow, title, paragraphs, highlights[]{ icon, title, description }, established }
   }`,
-  distributionCategory: `*[_id == "distributionCategory"][0]{ _id, _type, slug, title, description }`,
-  productCategories: `*[_type == "productCategory"] | order(id asc){ _id, _type, id, title, description, image${imageProjection}, listingPath }`,
-  listingProducts: `*[_type == "distributionProduct"] | order(categoryId asc, id asc){
-    _id, _type, categoryId, id, title, image${imageProjection}, specs[]{ label, value },
-    badge{ type, label, icon }, accent, detailSlug, comparisonSku, comparisonHighlight,
-    comparisonValues[]{ key, value, tags }
+  productCategories: `*[_type == "productCategory"] | order(id asc){
+    _id, _type, id, title, description, image${imageProjection},
+    technicalSpecs, bodyParagraphs
   }`,
-  listingProductsByCategory: `*[_type == "distributionProduct" && categoryId == $categoryId] | order(id asc){
-    _id, _type, categoryId, id, title, image${imageProjection}, specs[]{ label, value },
-    badge{ type, label, icon }, accent, detailSlug, comparisonSku, comparisonHighlight,
-    comparisonValues[]{ key, value, tags }
-  }`,
-  productDetails: `*[_type == "productDetail"] | order(title asc){
-    _id, _type, categoryId, slug, sku, title, breadcrumbLabel, description,
-    images{ main${imageProjection}, front${imageProjection}, detail${imageProjection} },
-    quickSpecs[]{ label, value, highlight },
-    technicalParameters[]{ parameter, value }
-  }`,
-  productDetailsByCategory: `*[_type == "productDetail" && categoryId == $categoryId] | order(title asc){
-    _id, _type, categoryId, slug, sku, title
-  }`,
-  comparisonParameters: `*[_type == "comparisonParameter"] | order(order asc){ _id, _type, key, label, hint, order }`,
   projects: `*[_type == "project"] | order(id asc){
     _id, _type, id, title, category, categoryLabel, sector, location, image${imageProjection},
     specs[]{ label, value }, accent
@@ -101,6 +83,20 @@ export const adminQueries = {
   }`,
   trendingArticles: `*[_type == "trendingArticle"] | order(order asc){ _id, _type, rank, title, readTime, order }`,
   adminCredentials: `*[_id == "adminCredentials"][0]{ _id, _type, username, password }`,
+  siteInquiries: `*[_type == "siteInquiry"] | order(submittedAt desc){
+    _id, _type, source, name, company, email, inquiryLabel, responded, submittedAt
+  }`,
+  siteInquiryById: `*[_id == $id][0]{
+    _id, _type, source, responded, submittedAt,
+    name, company, email, phone, inquiryLabel, message,
+    quote{
+      category, capacity, transformerType, coolingType, windingMaterial, tapChanger,
+      altitude, maxAmbientTemp, siteDetails,
+      standardsIs, standardsIec, standardsAnsi,
+      technicalRequirements, product, sku
+    }
+  }`,
+  pendingInquiryCount: `count(*[_type == "siteInquiry" && responded != true])`,
 } as const
 
 export function getPageQuery(pageKey: string): string | null {
@@ -110,7 +106,6 @@ export function getPageQuery(pageKey: string): string | null {
     about: adminQueries.aboutPage,
     contact: adminQueries.contactPage,
     'corporate-profile': adminQueries.corporateProfilePage,
-    'distribution-category': adminQueries.distributionCategory,
   }
   return map[pageKey] ?? null
 }

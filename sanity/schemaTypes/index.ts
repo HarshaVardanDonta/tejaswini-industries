@@ -1,15 +1,9 @@
 import { type SchemaTypeDefinition } from 'sanity'
 
 import { blogPost, trendingArticle } from './documents/blogPost'
-import { comparisonParameter } from './documents/comparisonParameter'
-import { distributionProduct } from './documents/distributionProduct'
+import { siteInquiry } from './documents/siteInquiry'
 import { productCategory } from './documents/productCategory'
-import { productDetail } from './documents/productDetail'
-import {
-  commissionRow,
-  distributionCategory,
-  project,
-} from './documents/project'
+import { commissionRow, project } from './documents/project'
 import { imageWithUrl } from './objects/imageWithUrl'
 import { spec } from './objects/spec'
 import { aboutPage } from './singletons/aboutPage'
@@ -29,12 +23,9 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   contactPage,
   corporateProfilePage,
   productCategory,
-  distributionProduct,
-  productDetail,
-  comparisonParameter,
-  distributionCategory,
   project,
   commissionRow,
   blogPost,
   trendingArticle,
+  siteInquiry,
 ]

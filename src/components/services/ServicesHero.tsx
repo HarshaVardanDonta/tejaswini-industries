@@ -6,15 +6,15 @@ export function ServicesHero() {
   const { hero } = useServicesPageData()
 
   return (
-    <section className="relative w-full h-[614px] min-h-[500px] flex items-center bg-gray-900 border-b border-gray-300">
-      <div className="absolute inset-0 z-0">
+    <section className="hero-bleed-header relative w-full flex items-center bg-gray-900 border-b border-gray-300">
+      <div className="absolute inset-0 z-0" aria-hidden>
         <img
           src={hero.image}
           alt={hero.imageAlt}
           className="w-full h-full object-cover opacity-40 mix-blend-overlay"
         />
       </div>
-      <div className="relative z-10 w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+      <div className="hero-bleed-header__content relative z-10 flex flex-1 items-center w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
         <div className="max-w-3xl bg-surface/95 p-8 border-l-4 border-secondary shadow-lg">
           <span className="font-label text-label text-secondary uppercase tracking-widest block mb-4">
             {hero.eyebrow}

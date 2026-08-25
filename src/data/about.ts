@@ -82,6 +82,6 @@ export const aboutPage = {
     title: 'Partner with Engineering Excellence',
     description:
       'Discuss your technical specifications with our engineering team today.',
-    buttonLabel: 'Request a Quote',
+    buttonLabel: 'Contact Us',
   },
 }

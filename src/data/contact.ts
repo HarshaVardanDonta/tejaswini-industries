@@ -1,4 +1,5 @@
 import { images } from '../constants/images'
+import { contactInfo } from '../constants/contactInfo'
 
 export const inquiryTypes = [
   { value: 'product', label: 'Product Inquiry' },
@@ -17,19 +18,19 @@ export const contactPage = {
     {
       icon: 'domain',
       title: 'Corporate Office',
-      lines: ['Industrial Estate, Phase II,', 'Sector 4, Manufacturing Hub, IN'],
+      lines: [...contactInfo.addressLines],
       mono: false,
     },
     {
       icon: 'call',
       title: 'Direct Contact',
-      lines: ['+91 800 555 0199', 'sales@tejaswini.ind'],
+      lines: [contactInfo.phone, contactInfo.email],
       mono: true,
     },
     {
       icon: 'schedule',
       title: 'Operating Hours',
-      lines: ['Mon - Sat: 9:00 AM - 6:00 PM', 'Sun: Closed'],
+      lines: [...contactInfo.operatingHoursLines],
       mono: false,
     },
   ],
@@ -41,9 +42,8 @@ export const contactPage = {
   },
   map: {
     image: images.contact.map,
-    imageAlt:
-      'Satellite map view of an industrial park with a facility marker',
-    label: 'Manufacturing Hub, IN',
+    imageAlt: `Map showing Tejaswini Industries corporate office in ${contactInfo.mapLabel}`,
+    label: contactInfo.mapLabel,
   },
   form: {
     title: 'Project Inquiry Form',

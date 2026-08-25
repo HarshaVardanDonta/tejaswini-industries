@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { BlogPagination } from '../components/blogs/BlogPagination'
 import { BlogPostCard } from '../components/blogs/BlogPostCard'
 import { BlogsFilters } from '../components/blogs/BlogsFilters'
@@ -7,6 +7,8 @@ import { BlogsSidebar } from '../components/blogs/BlogsSidebar'
 import { FeaturedBlogPost } from '../components/blogs/FeaturedBlogPost'
 import { ProductsShell } from '../components/layout/ProductsShell'
 import { PageLoading } from '../components/PageLoading'
+import { PageSEO } from '../components/seo/PageSEO'
+import { staticPageMeta } from '../constants/seo'
 import { BlogsPageProvider } from '../context/BlogsPageContext'
 import type { BlogCategory, BlogPost } from '../data/blogs'
 import { blogPosts, featuredPost, trendingArticles } from '../data/blogs'
@@ -50,10 +52,6 @@ export function BlogsPage() {
     return posts.filter((post) => post.category === filter)
   }, [filter, posts])
 
-  useEffect(() => {
-    document.title = 'Industrial Insights - Tejaswini Industries'
-  }, [])
-
   if (postsLoading || trendingLoading) {
     return (
       <ProductsShell className="bg-gray-50">
@@ -65,6 +63,7 @@ export function BlogsPage() {
   return (
     <BlogsPageProvider featured={featured} trending={trending}>
       <ProductsShell className="bg-gray-50">
+        <PageSEO {...staticPageMeta.blogs} />
         <main className="grow max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-space-12 space-y-space-12 w-full">
           <div>
             <BlogsIntro />

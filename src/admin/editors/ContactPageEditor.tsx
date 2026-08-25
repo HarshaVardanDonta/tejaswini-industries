@@ -54,7 +54,11 @@ export function ContactPageEditor() {
       </SectionCard>
 
       <SectionCard title="Map" defaultOpen={false}>
-        <ImageField label="Map image" value={map.image ?? emptyImage()} onChange={(image) => setForm(patchNested(form, 'map', { ...map, image }))} />
+        <p className="font-body-sm text-body-sm text-on-surface-variant mb-space-3">
+          The live site embeds Google Maps at the corporate office coordinates. The image
+          below is used for alt text context only.
+        </p>
+        <ImageField label="Map image (legacy / alt)" value={map.image ?? emptyImage()} onChange={(image) => setForm(patchNested(form, 'map', { ...map, image }))} />
         <TextInput label="Label" value={map.label ?? ''} onChange={(v) => setForm(patchNested(form, 'map', { ...map, label: v }))} />
       </SectionCard>
 

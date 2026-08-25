@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import type { ProductCategory } from '../../data/productCategories'
+import { getProductCategoryPath } from '../../data/productCategories'
 
 type ProductCategoryCardProps = {
   category: ProductCategory
@@ -25,21 +26,12 @@ export function ProductCategoryCard({ category }: ProductCategoryCardProps) {
           </p>
         </div>
         <div className="mt-auto pt-space-4">
-          {category.listingPath ? (
-            <Link
-              to={category.listingPath}
-              className="inline-flex items-center justify-center bg-primary text-on-primary font-label text-label uppercase px-space-4 py-space-3 rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors w-full"
-            >
-              View Range
-            </Link>
-          ) : (
-            <a
-              href="#"
-              className="inline-flex items-center justify-center bg-primary text-on-primary font-label text-label uppercase px-space-4 py-space-3 rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors w-full"
-            >
-              View Range
-            </a>
-          )}
+          <Link
+            to={getProductCategoryPath(category.id)}
+            className="inline-flex items-center justify-center bg-primary text-on-primary font-label text-label uppercase px-space-4 py-space-3 rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors w-full"
+          >
+            Learn More
+          </Link>
         </div>
       </div>
     </article>

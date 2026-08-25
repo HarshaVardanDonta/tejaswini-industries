@@ -21,7 +21,6 @@ export const structure = (S: StructureBuilder) =>
               singleton(S, 'aboutPage', 'About Page'),
               singleton(S, 'contactPage', 'Contact Page'),
               singleton(S, 'corporateProfilePage', 'Corporate Profile'),
-              singleton(S, 'distributionCategory', 'Distribution Category'),
             ])
         ),
       S.divider(),
@@ -29,12 +28,11 @@ export const structure = (S: StructureBuilder) =>
       S.documentTypeListItem('trendingArticle').title('Trending Articles'),
       S.divider(),
       S.documentTypeListItem('productCategory').title('Product Categories'),
-      S.documentTypeListItem('distributionProduct').title('Category Listing Products'),
-      S.documentTypeListItem('productDetail').title('Product Details'),
-      S.documentTypeListItem('comparisonParameter').title('Comparison Parameters'),
       S.divider(),
       S.documentTypeListItem('project').title('Projects'),
       S.documentTypeListItem('commissionRow').title('Commission Rows'),
+      S.divider(),
+      S.documentTypeListItem('siteInquiry').title('Form Inquiries'),
       S.divider(),
       singleton(S, 'adminCredentials', 'Admin Credentials'),
     ])

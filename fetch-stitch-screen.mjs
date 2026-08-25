@@ -4,9 +4,8 @@ import { fileURLToPath } from 'url'
 import { stitch } from '@google/stitch-sdk'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const mcp = JSON.parse(
-  readFileSync(join(process.env.USERPROFILE, '.cursor', 'mcp.json'), 'utf8')
-)
+const home = process.env.HOME ?? process.env.USERPROFILE
+const mcp = JSON.parse(readFileSync(join(home, '.cursor', 'mcp.json'), 'utf8'))
 process.env.STITCH_API_KEY =
   mcp.mcpServers.stitch.headers['X-Goog-Api-Key']
 
@@ -40,6 +39,22 @@ const SCREENS = [
   {
     screenId: '30c05d2242334214914cd2d553ea2234',
     outDir: join(__dirname, 'stitch', 'centered-industrial-loading-state'),
+  },
+  {
+    screenId: '5b109531c7094da4a93905972496e084',
+    outDir: join(__dirname, 'stitch', 'request-quote-step-1'),
+  },
+  {
+    screenId: '506203af41134bda909114860ea78a93',
+    outDir: join(__dirname, 'stitch', 'request-quote-step-2'),
+  },
+  {
+    screenId: '8d68c67dfc854b20bbe6e3a48a6beae9',
+    outDir: join(__dirname, 'stitch', 'request-quote-step-3'),
+  },
+  {
+    screenId: '0d2d318925ab47aa80184962244a0692',
+    outDir: join(__dirname, 'stitch', 'our-clients-technical-testimonials'),
   },
 ]
 
