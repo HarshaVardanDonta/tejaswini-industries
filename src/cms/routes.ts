@@ -1,3 +1,4 @@
+import { CATALOG_HIDDEN_IDS } from '../data/productCategories'
 import { readBaked } from './repository'
 import type { CmsDoc } from './types'
 
@@ -20,7 +21,10 @@ export const staticPublicPaths = [
 
 export function getProductPaths(): string[] {
   const categories = readBaked<CmsDoc[]>('*[_type == "productCategory"] | order(id asc)')
-  return categories.map((category) => `/products/${String(category.id)}`)
+  return categories
+    .map((category) => String(category.id))
+    .filter((id) => id && !CATALOG_HIDDEN_IDS.has(id))
+    .map((id) => `/products/${id}`)
 }
 
 export function getBlogPaths(): string[] {

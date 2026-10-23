@@ -30,7 +30,7 @@ export const staticPageMeta = {
   products: {
     title: 'Transformers and Panels Made in Hyderabad',
     description:
-      'CRGO, amorphous and aluminium-wound distribution transformers to 2000 kVA, plus panels and ring main units from Mallapur, Hyderabad.',
+      'Distribution transformers to 2000 kVA, with aluminium or copper windings and CRGO or amorphous cores, plus panels and ring main units from Mallapur, Hyderabad.',
     path: '/products',
   },
   serviceAreas: {

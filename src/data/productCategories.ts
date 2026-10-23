@@ -14,6 +14,15 @@ export function getProductCategoryPath(id: string) {
   return `/products/${id}`
 }
 
+/** Choices shown on the distribution transformer page, not as their own products. */
+export const CATALOG_HIDDEN_IDS = new Set([
+  'crgo-core-transformers',
+  'amorphous-core-transformers',
+  'aluminium-wound-transformers',
+  'oil-cooled-transformers',
+  'oltc-transformers',
+])
+
 export function getProductCategoryById(id: string): ProductCategory | undefined {
   return productCategories.find((category) => category.id === id)
 }
@@ -23,7 +32,7 @@ export const productCategories: ProductCategory[] = [
     id: 'distribution-transformers',
     title: 'Distribution Transformers in Hyderabad',
     description:
-      'Distribution transformers made in Hyderabad, 100 kVA to 2000 kVA, 11/22/33 kV, ONAN, CRGO or amorphous cores and aluminium windings.',
+      'Distribution transformers made in Hyderabad, 100 kVA to 2000 kVA, 11/22/33 kV, ONAN, with CRGO or amorphous cores and aluminium or copper windings.',
     image: images.products.distribution,
     imageAlt:
       'Heavy-duty industrial distribution transformer in a modern warehouse',
@@ -32,12 +41,12 @@ export const productCategories: ProductCategory[] = [
       'Voltage Class: 11 kV, 22 kV, 33 kV',
       'Cooling: ONAN',
       'Core: CRGO or amorphous',
-      'Winding: aluminium',
+      'Winding: aluminium (Al) or copper (Cu)',
       'Taping: OFF Load Tap Changer / On load Tap changer',
     ],
     bodyParagraphs: [
       'Distribution transformers for projects in Hyderabad and Telangana are built in 1 or 3 phase, with primary voltages up to 33 kV and secondary voltages from 433 V to 11000 V. The top rating is 2000 kVA. The low end of the published range remains 100 kVA.',
-      'Cores are CRGO (cold-rolled grain-oriented steel) or amorphous metal. Windings on this range are aluminium. ISO 9001 certification is stated for the transformers, with internal and external quality audits. No efficiency-star rating is published.',
+      'Cores are CRGO (cold-rolled grain-oriented steel) or amorphous metal. Windings are aluminium (Al) or copper (Cu). ISO 9001 certification is stated for the transformers, with internal and external quality audits. No efficiency-star rating is published.',
       'Cooling is ONAN (oil natural, air natural). Tap changers are off-load or on-load. Apartment and factory kVA is not published as a sizing chart; send connected load with the inquiry.',
     ],
   },

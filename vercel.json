@@ -21,7 +21,32 @@
     },
     {
       "source": "/products/copper-wound-transformers",
-      "destination": "/products/aluminium-wound-transformers",
+      "destination": "/products/distribution-transformers",
+      "permanent": true
+    },
+    {
+      "source": "/products/aluminium-wound-transformers",
+      "destination": "/products/distribution-transformers",
+      "permanent": true
+    },
+    {
+      "source": "/products/crgo-core-transformers",
+      "destination": "/products/distribution-transformers",
+      "permanent": true
+    },
+    {
+      "source": "/products/amorphous-core-transformers",
+      "destination": "/products/distribution-transformers",
+      "permanent": true
+    },
+    {
+      "source": "/products/oil-cooled-transformers",
+      "destination": "/products/distribution-transformers",
+      "permanent": true
+    },
+    {
+      "source": "/products/oltc-transformers",
+      "destination": "/products/distribution-transformers",
       "permanent": true
     },
     { "source": "/(.*)/index.html", "destination": "/$1", "permanent": true }

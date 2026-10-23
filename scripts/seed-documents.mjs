@@ -431,7 +431,7 @@ export function buildDocuments(images) {
       id: 'distribution-transformers',
       title: 'Distribution Transformers in Hyderabad',
       description:
-        'Distribution transformers made in Hyderabad, 100 kVA to 2000 kVA, 11/22/33 kV, ONAN, CRGO or amorphous cores and aluminium windings.',
+        'Distribution transformers made in Hyderabad, 100 kVA to 2000 kVA, 11/22/33 kV, ONAN, with CRGO or amorphous cores and aluminium or copper windings.',
       image: img(
         images.products.distribution,
         'Heavy-duty industrial distribution transformer in a modern warehouse'
@@ -441,12 +441,12 @@ export function buildDocuments(images) {
         'Voltage Class: 11 kV, 22 kV, 33 kV',
         'Cooling: ONAN',
         'Core: CRGO or amorphous',
-        'Winding: aluminium',
+        'Winding: aluminium (Al) or copper (Cu)',
         'Taping: OFF Load Tap Changer / On load Tap changer',
       ],
       bodyParagraphs: [
         'Distribution transformers for projects in Hyderabad and Telangana are built in 1 or 3 phase, with primary voltages up to 33 kV and secondary voltages from 433 V to 11000 V. The top rating is 2000 kVA. The low end of the published range remains 100 kVA.',
-        'Cores are CRGO (cold-rolled grain-oriented steel) or amorphous metal. Windings on this range are aluminium. ISO 9001 certification is stated for the transformers, with internal and external quality audits. No efficiency-star rating is published.',
+        'Cores are CRGO (cold-rolled grain-oriented steel) or amorphous metal. Windings are aluminium (Al) or copper (Cu). ISO 9001 certification is stated for the transformers, with internal and external quality audits. No efficiency-star rating is published.',
         'Cooling is ONAN (oil natural, air natural). Tap changers are off-load or on-load. Apartment and factory kVA is not published as a sizing chart; send connected load with the inquiry.',
       ],
     },
@@ -733,18 +733,18 @@ export function buildDocuments(images) {
           page: 'distribution-transformers',
           question: 'What ratings are published for distribution transformers?',
           answer:
-            '100 kVA to 2000 kVA, voltage class 11 kV, 22 kV and 33 kV, cooling ONAN, off-load or on-load tap changer. Cores are CRGO or amorphous. Windings are aluminium. Units are single- or three-phase, with primary voltage up to 33 kV and secondary voltage from 433 V to 11000 V. The order rating is the one on the quotation.',
+            '100 kVA to 2000 kVA, voltage class 11 kV, 22 kV and 33 kV, cooling ONAN, off-load or on-load tap changer. Cores are CRGO or amorphous. Windings are aluminium (Al) or copper (Cu). Units are single- or three-phase, with primary voltage up to 33 kV and secondary voltage from 433 V to 11000 V. The order rating is the one on the quotation.',
         },
         {
           id: 'oil-what',
-          page: 'oil-cooled-transformers',
+          page: 'distribution-transformers',
           question: 'What does oil-cooled mean on this site?',
           answer:
             'The catalogue lists cooling as ONAN, which is oil-natural, air-natural. The maintenance guide describes the same family as oil-immersed distribution transformers. Oil volume and a loss guarantee are not published.',
         },
         {
           id: 'oltc-choice',
-          page: 'oltc-transformers',
+          page: 'distribution-transformers',
           question: 'Can I specify OLTC or off-load tap changer?',
           answer:
             'Yes. The distribution specification lists both. The site does not publish which one is standard, the tap range, or the number of positions. Write the requirement on the inquiry.',

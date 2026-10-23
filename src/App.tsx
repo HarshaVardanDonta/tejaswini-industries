@@ -80,7 +80,27 @@ export function AppRoutes() {
           />
           <Route
             path="products/copper-wound-transformers"
-            element={<Navigate to="/products/aluminium-wound-transformers" replace />}
+            element={<Navigate to="/products/distribution-transformers" replace />}
+          />
+          <Route
+            path="products/aluminium-wound-transformers"
+            element={<Navigate to="/products/distribution-transformers" replace />}
+          />
+          <Route
+            path="products/crgo-core-transformers"
+            element={<Navigate to="/products/distribution-transformers" replace />}
+          />
+          <Route
+            path="products/amorphous-core-transformers"
+            element={<Navigate to="/products/distribution-transformers" replace />}
+          />
+          <Route
+            path="products/oil-cooled-transformers"
+            element={<Navigate to="/products/distribution-transformers" replace />}
+          />
+          <Route
+            path="products/oltc-transformers"
+            element={<Navigate to="/products/distribution-transformers" replace />}
           />
           <Route
             path="products/distribution-transformers/compare"

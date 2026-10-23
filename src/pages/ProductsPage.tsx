@@ -5,7 +5,11 @@ import { ProductCategoryCard } from '../components/products/ProductCategoryCard'
 import { ProductsIntro } from '../components/products/ProductsIntro'
 import { PageSEO } from '../components/seo/PageSEO'
 import { staticPageMeta } from '../constants/seo'
-import { getProductCategoryById, productCategories } from '../data/productCategories'
+import {
+  CATALOG_HIDDEN_IDS,
+  getProductCategoryById,
+  productCategories,
+} from '../data/productCategories'
 import { useCmsQuery } from '../hooks/useCmsQuery'
 import { mapProductCategory } from '../cms/mappers'
 import { queries } from '../cms/queries'
@@ -18,15 +22,17 @@ export function ProductsPage() {
   )
 
   const categories = useMemo(() => {
-    if (!data?.length) return productCategories
-    return data.map((item) => {
-      const id = (item as { id: string }).id
-      const staticFallback = getProductCategoryById(id)
-      return mapProductCategory(
-        item as Parameters<typeof mapProductCategory>[0],
-        staticFallback
-      )
-    })
+    const source = !data?.length
+      ? productCategories
+      : data.map((item) => {
+          const id = (item as { id: string }).id
+          const staticFallback = getProductCategoryById(id)
+          return mapProductCategory(
+            item as Parameters<typeof mapProductCategory>[0],
+            staticFallback
+          )
+        })
+    return source.filter((category) => !CATALOG_HIDDEN_IDS.has(category.id))
   }, [data])
 
   if (loading) return <ProductsShell><PageLoading embedded /></ProductsShell>
