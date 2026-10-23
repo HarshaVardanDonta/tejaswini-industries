@@ -3,28 +3,34 @@ import { Link } from 'react-router-dom'
 import { useAdminDocument } from '../hooks/useAdminDocument'
 import { adminNavGroups } from '../lib/adminNavigation'
 import { adminQueries } from '../lib/adminQueries'
+import { LeadsInbox } from './inquiries/InquiriesListPage'
 
 export function AdminDashboard() {
   const sections = adminNavGroups.filter((g) => g.title !== 'Overview')
-  const { data: pendingCount } = useAdminDocument<number>(adminQueries.pendingInquiryCount)
+  const { data: pendingCount } = useAdminDocument<number>(adminQueries.pendingLeadCount)
 
   return (
-    <div className="p-6 space-y-8">
-      <div>
+    <div className="space-y-8">
+      <div className="px-6 pt-6">
         <h1 className="font-h1 text-h1 text-primary uppercase">Dashboard</h1>
         <p className="font-body-lg text-body-lg text-gray-700 mt-2 max-w-2xl">
-          Manage all website content structured by section. Changes are saved to Sanity and appear on
-          the public site after you refresh.
+          Content edits are saved in Firestore. This site has no server, so a save does not rebuild
+          the HTML or send email. Run a new static deploy when crawlers should see the updated copy.
+          Visitors who run JavaScript load the latest Firestore content after the page opens.
         </p>
         {typeof pendingCount === 'number' && pendingCount > 0 ? (
           <p className="font-body-sm text-body-sm mt-3">
-            <Link to="/admin/inquiries" className="text-secondary font-label uppercase hover:underline">
-              {pendingCount} form submission{pendingCount === 1 ? '' : 's'} awaiting response
-            </Link>
+            <a href="#leads" className="text-secondary font-label uppercase hover:underline">
+              {pendingCount} lead{pendingCount === 1 ? '' : 's'} not handled yet
+            </a>
           </p>
         ) : null}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <section id="leads" className="px-6">
+        <h2 className="font-h2 text-h2 text-primary uppercase mb-2">Leads inbox</h2>
+        <LeadsInbox compact showHeading={false} />
+      </section>
+      <div className="px-6 pb-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {sections.flatMap((group) =>
           group.items.map((item) => (
             <Link

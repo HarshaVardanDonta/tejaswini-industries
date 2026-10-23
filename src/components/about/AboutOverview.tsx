@@ -12,6 +12,10 @@ export function AboutOverview() {
             alt={overview.isoImageAlt}
             className="w-full h-auto rounded-lg grayscale hover:grayscale-0 transition-all duration-500"
             src={overview.isoImage}
+            width={960}
+            height={720}
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div className="absolute -bottom-space-6 -left-space-2 sm:-left-space-6 bg-white border border-gray-100 p-space-4 rounded-xl shadow-sm border-l-4 border-l-secondary">

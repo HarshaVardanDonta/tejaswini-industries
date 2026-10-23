@@ -4,6 +4,7 @@ import { images } from '../constants/images'
 import { Icon } from './Icon'
 
 const quickLinks = [
+  { label: 'Service areas', to: '/service-areas' },
   { label: 'Quality Policy', to: '/quality-policy' },
   { label: 'Infrastructure', to: '/infrastructure' },
   { label: 'Career', to: '/careers' },
@@ -13,6 +14,19 @@ const quickLinks = [
 export function Footer() {
   return (
     <footer className="bg-surface-container-high dark:bg-tertiary-container w-full border-t border-gray-300 dark:border-outline-variant mt-auto">
+      <div className="bg-primary text-on-primary">
+        <div className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-space-6 flex flex-col md:flex-row md:items-center gap-space-4 justify-between">
+          <p className="font-body-lg text-body-lg max-w-2xl">
+            Request a quote for a Hyderabad or Telangana project. Call {contactInfo.phone} or send kVA, voltage, company and site location.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex bg-secondary text-on-secondary px-space-6 py-space-3 font-label text-label uppercase shrink-0"
+          >
+            Request a quote
+          </Link>
+        </div>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-space-8 px-margin-desktop py-space-12 w-full max-w-[1280px] mx-auto">
         <div className="col-span-1 md:col-span-2">
           <div className="font-h3 text-h3 text-primary dark:text-primary-fixed-dim uppercase mb-space-4 flex items-center gap-2">
@@ -40,6 +54,10 @@ export function Footer() {
               <img
                 src={images.bisCertification}
                 alt="BIS Certification"
+                width={28}
+                height={28}
+                loading="lazy"
+                decoding="async"
                 className="h-7 w-auto object-contain"
               />
             </div>

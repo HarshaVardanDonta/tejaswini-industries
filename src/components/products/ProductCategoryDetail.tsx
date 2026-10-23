@@ -22,6 +22,10 @@ export function ProductCategoryDetail({ category }: ProductCategoryDetailProps) 
             src={category.image}
             alt={category.imageAlt}
             className="w-full h-full object-cover"
+            width={960}
+            height={720}
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div className="flex flex-col justify-center">

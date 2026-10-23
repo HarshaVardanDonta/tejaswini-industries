@@ -11,6 +11,10 @@ export function ServicesHero() {
         <img
           src={hero.image}
           alt={hero.imageAlt}
+          width={1600}
+          height={700}
+          decoding="async"
+          fetchPriority="high"
           className="w-full h-full object-cover opacity-40 mix-blend-overlay"
         />
       </div>

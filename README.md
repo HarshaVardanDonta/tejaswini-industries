@@ -1,58 +1,48 @@
 # Tejaswini Industries
 
-Industrial marketing site (Vite + React) with **Sanity CMS** and a custom content admin at `/admin`.
+Industrial marketing site (Vite + React) for a distribution transformer manufacturer in Hyderabad. Content is stored in **Cloud Firestore**. Public pages are prerendered to HTML at build time. The owner edits content at `/admin` with Firebase Auth.
 
-## Sanity CMS setup
+Firebase project: `tejaswini-industries-32349` (Spark plan, Firestore in `asia-south1`).
 
-The `sanity/` folder is **already configured** (schemas, Studio structure, seed scripts). You do **not** need to run `npx sanity init` again — that command fails with “Given path is not empty” because the Studio lives in the existing `sanity/` directory.
+## Owner setup
 
-Your Sanity project was created successfully:
+1. Copy [`.env.example`](.env.example) to `.env`. The public web config is already filled in.
+2. In the Firebase console, confirm Email/Password sign-in is enabled.
+3. Create a service account key (Project settings → Service accounts → Generate new private key). Do not commit it. Point `FIREBASE_SERVICE_ACCOUNT_JSON` at the file.
+4. Deploy rules: `npx firebase deploy --only firestore:rules --project tejaswini-industries-32349`
+5. Seed content and create the admin user:
 
-- **Project:** tejaswini-industries  
-- **Project ID:** `y5p55fqj`  
-- **Dataset:** `production` (public, default)  
-- **Manage:** https://www.sanity.io/manage/project/y5p55fqj  
+   ```bash
+   FIREBASE_SERVICE_ACCOUNT_JSON=/absolute/path/service-account.json \
+   ADMIN_EMAIL=owner@example.com \
+   ADMIN_PASSWORD='choose-a-long-password' \
+   npm run seed:firestore
+   ```
 
-### Finish setup
+   The script writes every content document and an `admins/{uid}` allowlist record. Firestore rules allow public reads of `content` and writes only for that UID. Passwords are not stored in Firestore.
+6. On Vercel, set the `VITE_FIREBASE_*` variables and `VITE_SITE_URL=https://www.tejaswiniindustries.com`. Do not set SMTP or a deploy-hook secret. The hosted site is static files plus the Firebase client SDK.
+7. Optional: set `VITE_GA4_ID` when a GA4 property exists. Do not invent an ID. The old Universal Analytics tag is not used.
 
-1. Copy [`.env.example`](.env.example) to `.env` (or use the `.env` already in the repo with the project ID).
-2. Create an **Editor** API token at [API → Tokens](https://www.sanity.io/manage/project/y5p55fqj/api) and set `VITE_SANITY_WRITE_TOKEN` in `.env`.
-3. Under **API → CORS origins**, add `http://localhost:5173` (and your production URL when you deploy).
-4. Seed content: `npm run seed:sanity`
-5. Start the app: `npm run dev`
-   - Site: http://localhost:5173  
-   - Admin: http://localhost:5173/admin/login (after seed: `admin` / `changeme`)
+Local emulator (no service account):
 
-The admin UI is a first-party React app (sidebar navigation, sectioned forms, list views). It reads and writes Sanity via `VITE_SANITY_WRITE_TOKEN` in the browser—the same model as the former embedded Studio.
+```bash
+firebase emulators:exec --only auth,firestore --project tejaswini-industries-32349 \
+  "ADMIN_EMAIL=owner@example.com ADMIN_PASSWORD='emulator-only-password' npm run seed:firestore"
+```
 
-Optional: run standalone Sanity Studio with `npm run sanity:dev` for schema development only (not linked from the public site).
+Then run the site with `VITE_FIREBASE_EMULATORS=true npm run dev` and sign in at `/admin/login`.
 
-### Form submissions (Sanity + email)
+### How content reaches Google
 
-Contact inquiries (`/contact`) are saved as **`siteInquiry`** documents in Sanity (with a **Responded** flag you can toggle in **Admin → Inquiries**). Email notification is best-effort after a successful Sanity save.
+`npm run build` prerenders every public route to static HTML with its own title, description, canonical and JSON-LD. The HTML is generated from `scripts/seed-documents.mjs`, overlaid with any Firestore `content` documents the build can read. There is no runtime server and no deploy hook. After an admin save, run a new Vercel deploy (or `npm run build`) so crawlers receive the new HTML. Until that deploy, visitors who run JavaScript still read the latest Firestore documents. Images stay as URLs or files in the repo. Cloud Storage and Cloud Functions are not used.
 
-1. Set **`SANITY_WRITE_TOKEN`** in `.env` to the same Editor API token as `VITE_SANITY_WRITE_TOKEN` (server-only; no `VITE_` prefix).
-2. Add SMTP variables for email (see below).
-3. Local dev: `npm run dev` serves `POST /api/contact` via Vite middleware.
-4. Production: deploy to [Vercel](https://vercel.com) and set `SANITY_WRITE_TOKEN`, SMTP vars, and deploy `api/contact.ts`.
+### Leads
 
-### Contact form email
+The contact form writes a document to the Firestore `leads` collection from the browser. Rules allow a public create only when the fields and size limits match, and they deny public reads. Allowlisted admins read the inbox at `/admin` and `/admin/leads` and can mark a lead handled. The Spark plan cannot email the owner when a lead arrives. Check `/admin`, or add email later with the Blaze plan or a third-party form service. Call (`tel:+919248030365`) and WhatsApp (`wa.me/919248030362`) stay on the form for an immediate reply.
 
-Submissions on `/contact` are also sent to **info@tejaswiniindustries.com** via SMTP when configured. Do **not** store SMTP passwords in Sanity—the site loads CMS data in the browser, so secrets would be exposed.
+### NAP
 
-1. Add SMTP variables to `.env` (see [`.env.example`](.env.example); no `VITE_` prefix).
-2. Local dev: `npm run dev` serves `/api/contact` through Vite middleware (uses the same `.env` values).
-3. Production: deploy to [Vercel](https://vercel.com) (or another host that runs `api/contact`) and set the same variables in the project **Environment Variables** dashboard.
-
-Typical values from your email host: `SMTP_HOST`, `SMTP_PORT` (often `587`), `SMTP_USER`, `SMTP_PASS`, optional `SMTP_FROM` and `CONTACT_INQUIRY_TO`.
-
-### Contact page map
-
-The contact sidebar embeds **Google Maps** at the coordinates in [`src/constants/contactInfo.ts`](src/constants/contactInfo.ts). Clicking the map opens **Google Maps navigation** (driving directions) to the office.
-
-### Admin security note
-
-Admin login checks username/password stored in the Sanity `adminCredentials` document (editable under **Settings → Admin Credentials** in `/admin`). Change the default password after first login. Writes and image uploads require the Editor API token in `.env`. This is basic access control, not enterprise auth.
+Address, phone, email and hours live in the Firestore document `siteSettings` (Admin → Business details) and in [`src/constants/contactInfo.ts`](src/constants/contactInfo.ts) as the baked fallback. Edit the Firestore document; do not scatter new copies through components.
 
 ---
 

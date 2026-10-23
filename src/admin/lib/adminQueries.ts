@@ -83,20 +83,16 @@ export const adminQueries = {
   }`,
   trendingArticles: `*[_type == "trendingArticle"] | order(order asc){ _id, _type, rank, title, readTime, order }`,
   adminCredentials: `*[_id == "adminCredentials"][0]{ _id, _type, username, password }`,
-  siteInquiries: `*[_type == "siteInquiry"] | order(submittedAt desc){
-    _id, _type, source, name, company, email, inquiryLabel, responded, submittedAt
+  leads: `*[_type == "lead"] | order(submittedAt desc){
+    _id, _type, source, name, company, email, phone, role, inquiryLabel,
+    kvaRating, voltage, projectLocation, message, handled, submittedAt
   }`,
-  siteInquiryById: `*[_id == $id][0]{
-    _id, _type, source, responded, submittedAt,
-    name, company, email, phone, inquiryLabel, message,
-    quote{
-      category, capacity, transformerType, coolingType, windingMaterial, tapChanger,
-      altitude, maxAmbientTemp, siteDetails,
-      standardsIs, standardsIec, standardsAnsi,
-      technicalRequirements, product, sku
-    }
+  leadById: `*[_id == $id][0]{
+    _id, _type, source, handled, handledAt, submittedAt,
+    name, company, role, email, phone, inquiryLabel,
+    kvaRating, voltage, projectLocation, message
   }`,
-  pendingInquiryCount: `count(*[_type == "siteInquiry" && responded != true])`,
+  pendingLeadCount: `count(*[_type == "lead" && handled != true])`,
 } as const
 
 export function getPageQuery(pageKey: string): string | null {

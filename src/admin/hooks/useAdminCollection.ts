@@ -1,7 +1,7 @@
 import { useAdminDocument } from './useAdminDocument'
 
 export function useAdminCollection<T>(
-  sanityType: string
+  docType: string
 ) {
-  return useAdminDocument<T[]>(`*[_type == $type] | order(_id asc)`, { type: sanityType })
+  return useAdminDocument<T[]>(`*[_type == $type] | order(_id asc)`, { type: docType })
 }

@@ -10,6 +10,9 @@ export function FeaturedBlogPost() {
           alt={featuredPost.imageAlt}
           className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
           src={featuredPost.image}
+          width={1200}
+          height={675}
+          decoding="async"
         />
         <div className="absolute top-space-4 left-space-4 bg-secondary text-on-secondary font-label text-label px-space-3 py-space-1 uppercase">
           Featured Guide
@@ -34,6 +37,10 @@ export function FeaturedBlogPost() {
                 alt={featuredPost.authorImageAlt}
                 className="w-full h-full object-cover"
                 src={featuredPost.authorImage}
+                width={64}
+                height={64}
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div>

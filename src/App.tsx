@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react'
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { GoogleAnalytics } from './components/GoogleAnalytics'
+import { PageSEO } from './components/seo/PageSEO'
 import { ScrollToTop } from './components/ScrollToTop'
 import { AppLayout } from './components/layout/AppLayout'
 import { AboutPage } from './pages/AboutPage'
@@ -17,6 +18,7 @@ import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage'
 import { ProductsPage } from './pages/ProductsPage'
 import { ProjectsPage } from './pages/ProjectsPage'
 import { QualityPolicyPage } from './pages/QualityPolicyPage'
+import { ServiceAreasPage } from './pages/ServiceAreasPage'
 import { ServicesPage } from './pages/ServicesPage'
 
 const AdminLoginPage = lazy(() =>
@@ -30,9 +32,11 @@ const AdminGuard = lazy(() =>
 )
 
 function AdminFallback() {
+  const { pathname } = useLocation()
   return (
     <div className="min-h-screen flex items-center justify-center font-body-sm text-body-sm text-gray-500">
-      Loading admin…
+      <PageSEO title="Admin" description="Private content admin." path={pathname} noindex />
+      <h1 className="font-h1 text-h1 text-primary uppercase">Admin</h1>
     </div>
   )
 }
@@ -43,9 +47,9 @@ function routerBasename(): string | undefined {
   return base.replace(/\/$/, '')
 }
 
-function App() {
+export function AppRoutes() {
   return (
-    <BrowserRouter basename={routerBasename()}>
+    <>
       <ScrollToTop />
       <GoogleAnalytics />
       <Routes>
@@ -85,6 +89,7 @@ function App() {
           <Route path="corporate-profile" element={<CorporateProfilePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="service-areas" element={<ServiceAreasPage />} />
           <Route path="request-quote" element={<Navigate to="/contact" replace />} />
           <Route path="quality-policy" element={<QualityPolicyPage />} />
           <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
@@ -95,6 +100,14 @@ function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
+    </>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter basename={routerBasename()}>
+      <AppRoutes />
     </BrowserRouter>
   )
 }

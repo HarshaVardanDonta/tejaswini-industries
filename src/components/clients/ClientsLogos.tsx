@@ -20,6 +20,10 @@ export function ClientsLogos() {
             <img
               src={logo.image}
               alt={logo.name}
+              width={160}
+              height={80}
+              loading="lazy"
+              decoding="async"
               className="max-h-full max-w-full object-contain mix-blend-multiply opacity-80"
             />
           </div>

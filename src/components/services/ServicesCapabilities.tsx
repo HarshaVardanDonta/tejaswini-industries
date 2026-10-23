@@ -16,6 +16,10 @@ export function ServicesCapabilities() {
           <img
             src={capabilities.featured.image}
             alt={capabilities.featured.imageAlt}
+            width={960}
+            height={640}
+            loading="lazy"
+            decoding="async"
             className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:grayscale-0 group-hover:opacity-40 transition-all duration-500"
           />
           <div className="relative z-10 bg-white/90 p-6 border-l-4 border-primary">

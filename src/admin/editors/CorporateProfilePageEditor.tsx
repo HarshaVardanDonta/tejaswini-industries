@@ -5,12 +5,12 @@ import { TextArea } from '../components/fields/TextArea'
 import { TextInput } from '../components/fields/TextInput'
 import { useSingletonPage } from '../hooks/useSingletonPage'
 import { adminQueries } from '../lib/adminQueries'
-import type { SanityImageWithUrl } from '../types/adminDocuments'
+import type { ContentImage } from '../types/adminDocuments'
 import { emptyImage, patchNested } from './helpers'
 
 type CorporateDoc = Record<string, unknown> & {
   hero?: {
-    image?: SanityImageWithUrl
+    image?: ContentImage
     badge?: string
     title?: string
     titleHighlight?: string
@@ -18,7 +18,7 @@ type CorporateDoc = Record<string, unknown> & {
     stats?: { value: string; label: string; accent?: string }[]
   }
   profile?: {
-    image?: SanityImageWithUrl
+    image?: ContentImage
     eyebrow?: string
     title?: string
     paragraphs?: string[]

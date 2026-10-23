@@ -13,6 +13,10 @@ export function CorporateProfileGlance() {
           <img
             src={profile.image}
             alt={profile.imageAlt}
+            width={640}
+            height={800}
+            loading="lazy"
+            decoding="async"
             className="w-full aspect-[4/5] object-cover rounded shadow-sm border border-gray-100"
           />
           <div className="absolute bottom-0 right-0 bg-primary text-on-primary p-space-6 border-l-4 border-secondary translate-x-4 translate-y-4 max-w-[220px]">

@@ -11,6 +11,10 @@ export function CorporateProfileHero() {
         <img
           src={hero.image}
           alt={hero.imageAlt}
+          width={1600}
+          height={700}
+          decoding="async"
+          fetchPriority="high"
           className="w-full h-full object-cover object-center opacity-40 mix-blend-overlay"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-tertiary via-tertiary/90 to-transparent" />

@@ -6,12 +6,12 @@ import { ProductsIntro } from '../components/products/ProductsIntro'
 import { PageSEO } from '../components/seo/PageSEO'
 import { staticPageMeta } from '../constants/seo'
 import { getProductCategoryById, productCategories } from '../data/productCategories'
-import { useSanityQuery } from '../hooks/useSanityQuery'
-import { mapProductCategory } from '../sanity/mappers'
-import { queries } from '../sanity/queries'
+import { useCmsQuery } from '../hooks/useCmsQuery'
+import { mapProductCategory } from '../cms/mappers'
+import { queries } from '../cms/queries'
 
 export function ProductsPage() {
-  const { data, loading } = useSanityQuery<Array<Record<string, unknown>>>(
+  const { data, loading } = useCmsQuery<Array<Record<string, unknown>>>(
     queries.productCategories,
     {},
     null

@@ -1,6 +1,8 @@
+import { signOut } from 'firebase/auth'
 import { Outlet, useNavigate } from 'react-router-dom'
 
-import { ADMIN_SESSION_KEY } from '../../sanity/queries'
+import { getFirebaseAuth } from '../../cms/firebase'
+import { PageSEO } from '../../components/seo/PageSEO'
 import { AdminSidebar } from './AdminSidebar'
 
 export function AdminLayout() {
@@ -8,15 +10,14 @@ export function AdminLayout() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex">
-      <meta name="robots" content="noindex" />
+      <PageSEO title="Admin" description="Private content admin." path="/admin" noindex />
       <AdminSidebar />
       <div className="flex-1 flex flex-col min-w-0">
         <header className="h-14 border-b border-gray-200 bg-white px-6 flex items-center justify-end gap-4">
           <button
             type="button"
             onClick={() => {
-              sessionStorage.removeItem(ADMIN_SESSION_KEY)
-              navigate('/admin/login')
+              void signOut(getFirebaseAuth()).finally(() => navigate('/admin/login'))
             }}
             className="font-label text-label uppercase text-gray-700 hover:text-secondary"
           >

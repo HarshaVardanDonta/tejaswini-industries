@@ -11,12 +11,12 @@ import { PageSEO } from '../components/seo/PageSEO'
 import { staticPageMeta } from '../constants/seo'
 import { AboutPageProvider } from '../context/PageDataContext'
 import { aboutPage } from '../data/about'
-import { useSanityQuery } from '../hooks/useSanityQuery'
-import { mapAboutPage } from '../sanity/mappers'
-import { queries } from '../sanity/queries'
+import { useCmsQuery } from '../hooks/useCmsQuery'
+import { mapAboutPage } from '../cms/mappers'
+import { queries } from '../cms/queries'
 
 export function AboutPage() {
-  const { data, loading } = useSanityQuery(queries.aboutPage, {}, null)
+  const { data, loading } = useCmsQuery(queries.aboutPage, {}, null)
   const pageData = useMemo(
     () => mapAboutPage(data as Record<string, unknown> | null, aboutPage),
     [data]

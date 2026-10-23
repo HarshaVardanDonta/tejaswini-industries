@@ -42,22 +42,29 @@ export const adminNavGroups: AdminNavGroup[] = [
     ],
   },
   {
-    title: 'Inquiries',
+    title: 'Leads',
     items: [
       {
-        label: 'All submissions',
-        path: '/admin/inquiries',
-        description: 'Quote and contact form submissions',
+        label: 'Inbox',
+        path: '/admin/leads',
+        description: 'Quote requests from the contact form',
       },
     ],
   },
   {
     title: 'Other',
-    items: [{ label: 'Trending Articles', path: '/admin/trending' }],
+    items: [
+      { label: 'Trending Articles', path: '/admin/trending' },
+      { label: 'FAQs', path: '/admin/faqs' },
+      { label: 'Service areas', path: '/admin/service-areas' },
+    ],
   },
   {
     title: 'Settings',
-    items: [{ label: 'Admin Credentials', path: '/admin/settings/credentials' }],
+    items: [
+      { label: 'Business details', path: '/admin/settings/business' },
+      { label: 'Admin access', path: '/admin/settings/credentials' },
+    ],
   },
 ]
 

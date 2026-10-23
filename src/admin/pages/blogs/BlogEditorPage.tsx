@@ -9,8 +9,8 @@ import { ToggleInput } from '../../components/fields/ToggleInput'
 import { emptyImage } from '../../editors/helpers'
 import { useDocumentEditor } from '../../hooks/useDocumentEditor'
 import { adminQueries } from '../../lib/adminQueries'
-import { resolveSlug, slugify, toSanitySlug } from '../../lib/adminMutations'
-import type { SanityImageWithUrl, SanitySlug } from '../../types/adminDocuments'
+import { resolveSlug, slugify, toContentSlug } from '../../lib/adminMutations'
+import type { ContentImage, ContentSlug } from '../../types/adminDocuments'
 
 type BlogSection = {
   id?: string
@@ -25,7 +25,7 @@ type BlogDoc = {
   _id: string
   _type: 'blogPost'
   id: string
-  slug: string | SanitySlug
+  slug: string | ContentSlug
   title: string
   excerpt?: string
   category?: string
@@ -39,8 +39,8 @@ type BlogDoc = {
   readTime?: string
   breadcrumbLabel?: string
   intro?: string
-  image?: SanityImageWithUrl
-  authorImage?: SanityImageWithUrl
+  image?: ContentImage
+  authorImage?: ContentImage
   sections?: BlogSection[]
   tableOfContents?: { id: string; label: string; indent?: number }[]
 }
@@ -49,6 +49,7 @@ export function BlogEditorPage() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const isNew = id === 'new'
+  // eslint-disable-next-line react-hooks/purity
   const docId = isNew ? `blogPost-draft-${Date.now()}` : decodeURIComponent(id ?? '')
 
   const { form, setForm, loading, error, dirty, saving, message, onSave, onDiscard } =
@@ -76,7 +77,7 @@ export function BlogEditorPage() {
     const slugCurrent = resolveSlug(form.slug) || slugify(form.title)
     const payload = {
       ...form,
-      slug: toSanitySlug(slugCurrent),
+      slug: toContentSlug(slugCurrent),
       _id: form._id.startsWith('blogPost-') ? form._id : `blogPost-${slugCurrent}`,
     }
     const ok = await onSave(payload)
@@ -255,7 +256,8 @@ export function BlogEditorPage() {
                 }}>+ Add row</button>
                 <button type="button" className="font-label text-label text-secondary uppercase" onClick={() => {
                   const next = [...sections]
-                  const { table: _table, ...rest } = next[si]
+                  const rest = { ...next[si] }
+                  delete rest.table
                   next[si] = rest
                   setForm({ ...form, sections: next })
                 }}>Remove table</button>

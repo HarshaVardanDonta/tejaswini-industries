@@ -19,10 +19,30 @@ function spec(label, value) {
 export function buildDocuments(images) {
   return [
     {
-      _id: 'adminCredentials',
-      _type: 'adminCredentials',
-      username: 'admin',
-      password: 'changeme',
+      _id: 'siteSettings',
+      _type: 'siteSettings',
+      addressLines: [
+        '3-13-109/1/1, FCI Road, Suryanagar',
+        'Mallapur, Hyderabad - 500076, Telangana, India',
+      ],
+      streetAddress: '3-13-109/1/1, FCI Road, Suryanagar, Mallapur',
+      postalCode: '500076',
+      locality: 'Hyderabad',
+      region: 'Telangana',
+      country: 'IN',
+      lat: 17.4454786,
+      lng: 78.5800202,
+      mapsUrl:
+        'https://www.google.com/maps/dir/?api=1&destination=17.4454786,78.5800202&travelmode=driving',
+      phone: '+91 9248030365',
+      phoneHref: 'tel:+919248030365',
+      email: 'info@tejaswiniindustries.com',
+      whatsappNumber: '919248030362',
+      whatsappNote:
+        'The published call number is +91 9248030365. WhatsApp on this site uses 919248030362. Confirm which number should be primary.',
+      hours: ['Mon - Sat: 9:00 AM - 5:30 PM', 'Sun: Closed'],
+      opens: '09:00',
+      closes: '17:30',
     },
 
     {
@@ -35,17 +55,17 @@ export function buildDocuments(images) {
         ),
         badgePrimary: 'ISO 9001:2015',
         badgeSecondary: 'BIS Certified',
-        title: 'Precision Engineering.\nUncompromising Power.',
+        title: 'Distribution Transformer Manufacturer\nin Hyderabad',
         description:
-          'Tejaswini Industries delivers industrial-grade transformers, control panels, and critical infrastructure solutions engineered for absolute reliability in high-demand environments.',
+          'Tejaswini Industries manufactures distribution transformers in Hyderabad, Telangana. The published distribution range is 100 kVA to 5000 kVA at 11 kV, 22 kV and 33 kV, with ONAN cooling and off-load or on-load tap changers. The factory is at Mallapur.',
         primaryCta: 'Contact Us',
         secondaryCta: 'Call Now',
       },
       companyIntro: {
         title: 'Engineering Authority',
         paragraphs: [
-          'Established with a commitment to unyielding quality, Tejaswini Industries stands at the forefront of electrical manufacturing. We specialize in the design, fabrication, and commissioning of heavy-duty transformers and power distribution networks.',
-          'Our facilities operate under stringent ISO 9001:2015 standards, ensuring every unit deployed is a testament to our technical rigor and operational excellence. We build the backbone of industrial power.',
+          'Tejaswini Industries builds distribution transformers, power transformers, dry-type transformers, HT panels, LT panels and ring main units at Mallapur, Hyderabad. Buyers in Hyderabad and the rest of Telangana can request a quotation with kVA, voltage and project location.',
+          'Our facilities operate under stringent ISO 9001:2015 standards, ensuring every unit deployed is a testament to our technical rigor and operational excellence. The site also shows a BIS Certified mark. We build the backbone of industrial power.',
         ],
         image: img(
           images.facility,
@@ -120,9 +140,9 @@ export function buildDocuments(images) {
       hero: {
         image: img(images.services.hero, 'Industrial machinery and power station interior'),
         eyebrow: 'Core Expertise',
-        title: 'Industrial Engineering Services & Turnkey Solutions',
+        title: 'Electrical Services for Hyderabad and Telangana',
         description:
-          'Delivering precision-engineered solutions for high-voltage infrastructure, complex installations, and critical maintenance operations. ISO 9001:2015 certified excellence.',
+          'Turnkey HT/LT installation, maintenance and TGSPDCL / TSSPDCL liaisoning from the Hyderabad works. ISO 9001:2015 certified processes. Liaisoning is a service; this site does not state a utility product approval.',
       },
       coreServices: [
         {
@@ -313,9 +333,9 @@ export function buildDocuments(images) {
       _id: 'contactPage',
       _type: 'contactPage',
       hero: {
-        title: 'Get in Touch',
+        title: 'Request a Transformer Quote in Telangana',
         description:
-          'Precision engineering requires clear communication. Connect with our technical consultants for robust industrial solutions, turnkey projects, and expert electrical liaisoning.',
+          'Call +91 9248030365, email info@tejaswiniindustries.com, or send the inquiry form with kVA, voltage, company, role and the project location in Telangana. The office is at Mallapur, Hyderabad - 500076.',
       },
       infoCards: [
         {
@@ -410,9 +430,9 @@ export function buildDocuments(images) {
       _id: 'distribution-transformers',
       _type: 'productCategory',
       id: 'distribution-transformers',
-      title: 'Distribution Transformers',
+      title: 'Distribution Transformers in Hyderabad',
       description:
-        'High-efficiency distribution units designed to step down voltage for local commercial and industrial grid applications. Built with robust enclosures for extended operational lifespan.',
+        'Hyderabad manufacturer of 11 kV, 22 kV and 33 kV distribution transformers, 100 kVA to 5000 kVA, ONAN cooling, with off-load or on-load tap changers.',
       image: img(
         images.products.distribution,
         'Heavy-duty industrial distribution transformer in a modern warehouse'
@@ -424,18 +444,18 @@ export function buildDocuments(images) {
         'Taping: OFF Load Tap Changer / On load Tap changer',
       ],
       bodyParagraphs: [
-        'Distribution transformers for industrial application are available in 3 or 1 phase version with primary voltages of up to 33 KV and secondary voltages ranging from 433 to 11000 V. The capacity range is up to 10000 KVA.',
-        'Our manufacturing facilities are located in Hyderabad. Power transformers up to 63 MVA 132 KV Class are regularly manufactured and supplied.',
-        'The company has achieved ISO 9001 certification for all its transformers with regular internal and external quality audits.',
+        'Distribution transformers for projects in Hyderabad and Telangana are available in 3 or 1 phase, with primary voltages of up to 33 kV and secondary voltages from 433 V to 11000 V. The specification list states 100 kVA to 5000 kVA. The same product description also states a capacity range up to 10000 kVA. The rating on a quotation is the one that applies to the order.',
+        'Manufacturing is in Hyderabad. Power transformers up to 63 MVA, 132 kV class, are described as regularly manufactured and supplied. ISO 9001 certification is stated for the transformers, with internal and external quality audits.',
+        'Cooling is listed as ONAN (oil natural, air natural). Taping is listed as off-load tap changer or on-load tap changer. Apartment and factory kVA is not published as a sizing chart; send connected load with the inquiry.',
       ],
     },
     {
       _id: 'power-transformers',
       _type: 'productCategory',
       id: 'power-transformers',
-      title: 'Power Transformers',
+      title: 'Power Transformers in Hyderabad',
       description:
-        'Heavy-duty transformers engineered for high-voltage transmission networks. Delivering supreme reliability and handling immense loads with minimal energy loss.',
+        'Power transformers manufactured in Hyderabad, including units described up to 63 MVA and 132 kV class, with copper foil winding on high-current sections.',
       image: img(images.products.power, 'Large power transformer at an outdoor substation'),
       technicalSpecs: [
         'Copper foil winding technology for high current sections',
@@ -444,16 +464,17 @@ export function buildDocuments(images) {
         'Minimal stray losses and reduced total copper losses',
       ],
       bodyParagraphs: [
-        'A power transformer transfers energy between two or more circuits through electromagnetic induction, efficiently changing AC voltages from one level to another within power networks.',
+        'A power transformer transfers energy between circuits through electromagnetic induction. Published construction notes specify copper foil winding for high-current sections, short-circuit strength in the LV winding, and lower stray and copper losses.',
+        'Product copy states that power transformers up to 63 MVA, 132 kV class, are manufactured and supplied from the Hyderabad facility. No separate aluminium-winding rating is published.',
       ],
     },
     {
       _id: 'dry-type-transformers',
       _type: 'productCategory',
       id: 'dry-type-transformers',
-      title: 'Dry Type Transformers',
+      title: 'Dry Type Transformers in Hyderabad',
       description:
-        'Environmentally safe, liquid-free transformers ideal for indoor installations where fire safety is paramount. Low maintenance and highly reliable.',
+        'VPI dry-type transformers from Hyderabad, up to 2.5 MVA, insulation class F (155 °C) and H (180 °C), protection up to IP56.',
       image: img(images.products.dryType, 'Dry-type transformer in a clean electrical control room'),
       technicalSpecs: [
         'VPI type up to 2.5 MVA',
@@ -469,9 +490,9 @@ export function buildDocuments(images) {
       _id: 'ht-panels',
       _type: 'productCategory',
       id: 'ht-panels',
-      title: 'HT Panels',
+      title: 'HT Panels in Hyderabad',
       description:
-        'High Tension switchgear panels designed for the protection and control of high-voltage industrial circuits, ensuring operational safety and system stability.',
+        'High-tension panels built in Hyderabad, with vacuum circuit breakers rated 630–2000 A and insulation level 12/28/75 kV.',
       image: img(images.products.htPanels, 'Row of high tension electrical control panels'),
       technicalSpecs: [
         'Vacuum Circuit Breaker rating 630–2000 A',
@@ -486,9 +507,9 @@ export function buildDocuments(images) {
       _id: 'lt-panels',
       _type: 'productCategory',
       id: 'lt-panels',
-      title: 'LT Panels',
+      title: 'LT Panels in Hyderabad',
       description:
-        'Low Tension distribution boards providing critical power routing and circuit protection for complex facility networks and heavy machinery clusters.',
+        'Low-tension distribution panels from Hyderabad, with a solid busbar system, on-load protected switching, and no direct access to live parts.',
       image: img(images.products.ltPanels, 'Low tension distribution panels in a factory setting'),
       technicalSpecs: [
         'All types of LT distribution panels',
@@ -504,9 +525,9 @@ export function buildDocuments(images) {
       _id: 'rmus',
       _type: 'productCategory',
       id: 'rmus',
-      title: 'RMUs',
+      title: 'Ring Main Units in Hyderabad',
       description:
-        'Compact, fully enclosed Ring Main Units for secondary distribution networks. Offering superior protection in minimal spatial footprints.',
+        '11 kV and 33 kV ring main units from Hyderabad, including 630 A, 26.3 kA load-break switches with earth switch and interlock.',
       image: img(images.products.rmu, 'Compact ring main unit switchgear'),
       technicalSpecs: [
         'Load Break Switches or SFU: 11 KV and 33 KV',
@@ -516,6 +537,212 @@ export function buildDocuments(images) {
       ],
       bodyParagraphs: [
         'Ring Main Units are compact, enclosed switchgear for medium voltage distribution — a complete package requiring only installation and cable connection.',
+      ],
+    },
+
+    {
+      _id: 'oil-cooled-transformers',
+      _type: 'productCategory',
+      id: 'oil-cooled-transformers',
+      title: 'Oil-Cooled Transformers in Hyderabad',
+      description:
+        'Oil-cooled (ONAN) distribution transformers built in Hyderabad. Published range 100 kVA to 5000 kVA at 11 kV, 22 kV and 33 kV.',
+      image: img(
+        images.products.distribution,
+        'Oil-cooled distribution transformer in the Hyderabad works'
+      ),
+      technicalSpecs: [
+        'Cooling: ONAN (oil natural, air natural)',
+        'Range: 100 KVA to 5000 KVA',
+        'Voltage Class: 11 KV, 22 KV, 33 KV',
+        'Also described as oil-immersed distribution transformers',
+      ],
+      bodyParagraphs: [
+        'The distribution transformer specification lists cooling as ONAN. ONAN is oil-natural, air-natural cooling: the oil circulates naturally and the tank surface releases heat to the air. The maintenance guide on this site is written for oil-immersed distribution transformers and covers oil level, leaks, silica-gel breather and oil BDV.',
+        'Published ratings on the distribution range are 100 kVA to 5000 kVA at 11 kV, 22 kV and 33 kV. A second sentence in that description also says capacity up to 10000 kVA. Use the quotation for the rating that will be built.',
+        'These units are made at Mallapur, Hyderabad, for industrial and commercial distribution. The site does not publish a separate oil volume, radiator schedule or guaranteed loss figure.',
+      ],
+    },
+    {
+      _id: 'oltc-transformers',
+      _type: 'productCategory',
+      id: 'oltc-transformers',
+      title: 'OLTC and OFTC Transformers in Hyderabad',
+      description:
+        'Hyderabad distribution transformers listed with off-load (OFTC) or on-load (OLTC) tap changers, 11 kV, 22 kV and 33 kV.',
+      image: img(
+        images.products.distribution,
+        'Distribution transformer with tap changer, manufactured in Hyderabad'
+      ),
+      technicalSpecs: [
+        'Taping: OFF Load Tap Changer / On load Tap changer',
+        'Voltage Class: 11 KV, 22 KV, 33 KV',
+        'Range: 100 KVA to 5000 KVA',
+        'Cooling: ONAN',
+      ],
+      bodyParagraphs: [
+        'The published distribution-transformer specification lists both an off-load tap changer and an on-load tap changer. Off-load (often called OFTC) is changed with the transformer isolated. On-load (OLTC) is the option listed for changing taps while the unit is in service. This site does not publish tap range, number of steps or a rule for choosing one.',
+        'Voltage class remains 11 kV, 22 kV and 33 kV, and the listed rating band is 100 kVA to 5000 kVA. State the required tap changer on the inquiry together with kVA, voltage and the Telangana project location.',
+      ],
+    },
+    {
+      _id: 'copper-wound-transformers',
+      _type: 'productCategory',
+      id: 'copper-wound-transformers',
+      title: 'Copper Wound Transformers in Hyderabad',
+      description:
+        'Hyderabad power transformers using copper foil winding on high-current sections, with lower stray and copper losses.',
+      image: img(
+        images.products.power,
+        'Copper-wound power transformer at the Hyderabad factory'
+      ),
+      technicalSpecs: [
+        'Copper foil winding technology for high current sections',
+        'Sustaining short circuit forces without distortion in LV windings',
+        'Hot spot in LV windings regulated',
+        'Minimal stray losses and reduced total copper losses',
+      ],
+      bodyParagraphs: [
+        'Power-transformer construction published on this site uses copper foil winding for high-current sections. The notes also say stray losses are reduced and total copper losses are lower than the standard-loss comparison used in that text.',
+        'An aluminium winding specification is not published. A blog sidebar title mentions copper versus aluminium windings, but that article has no body text on this site, so it is not a product claim. Ask for winding material when you enquire.',
+        'Manufacturing is in Hyderabad. Distribution transformers are a separate range (100 kVA to 5000 kVA, 11/22/33 kV, ONAN) and their winding metal is not stated in the catalogue.',
+      ],
+    },
+
+    {
+      _id: 'serviceAreasPage',
+      _type: 'serviceAreasPage',
+      title: 'Transformer Supply in Hyderabad and Telangana',
+      description:
+        'Distribution transformers, panels and ring main units made at Mallapur, Hyderabad, for projects in Hyderabad and Telangana.',
+      paragraphs: [
+        'Tejaswini Industries manufactures distribution transformers, power transformers, dry-type transformers, HT panels, LT panels and ring main units at 3-13-109/1/1, FCI Road, Suryanagar, Mallapur, Hyderabad 500076, Telangana.',
+        'Enquiries for industrial, commercial, apartment and infrastructure projects in Hyderabad and elsewhere in Telangana are taken on the contact form. The form asks for kVA, voltage, company, role and project location. A site outside the published address is confirmed when the quotation is prepared. This page does not list districts the company has not named.',
+        'The project list also includes references outside Telangana (Gujarat, Maharashtra and Odisha, including Surat, Pune and Jamnagar). Those are published installations, not a claim that every district is covered.',
+      ],
+      areas: [
+        {
+          name: 'Hyderabad',
+          detail:
+            'Factory and corporate office at Mallapur, on FCI Road, Suryanagar. Call +91 9248030365. Hours published on the site are Monday to Saturday, 9:00 AM to 5:30 PM.',
+        },
+        {
+          name: 'Telangana',
+          detail:
+            'Projects elsewhere in Telangana are quoted from the Hyderabad works. Name the town or site on the inquiry. TGSPDCL / TSSPDCL liaisoning is offered as a service and is not described as a product approval.',
+        },
+      ],
+    },
+
+    {
+      _id: 'faqs',
+      _type: 'faqSet',
+      items: [
+        {
+          id: 'home-who',
+          page: 'home',
+          question: 'Who is the distribution transformer manufacturer in Hyderabad?',
+          answer:
+            'Tejaswini Industries manufactures distribution transformers at Mallapur, Hyderabad, Telangana (3-13-109/1/1, FCI Road, Suryanagar, PIN 500076). The published distribution range is 100 kVA to 5000 kVA at 11 kV, 22 kV and 33 kV, with ONAN cooling and off-load or on-load tap changers. Call +91 9248030365.',
+        },
+        {
+          id: 'home-kva',
+          page: 'home',
+          question: 'What kVA is published for apartments and factories?',
+          answer:
+            'The distribution specification list states 100 kVA to 5000 kVA. Another sentence on that page says capacity up to 10000 kVA. There is no published chart that converts flats or a factory load into kVA. Send the connected load, voltage and Telangana location on the inquiry form so the rating can be confirmed in the quotation.',
+        },
+        {
+          id: 'home-winding',
+          page: 'home',
+          question: 'Do the transformers use copper or aluminium windings?',
+          answer:
+            'Power-transformer copy states copper foil winding for high-current sections and lower copper losses. An aluminium winding specification is not published. Distribution-transformer winding metal is not stated. Ask for the winding material on the inquiry.',
+        },
+        {
+          id: 'home-tap',
+          page: 'home',
+          question: 'What is the difference between OLTC and OFTC here?',
+          answer:
+            'The distribution specification lists both an off-load tap changer and an on-load tap changer. Off-load is changed with the transformer isolated. On-load is the listed option for changing taps in service. Tap range and step size are not published.',
+        },
+        {
+          id: 'home-certs',
+          page: 'home',
+          question: 'Which certifications and utility approvals are stated?',
+          answer:
+            'The site shows ISO 9001:2015 and BIS Certified marks, and the corporate profile says products are IS/IEC compliant. Certificate numbers are not published. TGSPDCL / TSSPDCL liaisoning is a service. The site does not say a transformer is TSSPDCL-approved.',
+        },
+        {
+          id: 'home-lead',
+          page: 'home',
+          question: 'What is the lead time and delivery time inside Telangana?',
+          answer:
+            'Lead time and a delivery promise are not published. The factory is in Hyderabad. The quotation states the schedule after the kVA, voltage and site are known.',
+        },
+        {
+          id: 'home-test',
+          page: 'home',
+          question: 'What inspection and testing is described?',
+          answer:
+            'The site says every product goes through a multi-stage quality check before deployment, and that in-house NDT and material analysis are part of the Hyderabad facility. The maintenance article for oil-immersed units lists visual checks, oil BDV (annual, above 40 kV), earth resistance, Buchholz relay and winding resistance. It also says not to sample oil or open a unit while it is energized.',
+        },
+        {
+          id: 'home-quote',
+          page: 'home',
+          question: 'How do I request a quote?',
+          answer:
+            'Use the contact form. It asks for name, company, role, email, kVA, voltage, project location in Telangana and the technical requirement. You can also call +91 9248030365. WhatsApp on the site uses a different published number, 92480 30362.',
+        },
+        {
+          id: 'dist-range',
+          page: 'distribution-transformers',
+          question: 'What ratings are published for distribution transformers?',
+          answer:
+            '100 kVA to 5000 kVA, voltage class 11 kV, 22 kV and 33 kV, cooling ONAN, off-load or on-load tap changer. The description also says single- or three-phase units with primary voltage up to 33 kV, secondary voltage from 433 V to 11000 V, and a capacity figure of up to 10000 kVA. Confirm the order rating on the quotation.',
+        },
+        {
+          id: 'oil-what',
+          page: 'oil-cooled-transformers',
+          question: 'What does oil-cooled mean on this site?',
+          answer:
+            'The catalogue lists cooling as ONAN, which is oil-natural, air-natural. The maintenance guide describes the same family as oil-immersed distribution transformers. Oil volume and a loss guarantee are not published.',
+        },
+        {
+          id: 'oltc-choice',
+          page: 'oltc-transformers',
+          question: 'Can I specify OLTC or off-load tap changer?',
+          answer:
+            'Yes. The distribution specification lists both. The site does not publish which one is standard, the tap range, or the number of positions. Write the requirement on the inquiry.',
+        },
+        {
+          id: 'cu-al',
+          page: 'copper-wound-transformers',
+          question: 'Is aluminium winding offered?',
+          answer:
+            'Only copper foil winding is described, and only for the power-transformer high-current sections. Aluminium winding is not a published specification.',
+        },
+        {
+          id: 'ht-rating',
+          page: 'ht-panels',
+          question: 'What HT panel ratings are published?',
+          answer:
+            'Vacuum circuit breaker rating 630–2000 A, current transformer accuracy class 1–5P10, insulation level 12/28/75 kV. Short-circuit text on the longer product note says up to 26.3 kA rms. Panels are made in Hyderabad.',
+        },
+        {
+          id: 'lt-what',
+          page: 'lt-panels',
+          question: 'What is stated for LT panels?',
+          answer:
+            'LT distribution panels use a solid busbar system, on-load protected switching, and keep live parts from direct access. A numerical busbar rating is not published. They are made in Hyderabad.',
+        },
+        {
+          id: 'areas-where',
+          page: 'service-areas',
+          question: 'Which places in Telangana are named?',
+          answer:
+            'The only address published is the Mallapur, Hyderabad factory and office, PIN 500076. Other Telangana sites are accepted as inquiry locations and confirmed on the quote. The site does not publish a list of industrial estates.',
+        },
       ],
     },
 

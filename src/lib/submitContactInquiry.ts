@@ -1,11 +1,7 @@
-export type ContactInquiryInput = {
-  name: string
-  company: string
-  email: string
-  phone: string
-  inquiryLabel: string
-  message: string
-}
+import { isFirebaseConfigured } from '../cms/config'
+import { validateLead, type LeadInput } from './lead'
+
+export type ContactInquiryInput = LeadInput
 
 export type SubmitContactInquiryResult =
   | { ok: true }
@@ -14,28 +10,35 @@ export type SubmitContactInquiryResult =
 export async function submitContactInquiry(
   input: ContactInquiryInput,
 ): Promise<SubmitContactInquiryResult> {
-  const response = await fetch('/api/contact', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(input),
-  })
-
-  let data: { error?: string; fields?: Record<string, string> } = {}
-  try {
-    data = (await response.json()) as typeof data
-  } catch {
-    // non-JSON error response
-  }
-
-  if (!response.ok) {
+  const { payload, errors } = validateLead(input)
+  if (!payload || errors) {
+    const first = errors ? Object.values(errors)[0] : undefined
     return {
       ok: false,
-      message:
-        data.error ??
-        'We could not send your inquiry. Please try again or email us directly.',
-      fields: data.fields,
+      message: first ?? 'Check the form and try again.',
+      fields: errors,
     }
   }
 
-  return { ok: true }
+  if (!isFirebaseConfigured) {
+    return {
+      ok: false,
+      message: 'The form is not connected yet. Please call or use WhatsApp.',
+    }
+  }
+
+  try {
+    const { createLead } = await import('../cms/leads')
+    await createLead(payload)
+    return { ok: true }
+  } catch (error) {
+    const code = error && typeof error === 'object' && 'code' in error ? String(error.code) : ''
+    return {
+      ok: false,
+      message:
+        code === 'permission-denied'
+          ? 'The inquiry was rejected. Shorten the fields and try again, or call us.'
+          : 'We could not save your inquiry. Please call or use WhatsApp.',
+    }
+  }
 }

@@ -7,14 +7,14 @@ import { PageSEO } from '../components/seo/PageSEO'
 import { staticPageMeta } from '../constants/seo'
 import { CorporateProfilePageProvider } from '../context/PageDataContext'
 import { corporateProfilePage } from '../data/corporateProfile'
-import { useSanityQuery } from '../hooks/useSanityQuery'
-import { mapCorporateProfilePage } from '../sanity/mappers'
-import { queries } from '../sanity/queries'
+import { useCmsQuery } from '../hooks/useCmsQuery'
+import { mapCorporateProfilePage } from '../cms/mappers'
+import { queries } from '../cms/queries'
 
 export function CorporateProfilePage() {
-  const { data, loading } = useSanityQuery(queries.corporateProfilePage, {}, null)
+  const { data, loading } = useCmsQuery(queries.corporateProfilePage, {}, null)
   const pageData = useMemo(
-    () => mapCorporateProfilePage(data as Record<string, unknown> | null, corporateProfilePage as unknown as import('../sanity/pageTypes').CorporateProfilePageData),
+    () => mapCorporateProfilePage(data as Record<string, unknown> | null, corporateProfilePage as unknown as import('../cms/pageTypes').CorporateProfilePageData),
     [data]
   )
 

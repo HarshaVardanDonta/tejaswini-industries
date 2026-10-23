@@ -1,15 +1,16 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
 export function useFormState<T>(initial: T | null) {
+  const initialKey = initial ? JSON.stringify(initial) : ''
   const [form, setForm] = useState<T | null>(initial)
-  const [baseline, setBaseline] = useState<string>('')
+  const [baseline, setBaseline] = useState<string>(initialKey)
+  const [seenKey, setSeenKey] = useState(initialKey)
 
-  useEffect(() => {
-    if (initial) {
-      setForm(initial)
-      setBaseline(JSON.stringify(initial))
-    }
-  }, [initial])
+  if (initial && initialKey !== seenKey) {
+    setSeenKey(initialKey)
+    setForm(initial)
+    setBaseline(initialKey)
+  }
 
   const dirty = useMemo(() => {
     if (!form) return false

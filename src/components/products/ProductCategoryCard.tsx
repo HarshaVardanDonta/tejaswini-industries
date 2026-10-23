@@ -14,6 +14,10 @@ export function ProductCategoryCard({ category }: ProductCategoryCardProps) {
           alt={category.imageAlt}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           src={category.image}
+          width={640}
+          height={400}
+          loading="lazy"
+          decoding="async"
         />
       </div>
       <div className="p-space-6 flex flex-col grow gap-space-4 border-l-[3px] border-transparent group-hover:border-secondary transition-all">

@@ -5,12 +5,12 @@ import { TextArea } from '../components/fields/TextArea'
 import { TextInput } from '../components/fields/TextInput'
 import { useSingletonPage } from '../hooks/useSingletonPage'
 import { adminQueries } from '../lib/adminQueries'
-import type { SanityImageWithUrl } from '../types/adminDocuments'
+import type { ContentImage } from '../types/adminDocuments'
 import { emptyImage, patchNested } from './helpers'
 
 type AboutDoc = Record<string, unknown> & {
-  hero?: { title?: string; description?: string; image?: SanityImageWithUrl }
-  overview?: { title?: string; paragraphs?: string[]; isoImage?: SanityImageWithUrl; highlights?: { icon: string; label: string }[] }
+  hero?: { title?: string; description?: string; image?: ContentImage }
+  overview?: { title?: string; paragraphs?: string[]; isoImage?: ContentImage; highlights?: { icon: string; label: string }[] }
   visionMission?: { icon: string; title: string; description: string; variant?: string }[]
   cta?: { title?: string; description?: string; buttonLabel?: string }
 }

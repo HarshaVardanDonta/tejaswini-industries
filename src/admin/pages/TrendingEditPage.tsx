@@ -11,6 +11,8 @@ export function TrendingEditPage() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const isNew = id === 'new'
+  // A new draft needs a stable id for this visit; it is not derived from props.
+  // eslint-disable-next-line react-hooks/purity
   const docId = isNew ? `trendingArticle-${Date.now()}` : decodeURIComponent(id ?? '')
 
   const { form, setForm, loading, error, dirty, saving, message, onSave, onDiscard } =

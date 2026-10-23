@@ -10,16 +10,16 @@ import { staticPageMeta } from '../constants/seo'
 import { ProjectsPageProvider } from '../context/ProjectsPageContext'
 import type { Project, ProjectCategory } from '../data/projects'
 import { commissionRows, projects } from '../data/projects'
-import { useSanityQuery } from '../hooks/useSanityQuery'
-import { mapProject } from '../sanity/mappers'
-import { queries } from '../sanity/queries'
+import { useCmsQuery } from '../hooks/useCmsQuery'
+import { mapProject } from '../cms/mappers'
+import { queries } from '../cms/queries'
 
 export function ProjectsPage() {
   const [filter, setFilter] = useState<ProjectCategory>('all')
-  const { data: projectsData, loading: projectsLoading } = useSanityQuery<
+  const { data: projectsData, loading: projectsLoading } = useCmsQuery<
     Array<Record<string, unknown>>
   >(queries.projects, {}, null)
-  const { data: commissionData, loading: commissionLoading } = useSanityQuery<
+  const { data: commissionData, loading: commissionLoading } = useCmsQuery<
     Array<Record<string, unknown>>
   >(queries.commissionRows, {}, null)
 

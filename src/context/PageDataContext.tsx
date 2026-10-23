@@ -9,7 +9,7 @@ import type {
   ContactPageData,
   CorporateProfilePageData,
   ServicesPageData,
-} from '../sanity/pageTypes'
+} from '../cms/pageTypes'
 
 const ServicesContext = createContext<ServicesPageData>(servicesPage as ServicesPageData)
 const AboutContext = createContext<AboutPageData>(aboutPage as AboutPageData)

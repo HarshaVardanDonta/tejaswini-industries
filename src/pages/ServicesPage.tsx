@@ -10,12 +10,12 @@ import { PageSEO } from '../components/seo/PageSEO'
 import { staticPageMeta } from '../constants/seo'
 import { ServicesPageProvider } from '../context/PageDataContext'
 import { servicesPage } from '../data/services'
-import { useSanityQuery } from '../hooks/useSanityQuery'
-import { mapServicesPage } from '../sanity/mappers'
-import { queries } from '../sanity/queries'
+import { useCmsQuery } from '../hooks/useCmsQuery'
+import { mapServicesPage } from '../cms/mappers'
+import { queries } from '../cms/queries'
 
 export function ServicesPage() {
-  const { data, loading } = useSanityQuery(queries.servicesPage, {}, null)
+  const { data, loading } = useCmsQuery(queries.servicesPage, {}, null)
   const pageData = useMemo(
     () => mapServicesPage(data as Record<string, unknown> | null, servicesPage),
     [data]
