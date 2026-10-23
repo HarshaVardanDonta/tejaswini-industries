@@ -5,14 +5,14 @@ import { TextArea } from '../components/fields/TextArea'
 import { TextInput } from '../components/fields/TextInput'
 import { useSingletonPage } from '../hooks/useSingletonPage'
 import { adminQueries } from '../lib/adminQueries'
-import type { SanityImageWithUrl } from '../types/adminDocuments'
+import type { ContentImage } from '../types/adminDocuments'
 import { emptyImage, patchNested } from './helpers'
 
 type ContactDoc = Record<string, unknown> & {
   hero?: { title?: string; description?: string }
   infoCards?: { icon: string; title: string; lines: string[]; mono?: boolean }[]
   whatsapp?: { title?: string; description?: string; buttonLabel?: string }
-  map?: { image?: SanityImageWithUrl; label?: string }
+  map?: { image?: ContentImage; label?: string }
   form?: { title?: string; submitLabel?: string }
   inquiryTypes?: { value: string; label: string }[]
 }

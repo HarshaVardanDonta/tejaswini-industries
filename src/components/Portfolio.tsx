@@ -34,6 +34,10 @@ export function Portfolio() {
                 alt={largeItem.imageAlt}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 src={largeItem.image}
+                width={1200}
+                height={800}
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-0 left-0 p-space-6 w-full">
@@ -59,6 +63,10 @@ export function Portfolio() {
                 className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${
                   item.overlayPrimary ? 'grayscale' : ''
                 }`}
+                width={640}
+                height={400}
+                loading="lazy"
+                decoding="async"
                 src={item.image}
               />
               <div

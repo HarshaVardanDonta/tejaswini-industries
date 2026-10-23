@@ -25,15 +25,20 @@ type QuoteFields = {
 
 type Doc = {
   _id: string
-  _type: 'siteInquiry'
+  _type: 'lead'
   source?: string
-  responded?: boolean
+  handled?: boolean
+  handledAt?: string
   submittedAt?: string
   name?: string
   company?: string
+  role?: string
   email?: string
   phone?: string
   inquiryLabel?: string
+  kvaRating?: string
+  voltage?: string
+  projectLocation?: string
   message?: string
   quote?: QuoteFields
 }
@@ -83,7 +88,7 @@ export function InquiryDetailPage() {
 
   const { form, setForm, loading, error, dirty, saving, message, onSave, onDiscard } =
     useDocumentEditor<Doc>({
-      query: adminQueries.siteInquiryById,
+      query: adminQueries.leadById,
       params: { id: docId },
     })
 
@@ -93,7 +98,7 @@ export function InquiryDetailPage() {
 
   return (
     <EditorShell
-      title="Inquiry details"
+      title="Lead"
       description={`${formatSource(form.source)} · ${formatDate(form.submittedAt)}`}
       loading={loading}
       error={error}
@@ -104,9 +109,9 @@ export function InquiryDetailPage() {
       onDiscard={onDiscard}
     >
       <ToggleInput
-        label="Responded"
-        checked={form.responded ?? false}
-        onChange={(checked) => setForm({ ...form, responded: checked })}
+        label="Handled"
+        checked={form.handled ?? false}
+        onChange={(checked) => setForm({ ...form, handled: checked })}
       />
 
       <div className="border border-gray-200 rounded-sm bg-white p-5 space-y-4">
@@ -114,9 +119,13 @@ export function InquiryDetailPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <ReadOnlyField label="Company" value={form.company} />
           <ReadOnlyField label="Full name" value={form.name} />
+          <ReadOnlyField label="Role" value={form.role} />
           <ReadOnlyField label="Email" value={form.email} />
           <ReadOnlyField label="Phone" value={form.phone} />
           <ReadOnlyField label="Inquiry type" value={form.inquiryLabel} />
+          <ReadOnlyField label="kVA" value={form.kvaRating} />
+          <ReadOnlyField label="Voltage" value={form.voltage} />
+          <ReadOnlyField label="Project location" value={form.projectLocation} />
         </div>
       </div>
 

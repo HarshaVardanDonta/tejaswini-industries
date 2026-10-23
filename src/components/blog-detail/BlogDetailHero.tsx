@@ -28,6 +28,9 @@ export function BlogDetailHero() {
           alt={heroImageAlt}
           className="w-full h-full object-cover"
           src={heroImage}
+          width={1200}
+          height={675}
+          decoding="async"
         />
       </div>
     </header>

@@ -19,6 +19,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
           alt={project.imageAlt}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           src={project.image}
+          width={640}
+          height={400}
+          loading="lazy"
+          decoding="async"
         />
         <div className="absolute top-space-4 left-space-4 bg-background text-primary px-space-2 py-space-1 rounded font-label text-label uppercase shadow-sm border border-gray-100">
           {project.categoryLabel}

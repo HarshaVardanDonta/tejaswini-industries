@@ -1,50 +1,33 @@
+import { useEffect, useState } from 'react'
+import { onAuthStateChanged } from 'firebase/auth'
+
 import { EditorShell } from '../../components/EditorShell'
-import { TextInput } from '../../components/fields/TextInput'
-import { useSingletonPage } from '../../hooks/useSingletonPage'
-import { adminQueries } from '../../lib/adminQueries'
-import type { AdminCredentials } from '../../types/adminDocuments'
+import { getFirebaseAuth, isFirebaseConfigured } from '../../../cms/firebase'
 
 export function CredentialsPage() {
-  const { form, setForm, loading, error, dirty, saving, message, onSave, onDiscard } =
-    useSingletonPage<AdminCredentials>({
-      query: adminQueries.adminCredentials,
-      docId: 'adminCredentials',
-      docType: 'adminCredentials',
-    })
+  const [email, setEmail] = useState<string | null>(null)
 
-  if (!form && !loading) {
-    return (
-      <EditorShell
-        title="Admin Credentials"
-        loading={false}
-        error="Credentials document not found. Run the seed script."
-        dirty={false}
-        saving={false}
-        message={null}
-        onSave={() => {}}
-        onDiscard={() => {}}
-      >
-        {null}
-      </EditorShell>
-    )
-  }
-
-  if (!form) return null
+  useEffect(() => {
+    if (!isFirebaseConfigured) return
+    return onAuthStateChanged(getFirebaseAuth(), (user) => setEmail(user?.email ?? null))
+  }, [])
 
   return (
     <EditorShell
-      title="Admin Credentials"
-      description="Username and password used on the /admin/login page."
-      loading={loading}
-      error={error}
-      dirty={dirty}
-      saving={saving}
-      message={message}
-      onSave={onSave}
-      onDiscard={onDiscard}
+      title="Admin access"
+      description="Login is Firebase Authentication email and password. A signed-in user can write content only when an admins/{uid} document exists. Create that document with scripts/seed-firestore.mjs. Passwords are not stored in Firestore."
+      loading={false}
+      error={null}
+      dirty={false}
+      saving={false}
+      message={null}
+      onSave={() => {}}
+      onDiscard={() => {}}
     >
-      <TextInput label="Username" value={form.username} onChange={(username) => setForm({ ...form, username })} />
-      <TextInput label="Password" type="password" value={form.password} onChange={(password) => setForm({ ...form, password })} />
+      <p className="font-body-sm text-body-sm text-gray-700">
+        Signed in as {email || 'unknown'}.
+        {isFirebaseConfigured ? '' : ' Firebase web config is missing.'}
+      </p>
     </EditorShell>
   )
 }

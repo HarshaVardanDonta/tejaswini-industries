@@ -69,6 +69,10 @@ export function BlogDetailSidebar() {
                 alt={relatedProduct.imageAlt}
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all"
                 src={relatedProduct.image}
+                width={320}
+                height={200}
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="flex flex-col justify-center">

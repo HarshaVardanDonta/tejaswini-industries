@@ -1,4 +1,4 @@
-export type SanityImageWithUrl = {
+export type ContentImage = {
   _type?: 'imageWithUrl'
   asset?: {
     _type?: 'image'
@@ -8,9 +8,9 @@ export type SanityImageWithUrl = {
   alt?: string
 }
 
-export type SanitySlug = { _type?: 'slug'; current?: string }
+export type ContentSlug = { _type?: 'slug'; current?: string }
 
-export type SanityDocBase = {
+export type ContentDocBase = {
   _id: string
   _type: string
   _rev?: string
@@ -18,7 +18,7 @@ export type SanityDocBase = {
 
 export type Spec = { _type?: 'spec'; label: string; value: string }
 
-export type AdminCredentials = SanityDocBase & {
+export type AdminCredentials = ContentDocBase & {
   _type: 'adminCredentials'
   username: string
   password: string

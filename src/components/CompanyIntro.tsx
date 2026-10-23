@@ -31,6 +31,10 @@ export function CompanyIntro() {
             alt={companyIntro.imageAlt}
             className="w-full h-auto object-cover rounded-sm border border-gray-100 shadow-sm"
             src={companyIntro.image}
+            width={960}
+            height={640}
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>

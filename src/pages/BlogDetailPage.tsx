@@ -10,17 +10,18 @@ import { PageLoading } from '../components/PageLoading'
 import { buildArticleJsonLd, PageSEO } from '../components/seo/PageSEO'
 import { BlogDetailProvider } from '../context/BlogDetailContext'
 import { transformerMaintenanceGuide } from '../data/blogDetailTransformerMaintenance'
-import { useSanityQuery } from '../hooks/useSanityQuery'
-import { mapBlogDetail } from '../sanity/mappers'
-import { queries } from '../sanity/queries'
+import { useCmsQuery } from '../hooks/useCmsQuery'
+import { mapBlogDetail } from '../cms/mappers'
+import { queries } from '../cms/queries'
 
 export function BlogDetailPage() {
   const { slug = '' } = useParams()
-  const { data, loading } = useSanityQuery(queries.blogPostBySlug, { slug }, null)
+  const { data, loading } = useCmsQuery(queries.blogPostBySlug, { slug }, null)
 
   const article = useMemo(() => {
-    const mapped = mapBlogDetail(data as Record<string, unknown> | null, transformerMaintenanceGuide)
-    return mapped.slug ? mapped : slug === transformerMaintenanceGuide.slug ? transformerMaintenanceGuide : null
+    if (data) return mapBlogDetail(data as Record<string, unknown> | null)
+    if (slug === transformerMaintenanceGuide.slug) return transformerMaintenanceGuide
+    return null
   }, [data, slug])
 
   if (loading) {

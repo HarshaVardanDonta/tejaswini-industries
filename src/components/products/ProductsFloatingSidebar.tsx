@@ -93,9 +93,12 @@ export function ProductsFloatingSidebar() {
     if (sessionStorage.getItem(TEASE_STORAGE_KEY)) return
 
     sessionStorage.setItem(TEASE_STORAGE_KEY, '1')
-    setShouldTease(true)
+    const start = window.setTimeout(() => setShouldTease(true), 0)
     const timer = window.setTimeout(() => setShouldTease(false), 1150)
-    return () => window.clearTimeout(timer)
+    return () => {
+      window.clearTimeout(start)
+      window.clearTimeout(timer)
+    }
   }, [])
 
   return (
@@ -122,6 +125,10 @@ export function ProductsFloatingSidebar() {
           <img
             src={images.bisCertification}
             alt="BIS Certification"
+            width={28}
+            height={28}
+            loading="lazy"
+            decoding="async"
             className="h-7 w-auto object-contain"
           />
         </div>

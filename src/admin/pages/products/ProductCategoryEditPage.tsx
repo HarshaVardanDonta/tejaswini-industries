@@ -7,7 +7,7 @@ import { TextInput } from '../../components/fields/TextInput'
 import { emptyImage } from '../../editors/helpers'
 import { useDocumentEditor } from '../../hooks/useDocumentEditor'
 import { adminQueries } from '../../lib/adminQueries'
-import type { SanityImageWithUrl } from '../../types/adminDocuments'
+import type { ContentImage } from '../../types/adminDocuments'
 
 type Doc = {
   _id: string
@@ -15,7 +15,7 @@ type Doc = {
   id: string
   title: string
   description: string
-  image?: SanityImageWithUrl
+  image?: ContentImage
   technicalSpecs?: string[]
   bodyParagraphs?: string[]
 }
@@ -24,6 +24,7 @@ export function ProductCategoryEditPage() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const isNew = id === 'new'
+  // eslint-disable-next-line react-hooks/purity
   const docId = isNew ? `productCategory-${Date.now()}` : decodeURIComponent(id ?? '')
 
   const { form, setForm, loading, error, dirty, saving, message, onSave, onDiscard } =

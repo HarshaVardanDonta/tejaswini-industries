@@ -5,11 +5,11 @@ import { TextArea } from '../components/fields/TextArea'
 import { TextInput } from '../components/fields/TextInput'
 import { useSingletonPage } from '../hooks/useSingletonPage'
 import { adminQueries } from '../lib/adminQueries'
-import type { SanityImageWithUrl } from '../types/adminDocuments'
+import type { ContentImage } from '../types/adminDocuments'
 import { emptyImage, patchNested } from './helpers'
 
 type ServicesDoc = Record<string, unknown> & {
-  hero?: { image?: SanityImageWithUrl; eyebrow?: string; title?: string; description?: string }
+  hero?: { image?: ContentImage; eyebrow?: string; title?: string; description?: string }
   coreServices?: { id: string; title: string; description: string; icon: string; iconBg?: string; accent?: string; features?: string[] }[]
   processSteps?: { step: string; title: string; description: string; icon: string; highlight?: boolean }[]
   capabilities?: Record<string, unknown>
@@ -29,7 +29,7 @@ export function ServicesPageEditor() {
   return (
     <EditorShell title="Services Page" loading={loading} error={error} dirty={dirty} saving={saving} message={message} onSave={onSave} onDiscard={onDiscard}>
       <SectionCard title="Hero">
-        <ImageField label="Image" value={(hero.image as SanityImageWithUrl) ?? emptyImage()} onChange={(image) => setForm(patchNested(form, 'hero', { ...hero, image }))} />
+        <ImageField label="Image" value={(hero.image as ContentImage) ?? emptyImage()} onChange={(image) => setForm(patchNested(form, 'hero', { ...hero, image }))} />
         <TextInput label="Eyebrow" value={hero.eyebrow ?? ''} onChange={(v) => setForm(patchNested(form, 'hero', { ...hero, eyebrow: v }))} />
         <TextInput label="Title" value={hero.title ?? ''} onChange={(v) => setForm(patchNested(form, 'hero', { ...hero, title: v }))} />
         <TextArea label="Description" value={hero.description ?? ''} onChange={(v) => setForm(patchNested(form, 'hero', { ...hero, description: v }))} />

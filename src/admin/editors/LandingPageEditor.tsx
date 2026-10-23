@@ -5,14 +5,14 @@ import { TextArea } from '../components/fields/TextArea'
 import { TextInput } from '../components/fields/TextInput'
 import { useSingletonPage } from '../hooks/useSingletonPage'
 import { adminQueries } from '../lib/adminQueries'
-import type { SanityImageWithUrl } from '../types/adminDocuments'
+import type { ContentImage } from '../types/adminDocuments'
 import { emptyImage, patchNested } from './helpers'
 
 type LandingDoc = {
   _id: string
   _type: string
   hero?: {
-    image?: SanityImageWithUrl
+    image?: ContentImage
     badgePrimary?: string
     badgeSecondary?: string
     title?: string
@@ -23,7 +23,7 @@ type LandingDoc = {
   companyIntro?: {
     title?: string
     paragraphs?: string[]
-    image?: SanityImageWithUrl
+    image?: ContentImage
     stats?: { value: string; label: string }[]
   }
   portfolio?: {
@@ -33,7 +33,7 @@ type LandingDoc = {
     items?: {
       title: string
       description: string
-      image?: SanityImageWithUrl
+      image?: ContentImage
       size?: string
       overlayPrimary?: boolean
     }[]

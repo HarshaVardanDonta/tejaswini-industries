@@ -1,4 +1,4 @@
-.PHONY: dev build preview lint sanity-dev seed
+.PHONY: dev build preview lint seed
 
 dev:
 	npm run dev
@@ -12,8 +12,5 @@ preview:
 lint:
 	npm run lint
 
-sanity-dev:
-	npm run sanity:dev
-
 seed:
-	npm run seed:sanity
+	npm run seed:firestore

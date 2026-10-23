@@ -1,9 +1,11 @@
 export const SITE_NAME = 'Tejaswini Industries'
 
-export const DEFAULT_SITE_URL = 'https://tejaswiniindustries.com'
+export const DEFAULT_SITE_URL = 'https://www.tejaswiniindustries.com'
+
+export const GOOGLE_SITE_VERIFICATION = 'xniulPkbdR6H1OLUhIGDiv8yQcoZBpXJyr9bIJSzF60'
 
 export const DEFAULT_DESCRIPTION =
-  'Tejaswini Industries delivers precision-engineered transformers, control panels, and critical electrical infrastructure solutions for industrial and utility applications.'
+  'Distribution transformer manufacturer in Hyderabad, Telangana. 11 kV, 22 kV and 33 kV distribution transformers, oil-cooled ONAN units, OLTC and off-load tap changers, and LT/HT panels.'
 
 export const DEFAULT_OG_IMAGE = '/images.png'
 
@@ -102,7 +104,6 @@ export const STATIC_SITEMAP_ROUTES: { path: string; priority: string; changefreq
   { path: '/', priority: '1.0', changefreq: 'weekly' },
   { path: '/products', priority: '0.9', changefreq: 'weekly' },
   { path: '/products/distribution-transformers', priority: '0.9', changefreq: 'weekly' },
-  { path: '/products/power-transformers', priority: '0.9', changefreq: 'weekly' },
   { path: '/products/dry-type-transformers', priority: '0.9', changefreq: 'weekly' },
   { path: '/products/ht-panels', priority: '0.9', changefreq: 'weekly' },
   { path: '/products/lt-panels', priority: '0.9', changefreq: 'weekly' },

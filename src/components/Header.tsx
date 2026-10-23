@@ -39,7 +39,7 @@ function BrandLogo({ onNavigate }: { onNavigate?: () => void }) {
         className="header-compact-logo-link"
         aria-label="Tejaswini Industries home"
       >
-        <img src={smallLogo} alt="" />
+        <img src={smallLogo} alt="Tejaswini Industries" width={48} height={48} />
       </Link>
     </div>
   )
@@ -167,7 +167,7 @@ function LogoLink({ onNavigate }: { onNavigate?: () => void }) {
       className="block h-8 shrink-0 rounded bg-white px-1.5 py-0.5"
       aria-label="Tejaswini Industries home"
     >
-      <img src={logo} alt="" className="h-full w-auto object-contain object-left" />
+      <img src={logo} alt="Tejaswini Industries" width={220} height={64} className="h-full w-auto object-contain object-left" />
     </Link>
   )
 }

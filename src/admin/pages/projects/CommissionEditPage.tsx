@@ -11,6 +11,7 @@ export function CommissionEditPage() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const isNew = id === 'new'
+  // eslint-disable-next-line react-hooks/purity
   const docId = isNew ? `commissionRow-${Date.now()}` : decodeURIComponent(id ?? '')
 
   const { form, setForm, loading, error, dirty, saving, message, onSave, onDiscard } =

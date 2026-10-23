@@ -14,6 +14,9 @@ import { CommissionEditPage } from './pages/projects/CommissionEditPage'
 import { TrendingListPage } from './pages/TrendingListPage'
 import { TrendingEditPage } from './pages/TrendingEditPage'
 import { CredentialsPage } from './pages/settings/CredentialsPage'
+import { BusinessSettingsPage } from './pages/settings/BusinessSettingsPage'
+import { FaqsPage } from './pages/FaqsPage'
+import { ServiceAreasEditorPage } from './pages/ServiceAreasEditorPage'
 import { InquiriesListPage } from './pages/inquiries/InquiriesListPage'
 import { InquiryDetailPage } from './pages/inquiries/InquiryDetailPage'
 
@@ -33,8 +36,13 @@ export function AdminApp() {
         <Route path="commissions/:id" element={<CommissionEditPage />} />
         <Route path="trending" element={<TrendingListPage />} />
         <Route path="trending/:id" element={<TrendingEditPage />} />
-        <Route path="inquiries" element={<InquiriesListPage />} />
-        <Route path="inquiries/:id" element={<InquiryDetailPage />} />
+        <Route path="leads" element={<InquiriesListPage />} />
+        <Route path="leads/:id" element={<InquiryDetailPage />} />
+        <Route path="inquiries" element={<Navigate to="/admin/leads" replace />} />
+        <Route path="inquiries/:id" element={<Navigate to="/admin/leads" replace />} />
+        <Route path="faqs" element={<FaqsPage />} />
+        <Route path="service-areas" element={<ServiceAreasEditorPage />} />
+        <Route path="settings/business" element={<BusinessSettingsPage />} />
         <Route path="settings/credentials" element={<CredentialsPage />} />
         <Route path="*" element={<Navigate to="/admin" replace />} />
       </Route>

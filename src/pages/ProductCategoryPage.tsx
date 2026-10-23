@@ -1,38 +1,43 @@
 import { useMemo } from 'react'
-import { Navigate, useParams } from 'react-router-dom'
+import { Link, Navigate, useParams } from 'react-router-dom'
+import { FaqList, usePageFaqs } from '../components/FaqList'
 import { ProductsShell } from '../components/layout/ProductsShell'
 import { PageLoading } from '../components/PageLoading'
-import { ProductCategoryDetail } from '../components/products/ProductCategoryDetail'
-import { PageSEO } from '../components/seo/PageSEO'
+import { presentCategory, ProductCategoryDetail } from '../components/products/ProductCategoryDetail'
+import {
+  buildBreadcrumbJsonLd,
+  buildFaqJsonLd,
+  buildProductJsonLd,
+  PageSEO,
+} from '../components/seo/PageSEO'
 import { getProductCategoryById, getProductCategoryPath } from '../data/productCategories'
-import { useSanityQuery } from '../hooks/useSanityQuery'
-import { mapProductCategory } from '../sanity/mappers'
-import { queries } from '../sanity/queries'
+import { useCmsQuery } from '../hooks/useCmsQuery'
+import { mapProductCategory } from '../cms/mappers'
+import { queries } from '../cms/queries'
 
 export function ProductCategoryPage() {
-  const { categoryId } = useParams<{ categoryId: string }>()
+  const { categoryId = '' } = useParams<{ categoryId: string }>()
   const staticFallback = categoryId ? getProductCategoryById(categoryId) : undefined
+  const faqs = usePageFaqs(categoryId)
 
-  const { data, loading } = useSanityQuery<Record<string, unknown>>(
+  const { data, loading } = useCmsQuery<Record<string, unknown> | null>(
     queries.productCategoryById,
-    { id: categoryId ?? '' },
-    null
+    { id: categoryId },
+    null,
   )
 
   const category = useMemo(() => {
-    if (!categoryId || !staticFallback) return null
-    if (!data) return staticFallback
-    return mapProductCategory(
-      data as Parameters<typeof mapProductCategory>[0],
-      staticFallback
-    )
-  }, [categoryId, data, staticFallback])
+    if (data && typeof data.id === 'string') {
+      return mapProductCategory(data as Parameters<typeof mapProductCategory>[0], staticFallback)
+    }
+    return staticFallback ?? null
+  }, [data, staticFallback])
 
-  if (!categoryId || !staticFallback) {
+  if (!categoryId) {
     return <Navigate to="/products" replace />
   }
 
-  if (loading && !data) {
+  if (loading && !category) {
     return (
       <ProductsShell>
         <PageLoading embedded />
@@ -44,14 +49,46 @@ export function ProductCategoryPage() {
     return <Navigate to="/products" replace />
   }
 
+  const product = presentCategory(category)
+  const path = getProductCategoryPath(product.id)
+  const jsonLd = [
+    buildProductJsonLd({
+      title: product.title,
+      description: product.description,
+      path,
+      image: product.image,
+    }),
+    buildBreadcrumbJsonLd([
+      { name: 'Home', path: '/' },
+      { name: 'Products', path: '/products' },
+      { name: product.title, path },
+    ]),
+    ...(faqs.length ? [buildFaqJsonLd(faqs)] : []),
+  ]
+
   return (
     <ProductsShell>
       <PageSEO
-        title={category.title}
-        description={category.description}
-        path={getProductCategoryPath(category.id)}
+        title={product.title}
+        description={product.description}
+        path={path}
+        image={product.image}
+        type="product"
+        jsonLd={jsonLd}
       />
-      <ProductCategoryDetail category={category} />
+      <ProductCategoryDetail category={product} />
+      <FaqList page={category.id} />
+      <p className="max-w-[1280px] mx-auto w-full px-margin-mobile md:px-margin-desktop pb-space-8 font-body-sm text-body-sm text-gray-600">
+        Need a rating for a Hyderabad or Telangana site?{' '}
+        <Link to="/contact" className="text-secondary uppercase font-label">
+          Request a quote
+        </Link>
+        {' '}or see{' '}
+        <Link to="/service-areas" className="text-secondary uppercase font-label">
+          service areas
+        </Link>
+        .
+      </p>
     </ProductsShell>
   )
 }

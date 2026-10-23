@@ -1,0 +1,82 @@
+rules_version = '2';
+
+// Public site content is readable by anyone.
+// Writes require a signed-in Firebase Auth user whose UID has an
+// admins/{uid} document. That document is created only by the Admin SDK
+// (scripts/seed-firestore.mjs). Security rules cannot grant the client
+// permission to add itself to the allowlist.
+//
+// Leads are quote requests from the public contact form. Anyone may create
+// one lead that matches the field list and size limits. Nobody except an
+// allowlisted admin may read or update it. There is no email trigger:
+// the Spark plan does not include Cloud Functions.
+//
+// Alternative: a custom claim `admin: true` set by the Admin SDK can replace
+// the admins/{uid} lookup. This project uses the allowlist document so the
+// owner can see who is an admin in the Firestore console.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    function leadText(data, key, min, max) {
+      return data[key] is string
+        && data[key].size() >= min
+        && data[key].size() <= max;
+    }
+
+    function isValidLead() {
+      let data = request.resource.data;
+      return data.keys().hasOnly([
+          '_type',
+          'source',
+          'handled',
+          'submittedAt',
+          'name',
+          'company',
+          'role',
+          'email',
+          'phone',
+          'inquiryLabel',
+          'kvaRating',
+          'voltage',
+          'projectLocation',
+          'message'
+        ])
+        && data._type == 'lead'
+        && data.source == 'contact'
+        && data.handled == false
+        && leadText(data, 'submittedAt', 10, 40)
+        && leadText(data, 'name', 1, 80)
+        && leadText(data, 'company', 1, 120)
+        && leadText(data, 'role', 1, 80)
+        && leadText(data, 'email', 5, 120)
+        && data.email.matches('.*@.*\\..*')
+        && data.phone is string
+        && data.phone.size() <= 30
+        && leadText(data, 'inquiryLabel', 1, 80)
+        && leadText(data, 'kvaRating', 1, 40)
+        && leadText(data, 'voltage', 1, 40)
+        && leadText(data, 'projectLocation', 1, 120)
+        && leadText(data, 'message', 1, 2000);
+    }
+
+    match /admins/{uid} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    match /content/{id} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /leads/{id} {
+      allow create: if isValidLead();
+      allow read, update, delete: if isAdmin();
+    }
+  }
+}

@@ -2,12 +2,12 @@ import { ListTable } from '../../components/ListTable'
 import { useAdminDocument } from '../../hooks/useAdminDocument'
 import { adminQueries } from '../../lib/adminQueries'
 import { resolveSlug } from '../../lib/adminMutations'
-import type { SanitySlug } from '../../types/adminDocuments'
+import type { ContentSlug } from '../../types/adminDocuments'
 
 type Row = {
   _id: string
   title?: string
-  slug?: string | SanitySlug
+  slug?: string | ContentSlug
   categoryLabel?: string
   featured?: boolean
   date?: string

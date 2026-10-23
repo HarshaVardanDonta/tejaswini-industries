@@ -8,12 +8,12 @@ import { PageSEO } from '../components/seo/PageSEO'
 import { staticPageMeta } from '../constants/seo'
 import { ContactPageProvider } from '../context/PageDataContext'
 import { contactPage, inquiryTypes } from '../data/contact'
-import { useSanityQuery } from '../hooks/useSanityQuery'
-import { mapContactPage } from '../sanity/mappers'
-import { queries } from '../sanity/queries'
+import { useCmsQuery } from '../hooks/useCmsQuery'
+import { mapContactPage } from '../cms/mappers'
+import { queries } from '../cms/queries'
 
 export function ContactPage() {
-  const { data, loading } = useSanityQuery(queries.contactPage, {}, null)
+  const { data, loading } = useCmsQuery(queries.contactPage, {}, null)
   const pageData = useMemo(
     () =>
       mapContactPage(data as Record<string, unknown> | null, {

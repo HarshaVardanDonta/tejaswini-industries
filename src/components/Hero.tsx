@@ -15,6 +15,10 @@ export function Hero() {
         alt={hero.imageAlt}
         className="absolute inset-0 w-full h-full object-cover object-[center_40%] z-0"
         src={hero.image}
+        width={1600}
+        height={819}
+        decoding="async"
+        fetchPriority="high"
       />
       <div className="relative z-20 w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter">
         <div className="col-span-1 md:col-span-8 flex flex-col justify-center">

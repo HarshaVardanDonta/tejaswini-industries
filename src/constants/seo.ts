@@ -22,16 +22,22 @@ export function buildAbsoluteUrl(pathOrUrl: string): string {
 
 export const staticPageMeta = {
   home: {
-    title: 'Tejaswini Industries',
+    title: 'Distribution Transformer Manufacturer in Hyderabad',
     description:
-      'Tejaswini Industries delivers industrial-grade transformers, control panels, and critical infrastructure solutions engineered for absolute reliability.',
+      'Hyderabad distribution transformers, 100 kVA to 2000 kVA, CRGO or amorphous cores, aluminium or copper windings.',
     path: '/',
   },
   products: {
-    title: 'Products',
+    title: 'Transformers and Panels Made in Hyderabad',
     description:
-      'Engineered for rigorous industrial environments, our comprehensive range of transformers, panels, and power distribution solutions.',
+      'Distribution transformers to 2000 kVA, with aluminium or copper windings and CRGO or amorphous cores, plus panels and ring main units from Mallapur, Hyderabad.',
     path: '/products',
+  },
+  serviceAreas: {
+    title: 'Transformer Supply in Hyderabad and Telangana',
+    description:
+      'Distribution transformers and LT/HT panels made at Mallapur, Hyderabad, for projects in Hyderabad and Telangana. Quote with kVA, voltage and site location.',
+    path: '/service-areas',
   },
   blogs: {
     title: 'Industrial Insights',
@@ -40,21 +46,21 @@ export const staticPageMeta = {
     path: '/blogs',
   },
   about: {
-    title: 'About Us',
+    title: 'About the Hyderabad Transformer Works',
     description:
-      'Tejaswini Industries stands at the forefront of industrial precision, delivering robust solutions for power utilities and heavy manufacturing.',
+      'Tejaswini Industries, established in 2011, builds distribution transformers and panels in Hyderabad, Telangana.',
     path: '/about',
   },
   contact: {
-    title: 'Contact Us',
+    title: 'Request a Transformer Quote in Telangana',
     description:
-      'Get in touch with Tejaswini Industries for product inquiries, project consultations, and technical support.',
+      'Contact Tejaswini Industries in Mallapur, Hyderabad. Call or WhatsApp +91 92480 30362, or send kVA, voltage, company, role and the Telangana project location.',
     path: '/contact',
   },
   services: {
-    title: 'Services',
+    title: 'Electrical Services in Hyderabad and Telangana',
     description:
-      'Turnkey engineering services, installation, commissioning, and maintenance from Tejaswini Industries.',
+      'Turnkey HT/LT work, maintenance and TGSPDCL / TSSPDCL liaisoning from Hyderabad. Liaisoning is a service, not a published product approval.',
     path: '/services',
   },
   projects: {

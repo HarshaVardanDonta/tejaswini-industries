@@ -113,7 +113,7 @@ export const transformerMaintenanceGuide = {
   ],
   relatedProduct: {
     title: 'Oil Immersed Series T-500',
-    capacity: 'Cap: 500kVA - 2500kVA',
+    capacity: 'Up to 2000 kVA',
     image: images.blogs.relatedOilImmersed,
     imageAlt: 'Oil immersed industrial transformer thumbnail',
     href: '/products/distribution-transformers',

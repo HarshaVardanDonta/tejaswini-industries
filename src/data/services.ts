@@ -94,9 +94,9 @@ export const servicesPage = {
     featured: {
       image: images.services.ehvSubstation,
       imageAlt: 'EHV Substation equipment',
-      title: 'EHV Substations (Up to 132kV)',
+      title: 'Substation Engineering',
       description:
-        'Complete civil, structural, and electrical engineering for Extra High Voltage substations, including testing and commissioning.',
+        'Civil, structural, and electrical engineering for substations, including testing and commissioning. Distribution transformers manufactured here stay within 100 kVA to 2000 kVA.',
     },
     internalElectrification: {
       icon: 'cable',

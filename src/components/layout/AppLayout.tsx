@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import { Footer } from '../Footer'
 import { Header } from '../Header'
 import { ProductsFloatingSidebar } from '../products/ProductsFloatingSidebar'
+import { SiteStructuredData } from '../seo/SiteStructuredData'
 
 export function AppLayout() {
   const { pathname } = useLocation()
@@ -25,6 +26,7 @@ export function AppLayout() {
 
   return (
     <div className="bg-surface text-on-surface font-body-lg min-h-screen flex flex-col antialiased">
+      <SiteStructuredData />
       <Header />
       <main className="grow">
         <Outlet />

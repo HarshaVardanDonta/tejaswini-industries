@@ -12,19 +12,19 @@ import { staticPageMeta } from '../constants/seo'
 import { BlogsPageProvider } from '../context/BlogsPageContext'
 import type { BlogCategory, BlogPost } from '../data/blogs'
 import { blogPosts, featuredPost, trendingArticles } from '../data/blogs'
-import { useSanityQuery } from '../hooks/useSanityQuery'
-import { mapBlogPost, mapFeaturedPost } from '../sanity/mappers'
-import { queries } from '../sanity/queries'
+import { useCmsQuery } from '../hooks/useCmsQuery'
+import { mapBlogPost, mapFeaturedPost } from '../cms/mappers'
+import { queries } from '../cms/queries'
 
 export function BlogsPage() {
   const [filter, setFilter] = useState<BlogCategory>('all')
-  const { data: postsData, loading: postsLoading } = useSanityQuery<Array<Record<string, unknown>>>(
+  const { data: postsData, loading: postsLoading } = useCmsQuery<Array<Record<string, unknown>>>(
     queries.blogPosts,
     {},
     null
   )
-  const { data: featuredData } = useSanityQuery(queries.featuredBlogPost, {}, null)
-  const { data: trendingData, loading: trendingLoading } = useSanityQuery<
+  const { data: featuredData } = useCmsQuery(queries.featuredBlogPost, {}, null)
+  const { data: trendingData, loading: trendingLoading } = useCmsQuery<
     Array<Record<string, unknown>>
   >(queries.trendingArticles, {}, null)
 

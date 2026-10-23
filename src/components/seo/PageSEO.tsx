@@ -1,10 +1,8 @@
-import {
-  SITE_NAME,
-  formatPageTitle,
-  truncateDescription,
-  DEFAULT_OG_IMAGE,
-} from '../../../lib/seo'
+import { SITE_NAME, formatPageTitle, truncateDescription, DEFAULT_OG_IMAGE } from '../../../lib/seo'
 import { buildAbsoluteUrl } from '../../constants/seo'
+import { currentHeadSink, pushJsonLd } from '../../seo/headSink'
+
+type JsonLd = Record<string, unknown>
 
 type PageSEOProps = {
   title: string
@@ -13,7 +11,7 @@ type PageSEOProps = {
   image?: string
   type?: 'website' | 'article' | 'product'
   noindex?: boolean
-  jsonLd?: Record<string, unknown>
+  jsonLd?: JsonLd | JsonLd[]
 }
 
 export function PageSEO({
@@ -25,16 +23,29 @@ export function PageSEO({
   noindex,
   jsonLd,
 }: PageSEOProps) {
+  const sink = currentHeadSink()
   const fullTitle = formatPageTitle(title)
   const desc = truncateDescription(description)
   const canonical = buildAbsoluteUrl(path)
   const ogImage = buildAbsoluteUrl(image || DEFAULT_OG_IMAGE)
+  const blocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : []
+
+  if (sink) {
+    sink.title = title
+    sink.description = description
+    sink.path = path
+    sink.image = image || DEFAULT_OG_IMAGE
+    sink.type = type
+    sink.noindex = Boolean(noindex)
+    blocks.forEach((block, index) => pushJsonLd(sink, `page:${path}:${index}`, block))
+    return null
+  }
 
   return (
     <>
       <title>{fullTitle}</title>
       <meta name="description" content={desc} />
-      {noindex ? <meta name="robots" content="noindex" /> : null}
+      <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
       <link rel="canonical" href={canonical} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={desc} />
@@ -46,9 +57,11 @@ export function PageSEO({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={desc} />
       <meta name="twitter:image" content={ogImage} />
-      {jsonLd ? (
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      ) : null}
+      {blocks.map((block, index) => (
+        <script key={index} type="application/ld+json">
+          {JSON.stringify(block)}
+        </script>
+      ))}
     </>
   )
 }
@@ -97,10 +110,42 @@ export function buildProductJsonLd(options: {
     description: truncateDescription(options.description),
     image: buildAbsoluteUrl(options.image || DEFAULT_OG_IMAGE),
     url: buildAbsoluteUrl(options.path),
-    sku: options.sku,
+    ...(options.sku ? { sku: options.sku } : {}),
     brand: {
       '@type': 'Brand',
       name: SITE_NAME,
     },
+    manufacturer: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+    },
+  }
+}
+
+export function buildBreadcrumbJsonLd(items: { name: string; path: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: buildAbsoluteUrl(item.path),
+    })),
+  }
+}
+
+export function buildFaqJsonLd(items: { question: string; answer: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
   }
 }
