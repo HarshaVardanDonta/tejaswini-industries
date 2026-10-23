@@ -27,11 +27,28 @@ export function ProductsIntro() {
           Transformers and Panels Made in Hyderabad
         </h1>
         <p className="font-body-lg text-body-lg text-gray-700">
-          Tejaswini Industries manufactures distribution transformers, power transformers,
-          dry-type transformers, oil-cooled ONAN units, copper-wound power transformers,
-          OLTC and off-load tap-changer options, HT panels, LT panels and ring main units
-          at Mallapur, Hyderabad. Distribution ratings published here are 100 kVA to 5000 kVA
-          at 11 kV, 22 kV and 33 kV. ISO 9001:2015 and a BIS Certified mark are shown on this site.
+          Tejaswini Industries manufactures distribution transformers, dry-type transformers,
+          oil-cooled ONAN units, OLTC and off-load tap-changer options, HT panels, LT panels
+          and ring main units at Mallapur, Hyderabad. Distribution ratings are 100 kVA to
+          2000 kVA at 11 kV, 22 kV and 33 kV, with CRGO or amorphous cores and aluminium
+          windings. ISO 9001:2015 and a BIS Certified mark are shown on this site.
+        </p>
+        <p className="font-body-sm text-body-sm text-gray-700 mt-space-4">
+          <Link to="/products/distribution-transformers" className="text-secondary uppercase font-label">
+            Distribution transformers
+          </Link>
+          {' · '}
+          <Link to="/products/crgo-core-transformers" className="text-secondary uppercase font-label">
+            CRGO core
+          </Link>
+          {' · '}
+          <Link to="/products/amorphous-core-transformers" className="text-secondary uppercase font-label">
+            Amorphous core
+          </Link>
+          {' · '}
+          <Link to="/products/aluminium-wound-transformers" className="text-secondary uppercase font-label">
+            Aluminium wound
+          </Link>
         </p>
       </div>
     </section>

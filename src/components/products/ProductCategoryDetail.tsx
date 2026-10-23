@@ -1,9 +1,19 @@
 import { Link } from 'react-router-dom'
-import type { ProductCategory } from '../../data/productCategories'
+import { getProductCategoryPath, type ProductCategory } from '../../data/productCategories'
 import { buildCategoryInquiryWhatsAppUrl } from '../../constants/contactInfo'
 import { CONTACT_PATH } from '../../constants/routes'
 import { Icon } from '../Icon'
 import { ProductCategoryBreadcrumb } from './ProductCategoryBreadcrumb'
+
+const RELATED_DISTRIBUTION = [
+  { id: 'distribution-transformers', label: 'Distribution transformers' },
+  { id: 'crgo-core-transformers', label: 'CRGO core' },
+  { id: 'amorphous-core-transformers', label: 'Amorphous core' },
+  { id: 'aluminium-wound-transformers', label: 'Aluminium wound' },
+  { id: 'oil-cooled-transformers', label: 'Oil-cooled ONAN' },
+  { id: 'oltc-transformers', label: 'OLTC and off-load' },
+  { id: 'dry-type-transformers', label: 'Dry type' },
+]
 
 type ProductCategoryDetailProps = {
   category: ProductCategory
@@ -89,6 +99,26 @@ export function ProductCategoryDetail({ category }: ProductCategoryDetailProps) 
             ))}
           </div>
         </section>
+      ) : null}
+
+      {RELATED_DISTRIBUTION.some((item) => item.id === category.id) ? (
+        <nav aria-label="Related products" className="mt-space-8">
+          <h2 className="font-h2 text-h2 text-primary uppercase border-b-2 border-gray-100 pb-space-2 mb-space-4">
+            Related products
+          </h2>
+          <ul className="flex flex-wrap gap-space-3">
+            {RELATED_DISTRIBUTION.filter((item) => item.id !== category.id).map((item) => (
+              <li key={item.id}>
+                <Link
+                  to={getProductCategoryPath(item.id)}
+                  className="font-label text-label uppercase text-secondary"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       ) : null}
     </main>
   )

@@ -75,6 +75,14 @@ export function AppRoutes() {
           <Route index element={<LandingPage />} />
           <Route path="products" element={<ProductsPage />} />
           <Route
+            path="products/power-transformers"
+            element={<Navigate to="/products/distribution-transformers" replace />}
+          />
+          <Route
+            path="products/copper-wound-transformers"
+            element={<Navigate to="/products/aluminium-wound-transformers" replace />}
+          />
+          <Route
             path="products/distribution-transformers/compare"
             element={<Navigate to="/products/distribution-transformers" replace />}
           />

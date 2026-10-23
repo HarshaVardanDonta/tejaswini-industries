@@ -10,7 +10,7 @@ export const corporateProfilePage = {
     description:
       'Delivering robust, IS/IEC compliant distribution transformers and turnkey high-voltage solutions designed for unyielding performance in critical industrial environments.',
     stats: [
-      { value: '25+', label: 'Years Expertise' },
+      { value: '2011', label: 'Established' },
       { value: '10k+', label: 'Deployments' },
       { value: '100%', label: 'IS/IEC Compliant' },
       { value: '24/7', label: 'Support Grid', accent: true },
@@ -39,6 +39,6 @@ export const corporateProfilePage = {
           'Tailored technical specifications to meet specific load demands.',
       },
     ],
-    established: 'Established 1998',
+    established: 'Established 2011',
   },
 } as const

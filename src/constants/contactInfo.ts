@@ -11,8 +11,8 @@ export const contactInfo = {
   /** Google Maps directions / navigation to the office */
   mapsUrl:
     'https://www.google.com/maps/dir/?api=1&destination=17.4454786,78.5800202&travelmode=driving',
-  phone: '+91 9248030365',
-  phoneHref: 'tel:+919248030365',
+  phone: '+91 92480 30362',
+  phoneHref: 'tel:+919248030362',
   email: 'info@tejaswiniindustries.com',
   mapLabel: 'Hyderabad, Telangana',
   operatingHoursLines: ['Mon - Sat: 9:00 AM - 5:30 PM', 'Sun: Closed'],

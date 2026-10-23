@@ -38,7 +38,7 @@ Then run the site with `VITE_FIREBASE_EMULATORS=true npm run dev` and sign in at
 
 ### Leads
 
-The contact form writes a document to the Firestore `leads` collection from the browser. Rules allow a public create only when the fields and size limits match, and they deny public reads. Allowlisted admins read the inbox at `/admin` and `/admin/leads` and can mark a lead handled. The Spark plan cannot email the owner when a lead arrives. Check `/admin`, or add email later with the Blaze plan or a third-party form service. Call (`tel:+919248030365`) and WhatsApp (`wa.me/919248030362`) stay on the form for an immediate reply.
+The contact form writes a document to the Firestore `leads` collection from the browser. Rules allow a public create only when the fields and size limits match, and they deny public reads. Allowlisted admins read the inbox at `/admin` and `/admin/leads` and can mark a lead handled. The Spark plan cannot email the owner when a lead arrives. Check `/admin`, or add email later with the Blaze plan or a third-party form service. Call (`tel:+919248030362`) and WhatsApp (`https://wa.me/919248030362`) both use +91 92480 30362 and stay on the form for an immediate reply.
 
 ### NAP
 

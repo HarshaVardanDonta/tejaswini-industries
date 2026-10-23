@@ -37,21 +37,6 @@ export const projectFilters: { id: ProjectCategory; label: string }[] = [
 
 export const projects: Project[] = [
   {
-    id: 'mega-solar-park',
-    title: 'Mega Solar Park Substation',
-    category: 'transformers',
-    categoryLabel: 'Transformer',
-    sector: 'Solar Farm Infrastructure',
-    location: 'Gujarat',
-    image: images.projects.solarSubstation,
-    imageAlt: 'Massive industrial electrical transformer in a modern factory',
-    accent: true,
-    specs: [
-      { label: 'Capacity', value: '500 MVA' },
-      { label: 'Voltage', value: '400/220 kV' },
-    ],
-  },
-  {
     id: 'cement-plant-control',
     title: 'Cement Plant Main Control',
     category: 'ht-panels',
@@ -85,7 +70,7 @@ export const commissionRows: CommissionRow[] = [
   {
     id: 'PRJ-24-091',
     sector: 'Textile Manufacturing',
-    deliverable: '2500kVA Distribution Transformer',
+    deliverable: 'Distribution transformer',
     location: 'Surat',
     status: 'active',
   },

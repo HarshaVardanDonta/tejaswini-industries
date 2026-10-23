@@ -24,13 +24,13 @@ export const staticPageMeta = {
   home: {
     title: 'Distribution Transformer Manufacturer in Hyderabad',
     description:
-      'Tejaswini Industries manufactures 11 kV, 22 kV and 33 kV distribution transformers in Hyderabad, Telangana, from 100 kVA to 5000 kVA, with ONAN cooling and OLTC or off-load tap changers.',
+      'Hyderabad distribution transformers, 100 kVA to 2000 kVA, 11/22/33 kV, ONAN cooling, CRGO or amorphous cores and aluminium windings.',
     path: '/',
   },
   products: {
     title: 'Transformers and Panels Made in Hyderabad',
     description:
-      'Distribution, power and dry-type transformers, oil-cooled and copper-wound units, OLTC options, HT panels, LT panels and ring main units from Mallapur, Hyderabad.',
+      'CRGO, amorphous and aluminium-wound distribution transformers to 2000 kVA, plus panels and ring main units from Mallapur, Hyderabad.',
     path: '/products',
   },
   serviceAreas: {
@@ -48,13 +48,13 @@ export const staticPageMeta = {
   about: {
     title: 'About the Hyderabad Transformer Works',
     description:
-      'Tejaswini Industries designs and builds transformers and panels in Hyderabad, Telangana. ISO 9001:2015 and a BIS Certified mark are shown on this site.',
+      'Tejaswini Industries, established in 2011, builds distribution transformers and panels in Hyderabad, Telangana.',
     path: '/about',
   },
   contact: {
     title: 'Request a Transformer Quote in Telangana',
     description:
-      'Contact Tejaswini Industries in Mallapur, Hyderabad. Call +91 9248030365 or send kVA, voltage, company, role and the Telangana project location.',
+      'Contact Tejaswini Industries in Mallapur, Hyderabad. Call or WhatsApp +91 92480 30362, or send kVA, voltage, company, role and the Telangana project location.',
     path: '/contact',
   },
   services: {

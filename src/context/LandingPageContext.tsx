@@ -53,7 +53,7 @@ export const defaultLandingPageData: LandingPageData = {
   hero: {
     image: images.hero,
     imageAlt:
-      'Tejaswini branded power transformer secured on a flatbed truck at an industrial delivery yard',
+      'Tejaswini distribution transformer secured on a flatbed truck at an industrial delivery yard',
     badgePrimary: 'ISO 9001:2015',
     badgeSecondary: 'BIS Certified',
     title: 'Precision Engineering.\nUncompromising Power.',
@@ -71,7 +71,7 @@ export const defaultLandingPageData: LandingPageData = {
     image: images.facility,
     imageAlt: 'Technicians assembling an electrical control panel in a manufacturing facility',
     stats: [
-      { value: '25+', label: 'Years Experience' },
+      { value: '2011', label: 'Established' },
       { value: '10k+', label: 'Units Deployed' },
     ],
   },
@@ -81,11 +81,11 @@ export const defaultLandingPageData: LandingPageData = {
     linkLabel: 'View All Products',
     items: [
       {
-        title: 'Power Transformers',
+        title: 'Distribution Transformers',
         description:
-          'High-capacity distribution and power transformers engineered for minimal loss and maximum durability in extreme conditions.',
+          'Distribution transformers from 100 kVA to 2000 kVA, with CRGO or amorphous cores and aluminium windings, built in Hyderabad.',
         image: images.transformers,
-        imageAlt: 'Power transformers',
+        imageAlt: 'Distribution transformers',
         size: 'large',
       },
       {

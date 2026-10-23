@@ -21,43 +21,81 @@ export function getProductCategoryById(id: string): ProductCategory | undefined 
 export const productCategories: ProductCategory[] = [
   {
     id: 'distribution-transformers',
-    title: 'Distribution Transformers',
+    title: 'Distribution Transformers in Hyderabad',
     description:
-      'High-efficiency distribution units designed to step down voltage for local commercial and industrial grid applications. Built with robust enclosures for extended operational lifespan.',
+      'Distribution transformers made in Hyderabad, 100 kVA to 2000 kVA, 11/22/33 kV, ONAN, CRGO or amorphous cores and aluminium windings.',
     image: images.products.distribution,
     imageAlt:
       'Heavy-duty industrial distribution transformer in a modern warehouse',
     technicalSpecs: [
-      'Range: 100 KVA to 5000 KVA',
-      'Voltage Class: 11 KV, 22 KV, 33 KV',
+      'Range: 100 kVA to 2000 kVA',
+      'Voltage Class: 11 kV, 22 kV, 33 kV',
       'Cooling: ONAN',
+      'Core: CRGO or amorphous',
+      'Winding: aluminium',
       'Taping: OFF Load Tap Changer / On load Tap changer',
     ],
     bodyParagraphs: [
-      'Distribution transformers for industrial application are available in 3 or 1 phase version with primary voltages of up to 33 KV and secondary voltages ranging from 433 to 11000 V. The capacity range is up to 10000 KVA. We manufacture single phase distribution transformers, three phase distribution transformers and industrial distribution transformers.',
-      'The high quality standards set up by the company are appreciated by our customers in India and abroad. Standards which are applied to development, manufacturing, installing and commissioning of power transformers for power stations, special purpose transformers for industry fields, reactors and accessories.',
-      'Our manufacturing facilities are located in Hyderabad. Power transformers up to 63 MVA 132 KV Class are regularly manufactured and supplied. Tejaswini is equipped to manufacture transformers with a wide range of internationally recognized standards.',
-      'Setting high standards as a consistent guarantee of the highest quality, the company has achieved ISO 9001 certification for all its transformers. Regular internal and external quality audits ensure full and continuous conformity with international standards.',
+      'Distribution transformers for projects in Hyderabad and Telangana are built in 1 or 3 phase, with primary voltages up to 33 kV and secondary voltages from 433 V to 11000 V. The top rating is 2000 kVA. The low end of the published range remains 100 kVA.',
+      'Cores are CRGO (cold-rolled grain-oriented steel) or amorphous metal. Windings on this range are aluminium. ISO 9001 certification is stated for the transformers, with internal and external quality audits. No efficiency-star rating is published.',
+      'Cooling is ONAN (oil natural, air natural). Tap changers are off-load or on-load. Apartment and factory kVA is not published as a sizing chart; send connected load with the inquiry.',
     ],
   },
   {
-    id: 'power-transformers',
-    title: 'Power Transformers',
+    id: 'crgo-core-transformers',
+    title: 'CRGO Core Distribution Transformers in Hyderabad',
     description:
-      'Heavy-duty transformers engineered for high-voltage transmission networks. Delivering supreme reliability and handling immense loads with minimal energy loss.',
-    image: images.products.power,
-    imageAlt: 'Large power transformer at an outdoor substation',
+      'CRGO-core distribution transformers made in Hyderabad, Telangana, from 100 kVA to 2000 kVA at 11 kV, 22 kV and 33 kV, with aluminium windings.',
+    image: images.products.distribution,
+    imageAlt: 'CRGO-core distribution transformer built in Hyderabad',
     technicalSpecs: [
-      'Copper foil winding technology for high current sections',
-      'Sustaining short circuit forces without distortion in LV and high current windings',
-      'Hot spot in LV windings regulated',
-      'No transposition — stray losses are minimal, reducing total copper losses',
-      'Reduced copper losses vis-a-vis standard losses, lowering heat dissipating area',
+      'Core: CRGO (cold-rolled grain-oriented silicon steel)',
+      'Range: 100 kVA to 2000 kVA',
+      'Voltage Class: 11 kV, 22 kV, 33 kV',
+      'Cooling: ONAN',
+      'Winding: aluminium',
     ],
     bodyParagraphs: [
-      'A power transformer is characterized by inner and outer low voltage winding sections and a high voltage winding section disposed there between. The low voltage windings are comprised of a plurality of pancake coils, and the high voltage windings are comprised of a plurality of conductor strands spirally wound for a plurality of coil layers.',
-      'A power transformer is an electrical device that transfers energy between two or more circuits through electromagnetic induction. A varying current in the transformer\'s primary winding creates a varying magnetic flux in the core and a varying magnetic field impinging on the secondary winding.',
-      'Making use of Faraday\'s Law in conjunction with high magnetic permeability core properties, transformers can thus be designed to efficiently change AC voltages from one voltage level to another within power networks.',
+      'A CRGO core is cold-rolled grain-oriented silicon steel. The grains are aligned so magnetic loss along the rolling direction is lower than in non-oriented electrical steel. Tejaswini Industries builds CRGO-core distribution transformers in Hyderabad from 100 kVA to 2000 kVA.',
+      'Voltage class is 11 kV, 22 kV and 33 kV. Cooling is ONAN. Windings are aluminium. No loss figure in watts and no efficiency-star rating are published.',
+    ],
+  },
+  {
+    id: 'amorphous-core-transformers',
+    title: 'Amorphous Core Distribution Transformers in Hyderabad',
+    description:
+      'Amorphous-core distribution transformers made in Hyderabad, 100 kVA to 2000 kVA, 11/22/33 kV, aluminium wound, with lower no-load loss than CRGO.',
+    image: images.products.distribution,
+    imageAlt: 'Amorphous-core distribution transformer built in Hyderabad',
+    technicalSpecs: [
+      'Core: amorphous metal (metallic-glass ribbon)',
+      'Range: 100 kVA to 2000 kVA',
+      'Voltage Class: 11 kV, 22 kV, 33 kV',
+      'Cooling: ONAN',
+      'Winding: aluminium',
+    ],
+    bodyParagraphs: [
+      'An amorphous core is a thin metallic-glass ribbon. It generally has lower no-load loss and lower hysteresis loss than a CRGO core of the same rating. Tejaswini Industries builds both cores in Hyderabad, from 100 kVA to 2000 kVA, with aluminium windings.',
+      'The ribbon is more brittle than CRGO steel, and the tank is often larger for the same kVA. This site does not publish a watt loss, a percentage energy saving, or an efficiency-star rating.',
+    ],
+  },
+  {
+    id: 'aluminium-wound-transformers',
+    title: 'Aluminium Wound Distribution Transformers in Hyderabad',
+    description:
+      'Aluminium-wound distribution transformers made in Hyderabad, 100 kVA to 2000 kVA, on CRGO or amorphous cores, for projects in Telangana.',
+    image: images.products.distribution,
+    imageAlt: 'Aluminium-wound distribution transformer built in Hyderabad',
+    technicalSpecs: [
+      'Winding: aluminium',
+      'Core: CRGO or amorphous',
+      'Range: 100 kVA to 2000 kVA',
+      'Voltage Class: 11 kV, 22 kV, 33 kV',
+      'Cooling: ONAN',
+    ],
+    bodyParagraphs: [
+      'Distribution transformers made here use aluminium windings, on either a CRGO core or an amorphous core, from 100 kVA to 2000 kVA. Aluminium has lower electrical conductivity than copper, so the conductor cross-section is larger for the same current, and the winding weighs less.',
+      'No price difference and no efficiency-star rating are published. Voltage class is 11 kV, 22 kV and 33 kV. Cooling is ONAN.',
     ],
   },
   {
@@ -68,7 +106,7 @@ export const productCategories: ProductCategory[] = [
     image: images.products.dryType,
     imageAlt: 'Dry-type transformer in a clean electrical control room',
     technicalSpecs: [
-      'VPI type (Vacuum Pressure Impregnated Transformer) up to 2.5 MVA',
+      'VPI type (Vacuum Pressure Impregnated Transformer) up to 2000 kVA',
       'Insulation grade F (155 °C) and H (180 °C)',
       'Protection up to IP56',
       'High mechanical strength with void-free insulation',
@@ -76,7 +114,7 @@ export const productCategories: ProductCategory[] = [
     ],
     bodyParagraphs: [
       'A dry type transformer is a type of transformer which never uses any insulating liquid where its winding or core are immersed in liquid. Rather, the windings and core are kept within a sealed tank that is pressurized with air.',
-      'We make VPI type (Vacuum Pressure Impregnated Transformer). This type of transformer is available up to 2.5 MVA with insulation grade F (155 °) and H (180 °), with protection up to IP56.',
+      'We make VPI type (Vacuum Pressure Impregnated Transformer). This type of transformer is available up to 2000 kVA with insulation grade F (155 °) and H (180 °), with protection up to IP56.',
       'This type of transformer has several advantages: high mechanical strength, void-free insulation, no temperature fluctuation, easy maintenance, and less prone to fire hazard.',
     ],
   },
