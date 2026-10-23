@@ -3,6 +3,7 @@ import { Navigate, useNavigate } from 'react-router-dom'
 import { signInWithEmailAndPassword, signOut } from 'firebase/auth'
 import { doc, getDoc } from 'firebase/firestore'
 
+import { FIREBASE_SETUP_HINT } from '../cms/config'
 import { getFirebaseAuth, getFirebaseDb, isFirebaseConfigured } from '../cms/firebase'
 import { PageSEO } from '../components/seo/PageSEO'
 
@@ -20,7 +21,7 @@ export function AdminLoginPage() {
     setError('')
 
     if (!isFirebaseConfigured) {
-      setError('Firebase is not configured. Add the VITE_FIREBASE_* variables.')
+      setError(`Sign-in could not reach Firebase. ${FIREBASE_SETUP_HINT}`)
       setLoading(false)
       return
     }

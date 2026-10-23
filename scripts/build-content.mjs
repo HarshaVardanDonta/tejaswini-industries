@@ -35,7 +35,8 @@ function decodeFields(fields) {
 
 async function fetchRemoteContent() {
   const projectId = process.env.VITE_FIREBASE_PROJECT_ID || 'tejaswini-industries-32349'
-  const apiKey = process.env.VITE_FIREBASE_API_KEY || ''
+  const apiKey =
+    process.env.VITE_FIREBASE_API_KEY || 'AIzaSyB626vQdimA3KGEPqqLXpnZX6Cu8u0nDr8'
   const emulator = process.env.FIRESTORE_EMULATOR_HOST
   if (!emulator && !apiKey) return null
 

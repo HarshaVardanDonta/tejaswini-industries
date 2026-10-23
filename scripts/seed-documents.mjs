@@ -56,7 +56,7 @@ export function buildDocuments(images) {
         badgeSecondary: 'BIS Certified',
         title: 'Distribution Transformer Manufacturer\nin Hyderabad',
         description:
-          'Tejaswini Industries manufactures distribution transformers in Hyderabad, Telangana. The distribution range is 100 kVA to 2000 kVA at 11 kV, 22 kV and 33 kV, with ONAN cooling, CRGO or amorphous cores, aluminium windings, and off-load or on-load tap changers. The factory is at Mallapur.',
+          'Tejaswini Industries manufactures distribution transformers in Hyderabad, Telangana. The distribution range is 100 kVA to 2000 kVA at 11 kV, 22 kV and 33 kV, with ONAN cooling, CRGO or amorphous cores, aluminium or copper windings, and off-load or on-load tap changers. The factory is at Mallapur.',
         primaryCta: 'Contact Us',
         secondaryCta: 'Call Now',
       },
@@ -83,7 +83,7 @@ export function buildDocuments(images) {
           {
             title: 'Distribution Transformers',
             description:
-              'Distribution transformers from 100 kVA to 2000 kVA, with CRGO or amorphous cores and aluminium windings, built in Hyderabad.',
+              'Distribution transformers from 100 kVA to 2000 kVA, with CRGO or amorphous cores and aluminium or copper windings, built in Hyderabad.',
             image: img(images.transformers, 'Distribution transformers'),
             size: 'large',
           },
@@ -523,134 +523,13 @@ export function buildDocuments(images) {
     },
 
     {
-      _id: 'oil-cooled-transformers',
-      _type: 'productCategory',
-      id: 'oil-cooled-transformers',
-      title: 'Oil-Cooled Transformers in Hyderabad',
-      description:
-        'Oil-cooled (ONAN) distribution transformers built in Hyderabad, 100 kVA to 2000 kVA at 11 kV, 22 kV and 33 kV.',
-      image: img(
-        images.products.distribution,
-        'Oil-cooled distribution transformer in the Hyderabad works'
-      ),
-      technicalSpecs: [
-        'Cooling: ONAN (oil natural, air natural)',
-        'Range: 100 kVA to 2000 kVA',
-        'Voltage Class: 11 kV, 22 kV, 33 kV',
-        'Also described as oil-immersed distribution transformers',
-      ],
-      bodyParagraphs: [
-        'The distribution transformer specification lists cooling as ONAN. ONAN is oil-natural, air-natural cooling: the oil circulates naturally and the tank surface releases heat to the air. The maintenance guide on this site is written for oil-immersed distribution transformers and covers oil level, leaks, silica-gel breather and oil BDV.',
-        'Ratings on the distribution range are 100 kVA to 2000 kVA at 11 kV, 22 kV and 33 kV. The quotation states the rating that will be built.',
-        'These units are made at Mallapur, Hyderabad, for industrial and commercial distribution. The site does not publish a separate oil volume, radiator schedule or guaranteed loss figure.',
-      ],
-    },
-    {
-      _id: 'oltc-transformers',
-      _type: 'productCategory',
-      id: 'oltc-transformers',
-      title: 'OLTC and OFTC Transformers in Hyderabad',
-      description:
-        'Hyderabad distribution transformers listed with off-load (OFTC) or on-load (OLTC) tap changers, 11 kV, 22 kV and 33 kV.',
-      image: img(
-        images.products.distribution,
-        'Distribution transformer with tap changer, manufactured in Hyderabad'
-      ),
-      technicalSpecs: [
-        'Taping: OFF Load Tap Changer / On load Tap changer',
-        'Voltage Class: 11 KV, 22 KV, 33 KV',
-        'Range: 100 kVA to 2000 kVA',
-        'Cooling: ONAN',
-      ],
-      bodyParagraphs: [
-        'The published distribution-transformer specification lists both an off-load tap changer and an on-load tap changer. Off-load (often called OFTC) is changed with the transformer isolated. On-load (OLTC) is the option listed for changing taps while the unit is in service. This site does not publish tap range, number of steps or a rule for choosing one.',
-        'Voltage class remains 11 kV, 22 kV and 33 kV, and the rating band is 100 kVA to 2000 kVA. State the required tap changer on the inquiry together with kVA, voltage and the Telangana project location.',
-      ],
-    },
-    {
-      _id: 'crgo-core-transformers',
-      _type: 'productCategory',
-      id: 'crgo-core-transformers',
-      title: 'CRGO Core Distribution Transformers in Hyderabad',
-      description:
-        'CRGO-core distribution transformers made in Hyderabad, Telangana, from 100 kVA to 2000 kVA at 11 kV, 22 kV and 33 kV, with aluminium windings.',
-      image: img(
-        images.products.distribution,
-        'CRGO-core distribution transformer built in Hyderabad'
-      ),
-      technicalSpecs: [
-        'Core: CRGO (cold-rolled grain-oriented silicon steel)',
-        'Range: 100 kVA to 2000 kVA',
-        'Voltage Class: 11 kV, 22 kV, 33 kV',
-        'Cooling: ONAN',
-        'Winding: aluminium',
-        'Taping: OFF Load Tap Changer / On load Tap changer',
-      ],
-      bodyParagraphs: [
-        'A CRGO core is cold-rolled grain-oriented silicon steel. The grains are aligned so magnetic loss along the rolling direction is lower than in non-oriented electrical steel. Tejaswini Industries builds CRGO-core distribution transformers in Hyderabad from 100 kVA to 2000 kVA.',
-        'Voltage class is 11 kV, 22 kV and 33 kV. Cooling is ONAN. Windings are aluminium. The same rating band is also built with an amorphous core. No loss figure in watts and no efficiency-star rating are published.',
-        'The factory is at Mallapur, Hyderabad 500076. Send kVA, voltage and the Telangana project location for a quotation.',
-      ],
-    },
-    {
-      _id: 'amorphous-core-transformers',
-      _type: 'productCategory',
-      id: 'amorphous-core-transformers',
-      title: 'Amorphous Core Distribution Transformers in Hyderabad',
-      description:
-        'Amorphous-core distribution transformers made in Hyderabad, 100 kVA to 2000 kVA, 11/22/33 kV, aluminium wound, with lower no-load loss than CRGO.',
-      image: img(
-        images.products.distribution,
-        'Amorphous-core distribution transformer built in Hyderabad'
-      ),
-      technicalSpecs: [
-        'Core: amorphous metal (metallic-glass ribbon)',
-        'Range: 100 kVA to 2000 kVA',
-        'Voltage Class: 11 kV, 22 kV, 33 kV',
-        'Cooling: ONAN',
-        'Winding: aluminium',
-        'Compared with CRGO: generally lower no-load loss',
-      ],
-      bodyParagraphs: [
-        'An amorphous core is a thin metallic-glass ribbon. It generally has lower no-load loss and lower hysteresis loss than a CRGO core of the same rating. Tejaswini Industries builds both cores in Hyderabad, from 100 kVA to 2000 kVA, with aluminium windings.',
-        'The ribbon is more brittle than CRGO steel, and the tank is often larger for the same kVA. This site does not publish a watt loss, a percentage energy saving, or an efficiency-star rating.',
-        'Voltage class is 11 kV, 22 kV and 33 kV. Cooling is ONAN. The tap changer is off-load or on-load. The works are at Mallapur, Hyderabad, for projects in Telangana.',
-      ],
-    },
-    {
-      _id: 'aluminium-wound-transformers',
-      _type: 'productCategory',
-      id: 'aluminium-wound-transformers',
-      title: 'Aluminium Wound Distribution Transformers in Hyderabad',
-      description:
-        'Aluminium-wound distribution transformers made in Hyderabad, 100 kVA to 2000 kVA, on CRGO or amorphous cores, for projects in Telangana.',
-      image: img(
-        images.products.distribution,
-        'Aluminium-wound distribution transformer built in Hyderabad'
-      ),
-      technicalSpecs: [
-        'Winding: aluminium',
-        'Core: CRGO or amorphous',
-        'Range: 100 kVA to 2000 kVA',
-        'Voltage Class: 11 kV, 22 kV, 33 kV',
-        'Cooling: ONAN',
-        'Taping: OFF Load Tap Changer / On load Tap changer',
-      ],
-      bodyParagraphs: [
-        'Distribution transformers made here use aluminium windings, on either a CRGO core or an amorphous core, from 100 kVA to 2000 kVA. Aluminium has lower electrical conductivity than copper, so the conductor cross-section is larger for the same current, and the winding weighs less.',
-        'No price difference and no efficiency-star rating are published. Windings on this range are aluminium.',
-        'Voltage class is 11 kV, 22 kV and 33 kV. Cooling is ONAN. The factory is at Mallapur, Hyderabad, for projects in Telangana.',
-      ],
-    },
-
-    {
       _id: 'serviceAreasPage',
       _type: 'serviceAreasPage',
       title: 'Transformer Supply in Hyderabad and Telangana',
       description:
         'Distribution transformers, panels and ring main units made at Mallapur, Hyderabad, for projects in Hyderabad and Telangana.',
       paragraphs: [
-        'Tejaswini Industries manufactures distribution transformers at 3-13-109/1/1, FCI Road, Suryanagar, Mallapur, Hyderabad 500076, Telangana. The distribution range is 100 kVA to 2000 kVA, with CRGO or amorphous cores and aluminium windings, plus dry-type transformers, HT panels, LT panels and ring main units.',
+        'Tejaswini Industries manufactures distribution transformers at 3-13-109/1/1, FCI Road, Suryanagar, Mallapur, Hyderabad 500076, Telangana. The distribution range is 100 kVA to 2000 kVA, with CRGO or amorphous cores and aluminium or copper windings, plus dry-type transformers, HT panels, LT panels and ring main units.',
         'Enquiries for industrial, commercial, apartment and infrastructure projects in Hyderabad and elsewhere in Telangana are taken on the contact form. The form asks for kVA, voltage, company, role and project location. A site outside the published address is confirmed when the quotation is prepared. This page does not list districts the company has not named.',
         'The project list also includes references outside Telangana (Gujarat, Maharashtra and Odisha, including Surat, Pune and Jamnagar). Those are published installations, not a claim that every district is covered.',
       ],
@@ -677,7 +556,7 @@ export function buildDocuments(images) {
           page: 'home',
           question: 'Who is the distribution transformer manufacturer in Hyderabad?',
           answer:
-            'Tejaswini Industries manufactures distribution transformers at Mallapur, Hyderabad, Telangana (3-13-109/1/1, FCI Road, Suryanagar, PIN 500076). The range is 100 kVA to 2000 kVA at 11 kV, 22 kV and 33 kV, with ONAN cooling, CRGO or amorphous cores, aluminium windings, and off-load or on-load tap changers. Call or WhatsApp +91 92480 30362.',
+            'Tejaswini Industries manufactures distribution transformers at Mallapur, Hyderabad, Telangana (3-13-109/1/1, FCI Road, Suryanagar, PIN 500076). The range is 100 kVA to 2000 kVA at 11 kV, 22 kV and 33 kV, with ONAN cooling, CRGO or amorphous cores, aluminium or copper windings, and off-load or on-load tap changers. Call or WhatsApp +91 92480 30362.',
         },
         {
           id: 'home-kva',
@@ -691,7 +570,7 @@ export function buildDocuments(images) {
           page: 'home',
           question: 'Do the transformers use copper or aluminium windings?',
           answer:
-            'Distribution transformers use aluminium windings, on a CRGO core or an amorphous core, from 100 kVA to 2000 kVA. Aluminium conducts less well than copper, so the conductor cross-section is larger for the same current and the winding is lighter. No price difference and no efficiency-star rating are published.',
+            'Distribution transformers are wound in aluminium or copper, on a CRGO core or an amorphous core, from 100 kVA to 2000 kVA. Aluminium conducts less well than copper, so an aluminium conductor is larger in cross-section for the same current and the winding is lighter. Copper is the higher-conductivity choice. No price difference and no efficiency-star rating are published.',
         },
         {
           id: 'home-tap',
@@ -751,38 +630,38 @@ export function buildDocuments(images) {
         },
         {
           id: 'crgo-what',
-          page: 'crgo-core-transformers',
+          page: 'distribution-transformers',
           question: 'What is a CRGO core?',
           answer:
-            'CRGO is cold-rolled grain-oriented silicon steel. The grain direction is aligned so magnetic loss along the rolling direction is lower than in non-oriented electrical steel. These distribution transformers are 100 kVA to 2000 kVA, aluminium wound, at 11 kV, 22 kV and 33 kV. No loss wattage or efficiency-star rating is published.',
+            'CRGO is cold-rolled grain-oriented silicon steel. The grain direction is aligned so magnetic loss along the rolling direction is lower than in non-oriented electrical steel. These distribution transformers are 100 kVA to 2000 kVA, with aluminium or copper windings, at 11 kV, 22 kV and 33 kV. No loss wattage or efficiency-star rating is published.',
         },
         {
           id: 'amorphous-vs-crgo',
-          page: 'amorphous-core-transformers',
+          page: 'distribution-transformers',
           question: 'How does an amorphous core compare with CRGO?',
           answer:
-            'Amorphous metal is a thin metallic-glass ribbon. It generally has lower no-load loss and lower hysteresis loss than CRGO steel. The ribbon is more brittle, and the tank is often larger for the same rating. Both cores are built here with aluminium windings, from 100 kVA to 2000 kVA. This site does not publish a loss comparison in watts, a percentage saving, or an efficiency-star rating.',
+            'Amorphous metal is a thin metallic-glass ribbon. It generally has lower no-load loss and lower hysteresis loss than CRGO steel. The ribbon is more brittle, and the tank is often larger for the same rating. Both cores are built here, with aluminium or copper windings, from 100 kVA to 2000 kVA. This site does not publish a loss comparison in watts, a percentage saving, or an efficiency-star rating.',
         },
         {
           id: 'crgo-vs-amorphous',
-          page: 'crgo-core-transformers',
+          page: 'distribution-transformers',
           question: 'When is CRGO used instead of an amorphous core?',
           answer:
-            'Both cores are manufactured for the same distribution band, 100 kVA to 2000 kVA, 11/22/33 kV, ONAN, aluminium windings. CRGO is grain-oriented silicon steel. Amorphous metal generally has lower no-load loss and is more brittle. The site does not publish a rule that assigns one core to a kVA band.',
+            'Both cores are manufactured for the same distribution band, 100 kVA to 2000 kVA, 11/22/33 kV, ONAN, with aluminium or copper windings. CRGO is grain-oriented silicon steel. Amorphous metal generally has lower no-load loss and is more brittle. The site does not publish a rule that assigns one core to a kVA band.',
         },
         {
           id: 'al-vs-cu',
-          page: 'aluminium-wound-transformers',
+          page: 'distribution-transformers',
           question: 'How does aluminium winding compare with copper?',
           answer:
-            'Aluminium has lower electrical conductivity than copper, so the conductor cross-section is larger for the same current, and the winding is lighter. Distribution transformers here, both CRGO and amorphous, use aluminium windings from 100 kVA to 2000 kVA. No price difference and no efficiency-star rating are published.',
+            'Both windings are offered on CRGO and amorphous distribution transformers from 100 kVA to 2000 kVA. Aluminium has lower electrical conductivity than copper, so the conductor cross-section is larger for the same current, and the winding is lighter. Copper is the smaller, higher-conductivity conductor. No price difference and no efficiency-star rating are published.',
         },
         {
-          id: 'al-range',
-          page: 'aluminium-wound-transformers',
-          question: 'What ratings use aluminium windings?',
+          id: 'winding-range',
+          page: 'distribution-transformers',
+          question: 'Which ratings can be aluminium or copper wound?',
           answer:
-            'The distribution range is 100 kVA to 2000 kVA at 11 kV, 22 kV and 33 kV, ONAN cooling, off-load or on-load tap changer, on a CRGO or amorphous core. The factory is at Mallapur, Hyderabad.',
+            'The distribution range is 100 kVA to 2000 kVA at 11 kV, 22 kV and 33 kV, ONAN cooling, off-load or on-load tap changer, on a CRGO or amorphous core, with an aluminium or copper winding. The factory is at Mallapur, Hyderabad.',
         },
         {
           id: 'ht-rating',

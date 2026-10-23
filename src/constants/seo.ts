@@ -24,7 +24,7 @@ export const staticPageMeta = {
   home: {
     title: 'Distribution Transformer Manufacturer in Hyderabad',
     description:
-      'Hyderabad distribution transformers, 100 kVA to 2000 kVA, 11/22/33 kV, ONAN cooling, CRGO or amorphous cores and aluminium windings.',
+      'Hyderabad distribution transformers, 100 kVA to 2000 kVA, CRGO or amorphous cores, aluminium or copper windings.',
     path: '/',
   },
   products: {

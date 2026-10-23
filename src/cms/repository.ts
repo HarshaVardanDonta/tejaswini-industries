@@ -1,6 +1,6 @@
 import { evaluateQuery, type CmsDoc } from '../../lib/cms-query'
 import { contentDocuments } from './active-content'
-import { isFirebaseConfigured } from './config'
+import { FIREBASE_SETUP_HINT, isFirebaseConfigured } from './config'
 
 function asDocs(value: readonly CmsDoc[]): CmsDoc[] {
   return value.map((doc) => ({ ...doc }))
@@ -52,7 +52,7 @@ export function readBaked<T>(query: string, params: Record<string, unknown> = {}
 
 export async function saveContentDocument(document: CmsDoc) {
   if (!isFirebaseConfigured) {
-    throw new Error('Firebase is not configured. Add the VITE_FIREBASE_* variables before saving.')
+    throw new Error(`Saving needs Firebase. ${FIREBASE_SETUP_HINT}`)
   }
   const payload = {
     ...document,
@@ -65,7 +65,7 @@ export async function saveContentDocument(document: CmsDoc) {
 
 export async function deleteContentDocument(id: string) {
   if (!isFirebaseConfigured) {
-    throw new Error('Firebase is not configured. Add the VITE_FIREBASE_* variables before deleting.')
+    throw new Error(`Deleting needs Firebase. ${FIREBASE_SETUP_HINT}`)
   }
   const remote = await import('./remote')
   await remote.removeDocument(id)

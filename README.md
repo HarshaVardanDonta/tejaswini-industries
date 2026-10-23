@@ -6,11 +6,16 @@ Firebase project: `tejaswini-industries-32349` (Spark plan, Firestore in `asia-s
 
 ## Owner setup
 
-1. Copy [`.env.example`](.env.example) to `.env`. The public web config is already filled in.
-2. In the Firebase console, confirm Email/Password sign-in is enabled.
-3. Create a service account key (Project settings → Service accounts → Generate new private key). Do not commit it. Point `FIREBASE_SERVICE_ACCOUNT_JSON` at the file.
-4. Deploy rules: `npx firebase deploy --only firestore:rules --project tejaswini-industries-32349`
-5. Seed content and create the admin user:
+The public Firebase web config is the default in [`src/cms/config.ts`](src/cms/config.ts). Login and the public site reach project `tejaswini-industries-32349` even when no `.env` file is present. A `VITE_FIREBASE_*` variable overrides that default when it is set.
+
+### Local
+
+1. Optional: copy [`.env.example`](.env.example) to `.env` if you want to point at another Firebase project or turn on the emulators. Restart `npm run dev` after any change. Vite reads `.env` only at startup.
+2. Leave `VITE_FIREBASE_EMULATORS` unset to use the live Firebase project. Set `VITE_FIREBASE_EMULATORS=true` only while the Auth emulator (port 9099) and Firestore emulator (port 8080) are running.
+3. In the Firebase console, confirm Email/Password sign-in is enabled.
+4. Create a service account key (Project settings → Service accounts → Generate new private key). Do not commit it. Point `FIREBASE_SERVICE_ACCOUNT_JSON` at the file. The hosted site never uses this key.
+5. Deploy rules: `npx firebase deploy --only firestore:rules --project tejaswini-industries-32349`
+6. Seed content and create the admin user:
 
    ```bash
    FIREBASE_SERVICE_ACCOUNT_JSON=/absolute/path/service-account.json \
@@ -20,8 +25,13 @@ Firebase project: `tejaswini-industries-32349` (Spark plan, Firestore in `asia-s
    ```
 
    The script writes every content document and an `admins/{uid}` allowlist record. Firestore rules allow public reads of `content` and writes only for that UID. Passwords are not stored in Firestore.
-6. On Vercel, set the `VITE_FIREBASE_*` variables and `VITE_SITE_URL=https://www.tejaswiniindustries.com`. Do not set SMTP or a deploy-hook secret. The hosted site is static files plus the Firebase client SDK.
-7. Optional: set `VITE_GA4_ID` when a GA4 property exists. Do not invent an ID. The old Universal Analytics tag is not used.
+
+### Vercel
+
+7. The build works without Firebase environment variables because the public web config is compiled in. To override it, set `VITE_FIREBASE_API_KEY`, `VITE_FIREBASE_AUTH_DOMAIN`, `VITE_FIREBASE_PROJECT_ID`, `VITE_FIREBASE_STORAGE_BUCKET`, `VITE_FIREBASE_MESSAGING_SENDER_ID`, and `VITE_FIREBASE_APP_ID` in the Vercel project (Settings → Environment Variables), using the values in `.env.example`. Also set `VITE_SITE_URL=https://www.tejaswiniindustries.com`. Do not set SMTP, a service-account JSON, or a deploy-hook secret. Redeploy after changing variables so the static HTML is rebuilt.
+8. Optional: set `VITE_GA4_ID` when a GA4 property exists. Do not invent an ID. The old Universal Analytics tag is not used.
+
+If the admin login says Firebase is missing, a local `.env` has a blank `VITE_FIREBASE_*` line. Delete that line or copy `.env.example` again, then restart the dev server.
 
 Local emulator (no service account):
 

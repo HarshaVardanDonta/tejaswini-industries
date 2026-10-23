@@ -2,7 +2,12 @@ import { initializeApp, type FirebaseApp } from 'firebase/app'
 import { connectAuthEmulator, getAuth, type Auth } from 'firebase/auth'
 import { connectFirestoreEmulator, getFirestore, type Firestore } from 'firebase/firestore'
 
-import { firebaseConfig, isFirebaseConfigured, useFirebaseEmulators } from './config'
+import {
+  FIREBASE_SETUP_HINT,
+  firebaseConfig,
+  isFirebaseConfigured,
+  useFirebaseEmulators,
+} from './config'
 
 export { isFirebaseConfigured }
 
@@ -15,7 +20,7 @@ let firestoreEmulatorConnected = false
 export function getFirebaseApp(): FirebaseApp {
   if (!isFirebaseConfigured) {
     throw new Error(
-      'Firebase web config is missing. Set the VITE_FIREBASE_* variables from .env.example.',
+      `Firebase web config is missing. ${FIREBASE_SETUP_HINT}`,
     )
   }
   if (!app) app = initializeApp(firebaseConfig)

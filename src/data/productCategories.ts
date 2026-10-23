@@ -51,63 +51,6 @@ export const productCategories: ProductCategory[] = [
     ],
   },
   {
-    id: 'crgo-core-transformers',
-    title: 'CRGO Core Distribution Transformers in Hyderabad',
-    description:
-      'CRGO-core distribution transformers made in Hyderabad, Telangana, from 100 kVA to 2000 kVA at 11 kV, 22 kV and 33 kV, with aluminium windings.',
-    image: images.products.distribution,
-    imageAlt: 'CRGO-core distribution transformer built in Hyderabad',
-    technicalSpecs: [
-      'Core: CRGO (cold-rolled grain-oriented silicon steel)',
-      'Range: 100 kVA to 2000 kVA',
-      'Voltage Class: 11 kV, 22 kV, 33 kV',
-      'Cooling: ONAN',
-      'Winding: aluminium',
-    ],
-    bodyParagraphs: [
-      'A CRGO core is cold-rolled grain-oriented silicon steel. The grains are aligned so magnetic loss along the rolling direction is lower than in non-oriented electrical steel. Tejaswini Industries builds CRGO-core distribution transformers in Hyderabad from 100 kVA to 2000 kVA.',
-      'Voltage class is 11 kV, 22 kV and 33 kV. Cooling is ONAN. Windings are aluminium. No loss figure in watts and no efficiency-star rating are published.',
-    ],
-  },
-  {
-    id: 'amorphous-core-transformers',
-    title: 'Amorphous Core Distribution Transformers in Hyderabad',
-    description:
-      'Amorphous-core distribution transformers made in Hyderabad, 100 kVA to 2000 kVA, 11/22/33 kV, aluminium wound, with lower no-load loss than CRGO.',
-    image: images.products.distribution,
-    imageAlt: 'Amorphous-core distribution transformer built in Hyderabad',
-    technicalSpecs: [
-      'Core: amorphous metal (metallic-glass ribbon)',
-      'Range: 100 kVA to 2000 kVA',
-      'Voltage Class: 11 kV, 22 kV, 33 kV',
-      'Cooling: ONAN',
-      'Winding: aluminium',
-    ],
-    bodyParagraphs: [
-      'An amorphous core is a thin metallic-glass ribbon. It generally has lower no-load loss and lower hysteresis loss than a CRGO core of the same rating. Tejaswini Industries builds both cores in Hyderabad, from 100 kVA to 2000 kVA, with aluminium windings.',
-      'The ribbon is more brittle than CRGO steel, and the tank is often larger for the same kVA. This site does not publish a watt loss, a percentage energy saving, or an efficiency-star rating.',
-    ],
-  },
-  {
-    id: 'aluminium-wound-transformers',
-    title: 'Aluminium Wound Distribution Transformers in Hyderabad',
-    description:
-      'Aluminium-wound distribution transformers made in Hyderabad, 100 kVA to 2000 kVA, on CRGO or amorphous cores, for projects in Telangana.',
-    image: images.products.distribution,
-    imageAlt: 'Aluminium-wound distribution transformer built in Hyderabad',
-    technicalSpecs: [
-      'Winding: aluminium',
-      'Core: CRGO or amorphous',
-      'Range: 100 kVA to 2000 kVA',
-      'Voltage Class: 11 kV, 22 kV, 33 kV',
-      'Cooling: ONAN',
-    ],
-    bodyParagraphs: [
-      'Distribution transformers made here use aluminium windings, on either a CRGO core or an amorphous core, from 100 kVA to 2000 kVA. Aluminium has lower electrical conductivity than copper, so the conductor cross-section is larger for the same current, and the winding weighs less.',
-      'No price difference and no efficiency-star rating are published. Voltage class is 11 kV, 22 kV and 33 kV. Cooling is ONAN.',
-    ],
-  },
-  {
     id: 'dry-type-transformers',
     title: 'Dry Type Transformers',
     description:

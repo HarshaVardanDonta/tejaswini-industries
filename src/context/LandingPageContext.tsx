@@ -83,7 +83,7 @@ export const defaultLandingPageData: LandingPageData = {
       {
         title: 'Distribution Transformers',
         description:
-          'Distribution transformers from 100 kVA to 2000 kVA, with CRGO or amorphous cores and aluminium windings, built in Hyderabad.',
+          'Distribution transformers from 100 kVA to 2000 kVA, with CRGO or amorphous cores and aluminium or copper windings, built in Hyderabad.',
         image: images.transformers,
         imageAlt: 'Distribution transformers',
         size: 'large',

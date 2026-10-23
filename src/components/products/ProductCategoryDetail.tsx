@@ -70,7 +70,7 @@ type ProductCategoryDetailProps = {
   category: ProductCategory
 }
 
-function presentCategory(category: ProductCategory): ProductCategory {
+export function presentCategory(category: ProductCategory): ProductCategory {
   if (category.id !== 'distribution-transformers') return category
   return {
     ...category,

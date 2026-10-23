@@ -3,7 +3,7 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { FaqList, usePageFaqs } from '../components/FaqList'
 import { ProductsShell } from '../components/layout/ProductsShell'
 import { PageLoading } from '../components/PageLoading'
-import { ProductCategoryDetail } from '../components/products/ProductCategoryDetail'
+import { presentCategory, ProductCategoryDetail } from '../components/products/ProductCategoryDetail'
 import {
   buildBreadcrumbJsonLd,
   buildFaqJsonLd,
@@ -49,18 +49,19 @@ export function ProductCategoryPage() {
     return <Navigate to="/products" replace />
   }
 
-  const path = getProductCategoryPath(category.id)
+  const product = presentCategory(category)
+  const path = getProductCategoryPath(product.id)
   const jsonLd = [
     buildProductJsonLd({
-      title: category.title,
-      description: category.description,
+      title: product.title,
+      description: product.description,
       path,
-      image: category.image,
+      image: product.image,
     }),
     buildBreadcrumbJsonLd([
       { name: 'Home', path: '/' },
       { name: 'Products', path: '/products' },
-      { name: category.title, path },
+      { name: product.title, path },
     ]),
     ...(faqs.length ? [buildFaqJsonLd(faqs)] : []),
   ]
@@ -68,14 +69,14 @@ export function ProductCategoryPage() {
   return (
     <ProductsShell>
       <PageSEO
-        title={category.title}
-        description={category.description}
+        title={product.title}
+        description={product.description}
         path={path}
-        image={category.image}
+        image={product.image}
         type="product"
         jsonLd={jsonLd}
       />
-      <ProductCategoryDetail category={category} />
+      <ProductCategoryDetail category={product} />
       <FaqList page={category.id} />
       <p className="max-w-[1280px] mx-auto w-full px-margin-mobile md:px-margin-desktop pb-space-8 font-body-sm text-body-sm text-gray-600">
         Need a rating for a Hyderabad or Telangana site?{' '}
