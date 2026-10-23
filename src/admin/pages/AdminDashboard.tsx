@@ -1,13 +1,10 @@
 import { Link } from 'react-router-dom'
 
-import { useAdminDocument } from '../hooks/useAdminDocument'
 import { adminNavGroups } from '../lib/adminNavigation'
-import { adminQueries } from '../lib/adminQueries'
 import { LeadsInbox } from './inquiries/InquiriesListPage'
 
 export function AdminDashboard() {
   const sections = adminNavGroups.filter((g) => g.title !== 'Overview')
-  const { data: pendingCount } = useAdminDocument<number>(adminQueries.pendingLeadCount)
 
   return (
     <div className="space-y-8">
@@ -18,13 +15,6 @@ export function AdminDashboard() {
           the HTML or send email. Run a new static deploy when crawlers should see the updated copy.
           Visitors who run JavaScript load the latest Firestore content after the page opens.
         </p>
-        {typeof pendingCount === 'number' && pendingCount > 0 ? (
-          <p className="font-body-sm text-body-sm mt-3">
-            <a href="#leads" className="text-secondary font-label uppercase hover:underline">
-              {pendingCount} lead{pendingCount === 1 ? '' : 's'} not handled yet
-            </a>
-          </p>
-        ) : null}
       </div>
       <section id="leads" className="px-6">
         <h2 className="font-h2 text-h2 text-primary uppercase mb-2">Leads inbox</h2>

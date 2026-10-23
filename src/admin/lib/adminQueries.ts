@@ -92,7 +92,6 @@ export const adminQueries = {
     name, company, role, email, phone, inquiryLabel,
     kvaRating, voltage, projectLocation, message
   }`,
-  pendingLeadCount: `count(*[_type == "lead" && handled != true])`,
 } as const
 
 export function getPageQuery(pageKey: string): string | null {

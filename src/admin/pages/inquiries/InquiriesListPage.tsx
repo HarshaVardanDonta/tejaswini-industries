@@ -71,11 +71,11 @@ export function LeadsInbox({
             when a lead arrives. Check this inbox. Email alerts would need the Blaze plan or a
             third-party form service.
           </p>
-          <p className="font-body-sm text-body-sm text-gray-700 mt-2">
-            {openCount} open {openCount === 1 ? 'lead' : 'leads'}
-          </p>
         </div>
       ) : null}
+      <p className="font-body-sm text-body-sm text-gray-700">
+        {openCount} open {openCount === 1 ? 'lead' : 'leads'}
+      </p>
       {actionError ? (
         <p className="font-body-sm text-body-sm text-secondary" role="alert">
           {actionError}
