@@ -1,21 +1,23 @@
-import type { BlogCategory } from '../../data/blogs'
-import { blogFilters } from '../../data/blogs'
+import type { BlogFilter } from '../../data/blogs'
 
 type BlogsFiltersProps = {
-  active: BlogCategory
-  onChange: (category: BlogCategory) => void
+  filters: BlogFilter[]
+  active: string
+  onChange: (category: string) => void
 }
 
-export function BlogsFilters({ active, onChange }: BlogsFiltersProps) {
+export function BlogsFilters({ filters, active, onChange }: BlogsFiltersProps) {
+  if (filters.length <= 2) return null
   return (
     <div className="flex flex-wrap gap-space-2 pt-space-4">
-      {blogFilters.map((filter) => {
+      {filters.map((filter) => {
         const isActive = active === filter.id
         return (
           <button
             key={filter.id}
             type="button"
             onClick={() => onChange(filter.id)}
+            aria-pressed={isActive}
             className={
               isActive
                 ? 'bg-primary text-on-primary font-label text-label px-space-4 py-space-2 border border-primary uppercase'

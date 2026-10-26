@@ -1,85 +1,58 @@
-import { useTrendingArticles } from '../../context/BlogsPageContext'
+import { Link } from 'react-router-dom'
+import { CONTACT_PATH } from '../../constants/routes'
+import { contactInfo, getWhatsAppUrl } from '../../constants/contactInfo'
 import { Icon } from '../Icon'
 
+const relatedPages = [
+  { label: 'Distribution transformers', to: '/products/distribution-transformers' },
+  { label: 'Service areas in Telangana', to: '/service-areas' },
+  { label: 'Electrical services', to: '/services' },
+  { label: 'About Tejaswini Industries', to: '/about' },
+]
+
 export function BlogsSidebar() {
-  const trendingArticles = useTrendingArticles()
   return (
     <aside className="lg:col-span-4 space-y-space-8">
       <div className="bg-primary text-on-primary p-space-6 border-t-4 border-secondary">
-        <h3 className="font-h2 text-h2 mb-space-2 uppercase">Industrial Bulletin</h3>
+        <h3 className="font-h2 text-h2 mb-space-2 uppercase">Request a quote</h3>
         <p className="font-body-sm text-body-sm text-on-primary/80 mb-space-6">
-          Subscribe to receive technical specifications, safety alerts, and industry
-          insights directly to your inbox.
+          Oil-filled distribution transformers from 100 kVA to 2000 kVA, made in Hyderabad. Send
+          your kVA rating, voltage and site location.
         </p>
-        <form
-          className="space-y-space-4"
-          onSubmit={(e) => {
-            e.preventDefault()
-          }}
-        >
-          <div>
-            <label className="block font-label text-label text-on-primary/80 mb-space-1 uppercase">
-              Email Address
-            </label>
-            <input
-              type="email"
-              placeholder="engineer@company.com"
-              className="w-full bg-white border border-gray-300 text-on-surface p-space-2 font-body-sm focus:ring-2 focus:ring-secondary outline-none rounded-none"
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-secondary text-on-secondary font-label text-label uppercase py-space-3 hover:bg-secondary-container transition-colors tracking-widest"
+        <div className="flex flex-col gap-space-3">
+          <Link
+            to={CONTACT_PATH}
+            className="w-full bg-secondary text-on-secondary font-label text-label uppercase py-space-3 hover:bg-secondary-container transition-colors tracking-widest text-center"
           >
-            Subscribe Now
-          </button>
-        </form>
-        <p className="font-mono-data text-mono-data text-[10px] text-on-primary/60 mt-space-4 text-center uppercase">
-          Strictly professional content. No spam.
-        </p>
+            Request a quote
+          </Link>
+          <a
+            href={getWhatsAppUrl('Hello, I would like a quote for a distribution transformer. Please share details.')}
+            rel="noopener"
+            className="w-full border border-on-primary/60 text-on-primary font-label text-label uppercase py-space-3 hover:bg-on-primary/10 transition-colors tracking-widest text-center"
+          >
+            WhatsApp {contactInfo.phone}
+          </a>
+        </div>
       </div>
 
       <div className="bg-white border border-gray-100 p-space-6">
         <h3 className="font-h3 text-h3 text-primary uppercase mb-space-6 pb-space-2 border-b-2 border-gray-100 flex items-center gap-space-2">
-          <Icon name="trending_up" className="text-secondary" filled={false} />
-          Most Read
+          <Icon name="link" className="text-secondary" filled={false} />
+          Related pages
         </h3>
-        <ul className="space-y-space-4">
-          {trendingArticles.map((article, index) => (
-            <li
-              key={article.rank}
-              className={`group cursor-pointer ${
-                index > 0 ? 'border-t border-gray-100 pt-space-4' : ''
-              }`}
-            >
-              <div className="font-mono-data text-mono-data text-secondary mb-1">
-                {article.rank}
-              </div>
-              <h4 className="font-h3 text-h3 text-gray-700 group-hover:text-primary transition-colors leading-tight">
-                {article.title}
-              </h4>
-              <div className="font-label text-label text-gray-500 mt-space-1">
-                {article.readTime}
-              </div>
+        <ul className="space-y-space-4 list-none pl-0 m-0">
+          {relatedPages.map((page) => (
+            <li key={page.to}>
+              <Link
+                to={page.to}
+                className="font-label text-label text-gray-700 hover:text-primary transition-colors"
+              >
+                {page.label}
+              </Link>
             </li>
           ))}
         </ul>
-      </div>
-
-      <div className="bg-gray-100 border border-gray-300 p-space-6 text-center flex flex-col items-center justify-center min-h-[250px]">
-        <Icon name="precision_manufacturing" className="text-primary mb-space-4" size={40} filled={false} />
-        <h3 className="font-h2 text-h2 text-primary uppercase mb-space-2">
-          Custom Fabrication
-        </h3>
-        <p className="font-body-sm text-body-sm text-gray-700 mb-space-4">
-          Need engineered solutions tailored to your exact load requirements?
-        </p>
-        <a
-          href="#"
-          className="font-label text-label text-secondary underline hover:text-primary uppercase tracking-widest"
-        >
-          Consult Our Engineers
-        </a>
       </div>
     </aside>
   )

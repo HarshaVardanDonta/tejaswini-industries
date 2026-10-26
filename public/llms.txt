@@ -30,3 +30,13 @@ Calls and WhatsApp use the same number.
 - Projects: https://www.tejaswiniindustries.com/projects
 - Contact / quote: https://www.tejaswiniindustries.com/contact
 - About: https://www.tejaswiniindustries.com/about
+
+## Guides
+
+Plain-language articles by Tejaswini Industries, published 26 October 2026. Index: https://www.tejaswiniindustries.com/blogs
+
+- IS 1180 energy efficiency levels explained: https://www.tejaswiniindustries.com/blogs/is-1180-energy-efficiency-levels-explained
+- Amorphous core vs CRGO core distribution transformers: https://www.tejaswiniindustries.com/blogs/amorphous-core-vs-crgo-core-distribution-transformer
+- OLTC vs off-circuit tap changer (OFTC): https://www.tejaswiniindustries.com/blogs/oltc-vs-off-circuit-tap-changer-distribution-transformer
+- How to choose the kVA rating of a distribution transformer: https://www.tejaswiniindustries.com/blogs/how-to-choose-transformer-kva-rating-for-your-load
+- Distribution transformer inspection checklist, before dispatch and at site: https://www.tejaswiniindustries.com/blogs/distribution-transformer-inspection-checklist-before-dispatch-and-at-site

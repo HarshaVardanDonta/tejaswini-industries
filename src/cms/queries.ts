@@ -21,8 +21,7 @@ export const queries = {
   projects: `*[_type == "project"] | order(id asc)`,
   commissionRows: `*[_type == "commissionRow"] | order(id asc)`,
 
-  blogPosts: `*[_type == "blogPost"] | order(date desc)`,
+  blogPosts: `*[_type == "blogPost"] | order(publishedAt desc)`,
   featuredBlogPost: `*[_type == "blogPost" && featured == true][0]`,
   blogPostBySlug: `*[_type == "blogPost" && slug.current == $slug][0]`,
-  trendingArticles: `*[_type == "trendingArticle"] | order(order asc)`,
 } as const

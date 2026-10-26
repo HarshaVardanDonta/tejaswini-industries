@@ -66,7 +66,7 @@ export const adminQueries = {
     specs[]{ label, value }, accent
   }`,
   commissionRows: `*[_type == "commissionRow"] | order(id asc){ _id, _type, id, sector, deliverable, location, status }`,
-  blogPosts: `*[_type == "blogPost"] | order(date desc){
+  blogPosts: `*[_type == "blogPost"] | order(publishedAt desc){
     _id, _type, id, slug, title, excerpt, category, categoryLabel, date, author, featured, accent, alertMeta
   }`,
   blogPostFull: `*[_id == $id][0]{
@@ -81,7 +81,6 @@ export const adminQueries = {
     tableOfContents[]{ id, label, indent },
     relatedProduct{ title, capacity, image${imageProjection}, href }
   }`,
-  trendingArticles: `*[_type == "trendingArticle"] | order(order asc){ _id, _type, rank, title, readTime, order }`,
   adminCredentials: `*[_id == "adminCredentials"][0]{ _id, _type, username, password }`,
   leads: `*[_type == "lead"] | order(submittedAt desc){
     _id, _type, source, name, company, email, phone, role, inquiryLabel,

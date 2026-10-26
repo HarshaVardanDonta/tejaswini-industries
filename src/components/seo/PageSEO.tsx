@@ -72,19 +72,30 @@ export function buildArticleJsonLd(options: {
   path: string
   image?: string
   datePublished?: string
+  dateModified?: string
   author?: string
+  authorType?: 'Person' | 'Organization'
+  wordCount?: number
+  section?: string
 }) {
+  const url = buildAbsoluteUrl(options.path)
   return {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
     headline: options.title,
     description: truncateDescription(options.description),
     image: buildAbsoluteUrl(options.image || DEFAULT_OG_IMAGE),
-    url: buildAbsoluteUrl(options.path),
+    url,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     datePublished: options.datePublished,
-    author: options.author
-      ? { '@type': 'Person', name: options.author }
-      : { '@type': 'Organization', name: SITE_NAME },
+    dateModified: options.dateModified || options.datePublished,
+    ...(options.wordCount ? { wordCount: options.wordCount } : {}),
+    ...(options.section ? { articleSection: options.section } : {}),
+    inLanguage: 'en-IN',
+    author:
+      options.author && options.authorType === 'Person'
+        ? { '@type': 'Person', name: options.author }
+        : { '@type': 'Organization', name: options.author || SITE_NAME, url: buildAbsoluteUrl('/') },
     publisher: {
       '@type': 'Organization',
       name: SITE_NAME,

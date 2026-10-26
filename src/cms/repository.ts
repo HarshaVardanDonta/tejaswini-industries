@@ -1,5 +1,5 @@
 import { evaluateQuery, type CmsDoc } from '../../lib/cms-query'
-import { contentDocuments } from './active-content'
+import { contentDocuments, retiredContentIds } from './active-content'
 import { FIREBASE_SETUP_HINT, isFirebaseConfigured } from './config'
 
 function asDocs(value: readonly CmsDoc[]): CmsDoc[] {
@@ -22,7 +22,10 @@ export async function loadMergedDocuments(options?: { includeLeads?: boolean }):
       remoteContent = await remote.readContentDocuments()
     }
     const merged = new Map(baked.map((entry) => [entry._id, entry]))
-    for (const entry of remoteContent) merged.set(entry._id, entry)
+    for (const entry of remoteContent) {
+      if (retiredContentIds.includes(entry._id)) continue
+      merged.set(entry._id, entry)
+    }
     const content = [...merged.values()].filter((entry) => entry._type !== 'lead')
     if (!options?.includeLeads) return content
     const leads = await remote.readLeadDocuments()

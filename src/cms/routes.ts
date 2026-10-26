@@ -28,7 +28,7 @@ export function getProductPaths(): string[] {
 }
 
 export function getBlogPaths(): string[] {
-  const posts = readBaked<CmsDoc[]>('*[_type == "blogPost"] | order(date desc)')
+  const posts = readBaked<CmsDoc[]>('*[_type == "blogPost"] | order(publishedAt desc)')
   return posts
     .map((post) => {
       const slug = post.slug as { current?: string } | undefined

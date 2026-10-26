@@ -54,7 +54,6 @@ export const adminNavGroups: AdminNavGroup[] = [
   {
     title: 'Other',
     items: [
-      { label: 'Trending Articles', path: '/admin/trending' },
       { label: 'FAQs', path: '/admin/faqs' },
       { label: 'Service areas', path: '/admin/service-areas' },
     ],

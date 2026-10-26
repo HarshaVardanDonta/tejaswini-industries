@@ -11,8 +11,6 @@ import { ProjectsListPage } from './pages/projects/ProjectsListPage'
 import { ProjectEditPage } from './pages/projects/ProjectEditPage'
 import { CommissionsListPage } from './pages/projects/CommissionsListPage'
 import { CommissionEditPage } from './pages/projects/CommissionEditPage'
-import { TrendingListPage } from './pages/TrendingListPage'
-import { TrendingEditPage } from './pages/TrendingEditPage'
 import { CredentialsPage } from './pages/settings/CredentialsPage'
 import { BusinessSettingsPage } from './pages/settings/BusinessSettingsPage'
 import { FaqsPage } from './pages/FaqsPage'
@@ -34,8 +32,6 @@ export function AdminApp() {
         <Route path="projects/:id" element={<ProjectEditPage />} />
         <Route path="commissions" element={<CommissionsListPage />} />
         <Route path="commissions/:id" element={<CommissionEditPage />} />
-        <Route path="trending" element={<TrendingListPage />} />
-        <Route path="trending/:id" element={<TrendingEditPage />} />
         <Route path="leads" element={<InquiriesListPage />} />
         <Route path="leads/:id" element={<InquiryDetailPage />} />
         <Route path="inquiries" element={<Navigate to="/admin/leads" replace />} />

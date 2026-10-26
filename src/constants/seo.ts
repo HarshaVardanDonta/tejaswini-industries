@@ -40,9 +40,9 @@ export const staticPageMeta = {
     path: '/service-areas',
   },
   blogs: {
-    title: 'Industrial Insights',
+    title: 'Transformer Guides and Articles',
     description:
-      'Technical articles, maintenance guides, and industry insights from Tejaswini Industries engineering team.',
+      'Guides from a Hyderabad transformer manufacturer: IS 1180 efficiency levels, amorphous vs CRGO cores, OLTC vs off-circuit tap changers, kVA sizing and site checks.',
     path: '/blogs',
   },
   about: {
