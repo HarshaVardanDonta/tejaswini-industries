@@ -13,7 +13,7 @@ const PUBLISHED = '2026-10-26'
 const AUTHOR = 'Tejaswini Industries'
 const PRODUCT_HREF = '/products/distribution-transformers'
 
-const photo = {
+export const photo = {
   frontWide: {
     url: '/images/blog/distribution-transformer-front-view-conservator-bushings-wide.webp',
     alt: 'Front view of an oil-filled distribution transformer with a TEJASWINI-branded conservator tank, three HV bushings on the top cover, red LV terminals and a radiator bank on each side, standing in a workshop bay.',
@@ -519,7 +519,7 @@ export const blogArticles = [
         id: 'full-load-current',
         title: 'Check the full-load current',
         paragraphs: [
-          'Once you have a rating, check the current it implies so that the LV breaker, cables or busbars are sized correctly. For a three-phase transformer, full-load current in amperes is kVA × 1000 ÷ (√3 × line voltage in volts).',
+          'Once you have a rating, check the current it implies so that the LV breaker, cables or busbars are sized correctly. Tejaswini Industries also builds [LT panels](/products/lt-panels) for the low-voltage side. For a three-phase transformer, full-load current in amperes is kVA × 1000 ÷ (√3 × line voltage in volts).',
           'For a 500 kVA transformer with a 433 V no-load secondary, that is about 667 A on the LV side. Use the actual rated voltage from the nameplate, and let your electrical designer size the protection, because overload and short-circuit settings depend on the whole installation.',
         ],
       },
@@ -529,7 +529,7 @@ export const blogArticles = [
         paragraphs: [
           'Running a transformer above its rating for long periods raises winding and oil temperatures, and insulation ages faster as temperature rises. Loading guides such as IS 2026 (Part 7) describe how much overload a transformer can take for how long, but they are for planned emergencies, not for routine operation.',
           'An oversized transformer is safe but wasteful. Its core is energised all the time, so a bigger core means a bigger no-load loss, and it costs more to buy. For a short list of loss and tap changer choices once the rating is fixed, read the guides on [IS 1180 efficiency levels](/blogs/is-1180-energy-efficiency-levels-explained) and the [OLTC versus off-circuit tap changer](/blogs/oltc-vs-off-circuit-tap-changer-distribution-transformer).',
-          'Tejaswini Industries makes oil-filled [distribution transformers](/products/distribution-transformers) from 100 kVA to 2000 kVA in Hyderabad and supplies projects across Telangana. If you are unsure about the rating, [send us your connected load, power factor and site details](/contact) and we will review them with you before you commit to a size.',
+          'Tejaswini Industries makes oil-filled [distribution transformers](/products/distribution-transformers) from 100 kVA to 2000 kVA in Hyderabad and supplies projects across Telangana. For an indoor room where fire safety is the priority, ask about our [dry-type transformers](/products/dry-type-transformers) as well. If you are unsure about the rating, [send us your connected load, power factor and site details](/contact) and we will review them with you before you commit to a size.',
         ],
       },
     ],

@@ -50,7 +50,18 @@ export function ContactInquiryForm() {
     const kvaRating = String(formData.get('kvaRating') ?? '').trim()
     const voltage = String(formData.get('voltage') ?? '').trim()
     const projectLocation = String(formData.get('projectLocation') ?? '').trim()
-    const message = String(formData.get('message') ?? '').trim()
+    const technicalNotes = [
+      ['IS 1180 efficiency level', String(formData.get('efficiencyLevel') ?? '').trim()],
+      ['Tap changer', String(formData.get('tapChanger') ?? '').trim()],
+      ['HV / LV terminations', String(formData.get('terminations') ?? '').trim()],
+    ]
+      .filter(([, value]) => value)
+      .map(([label, value]) => `${label}: ${value}`)
+    // The optional technical fields are saved inside the message, so the lead record and
+    // the Firestore rules do not change.
+    const message = [String(formData.get('message') ?? '').trim(), ...technicalNotes]
+      .filter(Boolean)
+      .join('\n')
     const inquiryLabel =
       inquiryTypes.find((type) => type.value === inquiryValue)?.label ?? inquiryValue
 
@@ -164,6 +175,47 @@ export function ContactInquiryForm() {
               />
             </div>
           </div>
+          <fieldset className="grid grid-cols-1 md:grid-cols-3 gap-space-6 border border-gray-100 rounded p-space-4">
+            <legend className="font-label text-label text-gray-700 uppercase px-space-2">
+              Transformer details (optional)
+            </legend>
+            <div className="flex flex-col gap-space-1">
+              <label className="font-label text-label text-gray-700 uppercase" htmlFor="efficiencyLevel">
+                IS 1180 level
+              </label>
+              <select className={`${inputClassName} appearance-none`} id="efficiencyLevel" name="efficiencyLevel" defaultValue="">
+                <option value="">Not sure / as per tender</option>
+                <option value="Level 1">Level 1</option>
+                <option value="Level 2">Level 2</option>
+                <option value="Level 3">Level 3</option>
+                <option value="Level 4">Level 4</option>
+                <option value="Level 5">Level 5</option>
+              </select>
+            </div>
+            <div className="flex flex-col gap-space-1">
+              <label className="font-label text-label text-gray-700 uppercase" htmlFor="tapChanger">
+                Tap changer
+              </label>
+              <select className={`${inputClassName} appearance-none`} id="tapChanger" name="tapChanger" defaultValue="">
+                <option value="">Not sure</option>
+                <option value="Off-load (OFTC)">Off-load (OFTC)</option>
+                <option value="On-load (OLTC)">On-load (OLTC)</option>
+              </select>
+            </div>
+            <div className="flex flex-col gap-space-1">
+              <label className="font-label text-label text-gray-700 uppercase" htmlFor="terminations">
+                HV / LV terminations
+              </label>
+              <input
+                className={inputClassName}
+                id="terminations"
+                name="terminations"
+                type="text"
+                maxLength={120}
+                placeholder="Bushings, cable box"
+              />
+            </div>
+          </fieldset>
           <div className="flex flex-col gap-space-1">
             <label className="font-label text-label text-gray-700 uppercase" htmlFor="projectLocation">
               Project location in Telangana *

@@ -1,6 +1,60 @@
 import { images } from '../constants/images'
 
-export type ProductCategory = {
+export type ProductFigure = {
+  url: string
+  alt: string
+  caption: string
+  width?: number
+  height?: number
+  maxWidth?: 'md' | 'full'
+}
+
+export type ProductDataTable = { caption: string; headers: string[]; rows: string[][] }
+
+export type ProductSection = {
+  id: string
+  title: string
+  /** Text may contain [link text](/path) and **bold**. */
+  paragraphs: string[]
+  bullets?: string[]
+  closing?: string[]
+  /** Show the specification table in this section. */
+  table?: boolean
+  /** Show the winding, core, cooling and tap changer options in this section. */
+  options?: boolean
+  figure?: ProductFigure
+  /** Extra data tables, for example losses by rating. */
+  extraTables?: ProductDataTable[]
+  extraTablesNote?: string
+}
+
+export type ProductFaq = { question: string; answer: string }
+export type ProductSpecRow = { label: string; value: string }
+
+export type ProductSeoFields = {
+  metaTitle?: string
+  metaDescription?: string
+  /** 40 to 60 words, plain facts, shown first on the page and used by answer engines. */
+  shortAnswer?: string
+  sections?: ProductSection[]
+  specsTable?: ProductSpecRow[]
+  faqs?: ProductFaq[]
+  /** Short fact strip under the heading, for example rating and voltage class. */
+  heroFacts?: string[]
+  /** What to send with an enquiry. */
+  quoteChecklist?: string[]
+  /** Blog slugs. */
+  relatedGuides?: string[]
+  /** Product category ids. */
+  relatedProducts?: string[]
+}
+
+export type ProductsPageData = ProductSeoFields & {
+  metaTitle: string
+  metaDescription: string
+}
+
+export type ProductCategory = ProductSeoFields & {
   id: string
   title: string
   description: string
@@ -8,6 +62,15 @@ export type ProductCategory = {
   imageAlt: string
   technicalSpecs: string[]
   bodyParagraphs: string[]
+}
+
+/** Short labels for links between product pages. */
+export const PRODUCT_SHORT_LABELS: Record<string, string> = {
+  'distribution-transformers': 'Distribution transformers',
+  'dry-type-transformers': 'Dry-type transformers',
+  'ht-panels': 'HT panels',
+  'lt-panels': 'LT panels',
+  rmus: 'Ring main units',
 }
 
 export function getProductCategoryPath(id: string) {

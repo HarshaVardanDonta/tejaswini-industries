@@ -2,14 +2,16 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 import { EditorShell } from '../../components/EditorShell'
 import { ImageField } from '../../components/ImageField'
+import { ProductSeoFieldsEditor } from '../../components/ProductSeoFields'
 import { TextArea } from '../../components/fields/TextArea'
 import { TextInput } from '../../components/fields/TextInput'
 import { emptyImage } from '../../editors/helpers'
 import { useDocumentEditor } from '../../hooks/useDocumentEditor'
 import { adminQueries } from '../../lib/adminQueries'
 import type { ContentImage } from '../../types/adminDocuments'
+import type { ProductSeoFields } from '../../../data/productCategories'
 
-type Doc = {
+type Doc = ProductSeoFields & {
   _id: string
   _type: 'productCategory'
   id: string
@@ -66,7 +68,7 @@ export function ProductCategoryEditPage() {
         onChange={(v) => setForm({ ...form, technicalSpecs: v.split('\n').filter(Boolean) })}
       />
       <TextArea
-        label="Description paragraphs (separate with a blank line)"
+        label="Older description paragraphs (shown only if there are no question sections)"
         value={(form.bodyParagraphs ?? []).join('\n\n')}
         onChange={(v) =>
           setForm({
@@ -78,6 +80,10 @@ export function ProductCategoryEditPage() {
           })
         }
       />
+      <h2 className="font-h2 text-h2 text-primary uppercase pt-space-6 border-t border-gray-200">
+        Search and answer-engine content
+      </h2>
+      <ProductSeoFieldsEditor form={form} setForm={setForm} />
     </EditorShell>
   )
 }

@@ -113,22 +113,71 @@ export function buildProductJsonLd(options: {
   path: string
   image?: string
   sku?: string
+  category?: string
+  specs?: { label: string; value: string }[]
 }) {
+  const origin = buildAbsoluteUrl('/')
+  const url = buildAbsoluteUrl(options.path)
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
+    '@id': `${url}#product`,
     name: options.title,
     description: truncateDescription(options.description),
     image: buildAbsoluteUrl(options.image || DEFAULT_OG_IMAGE),
-    url: buildAbsoluteUrl(options.path),
+    url,
     ...(options.sku ? { sku: options.sku } : {}),
+    ...(options.category ? { category: options.category } : {}),
     brand: {
       '@type': 'Brand',
       name: SITE_NAME,
     },
     manufacturer: {
       '@type': 'Organization',
+      '@id': `${origin}#organization`,
       name: SITE_NAME,
+      url: origin,
+    },
+    ...(options.specs?.length
+      ? {
+          additionalProperty: options.specs.map((spec) => ({
+            '@type': 'PropertyValue',
+            name: spec.label,
+            value: spec.value,
+          })),
+        }
+      : {}),
+  }
+}
+
+/** Products index: a CollectionPage whose main entity is an ItemList of the category pages. */
+export function buildCollectionJsonLd(options: {
+  title: string
+  description: string
+  path: string
+  items: { name: string; path: string; image?: string }[]
+}) {
+  const url = buildAbsoluteUrl(options.path)
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${url}#collection`,
+    name: options.title,
+    description: truncateDescription(options.description),
+    url,
+    inLanguage: 'en-IN',
+    isPartOf: { '@type': 'WebSite', url: buildAbsoluteUrl('/'), name: SITE_NAME },
+    publisher: { '@type': 'Organization', '@id': `${buildAbsoluteUrl('/')}#organization`, name: SITE_NAME },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: options.items.length,
+      itemListElement: options.items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: buildAbsoluteUrl(item.path),
+        name: item.name,
+        ...(item.image ? { image: buildAbsoluteUrl(item.image) } : {}),
+      })),
     },
   }
 }

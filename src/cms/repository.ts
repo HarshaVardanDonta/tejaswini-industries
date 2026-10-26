@@ -24,7 +24,11 @@ export async function loadMergedDocuments(options?: { includeLeads?: boolean }):
     const merged = new Map(baked.map((entry) => [entry._id, entry]))
     for (const entry of remoteContent) {
       if (retiredContentIds.includes(entry._id)) continue
-      merged.set(entry._id, entry)
+      // Product documents keep seed values for fields missing from the remote copy.
+      const base = merged.get(entry._id)
+      const fieldMerge =
+        base && (entry._type === 'productCategory' || entry._type === 'productsPage')
+      merged.set(entry._id, fieldMerge ? { ...base, ...entry } : entry)
     }
     const content = [...merged.values()].filter((entry) => entry._type !== 'lead')
     if (!options?.includeLeads) return content

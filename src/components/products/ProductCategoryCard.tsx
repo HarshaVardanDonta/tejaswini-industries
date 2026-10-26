@@ -32,9 +32,10 @@ export function ProductCategoryCard({ category }: ProductCategoryCardProps) {
         <div className="mt-auto pt-space-4">
           <Link
             to={getProductCategoryPath(category.id)}
+            aria-label={`View specifications: ${category.title}`}
             className="inline-flex items-center justify-center bg-primary text-on-primary font-label text-label uppercase px-space-4 py-space-3 rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors w-full"
           >
-            Learn More
+            View specifications
           </Link>
         </div>
       </div>

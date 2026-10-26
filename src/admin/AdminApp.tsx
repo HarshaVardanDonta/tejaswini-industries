@@ -7,6 +7,7 @@ import { BlogListPage } from './pages/blogs/BlogListPage'
 import { BlogEditorPage } from './pages/blogs/BlogEditorPage'
 import { ProductCategoriesListPage } from './pages/products/ProductCategoriesListPage'
 import { ProductCategoryEditPage } from './pages/products/ProductCategoryEditPage'
+import { ProductsPageEditPage } from './pages/products/ProductsPageEditPage'
 import { ProjectsListPage } from './pages/projects/ProjectsListPage'
 import { ProjectEditPage } from './pages/projects/ProjectEditPage'
 import { CommissionsListPage } from './pages/projects/CommissionsListPage'
@@ -26,6 +27,7 @@ export function AdminApp() {
         <Route path="pages/:pageKey" element={<PageEditorPage />} />
         <Route path="blogs" element={<BlogListPage />} />
         <Route path="blogs/:id" element={<BlogEditorPage />} />
+        <Route path="products/page" element={<ProductsPageEditPage />} />
         <Route path="products/categories" element={<ProductCategoriesListPage />} />
         <Route path="products/categories/:id" element={<ProductCategoryEditPage />} />
         <Route path="projects" element={<ProjectsListPage />} />

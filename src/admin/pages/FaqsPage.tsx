@@ -44,7 +44,7 @@ export function FaqsPage() {
   return (
     <EditorShell
       title="FAQs"
-      description="Answers shown on the public pages and in FAQPage structured data. Use the page id (home, a product id, or service-areas)."
+      description="Answers shown on the public pages and in FAQPage structured data. Use the page id (home or service-areas). Product page FAQs are edited on each product category."
       loading={loading}
       error={error}
       dirty={dirty}

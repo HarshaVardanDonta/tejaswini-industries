@@ -74,7 +74,11 @@ if (remote?.length) {
   for (const doc of remote) {
     if (doc._type === 'siteInquiry') continue
     if (retiredContentIds.includes(doc._id)) continue
-    merged.set(doc._id, doc)
+    // Product documents: fields missing from the remote copy (for example the SEO fields
+    // added after it was first seeded) keep their seed values until the next seed run.
+    const base = merged.get(doc._id)
+    const fieldMerge = base && (doc._type === 'productCategory' || doc._type === 'productsPage')
+    merged.set(doc._id, fieldMerge ? { ...base, ...doc } : doc)
   }
   console.log(`[build-content] Merged ${remote.length} Firestore content documents over seed.`)
 } else {
