@@ -44,6 +44,24 @@ for (const route of prerenderPaths) {
   console.log('  prerendered', route)
 }
 
+// Static 404 page for hosts that serve dist/404.html with a real 404 status
+// (Firebase Hosting). The app script is stripped so the client router does
+// not redirect the visitor away from the 404 response.
+const notFoundHead = `<title>Page not found | Tejaswini Industries</title>
+    <meta name="description" content="The page you are looking for does not exist." />
+    <meta name="robots" content="noindex" />`
+const notFoundBody = `<main style="min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem;text-align:center;font-family:'Source Sans 3',system-ui,sans-serif">
+      <h1 style="font-family:'Barlow Condensed',system-ui,sans-serif;font-size:2.5rem;text-transform:uppercase;margin:0">Page not found</h1>
+      <p style="margin:0;max-width:32rem">This page does not exist or has moved. Tejaswini Industries manufactures distribution transformers in Hyderabad, Telangana.</p>
+      <p style="margin:0"><a href="/">Home</a> &middot; <a href="/products/distribution-transformers">Distribution transformers</a> &middot; <a href="/contact">Contact</a> &middot; <a href="tel:+919248030362">Call +91 92480 30362</a></p>
+    </main>`
+const notFoundPage = template
+  .replace('<!--app-head-->', notFoundHead)
+  .replace(/\s*<script type="module"[^>]*><\/script>/g, '')
+  .replace('<div id="root"></div>', `<div id="root">${notFoundBody}</div>`)
+writeFileSync(join(root, 'dist/404.html'), notFoundPage)
+console.log('  wrote 404.html')
+
 const urls = prerenderPaths
   .filter((route) => !route.startsWith('/admin'))
   .map((route) => ({

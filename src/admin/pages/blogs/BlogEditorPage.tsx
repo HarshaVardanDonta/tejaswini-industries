@@ -31,6 +31,11 @@ type BlogDoc = {
   category?: string
   categoryLabel?: string
   date?: string
+  publishedAt?: string
+  metaTitle?: string
+  metaDescription?: string
+  heroCaption?: string
+  faqs?: { question: string; answer: string }[]
   author?: string
   featured?: boolean
   accent?: boolean
@@ -42,7 +47,7 @@ type BlogDoc = {
   image?: ContentImage
   authorImage?: ContentImage
   sections?: BlogSection[]
-  tableOfContents?: { id: string; label: string; indent?: number }[]
+  tableOfContents?: { id: string; label: string; indent?: boolean | number }[]
 }
 
 export function BlogEditorPage() {
@@ -98,11 +103,19 @@ export function BlogEditorPage() {
         <TextArea label="Excerpt" value={form.excerpt ?? ''} onChange={(v) => setForm({ ...form, excerpt: v })} />
         <TextInput label="Category" value={form.category ?? ''} onChange={(v) => setForm({ ...form, category: v })} />
         <TextInput label="Category label" value={form.categoryLabel ?? ''} onChange={(v) => setForm({ ...form, categoryLabel: v })} />
-        <TextInput label="Date" value={form.date ?? ''} onChange={(v) => setForm({ ...form, date: v })} />
+        <TextInput
+          label="Published date"
+          value={form.publishedAt ?? ''}
+          onChange={(v) => setForm({ ...form, publishedAt: v })}
+          hint="YYYY-MM-DD, for example 2026-10-26. Shown on the post and used in search results."
+        />
+        <TextInput label="Meta title" value={form.metaTitle ?? ''} onChange={(v) => setForm({ ...form, metaTitle: v })} hint="Short page title for search results, ideally under 50 characters." />
+        <TextArea label="Meta description" value={form.metaDescription ?? ''} onChange={(v) => setForm({ ...form, metaDescription: v })} />
         <TextInput label="Author" value={form.author ?? ''} onChange={(v) => setForm({ ...form, author: v })} />
         <TextInput label="Read time" value={form.readTime ?? ''} onChange={(v) => setForm({ ...form, readTime: v })} />
         <ToggleInput label="Featured" checked={!!form.featured} onChange={(featured) => setForm({ ...form, featured })} />
         <ImageField label="Cover image" value={form.image ?? emptyImage()} onChange={(image) => setForm({ ...form, image })} />
+        <TextInput label="Cover image caption" value={form.heroCaption ?? ''} onChange={(v) => setForm({ ...form, heroCaption: v })} />
         <TextArea label="Intro" value={form.intro ?? ''} onChange={(v) => setForm({ ...form, intro: v })} />
       </SectionCard>
 
@@ -319,6 +332,26 @@ export function BlogEditorPage() {
           <button type="button" className="font-label text-label text-secondary uppercase" onClick={() => setForm({ ...form, sections: [...sections, { id: '', title: '', paragraphs: [], table: { headers: ['Column 1', 'Column 2'], rows: [{ cells: ['', ''] }] } }] })}>+ Table section</button>
           <button type="button" className="font-label text-label text-secondary uppercase" onClick={() => setForm({ ...form, sections: [...sections, { id: '', title: '', alert: { title: '', message: '' } }] })}>+ Alert section</button>
         </div>
+      </SectionCard>
+
+      <SectionCard title="FAQs" defaultOpen={false}>
+        <TextArea
+          label="Questions and answers (one per line: Question | Answer)"
+          value={(form.faqs ?? []).map((item) => `${item.question} | ${item.answer}`).join('\n')}
+          onChange={(v) =>
+            setForm({
+              ...form,
+              faqs: v
+                .split('\n')
+                .map((line) => line.trim())
+                .filter(Boolean)
+                .map((line) => {
+                  const [question, ...rest] = line.split('|')
+                  return { question: question.trim(), answer: rest.join('|').trim() }
+                }),
+            })
+          }
+        />
       </SectionCard>
 
       <SectionCard title="Table of contents" defaultOpen={false}>

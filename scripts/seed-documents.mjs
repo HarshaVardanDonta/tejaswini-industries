@@ -1,3 +1,6 @@
+import { buildBlogDocuments } from './blog-posts.mjs'
+import { distributionHero, productSeoContent, productsPageContent } from './product-content.mjs'
+
 /** @typedef {import('./seed-images.json')} SeedImages */
 
 export function img(url, alt = '') {
@@ -429,13 +432,11 @@ export function buildDocuments(images) {
       _id: 'distribution-transformers',
       _type: 'productCategory',
       id: 'distribution-transformers',
+      ...productSeoContent['distribution-transformers'],
       title: 'Distribution Transformers in Hyderabad',
       description:
         'Distribution transformers made in Hyderabad, 100 kVA to 2000 kVA, 11/22/33 kV, ONAN, with CRGO or amorphous cores and aluminium or copper windings.',
-      image: img(
-        images.products.distribution,
-        'Heavy-duty industrial distribution transformer in a modern warehouse'
-      ),
+      image: img(distributionHero.url, distributionHero.alt),
       technicalSpecs: [
         'Range: 100 kVA to 2000 kVA',
         'Voltage Class: 11 kV, 22 kV, 33 kV',
@@ -454,6 +455,7 @@ export function buildDocuments(images) {
       _id: 'dry-type-transformers',
       _type: 'productCategory',
       id: 'dry-type-transformers',
+      ...productSeoContent['dry-type-transformers'],
       title: 'Dry Type Transformers in Hyderabad',
       description:
         'VPI dry-type transformers from Hyderabad, up to 2000 kVA, insulation class F (155 °C) and H (180 °C), protection up to IP56.',
@@ -472,6 +474,7 @@ export function buildDocuments(images) {
       _id: 'ht-panels',
       _type: 'productCategory',
       id: 'ht-panels',
+      ...productSeoContent['ht-panels'],
       title: 'HT Panels in Hyderabad',
       description:
         'High-tension panels built in Hyderabad, with vacuum circuit breakers rated 630–2000 A and insulation level 12/28/75 kV.',
@@ -489,6 +492,7 @@ export function buildDocuments(images) {
       _id: 'lt-panels',
       _type: 'productCategory',
       id: 'lt-panels',
+      ...productSeoContent['lt-panels'],
       title: 'LT Panels in Hyderabad',
       description:
         'Low-tension distribution panels from Hyderabad, with a solid busbar system, on-load protected switching, and no direct access to live parts.',
@@ -507,6 +511,7 @@ export function buildDocuments(images) {
       _id: 'rmus',
       _type: 'productCategory',
       id: 'rmus',
+      ...productSeoContent['rmus'],
       title: 'Ring Main Units in Hyderabad',
       description:
         '11 kV and 33 kV ring main units from Hyderabad, including 630 A, 26.3 kA load-break switches with earth switch and interlock.',
@@ -521,6 +526,8 @@ export function buildDocuments(images) {
         'Ring Main Units are compact, enclosed switchgear for medium voltage distribution — a complete package requiring only installation and cable connection.',
       ],
     },
+
+    { ...productsPageContent },
 
     {
       _id: 'serviceAreasPage',
@@ -608,76 +615,6 @@ export function buildDocuments(images) {
             'Use the contact form. It asks for name, company, role, email, kVA, voltage, project location in Telangana and the technical requirement. Calls and WhatsApp both use +91 92480 30362.',
         },
         {
-          id: 'dist-range',
-          page: 'distribution-transformers',
-          question: 'What ratings are published for distribution transformers?',
-          answer:
-            '100 kVA to 2000 kVA, voltage class 11 kV, 22 kV and 33 kV, cooling ONAN, off-load or on-load tap changer. Cores are CRGO or amorphous. Windings are aluminium (Al) or copper (Cu). Units are single- or three-phase, with primary voltage up to 33 kV and secondary voltage from 433 V to 11000 V. The order rating is the one on the quotation.',
-        },
-        {
-          id: 'oil-what',
-          page: 'distribution-transformers',
-          question: 'What does oil-cooled mean on this site?',
-          answer:
-            'The catalogue lists cooling as ONAN, which is oil-natural, air-natural. The maintenance guide describes the same family as oil-immersed distribution transformers. Oil volume and a loss guarantee are not published.',
-        },
-        {
-          id: 'oltc-choice',
-          page: 'distribution-transformers',
-          question: 'Can I specify OLTC or off-load tap changer?',
-          answer:
-            'Yes. The distribution specification lists both. The site does not publish which one is standard, the tap range, or the number of positions. Write the requirement on the inquiry.',
-        },
-        {
-          id: 'crgo-what',
-          page: 'distribution-transformers',
-          question: 'What is a CRGO core?',
-          answer:
-            'CRGO is cold-rolled grain-oriented silicon steel. The grain direction is aligned so magnetic loss along the rolling direction is lower than in non-oriented electrical steel. These distribution transformers are 100 kVA to 2000 kVA, with aluminium or copper windings, at 11 kV, 22 kV and 33 kV. No loss wattage or efficiency-star rating is published.',
-        },
-        {
-          id: 'amorphous-vs-crgo',
-          page: 'distribution-transformers',
-          question: 'How does an amorphous core compare with CRGO?',
-          answer:
-            'Amorphous metal is a thin metallic-glass ribbon. It generally has lower no-load loss and lower hysteresis loss than CRGO steel. The ribbon is more brittle, and the tank is often larger for the same rating. Both cores are built here, with aluminium or copper windings, from 100 kVA to 2000 kVA. This site does not publish a loss comparison in watts, a percentage saving, or an efficiency-star rating.',
-        },
-        {
-          id: 'crgo-vs-amorphous',
-          page: 'distribution-transformers',
-          question: 'When is CRGO used instead of an amorphous core?',
-          answer:
-            'Both cores are manufactured for the same distribution band, 100 kVA to 2000 kVA, 11/22/33 kV, ONAN, with aluminium or copper windings. CRGO is grain-oriented silicon steel. Amorphous metal generally has lower no-load loss and is more brittle. The site does not publish a rule that assigns one core to a kVA band.',
-        },
-        {
-          id: 'al-vs-cu',
-          page: 'distribution-transformers',
-          question: 'How does aluminium winding compare with copper?',
-          answer:
-            'Both windings are offered on CRGO and amorphous distribution transformers from 100 kVA to 2000 kVA. Aluminium has lower electrical conductivity than copper, so the conductor cross-section is larger for the same current, and the winding is lighter. Copper is the smaller, higher-conductivity conductor. No price difference and no efficiency-star rating are published.',
-        },
-        {
-          id: 'winding-range',
-          page: 'distribution-transformers',
-          question: 'Which ratings can be aluminium or copper wound?',
-          answer:
-            'The distribution range is 100 kVA to 2000 kVA at 11 kV, 22 kV and 33 kV, ONAN cooling, off-load or on-load tap changer, on a CRGO or amorphous core, with an aluminium or copper winding. The factory is at Mallapur, Hyderabad.',
-        },
-        {
-          id: 'ht-rating',
-          page: 'ht-panels',
-          question: 'What HT panel ratings are published?',
-          answer:
-            'Vacuum circuit breaker rating 630–2000 A, current transformer accuracy class 1–5P10, insulation level 12/28/75 kV. Short-circuit text on the longer product note says up to 26.3 kA rms. Panels are made in Hyderabad.',
-        },
-        {
-          id: 'lt-what',
-          page: 'lt-panels',
-          question: 'What is stated for LT panels?',
-          answer:
-            'LT distribution panels use a solid busbar system, on-load protected switching, and keep live parts from direct access. A numerical busbar rating is not published. They are made in Hyderabad.',
-        },
-        {
           id: 'areas-where',
           page: 'service-areas',
           question: 'Which places in Telangana are named?',
@@ -746,217 +683,6 @@ export function buildDocuments(images) {
       status: 'closed',
     },
 
-    {
-      _id: 'optimizing-core-performance',
-      _type: 'blogPost',
-      id: 'optimizing-core-performance',
-      slug: slug('optimizing-core-performance'),
-      title: 'Optimizing Core Performance in High-Voltage Transformers',
-      excerpt:
-        'A comprehensive analysis of advanced cooling methodologies and magnetic core optimizations designed to extend lifecycle and improve efficiency in heavy industrial applications.',
-      category: 'transformers',
-      categoryLabel: 'TRANSFORMERS',
-      date: 'OCT 24, 2024',
-      author: 'DR. ARVIND RAO',
-      authorRole: 'CHIEF ENGINEER',
-      authorImage: img(images.blogs.author, 'Professional headshot of chief engineer'),
-      image: img(
-        images.blogs.featured,
-        'High-voltage transformer in a modern manufacturing facility'
-      ),
-      featured: true,
-    },
-
-    {
-      _id: 'transformer-maintenance',
-      _type: 'blogPost',
-      id: 'transformer-maintenance',
-      slug: slug('transformer-maintenance-guide'),
-      title: 'Maximizing Efficiency: A Guide to Distribution Transformer Maintenance',
-      excerpt:
-        'Proactive maintenance protocols for oil-immersed distribution transformers—visual inspections, dielectric testing, and ISO-compliant field checklists.',
-      category: 'maintenance',
-      categoryLabel: 'MAINTENANCE',
-      date: 'OCT 24, 2024',
-      author: 'ENG. RAJESH KUMAR',
-      image: img(
-        images.blogs.detailHero,
-        'Distribution transformer maintenance in a manufacturing facility'
-      ),
-      featured: false,
-      breadcrumbLabel: 'Transformer Maintenance',
-      readTime: '8 min read',
-      intro:
-        'Distribution transformers are the critical backbone of industrial power systems. Proactive maintenance is not merely a recommendation; it is an operational imperative to prevent catastrophic failures and ensure continuous high-performance output.',
-      sections: [
-        {
-          id: 'routine-visual-inspections',
-          title: '1. Routine Visual Inspections',
-          paragraphs: [
-            'Visual inspections form the first line of defense in transformer maintenance. These should be conducted strictly according to a documented schedule. Key indicators of potential issues include oil leaks around gaskets or valves, discoloration of the tank surface indicating localized overheating, and physical damage to bushings or cooling fins.',
-          ],
-          subsections: [
-            {
-              id: 'key-inspection-checkpoints',
-              title: 'Key Inspection Checkpoints',
-              checklist: [
-                {
-                  label: 'Oil Levels & Leaks:',
-                  text: 'Verify conservator oil levels and inspect all welded joints and valves.',
-                },
-                {
-                  label: 'Silica Gel Breather:',
-                  text: 'Ensure the gel is blue (active) and replace if it turns pink (saturated).',
-                },
-                {
-                  label: 'Bushing Condition:',
-                  text: 'Check for cracks, tracking marks, or significant dirt accumulation.',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: 'technical-maintenance-schedule',
-          title: '2. Technical Maintenance Schedule',
-          paragraphs: [
-            'Adhering to a standardized maintenance grid is vital for operational compliance and equipment longevity. Below is the recommended industrial standard schedule for oil-immersed distribution transformers.',
-          ],
-          table: {
-            headers: ['Component', 'Inspection Action', 'Frequency', 'Tolerance limit'],
-            rows: [
-              {
-                cells: ['Oil BDV Test', 'Dielectric strength measurement', 'Annual', '> 40 kV (min)'],
-              },
-              {
-                cells: [
-                  'Earth Resistance',
-                  'Megger testing of neutral/body earth',
-                  'Bi-Annual',
-                  '< 1.0 Ohm',
-                ],
-              },
-              {
-                cells: [
-                  'Buchholz Relay',
-                  'Gas accumulation check & float operation',
-                  'Quarterly',
-                  'Zero Gas',
-                ],
-              },
-              {
-                cells: [
-                  'Winding Resistance',
-                  'Bridge method measurement per phase',
-                  '3 Years',
-                  '± 2% variation',
-                ],
-              },
-            ],
-          },
-          alert: {
-            title: 'Critical Action Warning',
-            message:
-              'Never attempt oil sampling or internal inspections while the transformer is energized. Ensure comprehensive isolation and grounding protocols are executed prior to physical intervention.',
-          },
-        },
-      ],
-      tableOfContents: [
-        { id: 'routine-visual-inspections', label: 'Routine Visual Inspections', indent: false },
-        { id: 'key-inspection-checkpoints', label: 'Key Inspection Checkpoints', indent: true },
-        {
-          id: 'technical-maintenance-schedule',
-          label: 'Technical Maintenance Schedule',
-          indent: false,
-        },
-      ],
-      relatedProduct: {
-        title: 'Oil Immersed Series T-500',
-        capacity: 'Up to 2000 kVA',
-        image: img(images.blogs.relatedOilImmersed, 'Oil immersed industrial transformer thumbnail'),
-        href: '/products/distribution-transformers',
-      },
-    },
-
-    {
-      _id: 'arc-flash-standards',
-      _type: 'blogPost',
-      id: 'arc-flash-standards',
-      slug: slug('arc-flash-standards'),
-      title: 'Revised Arc Flash Hazard Safety Standards Q4',
-      excerpt:
-        'Critical updates to personal protective equipment requirements and boundary calculations for low-voltage panels.',
-      category: 'electrical-safety',
-      categoryLabel: 'ALERT • SAFETY',
-      date: 'OCT 15, 2024',
-      author: 'COMPLIANCE TEAM',
-      image: img(images.blogs.safety, 'Industrial warehouse with electrical components'),
-      accent: true,
-      alertMeta: true,
-      featured: false,
-    },
-    {
-      _id: 'iso-audit',
-      _type: 'blogPost',
-      id: 'iso-audit',
-      slug: slug('iso-audit'),
-      title: 'ISO 9001:2015 Audit Preparation Guidelines',
-      excerpt:
-        'A structured checklist for manufacturing floors to ensure seamless compliance during upcoming certification renewal audits.',
-      category: 'industry-news',
-      categoryLabel: 'INDUSTRY NEWS',
-      date: 'OCT 10, 2024',
-      author: 'QA DEPT',
-      image: img(images.blogs.industryNews, 'Technical blueprint on digital drafting screen'),
-      featured: false,
-    },
-    {
-      _id: 'cable-routing',
-      _type: 'blogPost',
-      id: 'cable-routing',
-      slug: slug('cable-routing'),
-      title: 'Cable Routing Standards for Heavy Load Centers',
-      excerpt:
-        'Best practices for tray management and separation protocols to minimize electromagnetic interference in dense installations.',
-      category: 'electrical-safety',
-      categoryLabel: 'ELECTRICAL SAFETY',
-      date: 'OCT 05, 2024',
-      author: 'DR. ARVIND RAO',
-      image: img(images.blogs.electricalSafety, 'Heavy gauge electrical cables in steel conduit'),
-      featured: false,
-    },
-
-    {
-      _id: 'trending-01',
-      _type: 'trendingArticle',
-      rank: '01',
-      title: 'Copper vs Aluminum Windings: A Cost-Benefit Analysis',
-      readTime: '5 MIN READ',
-      order: 0,
-    },
-    {
-      _id: 'trending-02',
-      _type: 'trendingArticle',
-      rank: '02',
-      title: 'Navigating the New Substation Clearance Regulations',
-      readTime: '8 MIN READ',
-      order: 1,
-    },
-    {
-      _id: 'trending-03',
-      _type: 'trendingArticle',
-      rank: '03',
-      title: 'Troubleshooting Harmonic Distortion in Industrial Grids',
-      readTime: '12 MIN READ',
-      order: 2,
-    },
-    {
-      _id: 'trending-04',
-      _type: 'trendingArticle',
-      rank: '04',
-      title: 'The Future of Dry-Type Transformers',
-      readTime: '4 MIN READ',
-      order: 3,
-    },
+    ...buildBlogDocuments(),
   ]
 }

@@ -485,12 +485,428 @@ export const contentDocuments: CmsDoc[] = [
     "_id": "distribution-transformers",
     "_type": "productCategory",
     "id": "distribution-transformers",
+    "metaTitle": "Distribution Transformers, Hyderabad",
+    "metaDescription": "BIS-approved oil-cooled distribution transformers, 100 to 2000 kVA, 11/22/33 kV, CRGO or amorphous core, copper or aluminium winding. Made in Hyderabad.",
+    "shortAnswer": "A distribution transformer steps medium-voltage supply down for local use. Tejaswini Industries makes BIS-approved, oil-cooled (ONAN) distribution transformers from 100 kVA to 2000 kVA at 11, 22 and 33 kV at its works in Mallapur, Hyderabad, with CRGO or amorphous cores, copper or aluminium windings and off-load or on-load tap changers.",
+    "heroFacts": [
+      "100 to 2000 kVA",
+      "11 / 22 / 33 kV",
+      "Oil-cooled (ONAN)",
+      "BIS-approved"
+    ],
+    "quoteChecklist": [
+      "kVA rating and number of phases",
+      "HV and LV voltage",
+      "IS 1180 efficiency level, or the guaranteed losses you need",
+      "Tap changer (OFTC or OLTC), with tap range and step",
+      "Winding (copper or aluminium) and core (CRGO or amorphous)",
+      "HV and LV terminations",
+      "Delivery location"
+    ],
+    "sections": [
+      {
+        "id": "what-is-a-distribution-transformer",
+        "title": "What is a distribution transformer?",
+        "paragraphs": [
+          "A distribution transformer is the last transformer between the medium-voltage network and the people who use the power. It takes supply at 11 kV, 22 kV or 33 kV and delivers it at a lower voltage for factories, buildings and local networks.",
+          "The units we build are oil-cooled. The core and windings sit in a tank of insulating oil, and the oil carries heat to the tank surface and radiators. This is called ONAN: oil natural, air natural. Units are single-phase or three-phase, with primary voltage up to 33 kV and secondary voltage from 433 V to 11,000 V."
+        ],
+        "figure": {
+          "image": {
+            "_type": "imageWithUrl",
+            "url": "/images/blog/oil-filled-distribution-transformer-side-view-wide.webp",
+            "alt": "Oil-filled distribution transformer seen from the side in a workshop, with a TEJASWINI-branded conservator tank above the tank, a blue silica gel breather, radiator fins and a grey side-mounted cabinet."
+          },
+          "caption": "Side view of an oil-filled distribution transformer in the workshop. The photo shows the build, not a particular rating.",
+          "width": 724,
+          "height": 407,
+          "maxWidth": "md"
+        }
+      },
+      {
+        "id": "where-are-distribution-transformers-used",
+        "title": "Where are distribution transformers used?",
+        "paragraphs": [
+          "Distribution transformers supply industrial plants, commercial buildings, apartment complexes, infrastructure projects and utility distribution feeders. Our customers are MEP consultants, EPC and electrical contractors, industries, infrastructure developers and utilities, mostly across India."
+        ]
+      },
+      {
+        "id": "distribution-transformer-specifications-and-standards",
+        "title": "What are the key specifications and standards?",
+        "paragraphs": [
+          "The table lists what we publish for the range. IS 1180 (Part 1) is the Indian standard for oil-immersed distribution transformers, and our units are BIS-approved. The guaranteed losses and efficiency level for an order are stated in the quotation, so ask for them when you enquire. For what the levels mean, read [IS 1180 energy efficiency levels explained](/blogs/is-1180-energy-efficiency-levels-explained)."
+        ],
+        "table": true,
+        "extraTables": [
+          {
+            "caption": "Maximum total loss in watts at 100 % load, by IS 1180 (Part 1) energy efficiency level (three-phase, 11 kV class)",
+            "headers": [
+              "Rating (kVA)",
+              "Impedance (%)",
+              "Level 1",
+              "Level 2",
+              "Level 3",
+              "Level 4",
+              "Level 5"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "250",
+                  "4.50",
+                  "2,930",
+                  "2,700",
+                  "2,488",
+                  "2,293",
+                  "2,113"
+                ]
+              },
+              {
+                "cells": [
+                  "315",
+                  "4.50",
+                  "3,100",
+                  "2,750",
+                  "2,440",
+                  "2,164",
+                  "1,920"
+                ]
+              },
+              {
+                "cells": [
+                  "400",
+                  "4.50",
+                  "3,450",
+                  "3,330",
+                  "3,214",
+                  "3,102",
+                  "2,994"
+                ]
+              },
+              {
+                "cells": [
+                  "500",
+                  "4.50",
+                  "4,300",
+                  "4,100",
+                  "3,909",
+                  "3,727",
+                  "3,554"
+                ]
+              },
+              {
+                "cells": [
+                  "630",
+                  "4.50",
+                  "5,300",
+                  "4,850",
+                  "4,438",
+                  "4,061",
+                  "3,717"
+                ]
+              },
+              {
+                "cells": [
+                  "800",
+                  "5.00",
+                  "6,403",
+                  "5,838",
+                  "5,323",
+                  "4,853",
+                  "4,425"
+                ]
+              },
+              {
+                "cells": [
+                  "1,000",
+                  "5.00",
+                  "7,700",
+                  "7,000",
+                  "6,364",
+                  "5,785",
+                  "5,259"
+                ]
+              },
+              {
+                "cells": [
+                  "1,250",
+                  "5.00",
+                  "9,200",
+                  "8,400",
+                  "7,670",
+                  "7,003",
+                  "6,394"
+                ]
+              },
+              {
+                "cells": [
+                  "1,600",
+                  "6.25",
+                  "11,800",
+                  "11,300",
+                  "10,821",
+                  "10,363",
+                  "9,924"
+                ]
+              },
+              {
+                "cells": [
+                  "2,000",
+                  "6.25",
+                  "15,000",
+                  "14,100",
+                  "13,254",
+                  "12,459",
+                  "11,711"
+                ]
+              }
+            ]
+          },
+          {
+            "caption": "Maximum total loss in watts at 50 % load, by IS 1180 (Part 1) energy efficiency level (three-phase, 11 kV class)",
+            "headers": [
+              "Rating (kVA)",
+              "Impedance (%)",
+              "Level 1",
+              "Level 2",
+              "Level 3",
+              "Level 4",
+              "Level 5"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "250",
+                  "4.50",
+                  "980",
+                  "920",
+                  "864",
+                  "811",
+                  "761"
+                ]
+              },
+              {
+                "cells": [
+                  "315",
+                  "4.50",
+                  "1,025",
+                  "955",
+                  "890",
+                  "829",
+                  "772"
+                ]
+              },
+              {
+                "cells": [
+                  "400",
+                  "4.50",
+                  "1,225",
+                  "1,150",
+                  "1,080",
+                  "1,013",
+                  "951"
+                ]
+              },
+              {
+                "cells": [
+                  "500",
+                  "4.50",
+                  "1,510",
+                  "1,430",
+                  "1,354",
+                  "1,282",
+                  "1,215"
+                ]
+              },
+              {
+                "cells": [
+                  "630",
+                  "4.50",
+                  "1,860",
+                  "1,745",
+                  "1,637",
+                  "1,536",
+                  "1,441"
+                ]
+              },
+              {
+                "cells": [
+                  "800",
+                  "5.00",
+                  "2,287",
+                  "2,147",
+                  "2,015",
+                  "1,892",
+                  "1,776"
+                ]
+              },
+              {
+                "cells": [
+                  "1,000",
+                  "5.00",
+                  "2,790",
+                  "2,620",
+                  "2,460",
+                  "2,310",
+                  "2,170"
+                ]
+              },
+              {
+                "cells": [
+                  "1,250",
+                  "5.00",
+                  "3,300",
+                  "3,220",
+                  "3,142",
+                  "3,066",
+                  "2,991"
+                ]
+              },
+              {
+                "cells": [
+                  "1,600",
+                  "6.25",
+                  "4,200",
+                  "3,970",
+                  "3,753",
+                  "3,547",
+                  "3,353"
+                ]
+              },
+              {
+                "cells": [
+                  "2,000",
+                  "6.25",
+                  "5,050",
+                  "4,790",
+                  "4,543",
+                  "4,309",
+                  "4,088"
+                ]
+              }
+            ]
+          }
+        ],
+        "extraTablesNote": "Source: IS 1180 (Part 1), Amendment No. 4 (March 2021), Table 6. Total loss is no-load loss plus load loss. These are the maximum values the standard permits for the 11 kV class, not guaranteed or tested values for a Tejaswini unit; the guaranteed losses for an order are stated in the quotation. Higher loss values apply to the 22 kV and 33 kV classes. Three-phase ratings below 250 kVA are not shown here; see the standard."
+      },
+      {
+        "id": "how-to-choose-a-distribution-transformer",
+        "title": "How do I choose a distribution transformer?",
+        "paragraphs": [
+          "Start with the kVA rating, which comes from your connected load, demand factor, power factor and growth. The [kVA rating guide](/blogs/how-to-choose-transformer-kva-rating-for-your-load) walks through it with a worked example. Then choose the core, winding and tap changer.",
+          "**Core.** Both CRGO (cold-rolled grain-oriented steel) and amorphous metal cores are built. Amorphous generally has lower no-load loss, and the tank is often larger for the same rating. The [amorphous vs CRGO guide](/blogs/amorphous-core-vs-crgo-core-distribution-transformer) compares them.",
+          "**Winding.** Copper has higher conductivity, so the conductor is smaller for the same current. Aluminium conductors are larger in cross-section and the winding is lighter.",
+          "**Tap changer.** An off-load tap changer (OFTC) is changed with the transformer isolated. An on-load tap changer (OLTC) can be changed while the unit is in service. See [OLTC vs off-circuit tap changer](/blogs/oltc-vs-off-circuit-tap-changer-distribution-transformer)."
+        ],
+        "options": true,
+        "figure": {
+          "image": {
+            "_type": "imageWithUrl",
+            "url": "/images/blog/wound-core-sections-packed-on-pallet-wide.webp",
+            "alt": "Wound transformer core sections made of rolled steel strip, bound with tape and packed in plastic on a pallet in a workshop."
+          },
+          "caption": "Wound core sections, packed in the workshop. The photo does not show whether the core is CRGO or amorphous.",
+          "width": 768,
+          "height": 432,
+          "maxWidth": "md"
+        }
+      },
+      {
+        "id": "why-buy-from-tejaswini-industries-hyderabad",
+        "title": "Why buy a distribution transformer from Tejaswini Industries in Hyderabad?",
+        "paragraphs": [
+          "We make the transformers ourselves at Mallapur, Hyderabad, so the rating, core, winding and tap changer are specified with the manufacturer directly. The company is ISO 9001:2015 certified, and the site states that every product passes a multi-stage quality check before deployment.",
+          "Before a unit leaves, you can check it against our [pre-dispatch and site inspection checklist](/blogs/distribution-transformer-inspection-checklist-before-dispatch-and-at-site). Transformer repair and electrical turnkey projects are also offered; see [services](/services)."
+        ]
+      }
+    ],
+    "specsTable": [
+      {
+        "label": "Rating range",
+        "value": "100 kVA to 2000 kVA"
+      },
+      {
+        "label": "Voltage class",
+        "value": "11 kV, 22 kV and 33 kV"
+      },
+      {
+        "label": "Phases",
+        "value": "Single-phase or three-phase"
+      },
+      {
+        "label": "Primary voltage",
+        "value": "Up to 33 kV"
+      },
+      {
+        "label": "Secondary voltage",
+        "value": "433 V to 11,000 V"
+      },
+      {
+        "label": "Cooling",
+        "value": "ONAN (oil natural, air natural)"
+      },
+      {
+        "label": "Core",
+        "value": "CRGO or amorphous"
+      },
+      {
+        "label": "Winding",
+        "value": "Aluminium (Al) or copper (Cu)"
+      },
+      {
+        "label": "Tap changer",
+        "value": "Off-load (OFTC) or on-load (OLTC)"
+      },
+      {
+        "label": "Approvals",
+        "value": "BIS-approved; ISO 9001:2015 certified company"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What kVA ratings of distribution transformer do you make?",
+        "answer": "Tejaswini Industries makes oil-cooled distribution transformers from 100 kVA to 2000 kVA at 11 kV, 22 kV and 33 kV. The right rating depends on your connected load, demand factor, power factor and growth. Send those with your enquiry and we will confirm the rating in the quotation."
+      },
+      {
+        "question": "Do you make copper-wound and aluminium-wound transformers?",
+        "answer": "Yes. Both windings are offered across the range. Copper has higher conductivity, so its conductor is smaller for the same current. Aluminium has lower conductivity, so the conductor is larger in cross-section, and the winding is lighter."
+      },
+      {
+        "question": "What is the difference between a CRGO and an amorphous core?",
+        "answer": "CRGO is cold-rolled grain-oriented silicon steel. Amorphous metal is a thin metallic-glass ribbon that generally has lower no-load loss, though the tank is often larger for the same rating. Both cores are built here. Loss values for your rating are given in the quotation."
+      },
+      {
+        "question": "Should I choose an OLTC or an off-load tap changer?",
+        "answer": "An off-load tap changer is operated with the transformer isolated. An on-load tap changer can be operated while the transformer is in service, which suits supplies where voltage must be adjusted without an outage. Both are available. State your tap range and step on the enquiry."
+      },
+      {
+        "question": "Are your distribution transformers BIS-approved?",
+        "answer": "Yes, Tejaswini Industries makes BIS-approved distribution transformers, and the company is ISO 9001:2015 certified. IS 1180 (Part 1) is the Indian standard for oil-immersed distribution transformers. Ask for the certificate details and guaranteed losses when you request a quotation."
+      },
+      {
+        "question": "How do I get a quotation for a distribution transformer?",
+        "answer": "Send the kVA rating, HV and LV voltage, tap changer type, winding and core preference and the site location through the contact form, or call or WhatsApp +91 92480 30362. The works are at Mallapur, Hyderabad, Telangana."
+      }
+    ],
+    "relatedGuides": [
+      "is-1180-energy-efficiency-levels-explained",
+      "amorphous-core-vs-crgo-core-distribution-transformer",
+      "oltc-vs-off-circuit-tap-changer-distribution-transformer",
+      "how-to-choose-transformer-kva-rating-for-your-load",
+      "distribution-transformer-inspection-checklist-before-dispatch-and-at-site"
+    ],
+    "relatedProducts": [
+      "dry-type-transformers",
+      "ht-panels",
+      "lt-panels",
+      "rmus"
+    ],
     "title": "Distribution Transformers in Hyderabad",
     "description": "Distribution transformers made in Hyderabad, 100 kVA to 2000 kVA, 11/22/33 kV, ONAN, with CRGO or amorphous cores and aluminium or copper windings.",
     "image": {
       "_type": "imageWithUrl",
-      "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBiKFrleg1jxpjd-D2p0QYWmywuCyLV_N5nIdnUO3UifzFavxJ7qKwiHLXwyWj0wwdjxRz9qMc5sybMl_U9yD2MPLgAalNl1ZU6NBIG4ae4Wl-d7DlNNBRmKU7_NlrEWwmguxzVxh6Tcp7bU11SUlE1U-EXBmLxBPpUvscyNrPLVHeYPOSy9SnPPb9_kIu1TbYPIDZ0x_5G1IBAPn-OVZFMoUUPeNyQZezkKFjanM9VS5r-DuvLqFe5Uf7aAaFgoTopije9eI2cLTE",
-      "alt": "Heavy-duty industrial distribution transformer in a modern warehouse"
+      "url": "/images/blog/distribution-transformer-front-view-conservator-bushings-wide.webp",
+      "alt": "Front view of an oil-filled distribution transformer made by Tejaswini Industries, with a TEJASWINI-branded conservator tank, three HV bushings on the top cover, red LV terminals and radiator banks on both sides, standing in a workshop bay."
     },
     "technicalSpecs": [
       "Range: 100 kVA to 2000 kVA",
@@ -510,6 +926,119 @@ export const contentDocuments: CmsDoc[] = [
     "_id": "dry-type-transformers",
     "_type": "productCategory",
     "id": "dry-type-transformers",
+    "metaTitle": "Dry Type Transformers, Hyderabad",
+    "metaDescription": "VPI dry-type transformers up to 2000 kVA with insulation class F or H and protection up to IP56, made by Tejaswini Industries in Hyderabad.",
+    "shortAnswer": "A dry-type transformer uses no insulating liquid, which makes it suited to indoor installations where fire safety matters. Tejaswini Industries makes VPI (vacuum pressure impregnated) dry-type transformers up to 2000 kVA at Mallapur, Hyderabad, with insulation class F (155 °C) or H (180 °C) and protection up to IP56.",
+    "heroFacts": [
+      "VPI type",
+      "Up to 2000 kVA",
+      "Insulation class F / H",
+      "Protection up to IP56"
+    ],
+    "quoteChecklist": [
+      "kVA rating and number of phases",
+      "Primary and secondary voltage",
+      "Insulation class (F or H)",
+      "Enclosure protection needed (up to IP56)",
+      "Where it will be installed",
+      "Delivery location"
+    ],
+    "sections": [
+      {
+        "id": "what-is-a-dry-type-transformer",
+        "title": "What is a dry-type transformer?",
+        "paragraphs": [
+          "In a dry-type transformer the windings and core are not immersed in oil or any other insulating liquid. Without oil there is nothing to leak or burn, so the unit is less prone to fire hazard and is easy to maintain.",
+          "We make the VPI type. In vacuum pressure impregnation the windings are impregnated with resin under vacuum and pressure, which gives void-free insulation and high mechanical strength."
+        ]
+      },
+      {
+        "id": "where-are-dry-type-transformers-used",
+        "title": "Where are dry-type transformers used?",
+        "paragraphs": [
+          "Dry-type transformers are chosen for indoor installations where fire safety is paramount, such as electrical rooms inside buildings and plants. Our customers include MEP consultants, EPC and electrical contractors and industries, mostly across India."
+        ]
+      },
+      {
+        "id": "dry-type-transformer-specifications",
+        "title": "What are the key specifications?",
+        "paragraphs": [
+          "Insulation class F allows a winding temperature of 155 °C and class H allows 180 °C. IP56 is an enclosure rating: protected against dust and against powerful water jets."
+        ],
+        "table": true
+      },
+      {
+        "id": "how-to-choose-a-dry-type-transformer",
+        "title": "How do I choose a dry-type transformer?",
+        "paragraphs": [
+          "Choose a dry-type unit when the transformer will sit indoors, close to people or equipment, and the priority is to avoid oil. For outdoor or yard installations, an oil-cooled [distribution transformer](/products/distribution-transformers) is the usual alternative.",
+          "To size the unit, work out your maximum demand and power factor as described in the [kVA rating guide](/blogs/how-to-choose-transformer-kva-rating-for-your-load). Then state the primary and secondary voltage, the insulation class you need, the enclosure protection you need and where it will be installed."
+        ]
+      },
+      {
+        "id": "why-buy-dry-type-from-tejaswini-industries-hyderabad",
+        "title": "Why buy a dry-type transformer from Tejaswini Industries in Hyderabad?",
+        "paragraphs": [
+          "The units are made at our works in Mallapur, Hyderabad, by a company that is ISO 9001:2015 certified. You can specify the rating, insulation class and enclosure directly with the manufacturer. Transformer repair and electrical turnkey projects are also offered; see [services](/services)."
+        ]
+      }
+    ],
+    "specsTable": [
+      {
+        "label": "Type",
+        "value": "VPI (vacuum pressure impregnated)"
+      },
+      {
+        "label": "Rating",
+        "value": "Up to 2000 kVA"
+      },
+      {
+        "label": "Insulation class",
+        "value": "F (155 °C) and H (180 °C)"
+      },
+      {
+        "label": "Protection",
+        "value": "Up to IP56"
+      },
+      {
+        "label": "Insulation",
+        "value": "Void-free, with high mechanical strength"
+      },
+      {
+        "label": "Cooling medium",
+        "value": "No insulating liquid"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a VPI dry-type transformer?",
+        "answer": "VPI stands for vacuum pressure impregnated. The windings are impregnated with resin under vacuum and pressure, which gives void-free insulation and high mechanical strength. The transformer uses no insulating liquid."
+      },
+      {
+        "question": "What is the largest dry-type transformer you make?",
+        "answer": "Tejaswini Industries makes VPI dry-type transformers up to 2000 kVA. Send the rating, voltage and installation location with your enquiry for a quotation."
+      },
+      {
+        "question": "What do insulation class F and H mean?",
+        "answer": "They are temperature classes for the insulation system. Class F is rated for 155 °C and class H for 180 °C. Both are offered, so state the class you need on the enquiry."
+      },
+      {
+        "question": "When should I choose a dry-type transformer instead of an oil-cooled one?",
+        "answer": "Choose dry-type for indoor installations where fire safety is the priority, because there is no oil to leak or burn. Oil-cooled distribution transformers are the usual choice for outdoor installations. We make both."
+      },
+      {
+        "question": "What does IP56 protection mean?",
+        "answer": "IP56 is an enclosure rating. The 5 means protected against dust, and the 6 means protected against powerful water jets. Our dry-type transformers are offered with protection up to IP56."
+      }
+    ],
+    "relatedGuides": [
+      "how-to-choose-transformer-kva-rating-for-your-load"
+    ],
+    "relatedProducts": [
+      "distribution-transformers",
+      "lt-panels",
+      "ht-panels"
+    ],
     "title": "Dry Type Transformers in Hyderabad",
     "description": "VPI dry-type transformers from Hyderabad, up to 2000 kVA, insulation class F (155 °C) and H (180 °C), protection up to IP56.",
     "image": {
@@ -531,6 +1060,127 @@ export const contentDocuments: CmsDoc[] = [
     "_id": "ht-panels",
     "_type": "productCategory",
     "id": "ht-panels",
+    "metaTitle": "HT Panels with VCB, Hyderabad",
+    "metaDescription": "HT switchgear panels with vacuum circuit breakers rated 630-2000 A, 12/28/75 kV insulation, up to 26.3 kA rms. Made in Hyderabad.",
+    "shortAnswer": "HT panels are high-voltage switchgear that protect and control industrial circuits. Tejaswini Industries builds HT panels in Hyderabad with vacuum circuit breakers rated 630 to 2000 A, insulation level 12/28/75 kV and short-circuit capacity up to 26.3 kA rms, fitted with current and potential transformers and metering.",
+    "heroFacts": [
+      "VCB 630 to 2000 A",
+      "Insulation 12/28/75 kV",
+      "Up to 26.3 kA rms"
+    ],
+    "quoteChecklist": [
+      "Single-line diagram, or a list of incomers and feeders",
+      "System voltage",
+      "Breaker current rating and fault level",
+      "Protection (relays, fuses) and metering needed",
+      "Earth switch needed or not",
+      "Delivery location"
+    ],
+    "sections": [
+      {
+        "id": "what-is-an-ht-panel",
+        "title": "What is an HT panel?",
+        "paragraphs": [
+          "An HT (high tension) panel is a switchgear assembly that switches, protects and measures a high-voltage circuit. Ours incorporate vacuum circuit breakers, current transformers, potential transformers and metering, with tripping by means of fuses and relays."
+        ]
+      },
+      {
+        "id": "where-are-ht-panels-used",
+        "title": "Where are HT panels used?",
+        "paragraphs": [
+          "HT panels are used for the protection and control of high-voltage industrial circuits, for example where supply comes into a plant and where it is fed on to transformers and large loads. Our customers include industries, EPC and electrical contractors, MEP consultants and utilities."
+        ]
+      },
+      {
+        "id": "ht-panel-specifications-and-standards",
+        "title": "What are the key specifications and standards?",
+        "paragraphs": [
+          "The table lists the published ratings. The design is compact and rugged, arc quenching is tested according to IS standards, and standard electrical and mechanical materials are used as per IS/IEC specification. A mechanically interlocked earth switch is available as an extra accessory."
+        ],
+        "table": true
+      },
+      {
+        "id": "how-to-choose-an-ht-panel",
+        "title": "How do I choose an HT panel?",
+        "paragraphs": [
+          "Start from your single-line diagram. Note the system voltage, the rated current of each incomer and feeder, the fault level the panel must withstand, and the protection you need (relays and fuses). Then state the instruments you want, such as ammeter and voltmeter with selector switches, and whether you need the earth switch.",
+          "If the panel will feed a transformer, see our [distribution transformers](/products/distribution-transformers). For secondary distribution, compare it with a [ring main unit](/products/rmus)."
+        ]
+      },
+      {
+        "id": "why-buy-ht-panels-from-tejaswini-industries-hyderabad",
+        "title": "Why buy HT panels from Tejaswini Industries in Hyderabad?",
+        "paragraphs": [
+          "The panels are built in Hyderabad by a company that is ISO 9001:2015 certified, and the same company makes the transformers, RMUs and LT panels that connect to them. Electrical turnkey projects are also offered; see [services](/services)."
+        ]
+      }
+    ],
+    "specsTable": [
+      {
+        "label": "Vacuum circuit breaker rating",
+        "value": "630 to 2000 A"
+      },
+      {
+        "label": "Insulation level",
+        "value": "12/28/75 kV"
+      },
+      {
+        "label": "Rated short-circuit capacity",
+        "value": "Up to 26.3 kA (rms)"
+      },
+      {
+        "label": "Current transformer accuracy class",
+        "value": "1 to 5P10"
+      },
+      {
+        "label": "Potential transformer accuracy class",
+        "value": "1"
+      },
+      {
+        "label": "Metering",
+        "value": "Ammeter and voltmeter with selector switches"
+      },
+      {
+        "label": "Tripping",
+        "value": "By fuses and relays"
+      },
+      {
+        "label": "Earth switch",
+        "value": "Mechanically interlocked, available as an extra accessory"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is an HT panel?",
+        "answer": "An HT panel is switchgear that protects, controls and measures a high-voltage circuit. Ours include vacuum circuit breakers, current and potential transformers and metering, with tripping by fuses and relays."
+      },
+      {
+        "question": "What ratings do your HT panels have?",
+        "answer": "Vacuum circuit breaker rating of 630 to 2000 A, insulation level 12/28/75 kV and rated short-circuit capacity up to 26.3 kA rms. Current transformers are accuracy class 1 to 5P10 and potential transformers are class 1."
+      },
+      {
+        "question": "What does an insulation level of 12/28/75 kV mean?",
+        "answer": "In the usual IEC convention it describes a 12 kV class panel that withstands 28 kV at power frequency and 75 kV lightning impulse. Confirm the values for your system voltage on the quotation."
+      },
+      {
+        "question": "Is an earth switch included in the HT panel?",
+        "answer": "A mechanically interlocked earth switch is available as an extra accessory. State on the enquiry if you need it."
+      },
+      {
+        "question": "What should I send to get a quotation for an HT panel?",
+        "answer": "Send the single-line diagram or a list of incomers and feeders, the system voltage, breaker current rating, fault level, protection and metering you need. Use the contact form or call or WhatsApp +91 92480 30362."
+      },
+      {
+        "question": "Can I buy the transformer and panels from the same company?",
+        "answer": "Yes. Tejaswini Industries makes distribution transformers, dry-type transformers, HT panels, LT panels, RMUs and APFC panels, and also takes up electrical turnkey projects."
+      }
+    ],
+    "relatedGuides": [],
+    "relatedProducts": [
+      "distribution-transformers",
+      "rmus",
+      "lt-panels"
+    ],
     "title": "HT Panels in Hyderabad",
     "description": "High-tension panels built in Hyderabad, with vacuum circuit breakers rated 630–2000 A and insulation level 12/28/75 kV.",
     "image": {
@@ -551,6 +1201,126 @@ export const contentDocuments: CmsDoc[] = [
     "_id": "lt-panels",
     "_type": "productCategory",
     "id": "lt-panels",
+    "metaTitle": "LT Distribution Panels, Hyderabad",
+    "metaDescription": "LT distribution panels with a solid busbar system and on-load protected switching, made in Hyderabad. APFC panels also available.",
+    "shortAnswer": "LT panels are low-voltage distribution boards that route power and protect circuits inside a plant or building. Tejaswini Industries builds all types of LT distribution panels in Hyderabad, with a solid busbar system, on-load protected switching and no direct access to live parts. APFC (power factor correction) panels are also part of the range.",
+    "heroFacts": [
+      "All types of LT panels",
+      "Solid busbar system",
+      "On-load protected switching",
+      "APFC panels also offered"
+    ],
+    "quoteChecklist": [
+      "Incoming supply and current rating",
+      "Number and rating of outgoing feeders",
+      "Fault level",
+      "Metering needed",
+      "APFC requirement and target power factor",
+      "Delivery location"
+    ],
+    "sections": [
+      {
+        "id": "what-is-an-lt-panel",
+        "title": "What is an LT panel?",
+        "paragraphs": [
+          "An LT (low tension) panel is a distribution board on the low-voltage side of the supply. It receives power, usually from a transformer, and routes it to outgoing circuits through switching and protection devices."
+        ]
+      },
+      {
+        "id": "where-are-lt-panels-used",
+        "title": "Where are LT panels used?",
+        "paragraphs": [
+          "LT panels provide power routing and circuit protection for complex facility networks and heavy machinery clusters. Typical buyers are industries, EPC and electrical contractors and MEP consultants."
+        ]
+      },
+      {
+        "id": "lt-panel-features",
+        "title": "What are the key features?",
+        "paragraphs": [
+          "The panels are designed for easy operation and maintenance and to take little space. The table lists the construction features we publish. A numerical busbar rating is not listed on this page; state the current you need and we will confirm it in the quotation."
+        ],
+        "table": true
+      },
+      {
+        "id": "how-to-choose-an-lt-panel",
+        "title": "How do I choose an LT panel?",
+        "paragraphs": [
+          "List the incoming supply, the number and current rating of outgoing feeders, the fault level and the metering you need. If the panel will sit on the secondary of a transformer, work out the full-load current first; the [kVA rating guide](/blogs/how-to-choose-transformer-kva-rating-for-your-load) shows how. Say if you also need an APFC panel.",
+          "Panels and transformers can come from one supplier: see [distribution transformers](/products/distribution-transformers) and [dry-type transformers](/products/dry-type-transformers)."
+        ]
+      },
+      {
+        "id": "why-buy-lt-panels-from-tejaswini-industries-hyderabad",
+        "title": "Why buy LT panels from Tejaswini Industries in Hyderabad?",
+        "paragraphs": [
+          "The panels are made in Hyderabad by a company that is ISO 9001:2015 certified, alongside transformers, HT panels and RMUs. Electrical turnkey projects are also offered; see [services](/services)."
+        ]
+      }
+    ],
+    "specsTable": [
+      {
+        "label": "Types",
+        "value": "All types of LT distribution panels"
+      },
+      {
+        "label": "Busbar",
+        "value": "Solid busbar system, which avoids loose connections"
+      },
+      {
+        "label": "Switching",
+        "value": "On-load protected switching system"
+      },
+      {
+        "label": "Live parts",
+        "value": "Not directly accessible"
+      },
+      {
+        "label": "Enclosure",
+        "value": "Protection against bird nesting, leakage through bushing and corrosion"
+      },
+      {
+        "label": "Footprint",
+        "value": "Consumes less space"
+      },
+      {
+        "label": "Other panels",
+        "value": "APFC panels also offered"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is an LT panel?",
+        "answer": "An LT panel is a low-voltage distribution board. It takes incoming power, usually from a transformer, and routes it to outgoing circuits with switching and protection devices."
+      },
+      {
+        "question": "What types of LT panel do you make?",
+        "answer": "Tejaswini Industries makes all types of LT distribution panels at Hyderabad. Send the incomer rating, number of feeders and protection you need for a quotation."
+      },
+      {
+        "question": "What is a solid busbar system?",
+        "answer": "A solid busbar system uses rigid busbars for the main connections. Our LT panels use it to avoid loose connections and to support reliable long-term operation."
+      },
+      {
+        "question": "Do you make APFC panels?",
+        "answer": "Yes. An APFC (automatic power factor correction) panel switches capacitors in and out to keep the power factor near its target. Send your load and target power factor and we will quote against it."
+      },
+      {
+        "question": "Are live parts accessible in your LT panels?",
+        "answer": "No. The panels are designed so that live parts are not directly accessible, and they include protection against bird nesting, leakage through bushing and corrosion."
+      },
+      {
+        "question": "How do I request an LT panel quotation?",
+        "answer": "Use the contact form, or call or WhatsApp +91 92480 30362, with the incoming supply, feeder list, fault level and any metering or APFC requirement."
+      }
+    ],
+    "relatedGuides": [
+      "how-to-choose-transformer-kva-rating-for-your-load"
+    ],
+    "relatedProducts": [
+      "distribution-transformers",
+      "dry-type-transformers",
+      "ht-panels"
+    ],
     "title": "LT Panels in Hyderabad",
     "description": "Low-tension distribution panels from Hyderabad, with a solid busbar system, on-load protected switching, and no direct access to live parts.",
     "image": {
@@ -572,6 +1342,119 @@ export const contentDocuments: CmsDoc[] = [
     "_id": "rmus",
     "_type": "productCategory",
     "id": "rmus",
+    "metaTitle": "Ring Main Units (RMU), Hyderabad",
+    "metaDescription": "11 kV and 33 kV ring main units: load break switch, SFU and VCB versions, 630 A and 26.3 kA with earth switch. Made in Hyderabad.",
+    "shortAnswer": "A ring main unit (RMU) is compact, sealed medium-voltage switchgear used in secondary distribution networks. Tejaswini Industries makes 11 kV and 33 kV RMUs in Hyderabad as load break switch or switch-fuse units and as vacuum circuit breaker versions, including 630 A, 26.3 kA load break switches with earth switch and interlock.",
+    "heroFacts": [
+      "11 kV and 33 kV",
+      "Load break switch, SFU or VCB",
+      "630 A, 26.3 kA load break switch"
+    ],
+    "quoteChecklist": [
+      "System voltage (11 kV or 33 kV)",
+      "Number and type of ways",
+      "SFU or VCB on the transformer feeder",
+      "Indoor or outdoor use",
+      "Earth fault indicator needed or not",
+      "Delivery location"
+    ],
+    "sections": [
+      {
+        "id": "what-is-a-ring-main-unit",
+        "title": "What is a ring main unit?",
+        "paragraphs": [
+          "A ring main unit is a compact, enclosed and sealed switchgear used for medium-voltage power distribution. It is an assembly of the switching, protection and metering devices needed, so it only needs installation and cable connection, which greatly reduces commissioning time."
+        ]
+      },
+      {
+        "id": "where-are-rmus-used",
+        "title": "Where are RMUs used?",
+        "paragraphs": [
+          "RMUs are widely used in distribution systems, where they switch and protect cable feeders and the transformers connected to them. Indoor and outdoor types are available. Our customers include utilities, infrastructure developers, EPC and electrical contractors and industries."
+        ]
+      },
+      {
+        "id": "rmu-specifications-and-standards",
+        "title": "What are the key specifications?",
+        "paragraphs": [
+          "The table lists the published options. A self-powered protection device with a microprocessor-based numerical relay provides over-current and earth fault protection."
+        ],
+        "table": true
+      },
+      {
+        "id": "how-to-choose-an-rmu",
+        "title": "How do I choose an RMU?",
+        "paragraphs": [
+          "State the system voltage (11 kV or 33 kV), the number and type of ways you need (ring cable switches and transformer feeders), and whether the transformer feeder should be protected by a fuse (SFU) or a vacuum circuit breaker. Add whether the unit is for indoor or outdoor use and whether you need an earth fault indicator.",
+          "The transformer on the feeder is covered under [distribution transformers](/products/distribution-transformers). For incoming HT switchgear in a plant, see [HT panels](/products/ht-panels)."
+        ]
+      },
+      {
+        "id": "why-buy-rmus-from-tejaswini-industries-hyderabad",
+        "title": "Why buy RMUs from Tejaswini Industries in Hyderabad?",
+        "paragraphs": [
+          "RMUs are made in Hyderabad by a company that is ISO 9001:2015 certified, and the same works builds the transformers and panels they connect to. Electrical turnkey projects are also offered; see [services](/services)."
+        ]
+      }
+    ],
+    "specsTable": [
+      {
+        "label": "Voltage",
+        "value": "11 kV and 33 kV"
+      },
+      {
+        "label": "Switching options",
+        "value": "Load break switch or SFU; vacuum circuit breaker (VCB, optional)"
+      },
+      {
+        "label": "Load break switch",
+        "value": "630 A, 26.3 kA, with earth switch and interlock"
+      },
+      {
+        "label": "Fault indication",
+        "value": "Earth fault indicator with CBCT as per the electricity board standard"
+      },
+      {
+        "label": "Protection",
+        "value": "Self-powered microprocessor-based numerical relay: over-current and earth fault"
+      },
+      {
+        "label": "Installation",
+        "value": "Indoor and outdoor types"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a ring main unit (RMU)?",
+        "answer": "An RMU is compact, enclosed and sealed medium-voltage switchgear with the switching and protection devices in one package. It only needs installation and cable connection."
+      },
+      {
+        "question": "What voltages do your RMUs cover?",
+        "answer": "Tejaswini Industries makes ring main units for 11 kV and 33 kV, as load break switch or SFU units and as vacuum circuit breaker versions."
+      },
+      {
+        "question": "What is the difference between an SFU and a VCB unit?",
+        "answer": "An SFU is a switch-fuse unit, where a fuse protects the transformer feeder. A VCB version uses a vacuum circuit breaker with a relay instead. Both are offered, and the VCB type is optional."
+      },
+      {
+        "question": "Do you make indoor and outdoor RMUs?",
+        "answer": "Yes, both indoor and outdoor types of ring main units are available. State where it will be installed on the enquiry."
+      },
+      {
+        "question": "What is an earth fault indicator with CBCT?",
+        "answer": "An earth fault indicator shows that an earth fault has passed through the feeder. It works from a CBCT, a core-balance current transformer, and is supplied as per the electricity board standard."
+      },
+      {
+        "question": "What do I need to send to get an RMU quotation?",
+        "answer": "Send the voltage, the number and type of ways, whether you want SFU or VCB, indoor or outdoor use, and the site location through the contact form, or call or WhatsApp +91 92480 30362."
+      }
+    ],
+    "relatedGuides": [],
+    "relatedProducts": [
+      "distribution-transformers",
+      "ht-panels",
+      "lt-panels"
+    ],
     "title": "Ring Main Units in Hyderabad",
     "description": "11 kV and 33 kV ring main units from Hyderabad, including 630 A, 26.3 kA load-break switches with earth switch and interlock.",
     "image": {
@@ -587,6 +1470,94 @@ export const contentDocuments: CmsDoc[] = [
     ],
     "bodyParagraphs": [
       "Ring Main Units are compact, enclosed switchgear for medium voltage distribution — a complete package requiring only installation and cable connection."
+    ]
+  },
+  {
+    "_id": "productsPage",
+    "_type": "productsPage",
+    "metaTitle": "Transformers and Panels, Hyderabad",
+    "metaDescription": "Distribution and dry-type transformers, HT and LT panels and ring main units made by Tejaswini Industries at Mallapur, Hyderabad.",
+    "shortAnswer": "Tejaswini Industries is a transformer and switchgear manufacturer at Mallapur, Hyderabad, Telangana. It makes BIS-approved distribution transformers, dry-type transformers, HT panels, LT panels, ring main units and APFC panels, and is ISO 9001:2015 certified. Customers are MEP consultants, EPC and electrical contractors, industries, infrastructure developers and utilities, mostly across India.",
+    "sections": [
+      {
+        "id": "what-products-does-tejaswini-industries-make",
+        "title": "What products does Tejaswini Industries make?",
+        "paragraphs": [
+          "The product range, each with its own page of specifications and questions:"
+        ],
+        "bullets": [
+          "[Distribution transformers](/products/distribution-transformers): oil-cooled, 100 kVA to 2000 kVA, 11/22/33 kV, CRGO or amorphous core, copper or aluminium winding, OFTC or OLTC.",
+          "[Dry-type transformers](/products/dry-type-transformers): VPI type up to 2000 kVA, insulation class F or H, protection up to IP56.",
+          "[HT panels](/products/ht-panels): vacuum circuit breakers rated 630 to 2000 A, insulation level 12/28/75 kV.",
+          "[LT panels](/products/lt-panels): LT distribution panels with a solid busbar system; APFC panels also offered.",
+          "[Ring main units](/products/rmus): 11 kV and 33 kV, load break switch, SFU or VCB versions."
+        ],
+        "closing": [
+          "Transformer repair and electrical turnkey projects are also offered; see [services](/services)."
+        ]
+      },
+      {
+        "id": "who-buys-from-tejaswini-industries",
+        "title": "Who buys from Tejaswini Industries?",
+        "paragraphs": [
+          "Our customers are MEP consultants, EPC and electrical contractors, industries, infrastructure developers and utilities, mostly across India. Projects in Hyderabad and the rest of Telangana are supplied from the works at Mallapur."
+        ]
+      },
+      {
+        "id": "how-to-choose-the-right-product",
+        "title": "How do I choose the right product?",
+        "paragraphs": [
+          "Match the product to where it sits in the supply chain:"
+        ],
+        "bullets": [
+          "Stepping 11, 22 or 33 kV supply down for use: a [distribution transformer](/products/distribution-transformers), or a [dry-type transformer](/products/dry-type-transformers) for indoor rooms where fire safety is the priority.",
+          "Switching and protecting a high-voltage circuit in a plant: [HT panels](/products/ht-panels).",
+          "Switching cable feeders and transformer feeders in a distribution network: [ring main units](/products/rmus).",
+          "Distributing low-voltage power to loads: [LT panels](/products/lt-panels)."
+        ],
+        "closing": [
+          "For sizing and specification help, read the guides on [choosing the kVA rating](/blogs/how-to-choose-transformer-kva-rating-for-your-load), [IS 1180 efficiency levels](/blogs/is-1180-energy-efficiency-levels-explained), [amorphous vs CRGO cores](/blogs/amorphous-core-vs-crgo-core-distribution-transformer) and [OLTC vs off-circuit tap changers](/blogs/oltc-vs-off-circuit-tap-changer-distribution-transformer)."
+        ]
+      },
+      {
+        "id": "why-buy-from-a-hyderabad-manufacturer",
+        "title": "Why buy transformers and panels from a Hyderabad manufacturer?",
+        "paragraphs": [
+          "Everything on this page is made by Tejaswini Industries itself at Mallapur, Hyderabad, so you specify rating, voltage and options with the manufacturer. The company is ISO 9001:2015 certified and the site states a multi-stage quality check before deployment. To ask for a quotation, [contact us](/contact) or call or WhatsApp +91 92480 30362."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What products does Tejaswini Industries manufacture?",
+        "answer": "Distribution transformers, dry-type transformers, HT panels, LT panels, ring main units and APFC panels, at Mallapur, Hyderabad, Telangana. The company also offers transformer repair and electrical turnkey projects."
+      },
+      {
+        "question": "Is Tejaswini Industries a manufacturer or a trader?",
+        "answer": "Tejaswini Industries is a manufacturer. The transformers and panels are made at its works at 3-13-109/1/1, FCI Road, Suryanagar, Mallapur, Hyderabad 500076."
+      },
+      {
+        "question": "Which certifications does Tejaswini Industries have?",
+        "answer": "The company is ISO 9001:2015 certified and makes BIS-approved distribution transformers. Ask for certificate details when you request a quotation."
+      },
+      {
+        "question": "Who are the customers of Tejaswini Industries?",
+        "answer": "MEP consultants, EPC and electrical contractors, industries, infrastructure developers and utilities, mostly across India."
+      },
+      {
+        "question": "What range of distribution transformers do you offer?",
+        "answer": "Oil-cooled distribution transformers from 100 kVA to 2000 kVA at 11 kV, 22 kV and 33 kV, with CRGO or amorphous cores, copper or aluminium windings and off-load or on-load tap changers."
+      },
+      {
+        "question": "How do I request a quotation?",
+        "answer": "Use the contact form with the product, rating, voltage and site location, or call or WhatsApp +91 92480 30362."
+      }
+    ],
+    "relatedGuides": [
+      "how-to-choose-transformer-kva-rating-for-your-load",
+      "is-1180-energy-efficiency-levels-explained",
+      "amorphous-core-vs-crgo-core-distribution-transformer",
+      "oltc-vs-off-circuit-tap-changer-distribution-transformer"
     ]
   },
   {
@@ -661,66 +1632,6 @@ export const contentDocuments: CmsDoc[] = [
         "page": "home",
         "question": "How do I request a quote?",
         "answer": "Use the contact form. It asks for name, company, role, email, kVA, voltage, project location in Telangana and the technical requirement. Calls and WhatsApp both use +91 92480 30362."
-      },
-      {
-        "id": "dist-range",
-        "page": "distribution-transformers",
-        "question": "What ratings are published for distribution transformers?",
-        "answer": "100 kVA to 2000 kVA, voltage class 11 kV, 22 kV and 33 kV, cooling ONAN, off-load or on-load tap changer. Cores are CRGO or amorphous. Windings are aluminium (Al) or copper (Cu). Units are single- or three-phase, with primary voltage up to 33 kV and secondary voltage from 433 V to 11000 V. The order rating is the one on the quotation."
-      },
-      {
-        "id": "oil-what",
-        "page": "distribution-transformers",
-        "question": "What does oil-cooled mean on this site?",
-        "answer": "The catalogue lists cooling as ONAN, which is oil-natural, air-natural. The maintenance guide describes the same family as oil-immersed distribution transformers. Oil volume and a loss guarantee are not published."
-      },
-      {
-        "id": "oltc-choice",
-        "page": "distribution-transformers",
-        "question": "Can I specify OLTC or off-load tap changer?",
-        "answer": "Yes. The distribution specification lists both. The site does not publish which one is standard, the tap range, or the number of positions. Write the requirement on the inquiry."
-      },
-      {
-        "id": "crgo-what",
-        "page": "distribution-transformers",
-        "question": "What is a CRGO core?",
-        "answer": "CRGO is cold-rolled grain-oriented silicon steel. The grain direction is aligned so magnetic loss along the rolling direction is lower than in non-oriented electrical steel. These distribution transformers are 100 kVA to 2000 kVA, with aluminium or copper windings, at 11 kV, 22 kV and 33 kV. No loss wattage or efficiency-star rating is published."
-      },
-      {
-        "id": "amorphous-vs-crgo",
-        "page": "distribution-transformers",
-        "question": "How does an amorphous core compare with CRGO?",
-        "answer": "Amorphous metal is a thin metallic-glass ribbon. It generally has lower no-load loss and lower hysteresis loss than CRGO steel. The ribbon is more brittle, and the tank is often larger for the same rating. Both cores are built here, with aluminium or copper windings, from 100 kVA to 2000 kVA. This site does not publish a loss comparison in watts, a percentage saving, or an efficiency-star rating."
-      },
-      {
-        "id": "crgo-vs-amorphous",
-        "page": "distribution-transformers",
-        "question": "When is CRGO used instead of an amorphous core?",
-        "answer": "Both cores are manufactured for the same distribution band, 100 kVA to 2000 kVA, 11/22/33 kV, ONAN, with aluminium or copper windings. CRGO is grain-oriented silicon steel. Amorphous metal generally has lower no-load loss and is more brittle. The site does not publish a rule that assigns one core to a kVA band."
-      },
-      {
-        "id": "al-vs-cu",
-        "page": "distribution-transformers",
-        "question": "How does aluminium winding compare with copper?",
-        "answer": "Both windings are offered on CRGO and amorphous distribution transformers from 100 kVA to 2000 kVA. Aluminium has lower electrical conductivity than copper, so the conductor cross-section is larger for the same current, and the winding is lighter. Copper is the smaller, higher-conductivity conductor. No price difference and no efficiency-star rating are published."
-      },
-      {
-        "id": "winding-range",
-        "page": "distribution-transformers",
-        "question": "Which ratings can be aluminium or copper wound?",
-        "answer": "The distribution range is 100 kVA to 2000 kVA at 11 kV, 22 kV and 33 kV, ONAN cooling, off-load or on-load tap changer, on a CRGO or amorphous core, with an aluminium or copper winding. The factory is at Mallapur, Hyderabad."
-      },
-      {
-        "id": "ht-rating",
-        "page": "ht-panels",
-        "question": "What HT panel ratings are published?",
-        "answer": "Vacuum circuit breaker rating 630–2000 A, current transformer accuracy class 1–5P10, insulation level 12/28/75 kV. Short-circuit text on the longer product note says up to 26.3 kA rms. Panels are made in Hyderabad."
-      },
-      {
-        "id": "lt-what",
-        "page": "lt-panels",
-        "question": "What is stated for LT panels?",
-        "answer": "LT distribution panels use a solid busbar system, on-load protected switching, and keep live parts from direct access. A numerical busbar rating is not published. They are made in Hyderabad."
       },
       {
         "id": "areas-where",
@@ -812,260 +1723,1181 @@ export const contentDocuments: CmsDoc[] = [
     "status": "closed"
   },
   {
-    "_id": "optimizing-core-performance",
+    "_id": "blogPost-is-1180-energy-efficiency-levels-explained",
     "_type": "blogPost",
-    "id": "optimizing-core-performance",
+    "id": "is-1180-energy-efficiency-levels-explained",
     "slug": {
       "_type": "slug",
-      "current": "optimizing-core-performance"
+      "current": "is-1180-energy-efficiency-levels-explained"
     },
-    "title": "Optimizing Core Performance in High-Voltage Transformers",
-    "excerpt": "A comprehensive analysis of advanced cooling methodologies and magnetic core optimizations designed to extend lifecycle and improve efficiency in heavy industrial applications.",
-    "category": "transformers",
-    "categoryLabel": "TRANSFORMERS",
-    "date": "OCT 24, 2024",
-    "author": "DR. ARVIND RAO",
-    "authorRole": "CHIEF ENGINEER",
-    "authorImage": {
-      "_type": "imageWithUrl",
-      "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDVLr7MEcklxrxQBOe_tlGfUb0-ivGl9fyrhL9b4zeKd75U4iiSn5yDm19N6zrYzHijLAhVI7KfswhxetDqfnzUqyOYuA301SnOpF61vw7uiGMATBUMqBo6RqyoUPAng878dtu1l52AkoV7bCcbwkQhh0Pte1HOyUt0nvjxfbACDSoIOi02OTHAdAOuw4JSZK_0Hcq_DAkpOQcYqLxF2Le_TIjgzXoMfEhyOvo9pzxN7tcvazWHk0Ngj4LNlwauoeI-kXKndroMHMo",
-      "alt": "Professional headshot of chief engineer"
-    },
+    "title": "IS 1180 Energy Efficiency Levels Explained: What to Specify for a Distribution Transformer",
+    "breadcrumbLabel": "IS 1180 Efficiency Levels",
+    "metaTitle": "IS 1180 Efficiency Levels Explained",
+    "metaDescription": "What IS 1180 (Part 1) covers, how its five energy efficiency levels relate to BEE stars, and what to write in a distribution transformer specification.",
+    "excerpt": "IS 1180 (Part 1) is the Indian standard for oil-immersed distribution transformers up to 2500 kVA. Here is what it covers, what the efficiency levels mean, and what to write in your specification.",
+    "category": "standards",
+    "categoryLabel": "Standards & Efficiency",
+    "publishedAt": "2026-10-26",
+    "dateModified": "2026-10-26",
+    "date": "OCT 26, 2026",
+    "author": "Tejaswini Industries",
+    "authorRole": "",
+    "readTime": "6 min read",
+    "wordCount": 1252,
+    "featured": true,
     "image": {
       "_type": "imageWithUrl",
-      "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDxM4lqDbVuoCpz0qUDuNuOJ0uQxWl6qBJwHyqtho0npZS5-Ryjm0Ec2tjqXONrFPM1apEHOFlgSmaaPqAgIo8HrvbR1vkdt9J-_u1S4RyXonmH5EVfxX5LCS1gkjef9vxu17WNW96KfxSbMGMkF9GBApavWljR_rhgyr23yMcf_j-bx3oydgpN5REmhmjlj4ds9Zt_GQVo8iq7ls8w11_t4OcKQDA7PSUqD5RnEpEBNWUF8JLHQXpHdh37wFlX_46AT-ld5VU9eGU",
-      "alt": "High-voltage transformer in a modern manufacturing facility"
+      "url": "/images/blog/distribution-transformer-front-view-conservator-bushings-wide.webp",
+      "alt": "Front view of an oil-filled distribution transformer with a TEJASWINI-branded conservator tank, three HV bushings on the top cover, red LV terminals and a radiator bank on each side, standing in a workshop bay."
     },
-    "featured": true
-  },
-  {
-    "_id": "transformer-maintenance",
-    "_type": "blogPost",
-    "id": "transformer-maintenance",
-    "slug": {
-      "_type": "slug",
-      "current": "transformer-maintenance-guide"
-    },
-    "title": "Maximizing Efficiency: A Guide to Distribution Transformer Maintenance",
-    "excerpt": "Proactive maintenance protocols for oil-immersed distribution transformers—visual inspections, dielectric testing, and ISO-compliant field checklists.",
-    "category": "maintenance",
-    "categoryLabel": "MAINTENANCE",
-    "date": "OCT 24, 2024",
-    "author": "ENG. RAJESH KUMAR",
-    "image": {
-      "_type": "imageWithUrl",
-      "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuB4nroFs-j9eoQ3-5QYiwKVBg0J0jOw2bveiRk1LM6W-OzgGNziTahCVvExKdI3rV3aUh_1uP8S5xuPZgT0c7KlaFsi-YeMxvsDMOW_E2pbnyYfutOlHqxKQJqu2M3fafQhiwPegvemywEY0ph5zvt_S7QiZDzFsW83iuJnTL-K0BmVck5o51FuM-tn1O07q62xS2U-dnQ6UAuw7RCO0rCBXPQgjBjjC0y_0O8STvkbBcTuK3eSV3LUtzwQR7q1fgddrKRxyigp6zE",
-      "alt": "Distribution transformer maintenance in a manufacturing facility"
-    },
-    "featured": false,
-    "breadcrumbLabel": "Transformer Maintenance",
-    "readTime": "8 min read",
-    "intro": "Distribution transformers are the critical backbone of industrial power systems. Proactive maintenance is not merely a recommendation; it is an operational imperative to prevent catastrophic failures and ensure continuous high-performance output.",
+    "heroCaption": "An oil-filled distribution transformer in the workshop, front view. The photo shows the build, not a particular efficiency level or rating.",
+    "intro": "IS 1180 (Part 1) is the Bureau of Indian Standards specification for oil-immersed distribution transformers up to and including 2500 kVA at system voltages up to 33 kV. It limits the total losses of each rating at 50 % and 100 % load, and groups those limits into energy efficiency levels. After Amendment No. 4 (March 2021) there are five levels, matching BEE labels from 1 star to 5 stars, and a higher level means lower permitted losses.",
     "sections": [
       {
-        "id": "routine-visual-inspections",
-        "title": "1. Routine Visual Inspections",
+        "id": "what-is-1180-part-1",
+        "title": "What IS 1180 (Part 1) covers",
         "paragraphs": [
-          "Visual inspections form the first line of defense in transformer maintenance. These should be conducted strictly according to a documented schedule. Key indicators of potential issues include oil leaks around gaskets or valves, discoloration of the tank surface indicating localized overheating, and physical damage to bushings or cooling fins."
+          "The full title is \"Outdoor/Indoor Type Oil Immersed Distribution Transformers up to and including 2500 kVA, 33 kV, Part 1: Mineral Oil Immersed\". The current text is the Fourth Revision of 2014, and it has been amended four times since (2016, 2017, 2019 and 2021). Part 3 of the same series, IS 1180 (Part 3), covers transformers filled with natural or synthetic ester liquid instead of mineral oil.",
+          "The standard lists preferred ratings. For three-phase units above 200 kVA they are 250, 315, 400, 500, 630, 800, 1000, 1250, 1600, 2000 and 2500 kVA, and for units up to 200 kVA they run from 16 to 200 kVA. It also sets out voltage ratios, tapping ranges, bushings, fittings, tank strength, the tests a transformer must pass and the markings it must carry.",
+          "IS 1180 is not the standard for power transformers. Those fall under the IS 2026 series, which IS 1180 also refers to for general requirements such as temperature rise and insulation levels. For a [distribution transformer](/products/distribution-transformers) in the 100 kVA to 2000 kVA range, IS 1180 is the document your specification should name."
+        ]
+      },
+      {
+        "id": "total-loss",
+        "title": "What \"maximum total loss\" means",
+        "paragraphs": [
+          "A transformer wastes energy in two ways. **No-load loss** is the energy used by the core whenever the transformer is energised, loaded or not. **Load loss** is the heat produced in the windings and other parts by the current, and it rises roughly with the square of the load.",
+          "IS 1180 does not limit the two separately. It gives one figure for each rating and level: the maximum total loss in watts, which is the no-load loss plus the load loss, at a reference temperature of 75 °C. Two figures are given per level, one at 50 % load and one at 100 % load."
         ],
         "subsections": [
           {
-            "id": "key-inspection-checkpoints",
-            "title": "Key Inspection Checkpoints",
-            "checklist": [
-              {
-                "label": "Oil Levels & Leaks:",
-                "text": "Verify conservator oil levels and inspect all welded joints and valves."
-              },
-              {
-                "label": "Silica Gel Breather:",
-                "text": "Ensure the gel is blue (active) and replace if it turns pink (saturated)."
-              },
-              {
-                "label": "Bushing Condition:",
-                "text": "Check for cracks, tracking marks, or significant dirt accumulation."
-              }
+            "id": "why-two-loading-points",
+            "title": "Why there are two loading points",
+            "paragraphs": [
+              "Most distribution transformers run below full load for most of the year. A limit at 50 % load rewards a low no-load loss, because the core loss is a large part of the total at that loading. A limit at 100 % load keeps the winding losses in check. A design has to meet both.",
+              "The published tables apply to transformers of the 11 kV class. For 22 kV and 33 kV classes the standard allows higher loss values, so do not compare a 33 kV offer against the 11 kV table."
             ]
           }
         ]
       },
       {
-        "id": "technical-maintenance-schedule",
-        "title": "2. Technical Maintenance Schedule",
+        "id": "five-levels",
+        "title": "The five energy efficiency levels and BEE stars",
         "paragraphs": [
-          "Adhering to a standardized maintenance grid is vital for operational compliance and equipment longevity. Below is the recommended industrial standard schedule for oil-immersed distribution transformers."
+          "The original 2014 text had three levels. Amendment No. 4 replaced that with five, numbered 1 to 5 and corresponding to 1-star to 5-star transformers as labelled by the Bureau of Energy Efficiency. Level 1 allows the highest losses and Level 5 the lowest.",
+          "The table shows how far apart the levels are for one rating. These figures are the maximum total losses for a 500 kVA three-phase transformer of the 11 kV class, taken from Table 6 of Amendment No. 4."
+        ],
+        "closing": [
+          "Because the numbering changed between the 2014 text and the 2021 amendment, always write the level together with the edition and amendment in the purchase order, or state the loss values in watts. \"Level 1\" on its own can be read two ways by two readers.",
+          "BEE star labelling is a separate scheme from the BIS licence, with its own rules on which transformers must carry a label. If your buyer is a utility or a government department, its tender documents usually say which level or star rating is required."
         ],
         "table": {
           "headers": [
-            "Component",
-            "Inspection Action",
-            "Frequency",
-            "Tolerance limit"
+            "Level (BEE star)",
+            "Max total loss at 50 % load",
+            "Max total loss at 100 % load"
           ],
           "rows": [
             {
               "cells": [
-                "Oil BDV Test",
-                "Dielectric strength measurement",
-                "Annual",
-                "> 40 kV (min)"
+                "Level 1 (1 star)",
+                "1,510 W",
+                "4,300 W"
               ]
             },
             {
               "cells": [
-                "Earth Resistance",
-                "Megger testing of neutral/body earth",
-                "Bi-Annual",
-                "< 1.0 Ohm"
+                "Level 2 (2 star)",
+                "1,430 W",
+                "4,100 W"
               ]
             },
             {
               "cells": [
-                "Buchholz Relay",
-                "Gas accumulation check & float operation",
-                "Quarterly",
-                "Zero Gas"
+                "Level 3 (3 star)",
+                "1,354 W",
+                "3,909 W"
               ]
             },
             {
               "cells": [
-                "Winding Resistance",
-                "Bridge method measurement per phase",
-                "3 Years",
-                "± 2% variation"
+                "Level 4 (4 star)",
+                "1,282 W",
+                "3,727 W"
+              ]
+            },
+            {
+              "cells": [
+                "Level 5 (5 star)",
+                "1,215 W",
+                "3,554 W"
               ]
             }
           ]
-        },
-        "alert": {
-          "title": "Critical Action Warning",
-          "message": "Never attempt oil sampling or internal inspections while the transformer is energized. Ensure comprehensive isolation and grounding protocols are executed prior to physical intervention."
         }
+      },
+      {
+        "id": "choosing-a-level",
+        "title": "How to choose a level",
+        "paragraphs": [
+          "If a tender or utility specification names a level, that settles it. If the choice is yours, treat it as a lifetime cost question, not just a purchase price question.",
+          "No-load loss is paid for every hour the transformer is energised, which is 8,760 hours in a year. Every 100 W of no-load loss avoided is 876 kWh a year (100 W × 8,760 h). Load loss depends on how heavily the transformer is loaded, so it matters most for units that run close to full load for long periods. Multiply the loss difference between two offers by your tariff and your expected years of service, then compare it with the difference in price.",
+          "A transformer on a lightly loaded feeder gains most from a low no-load loss. A transformer that runs near its rating through most shifts gains most from low winding losses. The [amorphous versus CRGO core guide](/blogs/amorphous-core-vs-crgo-core-distribution-transformer) explains how the core material affects the first of those."
+        ]
+      },
+      {
+        "id": "writing-the-specification",
+        "title": "What to write in the specification",
+        "paragraphs": [
+          "A specification that only says \"BIS approved\" leaves too much open. These are the lines that remove ambiguity:"
+        ],
+        "bullets": [
+          "The standard, part, edition and amendment, for example IS 1180 (Part 1) with Amendment No. 4.",
+          "The energy efficiency level, or the guaranteed maximum losses in watts at 50 % and 100 % load.",
+          "Rating in kVA, number of phases, HV and LV voltage, and vector group.",
+          "Tap changer type and range. See the [OLTC versus off-circuit tap changer guide](/blogs/oltc-vs-off-circuit-tap-changer-distribution-transformer).",
+          "Winding material (aluminium or copper) and core material (CRGO or amorphous), if you have a preference.",
+          "The test reports you expect with the delivery, and whether you or your consultant will witness the tests."
+        ],
+        "closing": [
+          "Ask each supplier to state the guaranteed losses in its offer, and check them against the table for the level you want. Tejaswini Industries makes oil-filled distribution transformers from 100 kVA to 2000 kVA in Hyderabad, with CRGO or amorphous cores, aluminium or copper windings, and off-circuit or on-load tap changers. Send your specification with the level you need and we will tell you what we can offer against it."
+        ]
       }
     ],
     "tableOfContents": [
       {
-        "id": "routine-visual-inspections",
-        "label": "Routine Visual Inspections",
+        "id": "what-is-1180-part-1",
+        "label": "What IS 1180 (Part 1) covers",
         "indent": false
       },
       {
-        "id": "key-inspection-checkpoints",
-        "label": "Key Inspection Checkpoints",
+        "id": "total-loss",
+        "label": "What \"maximum total loss\" means",
+        "indent": false
+      },
+      {
+        "id": "why-two-loading-points",
+        "label": "Why there are two loading points",
         "indent": true
       },
       {
-        "id": "technical-maintenance-schedule",
-        "label": "Technical Maintenance Schedule",
+        "id": "five-levels",
+        "label": "The five energy efficiency levels and BEE stars",
+        "indent": false
+      },
+      {
+        "id": "choosing-a-level",
+        "label": "How to choose a level",
+        "indent": false
+      },
+      {
+        "id": "writing-the-specification",
+        "label": "What to write in the specification",
+        "indent": false
+      },
+      {
+        "id": "faq",
+        "label": "Frequently asked questions",
         "indent": false
       }
     ],
+    "faqs": [
+      {
+        "question": "What is IS 1180?",
+        "answer": "IS 1180 is the Indian standard for distribution transformers. Part 1 covers oil-immersed transformers filled with mineral oil, up to and including 2500 kVA and 33 kV. It sets ratings, fittings, tests and the maximum total losses for each energy efficiency level."
+      },
+      {
+        "question": "Which IS 1180 efficiency level is the most efficient?",
+        "answer": "After Amendment No. 4 (2021), Level 5 allows the lowest losses and is the most efficient. Level 1 allows the highest losses. The levels correspond to BEE labels of 1 star to 5 stars. Check the edition and amendment you are quoting, because the 2014 text used three levels."
+      },
+      {
+        "question": "Is the IS 1180 level the same as the BEE star rating?",
+        "answer": "They are matched: Levels 1 to 5 correspond to 1-star to 5-star transformers. BEE star labelling is a separate scheme with its own rules on which transformers need a label, so confirm what your buyer or utility requires."
+      },
+      {
+        "question": "Does IS 1180 apply to transformers above 2500 kVA?",
+        "answer": "No. IS 1180 (Part 1) stops at 2500 kVA and 33 kV. Larger power transformers are covered by the IS 2026 series."
+      }
+    ],
+    "cta": {
+      "title": "Need a distribution transformer quote?",
+      "text": "Send your kVA rating, HV and LV voltage, tap changer requirement and site location. Tejaswini Industries will reply with a quote for oil-filled distribution transformers from 100 kVA to 2000 kVA."
+    },
     "relatedProduct": {
-      "title": "Oil Immersed Series T-500",
-      "capacity": "Up to 2000 kVA",
+      "title": "Distribution Transformers",
+      "capacity": "100 kVA to 2000 kVA",
       "image": {
         "_type": "imageWithUrl",
-        "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBZ7S0-m4mM8DFQGni5o150QeFDD83oDuijTZNsQoslWTkSbzy880_1EC8dZEzYKjrocCD51NVTFCpso2KL2KDGbhWzFjMHf3xD4IQW2nl6xnVW0bFcCxf6CHUZIRTPzuXH6Rvm5BDeapbgjuYck8Q_28cmcRQ16BjDU5_S1MX558MYlHO2JQNrULbLlNt-AsFqwrcuqOR_rttBkhTyQ7D74c-bWXWYyied0vuQLam-WdPGE_QZ-2yFu8ceNH4lYdx0t6mJXKf9Vig",
-        "alt": "Oil immersed industrial transformer thumbnail"
+        "url": "/images/blog/distribution-transformer-front-view-conservator-bushings-wide.webp",
+        "alt": "Front view of an oil-filled distribution transformer with a TEJASWINI-branded conservator tank, three HV bushings on the top cover, red LV terminals and a radiator bank on each side, standing in a workshop bay."
       },
       "href": "/products/distribution-transformers"
     }
   },
   {
-    "_id": "arc-flash-standards",
+    "_id": "blogPost-amorphous-core-vs-crgo-core-distribution-transformer",
     "_type": "blogPost",
-    "id": "arc-flash-standards",
+    "id": "amorphous-core-vs-crgo-core-distribution-transformer",
     "slug": {
       "_type": "slug",
-      "current": "arc-flash-standards"
+      "current": "amorphous-core-vs-crgo-core-distribution-transformer"
     },
-    "title": "Revised Arc Flash Hazard Safety Standards Q4",
-    "excerpt": "Critical updates to personal protective equipment requirements and boundary calculations for low-voltage panels.",
-    "category": "electrical-safety",
-    "categoryLabel": "ALERT • SAFETY",
-    "date": "OCT 15, 2024",
-    "author": "COMPLIANCE TEAM",
+    "title": "Amorphous Core vs CRGO Core Distribution Transformers: Losses, Cost and When Each Fits",
+    "breadcrumbLabel": "Amorphous vs CRGO Core",
+    "metaTitle": "Amorphous vs CRGO Core Transformers",
+    "metaDescription": "How amorphous and CRGO cores differ in no-load loss, price and suitability, and how to decide which one suits the way your distribution transformer is loaded.",
+    "excerpt": "Amorphous cores cut no-load loss but cost more to buy. CRGO is the usual choice. Which one pays off depends on how your transformer is loaded.",
+    "category": "selection",
+    "categoryLabel": "Selection Guides",
+    "publishedAt": "2026-10-26",
+    "dateModified": "2026-10-26",
+    "date": "OCT 26, 2026",
+    "author": "Tejaswini Industries",
+    "authorRole": "",
+    "readTime": "5 min read",
+    "wordCount": 988,
+    "featured": false,
     "image": {
       "_type": "imageWithUrl",
-      "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDtvW1wF44g21Kpk28pczWxb78tgAXvTewhc_eSU9f6dGs6pQsIFVa9Mjn1E5awJugvsSRbur4jpb8W4yl6cNR8io_W56TklPSLVVR0ZR-2ok4kqmlGHGtGAyXH7tT-CBwjEjNT-xVLMaY87oLlCca7tHRikmnNoYIXvdSrTidFXU_1Z1hh57J8CAxOyLJgZ-bIQtcfRXVA_LnkCETZdf9mm4mT_lM1M_8PSNj00LMTpAlFsbURpsNpacdfShZhQiXEfxNqB8mKcgM",
-      "alt": "Industrial warehouse with electrical components"
+      "url": "/images/blog/wound-core-sections-packed-on-pallet-wide.webp",
+      "alt": "Wound transformer core sections made of rolled steel strip, bound with tape and packed in plastic on a pallet in a workshop."
     },
-    "accent": true,
-    "alertMeta": true,
-    "featured": false
+    "heroCaption": "Wound core sections made of rolled steel strip, packed in plastic on a pallet in the workshop. The photo does not show which core material or rating these sections are for.",
+    "intro": "An amorphous core usually gives a much lower no-load loss than a CRGO core, at a higher purchase price. Published studies commonly report no-load loss reductions of roughly 50 % to 70 %, depending on the design and what it is compared with. The saving matters most on a transformer that stays energised all year and carries a light load. A transformer that runs near full load for long hours gains less, because its losses come mostly from the windings.",
+    "sections": [
+      {
+        "id": "what-the-core-does",
+        "title": "What the core does and why its material matters",
+        "paragraphs": [
+          "The core carries the magnetic flux that links the primary and secondary windings. Every time the transformer is energised, the core is being magnetised and demagnetised 50 times a second, and that wastes a little energy as heat. This is the no-load loss, and it is there whether the transformer carries 5 % of its rating or 95 %.",
+          "Core material is the main thing that sets the size of that loss. The two materials used in oil-filled [distribution transformers](/products/distribution-transformers) are CRGO and amorphous metal."
+        ]
+      },
+      {
+        "id": "crgo",
+        "title": "CRGO core",
+        "paragraphs": [
+          "CRGO stands for cold-rolled grain-oriented silicon steel. It is rolled into thin sheets with a crystal structure that guides the magnetic flux along the rolling direction. IS 3024 is the Indian standard for grain-oriented electrical steel sheet and strip.",
+          "CRGO is the established choice for distribution transformers. Manufacturers know it well, it is widely available, and a CRGO transformer costs less to buy than an amorphous one of the same rating. Better grades of CRGO lower the loss further, at a higher steel price."
+        ]
+      },
+      {
+        "id": "amorphous",
+        "title": "Amorphous core",
+        "paragraphs": [
+          "Amorphous metal is made by cooling molten alloy so quickly that it does not form a crystal structure. It is produced as a very thin ribbon, about a tenth of the thickness of silicon steel sheet. The non-crystalline structure and the thin ribbon both reduce the energy lost in magnetising the core.",
+          "The trade-offs are cost and handling. The ribbon is more expensive and harder to work with than steel sheet, which is why amorphous transformers cost more. Some designs also end up larger or heavier for the same rating, and some sources note a higher inrush current when the transformer is energised, which is worth discussing if the upstream protection settings are tight."
+        ]
+      },
+      {
+        "id": "comparison",
+        "title": "Side-by-side comparison",
+        "paragraphs": [
+          "Core material changes the no-load loss. It does not set the load loss, which depends on the winding design and conductor. Aluminium or copper windings are a separate choice from the core."
+        ],
+        "table": {
+          "headers": [
+            "Point",
+            "CRGO core",
+            "Amorphous core"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "No-load loss",
+                "Higher",
+                "Much lower; published studies often report about 50 % to 70 % less"
+              ]
+            },
+            {
+              "cells": [
+                "Load loss",
+                "Set by the windings",
+                "Set by the windings"
+              ]
+            },
+            {
+              "cells": [
+                "Purchase price",
+                "Lower",
+                "Higher"
+              ]
+            },
+            {
+              "cells": [
+                "Size and weight",
+                "Usually more compact",
+                "Can be larger or heavier for the same rating"
+              ]
+            },
+            {
+              "cells": [
+                "Best fit",
+                "Transformers loaded heavily for long hours, or where first cost decides",
+                "Transformers energised all year with light or variable load"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "when-amorphous-pays-off",
+        "title": "When an amorphous core pays off",
+        "paragraphs": [
+          "The payback comes from the energy saved on no-load loss. A transformer is energised for 8,760 hours in a year, so each 100 W of no-load loss saved avoids 876 kWh a year. Multiply that by your tariff, then divide the extra purchase price by the yearly saving to get a simple payback period in years.",
+          "The calculation favours amorphous cores where the transformer is lightly loaded much of the time: a feeder serving mostly daytime load, a site with long idle periods, or a transformer sized with generous spare capacity. It also favours them where the tariff is high and the transformer is expected to serve for many years."
+        ],
+        "subsections": [
+          {
+            "id": "when-crgo-is-the-better-choice",
+            "title": "When CRGO is the better choice",
+            "paragraphs": [
+              "If the transformer carries close to its rating through two or three shifts a day, winding losses dominate and the no-load saving is a smaller share of the total. If the budget is fixed, or the foundation, plinth or room is tight on space and weight, CRGO is often the practical answer."
+            ]
+          }
+        ],
+        "figure": {
+          "image": {
+            "_type": "imageWithUrl",
+            "url": "/images/blog/oil-filled-distribution-transformer-side-view-full.webp",
+            "alt": "Side view of an oil-filled distribution transformer on a workshop floor: TEJASWINI-branded conservator, blue silica gel breather, HV bushings on the top cover, radiator banks and a grey side-mounted cabinet."
+          },
+          "caption": "A finished oil-filled distribution transformer in the workshop. The core sits inside the tank under the top cover, so its material cannot be told from the outside. Always state it in the specification.",
+          "width": 724,
+          "height": 962,
+          "maxWidth": "md"
+        }
+      },
+      {
+        "id": "core-and-is-1180",
+        "title": "Core material and the IS 1180 efficiency levels",
+        "paragraphs": [
+          "IS 1180 (Part 1) limits the maximum total loss for each efficiency level. It does not require a particular core material. A manufacturer can meet a level with CRGO or with amorphous metal, and the higher levels are generally easier to reach with a low-loss core. The [IS 1180 efficiency levels guide](/blogs/is-1180-energy-efficiency-levels-explained) explains how to read the loss tables.",
+          "Tejaswini Industries builds oil-filled distribution transformers from 100 kVA to 2000 kVA in Hyderabad with either CRGO or amorphous cores, and with aluminium or copper windings. Send us the rating, voltage, how the transformer will be loaded and the efficiency level you need, and we will confirm the options for your rating in the quote."
+        ]
+      }
+    ],
+    "tableOfContents": [
+      {
+        "id": "what-the-core-does",
+        "label": "What the core does and why its material matters",
+        "indent": false
+      },
+      {
+        "id": "crgo",
+        "label": "CRGO core",
+        "indent": false
+      },
+      {
+        "id": "amorphous",
+        "label": "Amorphous core",
+        "indent": false
+      },
+      {
+        "id": "comparison",
+        "label": "Side-by-side comparison",
+        "indent": false
+      },
+      {
+        "id": "when-amorphous-pays-off",
+        "label": "When an amorphous core pays off",
+        "indent": false
+      },
+      {
+        "id": "when-crgo-is-the-better-choice",
+        "label": "When CRGO is the better choice",
+        "indent": true
+      },
+      {
+        "id": "core-and-is-1180",
+        "label": "Core material and the IS 1180 efficiency levels",
+        "indent": false
+      },
+      {
+        "id": "faq",
+        "label": "Frequently asked questions",
+        "indent": false
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is an amorphous core transformer better than a CRGO transformer?",
+        "answer": "It has a lower no-load loss, so it wastes less energy when lightly loaded or idle. It also costs more to buy. Whether it is better depends on how the transformer is loaded, your tariff and how long you expect it to serve."
+      },
+      {
+        "question": "How much lower are the losses with an amorphous core?",
+        "answer": "Published studies commonly report no-load loss reductions of roughly 50 % to 70 % compared with grain-oriented silicon steel, depending on the design. The exact figure for a given transformer should come from the guaranteed loss values in the manufacturer offer."
+      },
+      {
+        "question": "Does the core material change the load loss?",
+        "answer": "No. Load loss comes mainly from the current in the windings, so it depends on the winding design and on whether the windings are aluminium or copper."
+      },
+      {
+        "question": "Can I get both core types from Tejaswini Industries?",
+        "answer": "Tejaswini Industries offers CRGO and amorphous cores on its distribution transformers from 100 kVA to 2000 kVA. Availability for a specific rating and voltage is confirmed in the quote."
+      }
+    ],
+    "cta": {
+      "title": "Need a distribution transformer quote?",
+      "text": "Send your kVA rating, HV and LV voltage, tap changer requirement and site location. Tejaswini Industries will reply with a quote for oil-filled distribution transformers from 100 kVA to 2000 kVA."
+    },
+    "relatedProduct": {
+      "title": "Distribution Transformers",
+      "capacity": "100 kVA to 2000 kVA",
+      "image": {
+        "_type": "imageWithUrl",
+        "url": "/images/blog/distribution-transformer-front-view-conservator-bushings-wide.webp",
+        "alt": "Front view of an oil-filled distribution transformer with a TEJASWINI-branded conservator tank, three HV bushings on the top cover, red LV terminals and a radiator bank on each side, standing in a workshop bay."
+      },
+      "href": "/products/distribution-transformers"
+    }
   },
   {
-    "_id": "iso-audit",
+    "_id": "blogPost-oltc-vs-off-circuit-tap-changer-distribution-transformer",
     "_type": "blogPost",
-    "id": "iso-audit",
+    "id": "oltc-vs-off-circuit-tap-changer-distribution-transformer",
     "slug": {
       "_type": "slug",
-      "current": "iso-audit"
+      "current": "oltc-vs-off-circuit-tap-changer-distribution-transformer"
     },
-    "title": "ISO 9001:2015 Audit Preparation Guidelines",
-    "excerpt": "A structured checklist for manufacturing floors to ensure seamless compliance during upcoming certification renewal audits.",
-    "category": "industry-news",
-    "categoryLabel": "INDUSTRY NEWS",
-    "date": "OCT 10, 2024",
-    "author": "QA DEPT",
+    "title": "OLTC vs Off-Circuit Tap Changer (OFTC): Which Distribution Transformer Do You Need?",
+    "breadcrumbLabel": "OLTC vs Off-Circuit Tap Changer",
+    "metaTitle": "OLTC vs Off-Circuit Tap Changer",
+    "metaDescription": "The difference between an on-load tap changer (OLTC) and an off-circuit or off-load tap changer (OFTC) on a distribution transformer, and when the extra cost is justified.",
+    "excerpt": "An OLTC changes the voltage ratio while the transformer is carrying load. An off-circuit tap changer needs the transformer switched off. Here is how to choose.",
+    "category": "selection",
+    "categoryLabel": "Selection Guides",
+    "publishedAt": "2026-10-26",
+    "dateModified": "2026-10-26",
+    "date": "OCT 26, 2026",
+    "author": "Tejaswini Industries",
+    "authorRole": "",
+    "readTime": "5 min read",
+    "wordCount": 948,
+    "featured": false,
     "image": {
       "_type": "imageWithUrl",
-      "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuCM9qtlibdRNKqoK5nVQyy4ftmFqzOYaMtKHpepvfBAQQ46W-gc1F-UuPP6bqUw1xJ10I81WQ5VbfiA3MyG_Kj6mYbARBJOn_s4ZrJE9z2jKRYKWJOjEf8L52t93qofA_4GUrUYjZvGWfm0pJZI7LClX0QgNctQz7zCO39YWyoBtTcys1uv62TgWptrBwQexfQX6n0eeODH4xH4E5VsJ1UDhJQH2OCVk22WEsX074KLwRGbqKmlVKmXBWexiEh3YVHz2xAfPJdLYVk",
-      "alt": "Technical blueprint on digital drafting screen"
+      "url": "/images/blog/oil-filled-distribution-transformer-side-view-wide.webp",
+      "alt": "Oil-filled distribution transformer seen from the side in a workshop, with a TEJASWINI-branded conservator tank above the tank, a blue silica gel breather, radiator fins and a grey side-mounted cabinet."
     },
-    "featured": false
+    "heroCaption": "A finished oil-filled distribution transformer in the workshop, seen from the side. The tap changer type depends on the order, and this photo is not a statement about what this unit has.",
+    "intro": "A tap changer adjusts the turns ratio of a transformer so its secondary voltage can be corrected. An off-circuit tap changer, also written OFTC, OCTC or off-load tap changer, can only be moved when the transformer is de-energised. An on-load tap changer (OLTC) changes tap while the transformer is carrying load, usually under an automatic voltage regulator. Choose an OLTC when the supply voltage varies enough to need regular correction. Choose an off-circuit tap changer when you can set the tap once and leave it.",
+    "sections": [
+      {
+        "id": "what-a-tap-changer-does",
+        "title": "What a tap changer does",
+        "paragraphs": [
+          "The voltage on the low-voltage side of a transformer depends on the incoming voltage and on the turns ratio. If the incoming 11 kV or 33 kV supply runs high or low, the secondary voltage follows it. A tap changer lets you add or remove turns on the high-voltage winding so the secondary voltage comes back to where your equipment needs it.",
+          "The names cause confusion because the same device is called by several. \"Off-circuit\", \"off-load\" and \"de-energised\" tap changer, and the abbreviations OCTC and OFTC, all mean a tap changer that must be moved with the transformer isolated. The Tejaswini Industries site uses \"off-load\"."
+        ]
+      },
+      {
+        "id": "off-circuit-tap-changer",
+        "title": "Off-circuit tap changer (OFTC)",
+        "paragraphs": [
+          "This is the standard fitting on distribution transformers. A handle or selector on the tank is moved to a different tap position with the transformer isolated from both the HV and LV sides. It is simple, has few moving parts and needs little attention.",
+          "IS 1180 (Part 1) gives the standard off-circuit tapping range on the HV winding. For three-phase transformers up to 200 kVA it is +2.5 % to −5 % in steps of 2.5 %. For ratings above 200 kVA up to 2500 kVA it is +5 % to −10 % in steps of 2.5 %. Other ranges and steps can be agreed between buyer and supplier."
+        ],
+        "subsections": [
+          {
+            "id": "changing-a-tap-safely",
+            "title": "Changing an off-circuit tap safely",
+            "paragraphs": [
+              "Never move an off-circuit tap changer while the transformer is energised. Isolate and earth both sides under your site permit-to-work procedure, lock the handle in the new position, check that the position indicator matches, measure the secondary voltage when the transformer is re-energised, and record the tap used. Only qualified electrical staff should do this."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "on-load-tap-changer",
+        "title": "On-load tap changer (OLTC)",
+        "paragraphs": [
+          "An OLTC changes tap without interrupting the load. It does this with a switching mechanism that moves from one tap to the next while current keeps flowing, usually driven by a motor and controlled by a voltage regulating relay that holds the secondary voltage inside a set band.",
+          "IS 1180 notes that on-load tap changers may be provided on ratings of 500 kVA and above, for example for HV variation from +5 % to −15 %. The step size and control arrangement should be written into the specification.",
+          "The extra capability brings extra cost, extra parts and extra maintenance. The switching mechanism, its oil and its contacts need periodic inspection, and the drive and control circuit need a reliable auxiliary supply."
+        ]
+      },
+      {
+        "id": "side-by-side",
+        "title": "Side-by-side comparison",
+        "paragraphs": [],
+        "table": {
+          "headers": [
+            "Point",
+            "Off-circuit (OFTC)",
+            "On-load (OLTC)"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "When it can be changed",
+                "Only with the transformer isolated",
+                "While carrying load"
+              ]
+            },
+            {
+              "cells": [
+                "Typical control",
+                "Manual handle or selector",
+                "Motor drive, often automatic"
+              ]
+            },
+            {
+              "cells": [
+                "Cost",
+                "Lower",
+                "Higher"
+              ]
+            },
+            {
+              "cells": [
+                "Maintenance",
+                "Minimal",
+                "Periodic inspection of the mechanism and oil"
+              ]
+            },
+            {
+              "cells": [
+                "Best when",
+                "Supply voltage is stable and set once",
+                "Supply voltage swings and an outage to change tap is costly"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "how-to-decide",
+        "title": "How to decide",
+        "paragraphs": [
+          "Start by measuring the incoming voltage over a few weeks, at different times of day and different seasons. If it stays inside a narrow band, an off-circuit tap changer set at commissioning is enough, and a planned shutdown once a year can adjust it.",
+          "An OLTC makes sense when the HV supply swings widely during the day, when the site is at the end of a long feeder, or when the process load cannot tolerate voltage excursions and cannot be stopped to change a tap. It is also worth considering where load grows by stages and the voltage drop changes with it.",
+          "If only a few sensitive loads are affected, a voltage stabiliser at those loads can be cheaper than an OLTC on the whole transformer. An OLTC corrects the whole LV bus, so it is the better answer when the entire site needs a steadier voltage."
+        ]
+      },
+      {
+        "id": "what-to-state",
+        "title": "What to state in the order",
+        "paragraphs": [
+          "Whichever type you choose, put these points in the specification:"
+        ],
+        "bullets": [
+          "Tap changer type: off-circuit with external handle and locking, or on-load.",
+          "Which winding is tapped (normally HV), the total range and the step size.",
+          "For an OLTC: manual or automatic control, the auxiliary supply voltage, and any remote position indication.",
+          "Where the tap position indicator should be readable from."
+        ],
+        "closing": [
+          "Tejaswini Industries offers both off-load and on-load tap changer options on its [distribution transformers](/products/distribution-transformers), from 100 kVA to 2000 kVA. For rating-specific advice, [send us your voltage readings and rating](/contact) and we will suggest a tap arrangement in the quote. Related reading: [how to choose the kVA rating](/blogs/how-to-choose-transformer-kva-rating-for-your-load)."
+        ]
+      }
+    ],
+    "tableOfContents": [
+      {
+        "id": "what-a-tap-changer-does",
+        "label": "What a tap changer does",
+        "indent": false
+      },
+      {
+        "id": "off-circuit-tap-changer",
+        "label": "Off-circuit tap changer (OFTC)",
+        "indent": false
+      },
+      {
+        "id": "changing-a-tap-safely",
+        "label": "Changing an off-circuit tap safely",
+        "indent": true
+      },
+      {
+        "id": "on-load-tap-changer",
+        "label": "On-load tap changer (OLTC)",
+        "indent": false
+      },
+      {
+        "id": "side-by-side",
+        "label": "Side-by-side comparison",
+        "indent": false
+      },
+      {
+        "id": "how-to-decide",
+        "label": "How to decide",
+        "indent": false
+      },
+      {
+        "id": "what-to-state",
+        "label": "What to state in the order",
+        "indent": false
+      },
+      {
+        "id": "faq",
+        "label": "Frequently asked questions",
+        "indent": false
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the difference between OLTC and OFTC?",
+        "answer": "An OFTC (off-circuit or off-load tap changer) can only be moved when the transformer is switched off. An OLTC (on-load tap changer) changes tap while the transformer carries load, usually automatically."
+      },
+      {
+        "question": "Is OCTC the same as OFTC?",
+        "answer": "Yes. OCTC (off-circuit tap changer), OFTC and off-load tap changer all describe a tap changer that must be operated with the transformer de-energised."
+      },
+      {
+        "question": "Can an off-circuit tap changer be changed while the transformer is live?",
+        "answer": "No. It is not designed to break current and operating it live can cause arcing and serious damage. Isolate and earth the transformer first."
+      },
+      {
+        "question": "Does an OLTC need more maintenance?",
+        "answer": "Yes. The switching mechanism, its oil and the motor drive need periodic inspection, which an off-circuit tap changer does not."
+      }
+    ],
+    "cta": {
+      "title": "Need a distribution transformer quote?",
+      "text": "Send your kVA rating, HV and LV voltage, tap changer requirement and site location. Tejaswini Industries will reply with a quote for oil-filled distribution transformers from 100 kVA to 2000 kVA."
+    },
+    "relatedProduct": {
+      "title": "Distribution Transformers",
+      "capacity": "100 kVA to 2000 kVA",
+      "image": {
+        "_type": "imageWithUrl",
+        "url": "/images/blog/distribution-transformer-front-view-conservator-bushings-wide.webp",
+        "alt": "Front view of an oil-filled distribution transformer with a TEJASWINI-branded conservator tank, three HV bushings on the top cover, red LV terminals and a radiator bank on each side, standing in a workshop bay."
+      },
+      "href": "/products/distribution-transformers"
+    }
   },
   {
-    "_id": "cable-routing",
+    "_id": "blogPost-how-to-choose-transformer-kva-rating-for-your-load",
     "_type": "blogPost",
-    "id": "cable-routing",
+    "id": "how-to-choose-transformer-kva-rating-for-your-load",
     "slug": {
       "_type": "slug",
-      "current": "cable-routing"
+      "current": "how-to-choose-transformer-kva-rating-for-your-load"
     },
-    "title": "Cable Routing Standards for Heavy Load Centers",
-    "excerpt": "Best practices for tray management and separation protocols to minimize electromagnetic interference in dense installations.",
-    "category": "electrical-safety",
-    "categoryLabel": "ELECTRICAL SAFETY",
-    "date": "OCT 05, 2024",
-    "author": "DR. ARVIND RAO",
+    "title": "How to Choose the kVA Rating of a Distribution Transformer for Your Load",
+    "breadcrumbLabel": "Choosing the kVA Rating",
+    "metaTitle": "How to Choose a Transformer kVA Rating",
+    "metaDescription": "A step-by-step method to size a distribution transformer from connected load, demand factor, power factor and growth, with a worked example and the standard IS 1180 ratings.",
+    "excerpt": "Work from connected load to demand, convert kW to kVA with the power factor, add room for growth, then pick the next standard rating.",
+    "category": "selection",
+    "categoryLabel": "Selection Guides",
+    "publishedAt": "2026-10-26",
+    "dateModified": "2026-10-26",
+    "date": "OCT 26, 2026",
+    "author": "Tejaswini Industries",
+    "authorRole": "",
+    "readTime": "5 min read",
+    "wordCount": 1028,
+    "featured": false,
     "image": {
       "_type": "imageWithUrl",
-      "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBa0DmkCYwVBTLj4BK4-4ZVrH0CmN0ZdYUu6uaB3Vr0bpYNoZZlYR2yAjImuFcQp5ypBiNKYVqb6Xdpl6d1I6bYm6X_ni6PY2VtOEL_FT3s6fu0vv7nOt47yCPcaT2aVBg4-4JVf1UuNs21e4NWwsO4g-PiktgNDoqWdh0OyNmjZMD76uJpTnOgAJ-FuI9EriWx3TjeT2eJu6rxGa15BY0Ckgi0d-JI2ckgveYCkD1qmkU8ZczvybNNuGZZBzBgQBoATOICWIYqjDU",
-      "alt": "Heavy gauge electrical cables in steel conduit"
+      "url": "/images/blog/primed-transformer-radiator-panels-stacked-wide.webp",
+      "alt": "Stacked transformer radiator panels with a red-brown coating, with their header pipes visible, stored in a workshop."
     },
-    "featured": false
+    "heroCaption": "Stacked radiator panels in the workshop. Radiators carry away the heat produced by the transformer losses, which is why sustained overload shortens transformer life.",
+    "intro": "To choose a transformer rating, take your maximum demand in kW, divide it by the power factor to get kVA, add a margin for growth and motor starting, and select the next standard rating above that figure. The rating must cover the demand you expect, not the sum of every nameplate on site. A transformer that is too small overheats and ages quickly. One that is far too large costs more and wastes energy in no-load loss.",
+    "sections": [
+      {
+        "id": "kva-and-kw",
+        "title": "kVA, kW and power factor",
+        "paragraphs": [
+          "A transformer is rated in kVA because its heating depends on the current it carries, and current depends on apparent power, not only on the useful power in kW. The two are linked by the power factor: kW = kVA × power factor, so kVA = kW ÷ power factor.",
+          "A load of 100 kW at a power factor of 0.9 needs 111 kVA, and the same 100 kW at a power factor of 0.8 needs 125 kVA. Improving the power factor with correction capacitors reduces the kVA the transformer must supply."
+        ]
+      },
+      {
+        "id": "sizing-steps",
+        "title": "Five steps to size the transformer",
+        "paragraphs": [],
+        "subsections": [
+          {
+            "id": "step-connected-load",
+            "title": "1. List the connected load",
+            "paragraphs": [
+              "Add up the rated kW of motors, lighting, air conditioning, process equipment and everything else that will be fed from the transformer. Include loads you will add in the next phase if they are planned."
+            ]
+          },
+          {
+            "id": "step-demand-factor",
+            "title": "2. Apply a demand factor",
+            "paragraphs": [
+              "Not everything runs at once or at full rating. The demand factor is the ratio of the maximum demand to the connected load. Use your own operating data or your consultant figure. If you have a utility maximum demand record from a similar plant, use that."
+            ]
+          },
+          {
+            "id": "step-power-factor",
+            "title": "3. Convert to kVA",
+            "paragraphs": [
+              "Divide the maximum demand in kW by the power factor at the transformer. Use the power factor you will actually achieve, including the effect of any capacitor bank."
+            ]
+          },
+          {
+            "id": "step-margin",
+            "title": "4. Allow for growth and starting loads",
+            "paragraphs": [
+              "Add a margin for expected growth. Check the largest motor: a direct-on-line start draws several times the running current and can pull the voltage down. Large motors, variable-speed drives and other non-linear loads may justify a larger rating or a different design, so discuss them with the manufacturer."
+            ]
+          },
+          {
+            "id": "step-standard-rating",
+            "title": "5. Pick the next standard rating",
+            "paragraphs": [
+              "IS 1180 (Part 1) lists the preferred ratings. For three-phase transformers above 200 kVA they are 250, 315, 400, 500, 630, 800, 1000, 1250, 1600, 2000 and 2500 kVA. Up to 200 kVA they run from 16 to 200 kVA, including 100 and 160. Choose the first standard rating at or above your calculated kVA."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "worked-example",
+        "title": "A worked example",
+        "paragraphs": [
+          "The numbers below are assumed only to show the arithmetic. They are not a recommendation for your site."
+        ],
+        "closing": [
+          "Going one step down to 315 kVA would leave the transformer running above its rating at the assumed peak. Going up to 500 kVA would add cost and no-load loss for capacity that the stated growth does not need."
+        ],
+        "table": {
+          "headers": [
+            "Step",
+            "Calculation",
+            "Result"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "Connected load",
+                "Given",
+                "320 kW"
+              ]
+            },
+            {
+              "cells": [
+                "Maximum demand",
+                "320 kW × 0.8 demand factor",
+                "256 kW"
+              ]
+            },
+            {
+              "cells": [
+                "Apparent power",
+                "256 kW ÷ 0.9 power factor",
+                "284 kVA"
+              ]
+            },
+            {
+              "cells": [
+                "With 20 % growth",
+                "284 kVA × 1.2",
+                "341 kVA"
+              ]
+            },
+            {
+              "cells": [
+                "Standard rating",
+                "Next standard rating above 341 kVA",
+                "400 kVA"
+              ]
+            }
+          ]
+        },
+        "figure": {
+          "image": {
+            "_type": "imageWithUrl",
+            "url": "/images/blog/distribution-transformer-front-view-conservator-bushings-full.webp",
+            "alt": "Front view of an oil-filled distribution transformer in a workshop: conservator tank with a TEJASWINI nameplate, a blue silica gel breather, three HV bushings, four red LV terminals and radiator panels on both sides."
+          },
+          "caption": "Front view of an oil-filled distribution transformer in the workshop. The rating is on the nameplate, and it should match the kVA you specified.",
+          "width": 768,
+          "height": 1024,
+          "maxWidth": "md"
+        }
+      },
+      {
+        "id": "full-load-current",
+        "title": "Check the full-load current",
+        "paragraphs": [
+          "Once you have a rating, check the current it implies so that the LV breaker, cables or busbars are sized correctly. Tejaswini Industries also builds [LT panels](/products/lt-panels) for the low-voltage side. For a three-phase transformer, full-load current in amperes is kVA × 1000 ÷ (√3 × line voltage in volts).",
+          "For a 500 kVA transformer with a 433 V no-load secondary, that is about 667 A on the LV side. Use the actual rated voltage from the nameplate, and let your electrical designer size the protection, because overload and short-circuit settings depend on the whole installation."
+        ]
+      },
+      {
+        "id": "too-small-too-large",
+        "title": "What happens if you get it wrong",
+        "paragraphs": [
+          "Running a transformer above its rating for long periods raises winding and oil temperatures, and insulation ages faster as temperature rises. Loading guides such as IS 2026 (Part 7) describe how much overload a transformer can take for how long, but they are for planned emergencies, not for routine operation.",
+          "An oversized transformer is safe but wasteful. Its core is energised all the time, so a bigger core means a bigger no-load loss, and it costs more to buy. For a short list of loss and tap changer choices once the rating is fixed, read the guides on [IS 1180 efficiency levels](/blogs/is-1180-energy-efficiency-levels-explained) and the [OLTC versus off-circuit tap changer](/blogs/oltc-vs-off-circuit-tap-changer-distribution-transformer).",
+          "Tejaswini Industries makes oil-filled [distribution transformers](/products/distribution-transformers) from 100 kVA to 2000 kVA in Hyderabad and supplies projects across Telangana. For an indoor room where fire safety is the priority, ask about our [dry-type transformers](/products/dry-type-transformers) as well. If you are unsure about the rating, [send us your connected load, power factor and site details](/contact) and we will review them with you before you commit to a size."
+        ]
+      }
+    ],
+    "tableOfContents": [
+      {
+        "id": "kva-and-kw",
+        "label": "kVA, kW and power factor",
+        "indent": false
+      },
+      {
+        "id": "sizing-steps",
+        "label": "Five steps to size the transformer",
+        "indent": false
+      },
+      {
+        "id": "step-connected-load",
+        "label": "1. List the connected load",
+        "indent": true
+      },
+      {
+        "id": "step-demand-factor",
+        "label": "2. Apply a demand factor",
+        "indent": true
+      },
+      {
+        "id": "step-power-factor",
+        "label": "3. Convert to kVA",
+        "indent": true
+      },
+      {
+        "id": "step-margin",
+        "label": "4. Allow for growth and starting loads",
+        "indent": true
+      },
+      {
+        "id": "step-standard-rating",
+        "label": "5. Pick the next standard rating",
+        "indent": true
+      },
+      {
+        "id": "worked-example",
+        "label": "A worked example",
+        "indent": false
+      },
+      {
+        "id": "full-load-current",
+        "label": "Check the full-load current",
+        "indent": false
+      },
+      {
+        "id": "too-small-too-large",
+        "label": "What happens if you get it wrong",
+        "indent": false
+      },
+      {
+        "id": "faq",
+        "label": "Frequently asked questions",
+        "indent": false
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I convert kW to kVA for a transformer?",
+        "answer": "Divide the kW by the power factor. For example, 100 kW at a power factor of 0.9 is about 111 kVA. Choose a standard transformer rating at or above that figure, with a margin for growth."
+      },
+      {
+        "question": "What size transformer do I need for a 100 kW load?",
+        "answer": "At a power factor of 0.9, a 100 kW maximum demand is about 111 kVA. That is above the 100 kVA standard rating, so the next standard rating, 160 kVA, would be the usual choice, and more if you expect growth or large motor starts."
+      },
+      {
+        "question": "Should I add spare capacity when choosing a transformer?",
+        "answer": "Add a margin for growth you have planned, but avoid a large unplanned margin. An oversized transformer costs more and has a higher no-load loss. Size for expected demand, then pick the next standard rating."
+      },
+      {
+        "question": "Can a transformer run above its rating for a short time?",
+        "answer": "Loading guides such as IS 2026 (Part 7) allow planned overloads for limited periods, at the cost of faster insulation ageing. Do not rely on overload for routine operation, and consult the manufacturer before you plan for it."
+      }
+    ],
+    "cta": {
+      "title": "Need a distribution transformer quote?",
+      "text": "Send your kVA rating, HV and LV voltage, tap changer requirement and site location. Tejaswini Industries will reply with a quote for oil-filled distribution transformers from 100 kVA to 2000 kVA."
+    },
+    "relatedProduct": {
+      "title": "Distribution Transformers",
+      "capacity": "100 kVA to 2000 kVA",
+      "image": {
+        "_type": "imageWithUrl",
+        "url": "/images/blog/distribution-transformer-front-view-conservator-bushings-wide.webp",
+        "alt": "Front view of an oil-filled distribution transformer with a TEJASWINI-branded conservator tank, three HV bushings on the top cover, red LV terminals and a radiator bank on each side, standing in a workshop bay."
+      },
+      "href": "/products/distribution-transformers"
+    }
   },
   {
-    "_id": "trending-01",
-    "_type": "trendingArticle",
-    "rank": "01",
-    "title": "Copper vs Aluminum Windings: A Cost-Benefit Analysis",
-    "readTime": "5 MIN READ",
-    "order": 0
-  },
-  {
-    "_id": "trending-02",
-    "_type": "trendingArticle",
-    "rank": "02",
-    "title": "Navigating the New Substation Clearance Regulations",
-    "readTime": "8 MIN READ",
-    "order": 1
-  },
-  {
-    "_id": "trending-03",
-    "_type": "trendingArticle",
-    "rank": "03",
-    "title": "Troubleshooting Harmonic Distortion in Industrial Grids",
-    "readTime": "12 MIN READ",
-    "order": 2
-  },
-  {
-    "_id": "trending-04",
-    "_type": "trendingArticle",
-    "rank": "04",
-    "title": "The Future of Dry-Type Transformers",
-    "readTime": "4 MIN READ",
-    "order": 3
+    "_id": "blogPost-distribution-transformer-inspection-checklist-before-dispatch-and-at-site",
+    "_type": "blogPost",
+    "id": "distribution-transformer-inspection-checklist-before-dispatch-and-at-site",
+    "slug": {
+      "_type": "slug",
+      "current": "distribution-transformer-inspection-checklist-before-dispatch-and-at-site"
+    },
+    "title": "Distribution Transformer Checklist: What to Inspect Before Dispatch and at Site",
+    "breadcrumbLabel": "Inspection Checklist",
+    "metaTitle": "Transformer Inspection Checklist",
+    "metaDescription": "A practical checklist for an oil-filled distribution transformer: nameplate, test reports and fittings before dispatch, and delivery, oil, breather and earthing checks at site.",
+    "excerpt": "Check the nameplate and test reports before the transformer leaves the works, then the oil level, breather, bushings and earthing before you energise it at site.",
+    "category": "inspection",
+    "categoryLabel": "Inspection & Site",
+    "publishedAt": "2026-10-26",
+    "dateModified": "2026-10-26",
+    "date": "OCT 26, 2026",
+    "author": "Tejaswini Industries",
+    "authorRole": "",
+    "readTime": "5 min read",
+    "wordCount": 1053,
+    "featured": false,
+    "image": {
+      "_type": "imageWithUrl",
+      "url": "/images/blog/distribution-transformer-front-view-conservator-bushings-wide.webp",
+      "alt": "Front view of an oil-filled distribution transformer with a TEJASWINI-branded conservator tank, three HV bushings on the top cover, red LV terminals and a radiator bank on each side, standing in a workshop bay."
+    },
+    "heroCaption": "Front view of an oil-filled distribution transformer. The conservator, silica gel breather, HV bushings, LV terminals and radiators are all points to check.",
+    "intro": "Most transformer problems that show up in the first weeks are visible or measurable before energising: a nameplate that does not match the order, a leak from transit, a saturated breather, a missing earth connection or a low insulation resistance. This checklist covers what to inspect at the manufacturer before dispatch, what to check on delivery, and what to confirm before the first switch-on. It is general guidance for an oil-filled distribution transformer. Follow your utility rules, site procedures and the manufacturer instructions.",
+    "sections": [
+      {
+        "id": "before-dispatch",
+        "title": "Before dispatch: at the works",
+        "paragraphs": [
+          "If you or your consultant visit the works, or review the documents remotely, these checks catch most specification mismatches while they are still cheap to fix."
+        ],
+        "subsections": [
+          {
+            "id": "nameplate-and-documents",
+            "title": "Nameplate and documents",
+            "checklist": [
+              {
+                "label": "Rating plate:",
+                "text": "kVA, number of phases, HV and LV voltage, vector group, impedance, tap range, cooling, serial number and year match the purchase order."
+              },
+              {
+                "label": "Standard:",
+                "text": "the plate and the test report name the standard you ordered, such as IS 1180 (Part 1)."
+              },
+              {
+                "label": "Test report:",
+                "text": "routine test results for this serial number are present, with the guaranteed losses beside the measured values."
+              }
+            ]
+          },
+          {
+            "id": "routine-tests",
+            "title": "Routine tests to expect on the report",
+            "paragraphs": [
+              "A routine test report for a distribution transformer normally includes winding resistance, voltage ratio and phase displacement (vector group), impedance voltage and load loss, no-load loss and no-load current, insulation resistance, a separate-source power-frequency withstand test, an induced overvoltage test, and an oil leakage or pressure test on the tank. Confirm the exact list against IS 1180 and your purchase specification, and ask to witness the tests if the order requires it."
+            ]
+          },
+          {
+            "id": "physical-condition",
+            "title": "Physical condition",
+            "checklist": [
+              {
+                "label": "Paint and tank:",
+                "text": "no dents, scratches through to bare metal, or weld defects, and gasketed joints show no seepage."
+              },
+              {
+                "label": "Bushings:",
+                "text": "no chips or cracks in the porcelain, terminals tight and undamaged."
+              },
+              {
+                "label": "Conservator and gauge:",
+                "text": "the oil level gauge is readable and the level is correct for the oil temperature."
+              },
+              {
+                "label": "Breather:",
+                "text": "silica gel is fresh and the oil seal is in place."
+              },
+              {
+                "label": "Radiators and valves:",
+                "text": "fitted correctly with no leaks at flanges, and the drain and sampling valves are closed and capped."
+              },
+              {
+                "label": "Earthing and lifting:",
+                "text": "earthing terminals and lifting lugs are present and undamaged."
+              },
+              {
+                "label": "Tap changer:",
+                "text": "the position indicator works, and the handle can be locked in position."
+              }
+            ]
+          }
+        ],
+        "figure": {
+          "image": {
+            "_type": "imageWithUrl",
+            "url": "/images/blog/oil-filled-distribution-transformer-side-view-full.webp",
+            "alt": "Side view of an oil-filled distribution transformer on a workshop floor: TEJASWINI-branded conservator, blue silica gel breather, HV bushings on the top cover, radiator banks and a grey side-mounted cabinet."
+          },
+          "caption": "Side view of an oil-filled distribution transformer in the workshop, with the conservator, the blue silica gel breather, the bushings, a radiator bank and a side-mounted cabinet visible. Each of these is part of a pre-dispatch walk-round.",
+          "width": 724,
+          "height": 962,
+          "maxWidth": "md"
+        }
+      },
+      {
+        "id": "transport-and-delivery",
+        "title": "Transport and delivery",
+        "paragraphs": [
+          "Check the packing before the unit leaves: bushings protected, loose parts tied down, and the load secured on the vehicle. Lift only at the lifting lugs and never from bushings, radiators or pipework.",
+          "On arrival, inspect before you sign. Look for oil on the tank or the vehicle bed, bent radiators, damaged bushings and signs of impact. Note any damage on the delivery document and photograph it. Store the transformer upright on firm, level ground, away from water collection, until it is installed."
+        ],
+        "figure": {
+          "image": {
+            "_type": "imageWithUrl",
+            "url": "/images/blog/primed-transformer-radiator-panels-stacked-full.webp",
+            "alt": "Four transformer radiator panels with a red-brown coating stacked one above the other in a workshop, header pipes visible on each panel."
+          },
+          "caption": "Radiator panels stacked in the workshop. On delivery, look at radiators for dents, damaged flanges and oil seepage, since they are among the parts most exposed in transit.",
+          "width": 768,
+          "height": 1024,
+          "maxWidth": "md"
+        }
+      },
+      {
+        "id": "before-energising",
+        "title": "At site, before energising",
+        "paragraphs": [
+          "Do these checks with the transformer isolated, and keep a written record of each reading."
+        ],
+        "subsections": [
+          {
+            "id": "site-checks",
+            "title": "Pre-commissioning checks",
+            "checklist": [
+              {
+                "label": "Insulation resistance:",
+                "text": "measure HV to LV, HV to earth and LV to earth with an insulation tester, and record the results with the oil temperature."
+              },
+              {
+                "label": "Oil:",
+                "text": "confirm the oil level, and draw an oil sample for a breakdown voltage (BDV) test if the transformer has been stored or has been moved a long way."
+              },
+              {
+                "label": "Breather:",
+                "text": "check the silica gel colour and the oil seal. Common gel is blue when dry and turns pink once it has absorbed moisture. Some gel types use other colours, so follow the manufacturer note."
+              },
+              {
+                "label": "Valves and plugs:",
+                "text": "remove any transit plugs or blanks, and make sure valves between the conservator and the tank are open where they are fitted."
+              },
+              {
+                "label": "Earthing:",
+                "text": "connect the tank and the LV neutral to the site earth as per the design, and check the earth resistance meets your requirement."
+              },
+              {
+                "label": "Tap position:",
+                "text": "set the tap for the measured incoming voltage, lock it, and check all three phases are on the same position."
+              },
+              {
+                "label": "Terminations:",
+                "text": "HV and LV cable or busbar connections are tight, phase sequence is correct, and protection (fuses or breaker, and any surge arresters) is set."
+              }
+            ]
+          }
+        ],
+        "alert": {
+          "title": "Isolate before you inspect",
+          "message": "Do not touch bushings, terminals or the tap changer on a transformer that might be live. Isolate, test for dead, and earth before any work, and use qualified electrical staff and your site permit-to-work procedure."
+        }
+      },
+      {
+        "id": "first-days",
+        "title": "After energising",
+        "paragraphs": [
+          "Energise on no load first, listen for abnormal noise and check the secondary voltage on every phase. Then load the transformer progressively. During the first days, walk round regularly and look for oil seepage, abnormal temperature and breather condition.",
+          "After that, a regular walk-round and periodic oil testing are the core of maintenance. IS 10028 (Part 3) is the Indian code of practice for transformer maintenance, and your utility may have its own schedule.",
+          "Tejaswini Industries builds oil-filled [distribution transformers](/products/distribution-transformers) from 100 kVA to 2000 kVA in Hyderabad. If you want a pre-dispatch inspection arranged for an order, or a document list agreed before the order is placed, [contact us](/contact). To choose the right rating first, read [how to choose the kVA rating](/blogs/how-to-choose-transformer-kva-rating-for-your-load)."
+        ]
+      }
+    ],
+    "tableOfContents": [
+      {
+        "id": "before-dispatch",
+        "label": "Before dispatch: at the works",
+        "indent": false
+      },
+      {
+        "id": "nameplate-and-documents",
+        "label": "Nameplate and documents",
+        "indent": true
+      },
+      {
+        "id": "routine-tests",
+        "label": "Routine tests to expect on the report",
+        "indent": true
+      },
+      {
+        "id": "physical-condition",
+        "label": "Physical condition",
+        "indent": true
+      },
+      {
+        "id": "transport-and-delivery",
+        "label": "Transport and delivery",
+        "indent": false
+      },
+      {
+        "id": "before-energising",
+        "label": "At site, before energising",
+        "indent": false
+      },
+      {
+        "id": "site-checks",
+        "label": "Pre-commissioning checks",
+        "indent": true
+      },
+      {
+        "id": "first-days",
+        "label": "After energising",
+        "indent": false
+      },
+      {
+        "id": "faq",
+        "label": "Frequently asked questions",
+        "indent": false
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What should I check on a distribution transformer before energising it?",
+        "answer": "Check insulation resistance, oil level and condition, the silica gel breather, that transit plugs are removed, the earthing connections, the tap position on all three phases, and that terminations and protection are correct. Record every reading."
+      },
+      {
+        "question": "What colour should the silica gel in a transformer breather be?",
+        "answer": "The common type is blue when dry and turns pink once it has absorbed moisture, which means it should be replaced or reactivated. Some gel types use other colours, so follow the manufacturer note."
+      },
+      {
+        "question": "Why does the oil level matter?",
+        "answer": "Oil insulates the windings and carries heat to the tank and radiators. A low level can leave windings exposed and reduce cooling. The correct level depends on the oil temperature, so read the gauge against its temperature markings."
+      },
+      {
+        "question": "Can I lift a transformer by its bushings or radiators?",
+        "answer": "No. Lift only at the lifting lugs. Bushings and radiators are not designed to carry the weight of the transformer."
+      }
+    ],
+    "cta": {
+      "title": "Need a distribution transformer quote?",
+      "text": "Send your kVA rating, HV and LV voltage, tap changer requirement and site location. Tejaswini Industries will reply with a quote for oil-filled distribution transformers from 100 kVA to 2000 kVA."
+    },
+    "relatedProduct": {
+      "title": "Distribution Transformers",
+      "capacity": "100 kVA to 2000 kVA",
+      "image": {
+        "_type": "imageWithUrl",
+        "url": "/images/blog/distribution-transformer-front-view-conservator-bushings-wide.webp",
+        "alt": "Front view of an oil-filled distribution transformer with a TEJASWINI-branded conservator tank, three HV bushings on the top cover, red LV terminals and a radiator bank on each side, standing in a workshop bay."
+      },
+      "href": "/products/distribution-transformers"
+    }
   }
+]
+
+/** Retired ids (scripts/retired-content.mjs). Remote copies of these are ignored. */
+export const retiredContentIds: string[] = [
+  "optimizing-core-performance",
+  "transformer-maintenance",
+  "arc-flash-standards",
+  "iso-audit",
+  "cable-routing",
+  "trending-01",
+  "trending-02",
+  "trending-03",
+  "trending-04"
 ]

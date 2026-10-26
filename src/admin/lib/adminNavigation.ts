@@ -31,6 +31,7 @@ export const adminNavGroups: AdminNavGroup[] = [
   {
     title: 'Products',
     items: [
+      { label: 'Products page (SEO)', path: '/admin/products/page' },
       { label: 'Product Categories', path: '/admin/products/categories' },
     ],
   },
@@ -54,7 +55,6 @@ export const adminNavGroups: AdminNavGroup[] = [
   {
     title: 'Other',
     items: [
-      { label: 'Trending Articles', path: '/admin/trending' },
       { label: 'FAQs', path: '/admin/faqs' },
       { label: 'Service areas', path: '/admin/service-areas' },
     ],

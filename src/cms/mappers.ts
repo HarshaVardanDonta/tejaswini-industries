@@ -8,9 +8,87 @@ import { contactInfo } from '../constants/contactInfo'
 import type { LandingPageData } from '../context/LandingPageContext'
 import type { ImageWithUrl } from './image'
 import { resolveImageAlt, resolveImageUrl } from './image'
+import type { BlogDetailData } from '../context/BlogDetailContext'
+import type { BlogPost } from '../data/blogs'
+import { formatPostDate } from '../data/blogs'
+import type {
+  ProductFaq,
+  ProductSection,
+  ProductSeoFields,
+  ProductSpecRow,
+  ProductsPageData,
+} from '../data/productCategories'
+
+type RawProductSeo = {
+  metaTitle?: string
+  metaDescription?: string
+  shortAnswer?: string
+  sections?: Array<Record<string, unknown>>
+  specsTable?: ProductSpecRow[]
+  faqs?: ProductFaq[]
+  heroFacts?: string[]
+  quoteChecklist?: string[]
+  relatedGuides?: string[]
+  relatedProducts?: string[]
+}
+
+function mapProductSeo(raw: RawProductSeo): ProductSeoFields {
+  const sections: ProductSection[] = (raw.sections ?? []).map((section) => {
+    const figure = section.figure as Record<string, unknown> | undefined
+    const image = figure ? mapMaybeImage(figure.image) : null
+    return {
+      id: String(section.id ?? ''),
+      title: String(section.title ?? ''),
+      paragraphs: (section.paragraphs as string[] | undefined) ?? [],
+      bullets: section.bullets as string[] | undefined,
+      closing: section.closing as string[] | undefined,
+      table: Boolean(section.table),
+      options: Boolean(section.options),
+      extraTables: (
+        section.extraTables as
+          | Array<{ caption?: string; headers?: string[]; rows?: Array<{ cells?: string[] } | string[]> }>
+          | undefined
+      )?.map((table) => ({
+        caption: table.caption || '',
+        headers: table.headers || [],
+        rows: (table.rows || []).map((row) => (Array.isArray(row) ? row : row.cells || [])),
+      })),
+      extraTablesNote: (section.extraTablesNote as string | undefined) || undefined,
+      figure:
+        figure && image?.url
+          ? {
+              url: image.url,
+              alt: image.alt,
+              caption: (figure.caption as string) || '',
+              width: figure.width as number | undefined,
+              height: figure.height as number | undefined,
+              maxWidth: (figure.maxWidth as 'md' | 'full' | undefined) || 'md',
+            }
+          : undefined,
+    }
+  })
+  return {
+    metaTitle: raw.metaTitle || undefined,
+    metaDescription: raw.metaDescription || undefined,
+    shortAnswer: raw.shortAnswer || undefined,
+    sections,
+    specsTable: raw.specsTable ?? [],
+    faqs: raw.faqs ?? [],
+    heroFacts: raw.heroFacts ?? [],
+    quoteChecklist: raw.quoteChecklist ?? [],
+    relatedGuides: raw.relatedGuides ?? [],
+    relatedProducts: raw.relatedProducts ?? [],
+  }
+}
+
+export function mapProductsPage(doc: (RawProductSeo & Record<string, unknown>) | null): ProductsPageData | null {
+  if (!doc) return null
+  const seo = mapProductSeo(doc)
+  return { ...seo, metaTitle: seo.metaTitle ?? '', metaDescription: seo.metaDescription ?? '' }
+}
 
 export function mapProductCategory(
-  category: {
+  category: RawProductSeo & {
     id: string
     title: string
     description: string
@@ -35,6 +113,7 @@ export function mapProductCategory(
     bodyParagraphs: category.bodyParagraphs?.length
       ? category.bodyParagraphs
       : (fallback?.bodyParagraphs ?? []),
+    ...mapProductSeo(category),
   }
 }
 
@@ -45,12 +124,13 @@ export function mapBlogPost(post: {
   excerpt: string
   category: string
   categoryLabel: string
-  date: string
+  date?: string
+  publishedAt?: string
+  readTime?: string
   author: string
   image?: ImageWithUrl
-  accent?: boolean
-  alertMeta?: boolean
-}) {
+  featured?: boolean
+}): BlogPost {
   return {
     id: post.id,
     slug: post.slug?.current,
@@ -58,80 +138,103 @@ export function mapBlogPost(post: {
     excerpt: post.excerpt,
     category: post.category,
     categoryLabel: post.categoryLabel,
-    date: post.date,
+    date: formatPostDate(post.publishedAt, post.date),
+    publishedAt: post.publishedAt,
+    readTime: post.readTime,
     author: post.author,
     image: resolveImageUrl(post.image),
     imageAlt: resolveImageAlt(post.image, post.title),
-    accent: post.accent,
-    alertMeta: post.alertMeta,
+    featured: Boolean(post.featured),
   }
 }
 
-export function mapBlogDetail(
-  post: Record<string, unknown> | null,
-  fallback?: typeof import('../data/blogDetailTransformerMaintenance').transformerMaintenanceGuide
-) {
-  if (!post) {
-    return fallback
-      ? fallback
-      : {
-          slug: '',
-          breadcrumbLabel: '',
-          title: '',
-          author: '',
-          date: '',
-          readTime: '',
-          heroImage: '',
-          heroImageAlt: '',
-          intro: '',
-          sections: [],
-          tableOfContents: [],
-          relatedProduct: undefined,
-        }
-  }
+function mapMaybeImage(image: unknown, fallbackAlt = '') {
   return {
-    slug: (post.slug as { current?: string })?.current || '',
-    breadcrumbLabel: (post.breadcrumbLabel as string) || '',
-    title: (post.title as string) || '',
-    author: (post.author as string) || '',
-    date: (post.date as string) || '',
-    readTime: (post.readTime as string) || '',
-    heroImage: resolveImageUrl(post.image as ImageWithUrl),
-    heroImageAlt: resolveImageAlt(post.image as ImageWithUrl, (post.title as string) || ''),
-    intro: (post.intro as string) || (post.excerpt as string) || '',
-    sections: ((post.sections as Array<Record<string, unknown>>) || []).map((section) => ({
+    url: resolveImageUrl(image as ImageWithUrl | undefined),
+    alt: resolveImageAlt(image as ImageWithUrl | undefined, fallbackAlt),
+  }
+}
+
+export function mapBlogDetail(post: Record<string, unknown> | null): BlogDetailData | null {
+  if (!post) return null
+  const slug = (post.slug as { current?: string } | undefined)?.current || ''
+  if (!slug) return null
+  const title = (post.title as string) || ''
+  const cover = mapMaybeImage(post.image, title)
+  const publishedAt = (post.publishedAt as string) || undefined
+  const sections: BlogDetailData['sections'] = (
+    (post.sections as Array<Record<string, unknown>> | undefined) || []
+  ).map((section) => {
+    const figure = section.figure as Record<string, unknown> | undefined
+    const figureImage = figure ? mapMaybeImage(figure.image) : null
+    const table = section.table as
+      | { headers?: string[]; rows?: Array<{ cells?: string[] } | string[]> }
+      | undefined
+    return {
       id: section.id as string,
       title: section.title as string,
       paragraphs: (section.paragraphs as string[]) || [],
-      subsections: section.subsections as Array<{
-        id: string
-        title: string
-        checklist: { label: string; text: string }[]
-      }>,
-      table: section.table
+      bullets: section.bullets as string[] | undefined,
+      closing: section.closing as string[] | undefined,
+      subsections: (section.subsections as BlogDetailData['sections'][number]['subsections']) || undefined,
+      table: table
         ? {
-            headers: ((section.table as { headers?: string[] }).headers) || [],
-            rows: (((section.table as { rows?: Array<{ cells?: string[] }> }).rows) || []).map(
-              (row) => row.cells || []
-            ),
+            headers: table.headers || [],
+            rows: (table.rows || []).map((row) => (Array.isArray(row) ? row : row.cells || [])),
           }
         : undefined,
       alert: section.alert as { title: string; message: string } | undefined,
-    })),
+      figure:
+        figure && figureImage?.url
+          ? {
+              url: figureImage.url,
+              alt: figureImage.alt,
+              caption: (figure.caption as string) || '',
+              width: figure.width as number | undefined,
+              height: figure.height as number | undefined,
+              maxWidth: (figure.maxWidth as 'md' | 'full' | undefined) || 'md',
+            }
+          : undefined,
+    }
+  })
+  const related = post.relatedProduct as Record<string, unknown> | undefined
+  const relatedImage = related ? mapMaybeImage(related.image, (related.title as string) || '') : null
+  return {
+    slug,
+    breadcrumbLabel: (post.breadcrumbLabel as string) || title,
+    title,
+    metaTitle: (post.metaTitle as string) || title,
+    metaDescription: (post.metaDescription as string) || (post.excerpt as string) || '',
+    author: (post.author as string) || '',
+    date: formatPostDate(publishedAt, (post.date as string) || ''),
+    publishedAt,
+    dateModified: (post.dateModified as string) || publishedAt,
+    readTime: (post.readTime as string) || '',
+    wordCount: post.wordCount as number | undefined,
+    category: (post.categoryLabel as string) || '',
+    heroImage: cover.url,
+    heroImageAlt: cover.alt,
+    heroCaption: (post.heroCaption as string) || '',
+    intro: (post.intro as string) || (post.excerpt as string) || '',
+    sections,
+    faqs: (post.faqs as BlogDetailData['faqs']) || [],
+    cta: post.cta as BlogDetailData['cta'],
     tableOfContents:
-      (post.tableOfContents as { id: string; label: string; indent: boolean }[]) || [],
-    relatedProduct: post.relatedProduct
-      ? {
-          title: (post.relatedProduct as { title: string }).title,
-          capacity: (post.relatedProduct as { capacity: string }).capacity,
-          image: resolveImageUrl((post.relatedProduct as { image?: ImageWithUrl }).image),
-          imageAlt: resolveImageAlt(
-            (post.relatedProduct as { image?: ImageWithUrl }).image,
-            (post.relatedProduct as { title: string }).title
-          ),
-          href: (post.relatedProduct as { href: string }).href,
-        }
-      : undefined,
+      (post.tableOfContents as BlogDetailData['tableOfContents'] | undefined)?.map((item) => ({
+        id: item.id,
+        label: item.label,
+        indent: Boolean(item.indent),
+      })) || [],
+    relatedProduct:
+      related && relatedImage
+        ? {
+            title: related.title as string,
+            capacity: related.capacity as string,
+            image: relatedImage.url,
+            imageAlt: relatedImage.alt,
+            href: related.href as string,
+          }
+        : undefined,
   }
 }
 
@@ -385,34 +488,5 @@ export function mapCorporateProfilePage(
       highlights: (profile?.highlights as CorporateProfilePageData['profile']['highlights']) || fallback.profile.highlights,
       established: (profile?.established as string) || fallback.profile.established,
     },
-  }
-}
-
-export function mapFeaturedPost(post: Record<string, unknown> | null, fallback: {
-  categoryLabel: string
-  date: string
-  title: string
-  excerpt: string
-  image: string
-  imageAlt: string
-  authorName: string
-  authorRole: string
-  authorImage: string
-  authorImageAlt: string
-}) {
-  if (!post) return fallback
-  const image = mapImageField(post.image as ImageWithUrl, fallback.image, fallback.imageAlt)
-  const authorImage = mapImageField(post.authorImage as ImageWithUrl, fallback.authorImage, fallback.authorImageAlt)
-  return {
-    categoryLabel: (post.categoryLabel as string) || fallback.categoryLabel,
-    date: (post.date as string) || fallback.date,
-    title: (post.title as string) || fallback.title,
-    excerpt: (post.excerpt as string) || fallback.excerpt,
-    image: image.url,
-    imageAlt: image.alt,
-    authorName: (post.author as string) || fallback.authorName,
-    authorRole: (post.authorRole as string) || fallback.authorRole,
-    authorImage: authorImage.url,
-    authorImageAlt: authorImage.alt,
   }
 }

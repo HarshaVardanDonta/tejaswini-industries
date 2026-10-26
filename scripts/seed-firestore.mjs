@@ -23,6 +23,7 @@ import { cert, initializeApp } from 'firebase-admin/app'
 import { getAuth } from 'firebase-admin/auth'
 import { getFirestore } from 'firebase-admin/firestore'
 import { buildDocuments } from './seed-documents.mjs'
+import { retiredContentIds } from './retired-content.mjs'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const projectId = process.env.VITE_FIREBASE_PROJECT_ID || 'tejaswini-industries-32349'
@@ -52,6 +53,12 @@ const db = getFirestore()
 for (const document of docs) {
   await db.collection('content').doc(document._id).set(document)
   console.log('  ✓', document._id)
+}
+
+// Remove the retired demo documents (old placeholder blog posts and "Most Read" entries).
+for (const id of retiredContentIds) {
+  await db.collection('content').doc(id).delete()
+  console.log('  ✗ removed retired', id)
 }
 
 const email = process.env.ADMIN_EMAIL?.trim()

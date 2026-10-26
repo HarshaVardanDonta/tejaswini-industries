@@ -2,7 +2,7 @@
 
 Tejaswini Industries manufactures distribution transformers, dry-type transformers, HT panels, LT panels and ring main units in Mallapur, Hyderabad, Telangana, India. Established 2011.
 
-Distribution transformers are 100 kVA to 2000 kVA at 11 kV, 22 kV and 33 kV, with ONAN (oil-cooled) cooling, off-load or on-load tap changers, a CRGO or amorphous core, and an aluminium or copper winding. Those choices are build options on the distribution transformer page. Dry-type units are VPI up to 2000 kVA. The site shows ISO 9001:2015 and BIS Certified marks and says products are IS/IEC compliant. It does not publish certificate numbers, loss wattages, efficiency-star ratings, a lead time, or a TSSPDCL product approval. TGSPDCL / TSSPDCL liaisoning is listed as a service.
+Distribution transformers are 100 kVA to 2000 kVA at 11 kV, 22 kV and 33 kV, with ONAN (oil-cooled) cooling, off-load or on-load tap changers, a CRGO or amorphous core, and an aluminium or copper winding. Those choices are build options on the distribution transformer page. Each product page opens with a short answer, then question-style sections, a specification table and FAQs, and links to the related guides below. Quotes: send rating, voltage and site location through the contact page. Dry-type units are VPI up to 2000 kVA. The site shows ISO 9001:2015 and BIS Certified marks and says products are IS/IEC compliant. It does not publish certificate numbers, loss wattages, efficiency-star ratings, a lead time, or a TSSPDCL product approval. TGSPDCL / TSSPDCL liaisoning is listed as a service.
 
 Calls and WhatsApp use the same number.
 
@@ -19,14 +19,24 @@ Calls and WhatsApp use the same number.
 ## Pages
 
 - Home: https://www.tejaswiniindustries.com/
-- Products: https://www.tejaswiniindustries.com/products
-- Distribution transformers: https://www.tejaswiniindustries.com/products/distribution-transformers
-- Dry-type transformers: https://www.tejaswiniindustries.com/products/dry-type-transformers
-- HT panels: https://www.tejaswiniindustries.com/products/ht-panels
-- LT panels: https://www.tejaswiniindustries.com/products/lt-panels
-- Ring main units: https://www.tejaswiniindustries.com/products/rmus
+- Products: https://www.tejaswiniindustries.com/products (index of all product pages, with a short answer and FAQs)
+- Distribution transformers: https://www.tejaswiniindustries.com/products/distribution-transformers (BIS-approved, oil-cooled ONAN, 100 kVA to 2000 kVA, 11/22/33 kV, CRGO or amorphous core, copper or aluminium winding, OFTC or OLTC; specification table and FAQs)
+- Dry-type transformers: https://www.tejaswiniindustries.com/products/dry-type-transformers (VPI type up to 2000 kVA, insulation class F and H, protection up to IP56)
+- HT panels: https://www.tejaswiniindustries.com/products/ht-panels (vacuum circuit breakers 630 to 2000 A, insulation level 12/28/75 kV, up to 26.3 kA rms)
+- LT panels: https://www.tejaswiniindustries.com/products/lt-panels (LT distribution panels with a solid busbar system; APFC panels also offered)
+- Ring main units: https://www.tejaswiniindustries.com/products/rmus (11 kV and 33 kV, load break switch, SFU or VCB versions, indoor and outdoor)
 - Service areas: https://www.tejaswiniindustries.com/service-areas
 - Services: https://www.tejaswiniindustries.com/services
 - Projects: https://www.tejaswiniindustries.com/projects
 - Contact / quote: https://www.tejaswiniindustries.com/contact
 - About: https://www.tejaswiniindustries.com/about
+
+## Guides
+
+Plain-language articles by Tejaswini Industries, published 26 October 2026. Index: https://www.tejaswiniindustries.com/blogs
+
+- IS 1180 energy efficiency levels explained: https://www.tejaswiniindustries.com/blogs/is-1180-energy-efficiency-levels-explained
+- Amorphous core vs CRGO core distribution transformers: https://www.tejaswiniindustries.com/blogs/amorphous-core-vs-crgo-core-distribution-transformer
+- OLTC vs off-circuit tap changer (OFTC): https://www.tejaswiniindustries.com/blogs/oltc-vs-off-circuit-tap-changer-distribution-transformer
+- How to choose the kVA rating of a distribution transformer: https://www.tejaswiniindustries.com/blogs/how-to-choose-transformer-kva-rating-for-your-load
+- Distribution transformer inspection checklist, before dispatch and at site: https://www.tejaswiniindustries.com/blogs/distribution-transformer-inspection-checklist-before-dispatch-and-at-site

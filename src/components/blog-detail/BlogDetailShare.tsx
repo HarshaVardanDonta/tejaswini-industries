@@ -23,7 +23,7 @@ export function BlogDetailShare() {
   return (
     <div className="flex items-center gap-space-4 pt-space-6 border-t border-gray-100 mt-space-8">
       <span className="font-label text-label text-gray-500 uppercase tracking-wider">
-        Share Protocol:
+        Share:
       </span>
       <button
         type="button"
@@ -48,7 +48,7 @@ export function BlogDetailShare() {
       ) : null}
       <button
         type="button"
-        aria-label="Print Document"
+        aria-label="Print article"
         className="bg-gray-100 hover:bg-gray-300 text-gray-700 p-space-2 rounded transition-colors"
         onClick={() => window.print()}
       >

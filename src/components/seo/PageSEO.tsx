@@ -72,19 +72,30 @@ export function buildArticleJsonLd(options: {
   path: string
   image?: string
   datePublished?: string
+  dateModified?: string
   author?: string
+  authorType?: 'Person' | 'Organization'
+  wordCount?: number
+  section?: string
 }) {
+  const url = buildAbsoluteUrl(options.path)
   return {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
     headline: options.title,
     description: truncateDescription(options.description),
     image: buildAbsoluteUrl(options.image || DEFAULT_OG_IMAGE),
-    url: buildAbsoluteUrl(options.path),
+    url,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     datePublished: options.datePublished,
-    author: options.author
-      ? { '@type': 'Person', name: options.author }
-      : { '@type': 'Organization', name: SITE_NAME },
+    dateModified: options.dateModified || options.datePublished,
+    ...(options.wordCount ? { wordCount: options.wordCount } : {}),
+    ...(options.section ? { articleSection: options.section } : {}),
+    inLanguage: 'en-IN',
+    author:
+      options.author && options.authorType === 'Person'
+        ? { '@type': 'Person', name: options.author }
+        : { '@type': 'Organization', name: options.author || SITE_NAME, url: buildAbsoluteUrl('/') },
     publisher: {
       '@type': 'Organization',
       name: SITE_NAME,
@@ -102,22 +113,71 @@ export function buildProductJsonLd(options: {
   path: string
   image?: string
   sku?: string
+  category?: string
+  specs?: { label: string; value: string }[]
 }) {
+  const origin = buildAbsoluteUrl('/')
+  const url = buildAbsoluteUrl(options.path)
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
+    '@id': `${url}#product`,
     name: options.title,
     description: truncateDescription(options.description),
     image: buildAbsoluteUrl(options.image || DEFAULT_OG_IMAGE),
-    url: buildAbsoluteUrl(options.path),
+    url,
     ...(options.sku ? { sku: options.sku } : {}),
+    ...(options.category ? { category: options.category } : {}),
     brand: {
       '@type': 'Brand',
       name: SITE_NAME,
     },
     manufacturer: {
       '@type': 'Organization',
+      '@id': `${origin}#organization`,
       name: SITE_NAME,
+      url: origin,
+    },
+    ...(options.specs?.length
+      ? {
+          additionalProperty: options.specs.map((spec) => ({
+            '@type': 'PropertyValue',
+            name: spec.label,
+            value: spec.value,
+          })),
+        }
+      : {}),
+  }
+}
+
+/** Products index: a CollectionPage whose main entity is an ItemList of the category pages. */
+export function buildCollectionJsonLd(options: {
+  title: string
+  description: string
+  path: string
+  items: { name: string; path: string; image?: string }[]
+}) {
+  const url = buildAbsoluteUrl(options.path)
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${url}#collection`,
+    name: options.title,
+    description: truncateDescription(options.description),
+    url,
+    inLanguage: 'en-IN',
+    isPartOf: { '@type': 'WebSite', url: buildAbsoluteUrl('/'), name: SITE_NAME },
+    publisher: { '@type': 'Organization', '@id': `${buildAbsoluteUrl('/')}#organization`, name: SITE_NAME },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: options.items.length,
+      itemListElement: options.items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: buildAbsoluteUrl(item.path),
+        name: item.name,
+        ...(item.image ? { image: buildAbsoluteUrl(item.image) } : {}),
+      })),
     },
   }
 }

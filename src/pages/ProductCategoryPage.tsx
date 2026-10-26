@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { FaqList, usePageFaqs } from '../components/FaqList'
+import { usePageFaqs } from '../components/FaqList'
 import { ProductsShell } from '../components/layout/ProductsShell'
 import { PageLoading } from '../components/PageLoading'
 import { presentCategory, ProductCategoryDetail } from '../components/products/ProductCategoryDetail'
@@ -10,7 +10,11 @@ import {
   buildProductJsonLd,
   PageSEO,
 } from '../components/seo/PageSEO'
-import { getProductCategoryById, getProductCategoryPath } from '../data/productCategories'
+import {
+  getProductCategoryById,
+  getProductCategoryPath,
+  PRODUCT_SHORT_LABELS,
+} from '../data/productCategories'
 import { useCmsQuery } from '../hooks/useCmsQuery'
 import { mapProductCategory } from '../cms/mappers'
 import { queries } from '../cms/queries'
@@ -18,7 +22,7 @@ import { queries } from '../cms/queries'
 export function ProductCategoryPage() {
   const { categoryId = '' } = useParams<{ categoryId: string }>()
   const staticFallback = categoryId ? getProductCategoryById(categoryId) : undefined
-  const faqs = usePageFaqs(categoryId)
+  const legacyFaqs = usePageFaqs(categoryId)
 
   const { data, loading } = useCmsQuery<Record<string, unknown> | null>(
     queries.productCategoryById,
@@ -51,12 +55,19 @@ export function ProductCategoryPage() {
 
   const product = presentCategory(category)
   const path = getProductCategoryPath(product.id)
+  const faqs = product.faqs?.length
+    ? product.faqs
+    : legacyFaqs.map((item) => ({ question: item.question, answer: item.answer }))
+  const metaTitle = product.metaTitle || product.title
+  const metaDescription = product.metaDescription || product.description
   const jsonLd = [
     buildProductJsonLd({
       title: product.title,
-      description: product.description,
+      description: metaDescription,
       path,
       image: product.image,
+      category: 'Electrical equipment',
+      specs: product.specsTable,
     }),
     buildBreadcrumbJsonLd([
       { name: 'Home', path: '/' },
@@ -69,15 +80,17 @@ export function ProductCategoryPage() {
   return (
     <ProductsShell>
       <PageSEO
-        title={product.title}
-        description={product.description}
+        title={metaTitle}
+        description={metaDescription}
         path={path}
         image={product.image}
         type="product"
         jsonLd={jsonLd}
       />
-      <ProductCategoryDetail category={product} />
-      <FaqList page={category.id} />
+      <ProductCategoryDetail
+        category={{ ...product, faqs }}
+        relatedTitles={PRODUCT_SHORT_LABELS}
+      />
       <p className="max-w-[1280px] mx-auto w-full px-margin-mobile md:px-margin-desktop pb-space-8 font-body-sm text-body-sm text-gray-600">
         Need a rating for a Hyderabad or Telangana site?{' '}
         <Link to="/contact" className="text-secondary uppercase font-label">

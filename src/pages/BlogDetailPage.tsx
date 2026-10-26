@@ -7,22 +7,35 @@ import { BlogDetailShare } from '../components/blog-detail/BlogDetailShare'
 import { BlogDetailSidebar } from '../components/blog-detail/BlogDetailSidebar'
 import { ProductsShell } from '../components/layout/ProductsShell'
 import { PageLoading } from '../components/PageLoading'
-import { buildArticleJsonLd, PageSEO } from '../components/seo/PageSEO'
+import {
+  buildArticleJsonLd,
+  buildBreadcrumbJsonLd,
+  buildFaqJsonLd,
+  PageSEO,
+} from '../components/seo/PageSEO'
 import { BlogDetailProvider } from '../context/BlogDetailContext'
-import { transformerMaintenanceGuide } from '../data/blogDetailTransformerMaintenance'
+import type { BlogPost } from '../data/blogs'
 import { useCmsQuery } from '../hooks/useCmsQuery'
-import { mapBlogDetail } from '../cms/mappers'
+import { mapBlogDetail, mapBlogPost } from '../cms/mappers'
 import { queries } from '../cms/queries'
 
 export function BlogDetailPage() {
   const { slug = '' } = useParams()
   const { data, loading } = useCmsQuery(queries.blogPostBySlug, { slug }, null)
+  const { data: postsData } = useCmsQuery<Array<Record<string, unknown>>>(queries.blogPosts, {}, null)
 
-  const article = useMemo(() => {
-    if (data) return mapBlogDetail(data as Record<string, unknown> | null)
-    if (slug === transformerMaintenanceGuide.slug) return transformerMaintenanceGuide
-    return null
-  }, [data, slug])
+  const article = useMemo(
+    () => (data ? mapBlogDetail(data as Record<string, unknown> | null) : null),
+    [data],
+  )
+
+  const otherPosts = useMemo(
+    (): BlogPost[] =>
+      (postsData ?? [])
+        .map((post) => mapBlogPost(post as Parameters<typeof mapBlogPost>[0]))
+        .filter((post) => post.slug && post.slug !== slug),
+    [postsData, slug],
+  )
 
   if (loading) {
     return (
@@ -46,23 +59,41 @@ export function BlogDetailPage() {
   }
 
   const articlePath = `/blogs/${article.slug}`
+  const jsonLd: Record<string, unknown>[] = [
+    buildArticleJsonLd({
+      title: article.title,
+      description: article.metaDescription,
+      path: articlePath,
+      image: article.heroImage,
+      datePublished: article.publishedAt,
+      dateModified: article.dateModified,
+      author: article.author || undefined,
+      authorType: 'Organization',
+      wordCount: article.wordCount,
+      section: article.category || undefined,
+    }),
+    buildBreadcrumbJsonLd([
+      { name: 'Home', path: '/' },
+      { name: 'Blogs', path: '/blogs' },
+      { name: article.breadcrumbLabel, path: articlePath },
+    ]),
+  ]
+  if (article.faqs.length) {
+    jsonLd.push(
+      buildFaqJsonLd(article.faqs.map((item) => ({ question: item.question, answer: item.answer }))),
+    )
+  }
 
   return (
     <BlogDetailProvider value={article}>
       <ProductsShell className="bg-background">
         <PageSEO
-          title={article.title}
-          description={article.intro}
+          title={article.metaTitle}
+          description={article.metaDescription}
           path={articlePath}
           image={article.heroImage}
           type="article"
-          jsonLd={buildArticleJsonLd({
-            title: article.title,
-            description: article.intro,
-            path: articlePath,
-            image: article.heroImage,
-            author: article.author,
-          })}
+          jsonLd={jsonLd}
         />
         <main className="grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-space-8 md:py-space-12 grid grid-cols-1 lg:grid-cols-12 gap-gutter">
           <BlogDetailBreadcrumb currentLabel={article.breadcrumbLabel} />
@@ -73,7 +104,7 @@ export function BlogDetailPage() {
             <BlogDetailShare />
           </article>
 
-          <BlogDetailSidebar />
+          <BlogDetailSidebar otherPosts={otherPosts} />
         </main>
       </ProductsShell>
     </BlogDetailProvider>

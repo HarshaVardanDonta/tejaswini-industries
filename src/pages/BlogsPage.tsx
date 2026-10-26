@@ -1,5 +1,4 @@
 import { useMemo, useState } from 'react'
-import { BlogPagination } from '../components/blogs/BlogPagination'
 import { BlogPostCard } from '../components/blogs/BlogPostCard'
 import { BlogsFilters } from '../components/blogs/BlogsFilters'
 import { BlogsIntro } from '../components/blogs/BlogsIntro'
@@ -7,52 +6,37 @@ import { BlogsSidebar } from '../components/blogs/BlogsSidebar'
 import { FeaturedBlogPost } from '../components/blogs/FeaturedBlogPost'
 import { ProductsShell } from '../components/layout/ProductsShell'
 import { PageLoading } from '../components/PageLoading'
-import { PageSEO } from '../components/seo/PageSEO'
+import { buildBreadcrumbJsonLd, PageSEO } from '../components/seo/PageSEO'
 import { staticPageMeta } from '../constants/seo'
-import { BlogsPageProvider } from '../context/BlogsPageContext'
-import type { BlogCategory, BlogPost } from '../data/blogs'
-import { blogPosts, featuredPost, trendingArticles } from '../data/blogs'
+import { ALL_CATEGORIES, buildBlogFilters } from '../data/blogs'
+import type { BlogPost } from '../data/blogs'
 import { useCmsQuery } from '../hooks/useCmsQuery'
-import { mapBlogPost, mapFeaturedPost } from '../cms/mappers'
+import { mapBlogPost } from '../cms/mappers'
 import { queries } from '../cms/queries'
 
 export function BlogsPage() {
-  const [filter, setFilter] = useState<BlogCategory>('all')
-  const { data: postsData, loading: postsLoading } = useCmsQuery<Array<Record<string, unknown>>>(
+  const [filter, setFilter] = useState<string>(ALL_CATEGORIES)
+  const { data: postsData, loading } = useCmsQuery<Array<Record<string, unknown>>>(
     queries.blogPosts,
     {},
-    null
-  )
-  const { data: featuredData } = useCmsQuery(queries.featuredBlogPost, {}, null)
-  const { data: trendingData, loading: trendingLoading } = useCmsQuery<
-    Array<Record<string, unknown>>
-  >(queries.trendingArticles, {}, null)
-
-  const posts = useMemo((): BlogPost[] => {
-    if (!postsData?.length) return blogPosts
-    return postsData.map((post) => mapBlogPost(post as Parameters<typeof mapBlogPost>[0]) as BlogPost)
-  }, [postsData])
-
-  const featured = useMemo(
-    () => mapFeaturedPost(featuredData as Record<string, unknown> | null, featuredPost),
-    [featuredData]
+    null,
   )
 
-  const trending = useMemo(() => {
-    if (!trendingData?.length) return trendingArticles
-    return trendingData.map((item) => ({
-      rank: item.rank as string,
-      title: item.title as string,
-      readTime: item.readTime as string,
-    }))
-  }, [trendingData])
+  const posts = useMemo(
+    (): BlogPost[] =>
+      (postsData ?? []).map((post) => mapBlogPost(post as Parameters<typeof mapBlogPost>[0])),
+    [postsData],
+  )
+  const filters = useMemo(() => buildBlogFilters(posts), [posts])
+  const featured = useMemo(() => posts.find((post) => post.featured) ?? posts[0], [posts])
 
-  const filteredPosts = useMemo(() => {
-    if (filter === 'all') return posts
-    return posts.filter((post) => post.category === filter)
-  }, [filter, posts])
+  const showFeatured = filter === ALL_CATEGORIES && Boolean(featured)
+  const gridPosts = useMemo(() => {
+    const visible = filter === ALL_CATEGORIES ? posts : posts.filter((post) => post.category === filter)
+    return showFeatured ? visible.filter((post) => post.id !== featured?.id) : visible
+  }, [filter, posts, showFeatured, featured])
 
-  if (postsLoading || trendingLoading) {
+  if (loading) {
     return (
       <ProductsShell className="bg-gray-50">
         <PageLoading embedded />
@@ -61,29 +45,33 @@ export function BlogsPage() {
   }
 
   return (
-    <BlogsPageProvider featured={featured} trending={trending}>
-      <ProductsShell className="bg-gray-50">
-        <PageSEO {...staticPageMeta.blogs} />
-        <main className="grow max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-space-12 space-y-space-12 w-full">
-          <div>
-            <BlogsIntro />
-            <BlogsFilters active={filter} onChange={setFilter} />
-          </div>
+    <ProductsShell className="bg-gray-50">
+      <PageSEO
+        {...staticPageMeta.blogs}
+        image={featured?.image}
+        jsonLd={buildBreadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Blogs', path: '/blogs' },
+        ])}
+      />
+      <main className="grow max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-space-12 space-y-space-12 w-full">
+        <div>
+          <BlogsIntro />
+          <BlogsFilters filters={filters} active={filter} onChange={setFilter} />
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
-            <div className="lg:col-span-8 space-y-space-8">
-              <FeaturedBlogPost />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-space-6">
-                {filteredPosts.map((post) => (
-                  <BlogPostCard key={post.id} post={post} />
-                ))}
-              </div>
-              <BlogPagination />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+          <div className="lg:col-span-8 space-y-space-8">
+            {showFeatured && featured ? <FeaturedBlogPost post={featured} /> : null}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-space-6">
+              {gridPosts.map((post) => (
+                <BlogPostCard key={post.id} post={post} />
+              ))}
             </div>
-            <BlogsSidebar />
           </div>
-        </main>
-      </ProductsShell>
-    </BlogsPageProvider>
+          <BlogsSidebar />
+        </div>
+      </main>
+    </ProductsShell>
   )
 }
