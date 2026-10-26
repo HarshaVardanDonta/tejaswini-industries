@@ -130,8 +130,8 @@ export function Footer() {
       <div className="border-t border-gray-300 dark:border-outline-variant py-space-4 bg-gray-100 dark:bg-tertiary">
         <div className="px-margin-desktop w-full max-w-[1280px] mx-auto text-center">
           <p className="font-body-sm text-body-sm text-gray-500 dark:text-gray-400">
-            © 2024 Tejaswini Industries. ISO 9001:2015 Certified. Precision
-            Engineering Redefined.
+            © {new Date().getFullYear()} Tejaswini Industries. ISO 9001:2015
+            Certified. Precision Engineering Redefined.
           </p>
         </div>
       </div>
